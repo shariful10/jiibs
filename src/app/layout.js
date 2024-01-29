@@ -1,5 +1,7 @@
 // pages/_app.js
 
+import Footer from "@/Components/Shared/Footer";
+import NavigationBar from "@/Components/Shared/NavigationBar";
 import "./globals.css";
 
 export const metadata = {
@@ -10,10 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={` source-sans-pro min-w-[390px] w-full max-w-[1900px] mx-auto`}
-      >
+      <body className={`source-sans-pro w-full max-w-[1520px] mx-auto`}>
+        <NavigationBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
