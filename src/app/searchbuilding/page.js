@@ -12,7 +12,7 @@ const page = () => {
             <UnitCard></UnitCard>
             <UnitCard></UnitCard>
             </div>  
-        <button className='my-[60px] h-[53px] w-[150px] border-[#E4E4E4] rounded-[7px] m-auto'>
+        <button className='my-[60px] h-[53px] w-[150px] border border-[#E4E4E4] rounded-[7px] m-auto'>
             Load More   
         </button>
         </div>
