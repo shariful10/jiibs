@@ -27,6 +27,29 @@ import nature5 from "../../../assets/nature-5.jpg";
 export default function DetailsSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  const images = [
+    {
+      name: "image-1",
+      image: nature1,
+    },
+    {
+      name: "image-2",
+      image: nature2,
+    },
+    {
+      name: "image-3",
+      image: nature3,
+    },
+    {
+      name: "image-4",
+      image: nature4,
+    },
+    {
+      name: "image-5",
+      image: nature5,
+    },
+  ];
+
   return (
     <>
       <div className="max-h-[600px] h-full min-h-full w-full flex gap-3">
@@ -43,21 +66,13 @@ export default function DetailsSlider() {
           className="md:max-w-10/12 w-full sliderPreview"
         >
           {/* view port */}
-          <SwiperSlide>
-            <Image src={nature1} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature2} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature4} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature5} />
-          </SwiperSlide>
+          {images?.length
+            ? images?.map((image, idx) => (
+                <SwiperSlide>
+                  <Image src={image?.image} />
+                </SwiperSlide>
+              ))
+            : null}
         </Swiper>
 
         {/* tabs */}
@@ -71,21 +86,13 @@ export default function DetailsSlider() {
           modules={[FreeMode, Navigation, Thumbs]}
           className="md:w-3/12 flex flex-row md:!flex-col sliderPreviewTabs"
         >
-          <SwiperSlide>
-            <Image src={nature1} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature2} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature3} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature4} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={nature5} />
-          </SwiperSlide>
+          {images?.length
+            ? images?.map((image, idx) => (
+                <SwiperSlide>
+                  <Image src={image?.image} />
+                </SwiperSlide>
+              ))
+            : null}
         </Swiper>
       </div>
     </>
