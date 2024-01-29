@@ -4,7 +4,7 @@ import unitImage from "../../public/unitImage.jpeg";
 
 const UnitCard = () => {
   return (
-    <div className="relative h-[430px] w-[320px] me-[33px] mb-[40px]">
+    <div className="relative h-[430px] w-[320px] mb-[40px]">
       <button className="absolute top-[16px] left-[16px] bg-white text-black px-3 py-1 rounded-full h-[24px] w-[101px] text-[12px]">
         Special Deal
       </button>
