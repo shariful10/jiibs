@@ -1,36 +1,40 @@
+import Container from "../Regular/Container";
+
 const NavigationBar = () => {
 	return (
-		<div className="bg-base-100 flex items-center justify-between">
-			{/* Login */}
-			<div className="flex text-[38px] font-semibold text-primary py-3">
-				<a>JIBBS.</a>
-			</div>
+		<Container>
+			<div className="bg-base-100 flex items-center justify-between">
+				{/* Login */}
+				<div className="flex text-[38px] font-semibold text-primary py-3">
+					<a>JIBBS.</a>
+				</div>
 
-			{/* search input */}
-			<div className="flex-none gap-2">
-				<div className="form-control m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
-					<div className="flex-1 flex items-center justify-start gap-5">
-						<figure>{magnifyGlassIcons}</figure>
-						<input
-							type="text"
-							placeholder="Search Apartments "
-							className="outline-none text-[17px] font-normal"
-						/>
+				{/* search input */}
+				<div className="flex-none gap-2">
+					<div className="form-control m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
+						<div className="flex-1 flex items-center justify-start gap-5">
+							<figure>{magnifyGlassIcons}</figure>
+							<input
+								type="text"
+								placeholder="Search Apartments "
+								className="outline-none text-[17px] font-normal"
+							/>
+						</div>
+						<button className="ml-2 focus:outline-none pl-6 flex items-center justify-end gap-2">
+							<span>Units</span>
+							<figure>{dropDownIcons}</figure>
+						</button>
 					</div>
-					<button className="ml-2 focus:outline-none pl-6 flex items-center justify-end gap-2">
-						<span>Units</span>
-						<figure>{dropDownIcons}</figure>
-					</button>
+				</div>
+
+				{/* user , login , sign up */}
+				<div className="flex justify-end items-center gap-4">
+					<AuthButton icons={loginUserIcon} title="Login" />
+
+					<AuthButton icons={signUpIcons} title="Sign Up" />
 				</div>
 			</div>
-
-			{/* user , login , sign up */}
-			<div className="flex justify-end items-center gap-4">
-				<AuthButton icons={loginUserIcon} title="Login" />
-
-				<AuthButton icons={signUpIcons} title="Sign Up" />
-			</div>
-		</div>
+		</Container>
 	);
 };
 
@@ -61,6 +65,7 @@ var loginUserIcon = (
 		/>
 	</svg>
 );
+
 var signUpIcons = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

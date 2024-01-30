@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-
-export default function LocationMap() {
-  return <div>LocationMap</div>;
-}
-=======
 import ButtonBlack from "@/Components/Regular/Buttons/ButtonBlack";
 import ButtonPrimary from "@/Components/Regular/Buttons/ButtonPrimary";
 import MapLocator from "./MapLocator";
@@ -94,4 +87,3 @@ var storiesUpIcons = (
     />
   </svg>
 );
->>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
