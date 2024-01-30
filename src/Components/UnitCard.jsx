@@ -2,7 +2,11 @@ import Image from "next/image";
 import React from "react";
 import unitImage from "../../public/unitImage.jpeg";
 
-const UnitCard = () => {
+const UnitCard = ({unit}) => {
+
+
+  const {id, image, location, building_name, rent_per_month, bed, bath, size} = unit
+
   return (
     <div className="relative h-[430px] w-[320px] mb-[40px]">
       <button className="absolute top-[16px] left-[16px] bg-white text-black px-3 py-1 rounded-full h-[24px] w-[101px] text-[12px]">
@@ -39,20 +43,20 @@ const UnitCard = () => {
         className=" rounded-[20px] "
       ></Image>
       <div className="flex flex-col h-[100px] mt-[10px]">
-        <p className=" text-[15px] font-semibold text-[#626262] h-[18px]">Midtown East</p>
-        <p className=" text-[20px] mt-[4px] font-semibold h-[25px]">Paragon #203</p>
-        <p className=" text-[20px] mt-[4px] font-semibold h-[25px]">$4456 /month</p>
+        <p className=" text-[15px] font-semibold text-[#626262] h-[18px]">{location}</p>
+        <p className=" text-[20px] mt-[4px] font-semibold h-[25px]">{building_name} #{id}</p>
+        <p className=" text-[20px] mt-[4px] font-semibold h-[25px]">${rent_per_month} /month</p>
         <ul className="flex flex-row text-[15px] mt-[6px] text-[#626262] font-semibold h-[16px]">
           <li className="list-none">
-            1 bed
+            {bed} bed
           </li>
           <li className="list-none">
             <span className="inline-block rounded-full mr-[5px] ms-[5px]">&#8226;</span>{" "}
-            1 Bath
+            {bath} Bath
           </li>
           <li className="list-none">
             <span className="inline-block rounded-full mr-[5px] ms-[5px]">&#8226;</span>{" "}
-            1230 Sqft
+            {size}
           </li>
         </ul>
       </div>
