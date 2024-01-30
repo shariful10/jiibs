@@ -49,8 +49,8 @@ const NavigationBar = () => {
               <path
                 d="M7.94531 4.5L4.94531 7.5L1.94531 4.5"
                 stroke="#222222"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>
