@@ -1,6 +1,5 @@
-import ProfileInfoContent from "@/Components/Pages/profileInfo/ProfileInfoContent";
 import Link from "next/link";
-import React from "react";
+import ProfileInfoContent from "@/Components/Pages/profileInfo/ProfileInfoContent";
 
 const PersonalInfo = () => {
 	return (
@@ -29,22 +28,22 @@ const PersonalInfo = () => {
 			<div className="mt-[60px]">
 				<ProfileInfoContent
 					className="text-darkGray"
-					titlt="Lagal name"
+					lavel="Lagal name"
 					title="Jane Brandson"
 				/>
 				<ProfileInfoContent
 					className="mt-6 text-darkGray"
-					titlt="Email address"
+					lavel="Email address"
 					title="contact.gmail.com"
 				/>
 				<ProfileInfoContent
 					className="mt-6 text-darkGray"
-					titlt="Phone number"
+					lavel="Phone number"
 					title="+1*******68"
 				/>
 				<ProfileInfoContent
 					className="mt-6 text-darkGray"
-					titlt="Password"
+					lavel="Password"
 					title="***********"
 				/>
 			</div>
