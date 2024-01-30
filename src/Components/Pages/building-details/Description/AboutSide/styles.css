@@ -1,0 +1,7 @@
+.swiper-wrapper {
+  @apply w-full flex items-start justify-between gap-6;
+}
+
+/* .swiper-slide {
+  @apply h-64;
+} */
