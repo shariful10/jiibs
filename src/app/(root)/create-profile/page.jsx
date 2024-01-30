@@ -9,6 +9,9 @@ const page = () => {
       <div className="flex items-end mb-3">
         <p className="ms-auto">Step {activeTab} of 4</p>
       </div>
+
+      {/* Tab progress indicator Horizontal line */}
+
       <div className="flex justify-between  mb-4 gap-3">
         <div
           className={`w-1/4 border-b-4 ${
@@ -31,7 +34,9 @@ const page = () => {
           }`}
         ></div>
       </div>
+      {/* Tab progress indicator Horizontal line End */}
 
+      {/* Tab content */}
       <div className="text-center my-10">
         <h2 className="text-2xl md:text-4xl font-semibold ">
           Connect your data
@@ -40,7 +45,9 @@ const page = () => {
           Choose the data source to power your first step
         </p>
       </div>
+      {/* Tab content End */}
 
+      {/* navigation Button */}
       <div className="flex justify-between">
         {activeTab > 1 && (
           <button
@@ -63,6 +70,7 @@ const page = () => {
           </div>
         )}
       </div>
+      {/* navigation Button End */}
     </div>
   );
 };
