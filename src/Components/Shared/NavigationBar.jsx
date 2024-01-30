@@ -4,7 +4,7 @@ import Container from "../Regular/Container";
 const NavigationBar = () => {
   return (
     <Container>
-      <div className="bg-base-100 flex items-center justify-between">
+      <div className="bg-base-100 md:flex items-center justify-between hidden">
         {/* Login */}
         <div className="flex text-[38px] font-semibold text-primary py-3">
           <Link href="/">JIBBS.</Link>
