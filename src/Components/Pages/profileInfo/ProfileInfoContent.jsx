@@ -12,4 +12,4 @@ const ProfileInfoContent = ({ className, lavel, title }) => {
    )
 }
 
-export default ProfileInfoContent
+export default ProfileInfoContent;

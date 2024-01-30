@@ -1,38 +1,80 @@
 import React from "react";
+import Image from "next/image";
+import dot from "@/assets/Vector.svg"
+import FooterItems from "./FooterItems";
+import twitter from "@/assets/twitter.svg";
+import Container from "../Regular/Container";
+import facebook from "@/assets/facebook.svg";
+import instragram from "@/assets/instragram.svg";
 
 const Footer = () => {
-  return (
-    <footer className="footer p-10 bg-base-300 text-[#626262] text-[16px] font-normal">
-      <nav>
-        <h6 className=" font-semibold text-black text-[18px]">Support</h6>
-        <a className="link link-hover">Help Center</a>
-        <a className="link link-hover">AirCover</a>
-        <a className="link link-hover">Anti-discrimination</a>
-        <a className="link link-hover">Disability Support</a>
-        <a className="link link-hover">Cancellation Option</a>
-        <a className="link link-hover">Report neighborhood concern</a>
-      </nav>
-      <nav>
-        <h6 className=" font-semibold text-black text-[18px]">Hosting</h6>
-        <a className="link link-hover">Laurylee your home</a>
-        <a className="link link-hover">AirCover for Hosts</a>
-        <a className="link link-hover">Hosting resources</a>
-        <a className="link link-hover">Community forum</a>
-        <a className="link link-hover">Hosting responsibly</a>
-        <a className="link link-hover">Laurylee-friendly apartments</a>
-      </nav>
-      <nav>
-        <h6 className=" font-semibold text-black text-[18px]">Laurylee</h6>
-        <a className="link link-hover">Newsroom</a>
-        <a className="link link-hover">New features</a>
-        <a className="link link-hover">Career resources</a>
-        <a className="link link-hover">Investors</a>
-        <a className="link link-hover">Gift cards</a>
-        <a className="link link-hover">laurylee.com emergency stays</a>
-      </nav>
-      
-    </footer>
-  );
+	return (
+		<footer className="pt-[60px] pb-[30px] bg-[#F7F7F7] w-screen">
+			<Container>
+				<div className="grid md:grid-cols-3 border-b pb-[52px]">
+					<FooterItems
+						title="Support"
+						item1="Help Center"
+						item2="AirCover"
+						item3="Anti-discrimination"
+						item4="Disability support"
+						item5="Cancellation options"
+						item6="Report neighborhood concern"
+					/>
+					<FooterItems
+						className="mt-5 md:mt-0"
+						title="Hosting"
+						item1="Laurylee your home"
+						item2="AirCover for Hosts"
+						item3="Hosting resources"
+						item4="Community forum"
+						item5="Hosting responsibly"
+						item6="Laurylee-friendly apartments"
+					/>
+					<FooterItems
+						className="mt-5 md:mt-0"
+						title="Laurylee"
+						item1="Newsroom"
+						item2="New features"
+						item3="Careers resources"
+						item4="Investors"
+						item5="Gift cards"
+						item6="laurylee.com emergency stays"
+					/>
+				</div>
+				<div className="mt-[22px] flex items-center justify-between">
+					<div className="flex items-center gap-10">
+						<p className="text-[#222]">
+							© 2023 Laurylee. All rights reserved.
+						</p>
+						<div className="flex items-center gap-4">
+                     <p className="flex items-center gap-1">
+                        <Image src={dot} alt="dot" />
+                        <span>Terms</span>
+                     </p>
+                     <p className="flex items-center gap-1">
+                        <Image src={dot} alt="dot" />
+                        <span>Sitemap</span>
+                     </p>
+                     <p className="flex items-center gap-1">
+                        <Image src={dot} alt="dot" />
+                        <span>Privacy</span>
+                     </p>
+                     <p className="flex items-center gap-1">
+                        <Image src={dot} alt="dot" />
+                        <span>Contact</span>
+                     </p>
+						</div>
+					</div>
+               <div className="flex items-center gap-4">
+                  <Image src={facebook} alt="" />
+                  <Image src={instragram} alt="" />
+                  <Image src={twitter} alt="" />
+               </div>
+				</div>
+			</Container>
+		</footer>
+	);
 };
 
 export default Footer;
