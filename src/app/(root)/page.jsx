@@ -8,7 +8,7 @@ import React from "react";
 const Home = () => {
   const apartments = data.apartments;
   return (
-    <div className="w-full max-w-[1520px] mx-auto">
+    <div className="w-full max-w-[1520px] mx-auto pb-20">
       <Categories />
       <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
         {apartments.map((apartment, index) => (
