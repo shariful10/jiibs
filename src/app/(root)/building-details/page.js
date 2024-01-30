@@ -1,9 +1,10 @@
-import BuildingDetails from "@/Components/Pages/building-details/BuildingDetails";
+import BuildingDetail from "@/Components/Pages/building-details/BuildingDetails";
 
-export default function Home() {
+// Building Details page
+export default function BuildingDetails() {
   return (
     <>
-      <BuildingDetails />
+      <BuildingDetail />
     </>
   );
 }
