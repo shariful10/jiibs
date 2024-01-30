@@ -1,13 +1,19 @@
 import React from "react";
 
-const PrioritiesButton = ({ title, selectValue, setSelectValue }) => {
+const PrioritiesButton = ({ title, priorities, setPriorities }) => {
   return (
     <button
       className={`px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white ${
-        selectValue === title && "bg-darkGray text-white"
+        priorities[title] && "bg-darkGray text-white"
       }`}
       onClick={() => {
-        setSelectValue(title);
+        // Toggle selection state
+        setPriorities((prevPriorities) => {
+          return {
+            ...prevPriorities,
+            [title]: !prevPriorities[title],
+          };
+        });
       }}
     >
       {" "}

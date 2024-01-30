@@ -7,6 +7,7 @@ import { useState } from "react";
 const page = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [selectValue, setSelectValue] = useState("");
+  const [priorities, setPriorities] = useState({});
 
   const handleCreateProfile = () => {
     let userInfo = JSON.parse(localStorage.getItem("create-profile")) || [];
@@ -17,7 +18,7 @@ const page = () => {
       userInfo.push({ people: selectValue });
     }
     if (activeTab === 3) {
-      userInfo.push({ priorities: selectValue });
+      userInfo.push({ priorities: priorities });
     }
     if (activeTab === 4) {
       userInfo.push({ info: selectValue });
@@ -25,6 +26,8 @@ const page = () => {
 
     localStorage.setItem("create-profile", JSON.stringify(userInfo));
   };
+
+  console.log(priorities);
 
   return (
     <div className="mt-16 max-w-4xl mx-auto p-5">
@@ -62,10 +65,12 @@ const page = () => {
       <div className="my-10">
         <div className="text-center">
           <h2 className="text-2xl md:text-4xl font-semibold mb-2">
-            Connect your data
+            {activeTab === 4 ? "Welcome to JIBBS" : "Connect your data"}
           </h2>
           <p className="text-xl text-darkGray">
-            Choose the data source to power your first step
+            {activeTab === 4
+              ? "First thing first, tell us a bit about yourself"
+              : "Choose the data source to power your first step"}
           </p>
         </div>
 
@@ -140,46 +145,54 @@ const page = () => {
               <div className="flex flex-wrap gap-6 mt-10">
                 <PrioritiesButton
                   title="high ceiling"
-                  setSelectValue={setSelectValue}
-                  selectValue={selectValue}
+                  setPriorities={setPriorities}
+                  priorities={priorities}
                 />
-
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  outdoor space
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  work space
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  pool
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  gym
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  big house
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  kitchen
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  high-end appliances
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  24-7 doorman
-                </button>
-                <button className="px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white">
-                  {" "}
-                  in-unit washer/dryer
-                </button>
+                <PrioritiesButton
+                  title="outdoor space"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="work space"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="pool"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="gym"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="big house"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="kitchen"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="high-end appliances"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="24-7 doorman"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
+                <PrioritiesButton
+                  title="in-unit washer/dryer"
+                  setPriorities={setPriorities}
+                  priorities={priorities}
+                />
               </div>
             </div>
           ) : (
@@ -201,19 +214,17 @@ const page = () => {
           </button>
         )}
 
-        {activeTab < 4 && (
-          <div className="flex gap-5 items-center ms-auto">
-            <button>Skip</button>
-            <button
-              className="bg-primary text-white px-10 py-3 rounded-md"
-              onClick={() => {
-                setActiveTab(activeTab + 1), handleCreateProfile();
-              }}
-            >
-              Next
-            </button>
-          </div>
-        )}
+        <div className="flex gap-5 items-center ms-auto">
+          <button>{activeTab === 1 ? "Skip" : "Skip for now"}</button>
+          <button
+            className="bg-primary text-white px-10 py-3 rounded-md"
+            onClick={() => {
+              setActiveTab(activeTab + 1), handleCreateProfile();
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
       {/* navigation Button End */}
     </div>
