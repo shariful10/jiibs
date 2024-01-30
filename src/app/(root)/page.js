@@ -1,7 +1,11 @@
-import React from "react";
+import NavigationBar from "@/Components/Shared/NavigationBar";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <NavigationBar />
+    </>
+  );
 };
 
 export default Home;

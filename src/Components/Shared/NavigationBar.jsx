@@ -1,76 +1,50 @@
 const NavigationBar = () => {
   return (
-    <div className="bg-base-100 grid grid-cols-3 justify-center">
-      <div className="flex-1 text-[38px] font-semibold text-[#2AB7DD] py-[12px]">
+    <div className="bg-base-100 flex items-center justify-between">
+      {/* Login */}
+      <div className="flex text-[38px] font-semibold text-primary py-3">
         <a>JIBBS.</a>
       </div>
+
+      {/* search input */}
       <div className="flex-none gap-2">
-        <div className="form-control m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="21"
-              viewBox="0 0 23 22"
-              fill="none"
-            >
-              <rect
-                x="0.719395"
-                y="0.00516561"
-                width="2.75919"
-                height="9.03236"
-                rx="0.5"
-                transform="matrix(0.724382 -0.689399 0.714407 0.69973 12.7493 14.978)"
-                fill="#626262"
-                stroke="#626262"
-              />
-              <path
-                d="M16.1755 8.52356C16.1755 12.3697 12.936 15.5471 8.86511 15.5471C4.79427 15.5471 1.55469 12.3697 1.55469 8.52356C1.55469 4.67738 4.79427 1.5 8.86511 1.5C12.936 1.5 16.1755 4.67738 16.1755 8.52356Z"
-                stroke="#626262"
-                strokeWidth="2"
-              />
-            </svg>
+        <div className="form-control m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
+          <div className="flex-1 flex items-center justify-start gap-5">
+            <figure>{magnifyGlassIcons}</figure>
+            <input
+              type="text"
+              placeholder="Search Apartments "
+              className="outline-none text-[17px] font-normal"
+            />
           </div>
-          <input
-            type="text"
-            placeholder="Search Apartments"
-            className="md:w-auto ms-1 me-[105px]"
-          />
-          <button className="ml-2 focus:outline-none flex flex-row items-center">
-            Units
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="11"
-              height="10"
-              viewBox="0 0 11 10"
-              fill="none"
-            >
-              <path d="M7.94531 4.5L4.94531 7.5L1.94531 4.5" fill="#222222" />
-              <path
-                d="M7.94531 4.5L4.94531 7.5L1.94531 4.5"
-                stroke="#222222"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          <button className="ml-2 focus:outline-none pl-6 flex items-center justify-end gap-2">
+            <span>Units</span>
+            <figure>{dropDownIcons}</figure>
           </button>
         </div>
       </div>
-      <div className=" flex flex-row justify-end">
-        <button className="btn me-[16px] w-[105px] flex">
-          {loginUserIcon}
-          Login
-        </button>
-        <button className="btn w-[117px]">
-          {signUpIcons}
-          Sign Up
-        </button>
+
+      {/* user , login , sign up */}
+      <div className="flex justify-end items-center gap-4">
+        <AuthButton icons={loginUserIcon} title="Login" />
+
+        <AuthButton icons={signUpIcons} title="Sign Up" />
       </div>
     </div>
   );
 };
 
 export default NavigationBar;
+
+// similar components
+function AuthButton({ icons, title }) {
+  return (
+    <button className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray">
+      <figure className="w-6 h-6 text-2xl"> {icons}</figure>
+      <span className="text-base font-semibold">{title}</span>
+    </button>
+  );
+}
 
 // icons
 var loginUserIcon = (
@@ -106,5 +80,47 @@ var signUpIcons = (
         <rect width={24} height={24} fill="white" />
       </clipPath>
     </defs>
+  </svg>
+);
+var magnifyGlassIcons = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="21"
+    height="21"
+    viewBox="0 0 23 22"
+    fill="none"
+  >
+    <rect
+      x="0.719395"
+      y="0.00516561"
+      width="2.75919"
+      height="9.03236"
+      rx="0.5"
+      transform="matrix(0.724382 -0.689399 0.714407 0.69973 12.7493 14.978)"
+      fill="#626262"
+      stroke="#626262"
+    />
+    <path
+      d="M16.1755 8.52356C16.1755 12.3697 12.936 15.5471 8.86511 15.5471C4.79427 15.5471 1.55469 12.3697 1.55469 8.52356C1.55469 4.67738 4.79427 1.5 8.86511 1.5C12.936 1.5 16.1755 4.67738 16.1755 8.52356Z"
+      stroke="#626262"
+      strokeWidth="2"
+    />
+  </svg>
+);
+var dropDownIcons = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="11"
+    height="10"
+    viewBox="0 0 11 10"
+    fill="none"
+  >
+    <path d="M7.94531 4.5L4.94531 7.5L1.94531 4.5" fill="#222222" />
+    <path
+      d="M7.94531 4.5L4.94531 7.5L1.94531 4.5"
+      stroke="#222222"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
