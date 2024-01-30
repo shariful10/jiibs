@@ -1,11 +1,4 @@
 "use client";
-<<<<<<< HEAD
-import React, { useState } from "react";
-
-const page = () => {
-<<<<<<< HEAD
-  const [activeTab, setActiveTab] = useState(1);
-=======
 import InputProfileCard from "@/Components/Regular/Inputs/InputProfileCard";
 import PrioritiesButton from "@/Components/Regular/Inputs/PrioritiesButton";
 import InputImage from "@/assets/images/self-employed-1.svg";
@@ -35,54 +28,40 @@ const page = () => {
   };
 
   console.log(priorities);
->>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
-=======
-	const [activeTab, setActiveTab] = useState(1);
->>>>>>> shariful
 
-	return (
-		<div className="mt-16 max-w-4xl mx-auto p-5">
-			<div className="flex items-end mb-3">
-				<p className="ms-auto">Step {activeTab} of 4</p>
-			</div>
+  return (
+    <div className="mt-16 max-w-4xl mx-auto p-5">
+      <div className="flex items-end mb-3">
+        <p className="ms-auto">Step {activeTab} of 4</p>
+      </div>
 
-			{/* Tab progress indicator Horizontal line */}
+      {/* Tab progress indicator Horizontal line */}
 
-			<div className="flex justify-between  mb-4 gap-3">
-				<div
-					className={`w-1/4 border-b-4 ${
-						activeTab === 1 ? "border-[#222222]" : "border-[#D9D9D9]"
-					}`}
-				></div>
-				<div
-					className={`w-1/4 border-b-4 ${
-						activeTab === 2 ? "border-[#222222]" : "border-[#D9D9D9]"
-					}`}
-				></div>
-				<div
-					className={`w-1/4 border-b-4 ${
-						activeTab === 3 ? "border-[#222222]" : "border-[#D9D9D9]"
-					}`}
-				></div>
-				<div
-					className={`w-1/4 border-b-4 ${
-						activeTab === 4 ? "border-[#222222]" : "border-[#D9D9D9]"
-					}`}
-				></div>
-			</div>
-			{/* Tab progress indicator Horizontal line End */}
+      <div className="flex justify-between  mb-4 gap-3">
+        <div
+          className={`w-1/4 border-b-4 ${
+            activeTab === 1 ? "border-[#222222]" : "border-[#D9D9D9]"
+          }`}
+        ></div>
+        <div
+          className={`w-1/4 border-b-4 ${
+            activeTab === 2 ? "border-[#222222]" : "border-[#D9D9D9]"
+          }`}
+        ></div>
+        <div
+          className={`w-1/4 border-b-4 ${
+            activeTab === 3 ? "border-[#222222]" : "border-[#D9D9D9]"
+          }`}
+        ></div>
+        <div
+          className={`w-1/4 border-b-4 ${
+            activeTab === 4 ? "border-[#222222]" : "border-[#D9D9D9]"
+          }`}
+        ></div>
+      </div>
+      {/* Tab progress indicator Horizontal line End */}
 
-<<<<<<< HEAD
       {/* Tab content */}
-<<<<<<< HEAD
-      <div className="text-center my-10">
-        <h2 className="text-2xl md:text-4xl font-semibold ">
-          Connect your data
-        </h2>
-        <p className="text-xl text-darkGray">
-          Choose the data source to power your first step
-        </p>
-=======
       <div className="my-10">
         <div className="text-center">
           <h2 className="text-2xl md:text-4xl font-semibold mb-2">
@@ -221,47 +200,20 @@ const page = () => {
           )}
         </div>
         {/* Tab input items End */}
->>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
       </div>
       {/* Tab content End */}
-=======
-			{/* Tab content */}
-			<div className="text-center my-10">
-				<h2 className="text-2xl md:text-4xl font-semibold ">
-					Connect your data
-				</h2>
-				<p className="text-xl text-darkGray">
-					Choose the data source to power your first step
-				</p>
-			</div>
-			{/* Tab content End */}
->>>>>>> shariful
 
-			{/* navigation Button */}
-			<div className="flex justify-between">
-				{activeTab > 1 && (
-					<button
-						className="mr-2 bg-softGray text-[#222222] px-6 py-3 rounded-md font-semibold"
-						onClick={() => setActiveTab(activeTab - 1)}
-					>
-						Back
-					</button>
-				)}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-        {activeTab < 4 && (
-          <div className="flex gap-5 items-center ms-auto">
-            <button>Skip</button>
-            <button
-              className="bg-primary text-white px-10 py-3 rounded-md"
-              onClick={() => setActiveTab(activeTab + 1)}
-            >
-              Next
-            </button>
-          </div>
+      {/* navigation Button */}
+      <div className="flex justify-between">
+        {activeTab > 1 && (
+          <button
+            className="mr-2 bg-softGray text-[#222222] px-6 py-3 rounded-md font-semibold"
+            onClick={() => setActiveTab(activeTab - 1)}
+          >
+            Back
+          </button>
         )}
-=======
+
         <div className="flex gap-5 items-center ms-auto">
           <button>{activeTab === 1 ? "Skip" : "Skip for now"}</button>
           <button
@@ -273,28 +225,10 @@ const page = () => {
             Next
           </button>
         </div>
->>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
       </div>
       {/* navigation Button End */}
     </div>
   );
-=======
-				{activeTab < 4 && (
-					<div className="flex gap-5 items-center ms-auto">
-						<button>Skip</button>
-						<button
-							className="bg-primary text-white px-10 py-3 rounded-md"
-							onClick={() => setActiveTab(activeTab + 1)}
-						>
-							Next
-						</button>
-					</div>
-				)}
-			</div>
-			{/* navigation Button End */}
-		</div>
-	);
->>>>>>> shariful
 };
 
 export default page;
