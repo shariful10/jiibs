@@ -1,7 +1,31 @@
+"use client";
+
+import Categories from "@/Components/Categories/Categories";
+import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
+import { data } from "@/Components/data";
 import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  const apartments = data.apartments;
+  return (
+    <div>
+      <Categories />
+      <div className="pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-10">
+        {apartments.map((apartment, index) => (
+          <ApartmentCard
+            key={index}
+            image={apartment.image}
+            location={apartment.location}
+            title={apartment.title}
+            price={apartment.price}
+            bed={apartment.bed}
+            bath={apartment.bath}
+            squareFit={apartment.squareFit}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Home;
