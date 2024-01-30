@@ -13,9 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`source-sans-pro w-full max-w-[1520px] mx-auto`}>
-        <NavigationBar />
         {children}
-        <Footer />
       </body>
     </html>
   );
