@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 import {
   starFilledIcon,
   starHalfFilledIcon,
   unFilledIcon,
 } from "../Utils/all-icons-svg";
 
+=======
+>>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
 const RatingStars = ({ rating }) => {
   const maxRating = 5;
   const filledStars = Math.floor(rating);

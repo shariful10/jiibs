@@ -84,6 +84,22 @@ const uses = () => {
         valid={errors}
       />
 
+<<<<<<< HEAD
+=======
+      <InputRadioBox
+        serial="1"
+        id="expertise_level"
+        name="expertise_level"
+        handle={handleChange}
+        labelText1={{ value: "Professional", text: "Professional" }}
+        labelText2={{ value: "Recreational", text: "Recreational" }}
+        // dyn={[
+        //   { value: "Professional", text: "Professional" },
+        //   { value: "Professional", text: "Professional" },
+        // ]}
+      />
+
+>>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
       {/* romance */}
       <InputRadio
         id="considerRomance"
