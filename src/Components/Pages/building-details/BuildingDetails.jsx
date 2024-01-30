@@ -3,9 +3,10 @@ import Container from "@/Components/Regular/Container";
 import DetailsSlider from "@/Components/Regular/DetailsSlider/DetailsSlider";
 import Description from "./Description/Description";
 
-export default function BuildingDetails() {
+export default function BuildingDetail() {
   return (
     <>
+      {/* title and slider part */}
       <Container className="py-4">
         {/* Header part */}
         <div className="flex gap-4 justify-between items-center py-[18px]">
@@ -25,8 +26,10 @@ export default function BuildingDetails() {
 
         {/* preview slider */}
         <DetailsSlider />
+      </Container>
 
-        {/* Description */}
+      {/* Description */}
+      <Container>
         <Description />
       </Container>
     </>

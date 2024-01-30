@@ -1,9 +1,3 @@
-import {
-  starFilledIcon,
-  starHalfFilledIcon,
-  unFilledIcon,
-} from "../Utils/all-icons-svg";
-
 const RatingStars = ({ rating }) => {
   const maxRating = 5;
   const filledStars = Math.floor(rating);
