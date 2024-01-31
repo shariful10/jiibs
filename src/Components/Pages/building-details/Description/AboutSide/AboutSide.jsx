@@ -6,6 +6,7 @@ import AboutDescription from "./AboutDescription";
 import Amenities from "./Amenities";
 import StudioBed from "./StudioBed";
 import Transportation from "./Transportation";
+import AvailableUnits from "./AvailableUnits";
 
 export default function AboutSide() {
   const studioBed = [
@@ -71,6 +72,11 @@ export default function AboutSide() {
         {/* Amenities */}
         <div>
           <Amenities />
+        </div>
+
+        {/* Available Units */}
+        <div>
+          <AvailableUnits />
         </div>
       </div>
     </>
