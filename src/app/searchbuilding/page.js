@@ -1,3 +1,4 @@
+import Container from '@/Components/Regular/Container';
 import UnitCard from '@/Components/UnitCard';
 import React from 'react';
 
@@ -73,8 +74,9 @@ const page = () => {
 
 
     return (
-        <div className='flex flex-col justify-center max-w-[1382px]'>
-            <div className='flex flex-wrap justify-start gap-[33px] '>
+        <Container>
+            <div className='flex flex-col justify-center'>
+            <div className='flex flex-wrap justify-start gap-8'>
                 {units?.map(eachUnit => (
                     <UnitCard key={eachUnit.id} unit={eachUnit} />
                 ))}
@@ -83,6 +85,7 @@ const page = () => {
                 Load More   
             </button>
         </div>
+        </Container>
     );
 };
 

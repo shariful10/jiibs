@@ -11,8 +11,6 @@ const page = () => {
             .catch(error => console.error('Error fetching units:', error));
     }, []);
 
-    console.log("gello",units)
-
     return (
         <div className='flex flex-wrap justify-start'>
             <UnitCard></UnitCard>
