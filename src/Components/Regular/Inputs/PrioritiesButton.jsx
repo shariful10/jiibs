@@ -3,8 +3,8 @@ import React from "react";
 const PrioritiesButton = ({ title, priorities, setPriorities }) => {
   return (
     <button
-      className={`px-5 py-3 rounded-md bg-softGray text-darkGray capitalize hover:bg-darkGray hover:text-white ${
-        priorities[title] && "bg-darkGray text-white"
+      className={`px-5 py-3 rounded-md text-darkGray capitalize hover:bg-darkGray hover:text-white ${
+        priorities[title] ? "bg-darkGray text-white" : "bg-softGray"
       }`}
       onClick={() => {
         // Toggle selection state

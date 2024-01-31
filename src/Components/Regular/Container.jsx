@@ -5,7 +5,7 @@ export default function Container({ children, className }) {
     <>
       <section>
         <div
-          className={`container py-7 px-5 sm:px-2 mx-auto w-full max-w-[1380px] ${
+          className={`w-full px-5 xl:px-0 xl:max-w-[1280px] xxl:max-w-xl exl:max-w-[1520px] mx-auto ${
             className ? className : null
           }`}
         >

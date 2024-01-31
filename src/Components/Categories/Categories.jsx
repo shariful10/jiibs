@@ -6,8 +6,8 @@ import { categories } from "./categoriesData";
 const Categories = () => {
   return (
     <div className="container py-9 mx-auto w-full max-w-[1520px]">
-      <div className="flex items-center justify-between w-full gap-12">
-        <div className="pt-4 flex items-center overflow-x-auto gap-7 justify-between md:gap-0 flex-1">
+      <div className="flex flex-wrap items-center justify-between w-full gap-12">
+        <div className="pt-4 flex items-center overflow-x-auto gap-7 md:gap-5">
           {categories.map((category) => (
             <CategoryBox
               key={category.label}
@@ -16,7 +16,7 @@ const Categories = () => {
             />
           ))}
         </div>
-        <div className="flex gap-3 items-center">
+        <div className="flex flex-wrap gap-3 items-center">
           <button className="px-5 py-4 rounded-[7px] border-[2px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
             <Image src={filter} alt="Filter" />
             Filters
