@@ -12,16 +12,7 @@ const Home = () => {
       <Categories />
       <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
         {apartments.map((apartment, index) => (
-          <ApartmentCard
-            key={index}
-            image={apartment.image}
-            location={apartment.location}
-            title={apartment.title}
-            price={apartment.price}
-            bed={apartment.bed}
-            bath={apartment.bath}
-            squareFit={apartment.squareFit}
-          />
+          <ApartmentCard key={index} apartment={apartment} />
         ))}
       </div>
     </div>

@@ -1,50 +1,21 @@
+import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import { FaHeart } from "react-icons/fa6";
-import heartButton from "@/assets/images/heart-button.svg";
 
-const ApartmentCard = ({
-  location,
-  price,
-  image,
-  title,
-  bed,
-  bath,
-  squareFit,
-}) => {
+const ApartmentCard = ({ apartment }) => {
+  const { location, price, image, title, bed, bath, squareFit } = apartment;
+
   return (
     <div>
       <Link href="/" className="col-span-1 cursor-pointer group">
         <div className="flex flex-col gap-2 w-full">
-          <div
-            className="
-            aspect-square
-            w-full
-            relative
-            overflow-hidden
-            rounded-[20px]
-            
-          "
-          >
+          <div className="aspect-square w-full relative overflow-hidden rounded-[20px]">
             <Image
-              className="
-              object-cover
-              h-full
-              w-full
-              group-hover:scale-110
-              duration-300
-            "
+              className="object-cover h-full w-full group-hover:scale-110 duration-300"
               src={image}
               alt="Room"
             />
-            <div
-              className="
-            absolute
-            top-3
-            right-3
-          "
-            >
+            <div className=" absolute top-3 right-3">
               <Image src={heartButton} alt="Heart button" />
             </div>
           </div>
