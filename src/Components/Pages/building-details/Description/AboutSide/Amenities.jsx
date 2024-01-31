@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./styles.css";
+import "./Amenities.css";
 
 // images
 import chadViewImg from "@/assets/chad-view.png";
