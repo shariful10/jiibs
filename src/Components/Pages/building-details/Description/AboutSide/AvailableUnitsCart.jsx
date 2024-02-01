@@ -1,19 +1,5 @@
 import Image from "next/image";
 
-/*
-
- {
-      type: "3 beds",
-      unitsNumber: "3405",
-      amount: { type: "month", price: 4495 },
-      offer: "1 month free - 14 Month Lease",
-      available: "Immediate",
-      roomSize: ["1 bed", "1 bath", "600 sqpft"],
-      ArchitectImage: "",
-    },
-
-    */
-
 export default function AvailableUnitsCart({ cart }) {
   return (
     <>
@@ -40,7 +26,7 @@ export default function AvailableUnitsCart({ cart }) {
           </p>
         </div>
 
-        <figure className="w-full max-w-48 h-full max-h-[184px]">
+        <figure className="w-full max-w-48 h-full max-h-[184px] border border-softGray">
           <Image
             className="w-full h-full"
             src={cart?.ArchitectImage}

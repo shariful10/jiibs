@@ -68,8 +68,11 @@ export default function DetailsSlider() {
           {/* view port */}
           {images?.length
             ? images?.map((image, idx) => (
-                <SwiperSlide key={idx}>
-                  <Image src={image?.image} />
+                <SwiperSlide className="w-full h-full" key={idx}>
+                  <Image
+                    className="w-full h-full object-cover"
+                    src={image?.image}
+                  />
                 </SwiperSlide>
               ))
             : null}

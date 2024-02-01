@@ -101,7 +101,7 @@ export default function AvailableUnits() {
     }
   }, [tabs]);
 
-  console.log("loadData ", loadData);
+  // console.log("loadData ", loadData);
 
   return (
     <>
@@ -134,7 +134,7 @@ export default function AvailableUnits() {
               </>
             )}
 
-            <div className="py-10 border-t-2">
+            <div className="py-6 border-t-2">
               {showData?.length > 3 ? (
                 <ButtonWhite onclick={() => setLoadData(!loadData)}>
                   <span>{loadData ? "See Less " : "Load More"}</span>
