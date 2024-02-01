@@ -1,5 +1,5 @@
 import AboutSide from "./AboutSide/AboutSide";
-import LocationMap from "./LocationMap";
+import LocationMap from "./LocationDetails/LocationMap";
 
 export default function Description() {
   return (
