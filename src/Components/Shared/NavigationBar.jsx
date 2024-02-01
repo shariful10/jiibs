@@ -1,40 +1,110 @@
+"use client";
 import Link from "next/link";
 import Container from "../Regular/Container";
+import { useState } from "react";
+import { IoClose } from "react-icons/io5";
+import SearchResult from "../SearchResult";
+import midtown from "@/assets/images/apartment/Midtown-East.png";
+
+const search = [
+  {
+    id: "1",
+    name: "Sunrise Apartments",
+    location: "123 Main Street, Cityville, State",
+    imageSrc: midtown,
+    availability: "Available",
+  },
+];
 
 const NavigationBar = () => {
+  const [isSearchExpanded, setSearchExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchedItems, setShowSearchedItems] = useState(false);
+  const [isDarkened, setIsDarkened] = useState(false);
+
+  const expandSearch = () => {
+    setSearchExpanded(true);
+    setIsDarkened(true);
+  };
+
+  const closeSearch = () => {
+    setSearchExpanded(false);
+    setShowSearchedItems(false);
+  };
+
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+    setShowSearchedItems(event.target.value.trim() !== "");
+  };
+
   return (
     <Container>
-      <div className="bg-base-100 md:flex items-center justify-between hidden py-3">
+      <div
+        className={`bg-base-100 md:flex justify-between items-center hidden py-3`}
+      >
         {/* Login */}
-        <div className="flex text-[38px] font-semibold text-primary py-3">
+        <div
+          className={`flex text-[38px] font-semibold text-primary py-3 ${
+            isSearchExpanded ? "" : ""
+          }`}
+        >
           <Link href="/">JIBBS.</Link>
         </div>
 
         {/* search input */}
-        <div className="flex-none gap-2">
-          <div className="form-control m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
+        <div
+          className={`flex-none gap-2 ${isSearchExpanded ? "w-[1322px]" : ""}`}
+        >
+          <div className="form-control  m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
             <div className="flex-1 flex items-center justify-start gap-5">
               <figure>{magnifyGlassIcons}</figure>
               <input
                 type="text"
                 placeholder="Search Apartments "
                 className="outline-none text-[17px] font-normal"
+                onClick={expandSearch}
+                value={searchQuery}
+                onChange={handleInputChange}
               />
             </div>
-            <button className="ml-2 focus:outline-none pl-6 flex items-center justify-end gap-2">
-              <span>Units</span>
-              <figure>{dropDownIcons}</figure>
-            </button>
+            {isSearchExpanded != true && (
+              <button className="ml-2 focus:outline-none pl-6 flex items-center justify-end gap-2">
+                <span>Units</span>
+                <figure>{dropDownIcons}</figure>
+              </button>
+            )}
           </div>
         </div>
 
         {/* user , login , sign up */}
-        <div className="flex justify-end items-center gap-4">
-          <AuthButton icons={loginUserIcon} title="Login" />
+        {isSearchExpanded ? (
+          <div className="items-center ms-[16px]" onClick={closeSearch}>
+            <IoClose className="h-[24px] w-[24px]" />
+          </div>
+        ) : (
+          <div className="flex justify-end items-center gap-4">
+            <AuthButton icons={loginUserIcon} title="Login" />
 
-          <AuthButton icons={signUpIcons} title="Sign Up" />
-        </div>
+            <AuthButton icons={signUpIcons} title="Sign Up" />
+          </div>
+        )}
       </div>
+      {showSearchedItems && (
+        <div className="absolute top-20 bg-white w-full max-w-[1520px] max-h-[720px] z-50">
+          <div className="p-4 w-[1322px]">
+            <div className="flex flex-col place-self-center mx-auto overflow-hidden">
+              {search.map((searchResult, index) => (
+                <SearchResult
+                  key={index}
+                  searchResult={searchResult}
+                ></SearchResult>
+              ))}
+            </div>
+            <button>Clear All</button>
+            <button>Show {search.length} results</button>
+          </div>
+        </div>
+      )}
     </Container>
   );
 };
