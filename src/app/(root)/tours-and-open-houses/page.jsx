@@ -3,8 +3,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Container from "@/Components/Regular/Container";
 import UpcomingTab from "@/Components/pages/ToursAndOpenHouses/UpcomingTab";
-import tour1 from "@/assets/tour1.svg";
-import arrow from "@/assets/arrow_right.svg";
 
 const ToursAndOpenHouses = () => {
 	const [tab, setTab] = useState("upcoming");
