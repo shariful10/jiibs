@@ -10,17 +10,17 @@ export default function BuildingDetail() {
       {/* title and slider part */}
       <Container className="py-4">
         {/* Header part */}
-        <div className="flex gap-4 justify-between items-center py-[18px]">
+        <div className=" mdx:flex flex-col mdx:flex-row gap-4 justify-between items-center py-[18px] hidden">
           <h1 className="text-3xl font-semibold">
             70 Pine Street, New York, New york 10005
           </h1>
 
           <Breadcrumbs
             paths={[
-              "buildings",
-              "Downtown",
-              "Financial district",
-              "70 pine street",
+              { name: "buildings", link: "#" },
+              { name: "Downtown", link: "#" },
+              { name: "Financial district", link: "#" },
+              { name: "70 pine street", link: "#" },
             ]}
           />
         </div>

@@ -6,7 +6,7 @@ const uses = () => {
     fullName: "",
   });
 
-  console.log("errors boat ", errors);
+  console.log("errors ", errors);
 
   const handleChange = (e) => {
     return setInputData({
