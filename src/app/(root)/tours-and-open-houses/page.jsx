@@ -11,7 +11,7 @@ const ToursAndOpenHouses = () => {
 
 	return (
 		<Container>
-			<div className="my-10 px-5">
+			<div className="my-10">
 				<div className="flex justify-between items-center">
 					<div className="text-darkGray flex items-center gap-6">
 						<p

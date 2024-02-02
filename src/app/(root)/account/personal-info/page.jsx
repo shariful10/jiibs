@@ -10,9 +10,13 @@ const PersonalInfo = () => {
 	const [editPass, setEditPass] = useState(false);
    console.log("rename: ", rename)
 
+   const handleRename = (rename) => {
+      setRename(rename)
+   };
+
 	return (
 		<Container>
-			<div className="mt-10 mb-20 px-5">
+			<div className="mt-10 mb-20">
 				<h2 className="text-[36px] font-semibold">Account</h2>
 				<div className="flex items-center gap-2 text-darkGray text-lg">
 					<Link href="/account" className="hover:text-primary">
@@ -50,7 +54,7 @@ const PersonalInfo = () => {
 									</p>
 								</div>
 								<button
-									onClick={() => setRename(false)}
+									onClick={() => handleRename(false)}
 									className="text-[15px] text-blackText font-semibold cursor-pointer"
 								>
 									Cancel
@@ -83,7 +87,7 @@ const PersonalInfo = () => {
 								</div>
 								<div className="flex flex-col items-center md:items-start">
 									<button
-										onClick={() => setRename(true)}
+										onClick={() => handleRename(false)}
 										className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
 									>
 										Save
@@ -102,7 +106,7 @@ const PersonalInfo = () => {
 							title="Jane Brandson"
 						>
 							<button
-								onClick={() => setRename(true)}
+                        onClick={() => handleRename(true)}
 								className="font-medium"
 							>
 								Edit
