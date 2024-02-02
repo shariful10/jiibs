@@ -1,19 +1,29 @@
+import Link from "next/link";
+
 export default function Breadcrumbs({ paths = [] }) {
   return (
     <>
       {paths.length ? (
-        <div className="flex gap-[14px] items-center">
-          {paths?.map((name, idx) => (
-            <>
-              <p className="text-base font-normal capitalize" key={idx}>
-                {name}
+        <Link
+          href={`${paths?.link}`}
+          className="flex gap-[14px] items-center flex-wrap"
+        >
+          {paths?.map((item, idx) => (
+            <div key={idx} className="flex gap-[14px] items-center min-w-max">
+              <p
+                className="text-sm md:text-base font-normal capitalize min-w-max"
+                key={idx}
+              >
+                {item?.name}
               </p>
               {idx === paths?.length - 1 ? null : (
-                <figure className="text-primary">{arrowIcon}</figure>
+                <figure className="text-primary text-sm md:text-base">
+                  {arrowIcon}
+                </figure>
               )}
-            </>
+            </div>
           ))}
-        </div>
+        </Link>
       ) : null}
     </>
   );

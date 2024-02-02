@@ -1,8 +1,17 @@
 "use client";
+import conciergeIcon from "@/assets/icons/details/conciergeIcon.png";
+import cycleIcon from "@/assets/icons/details/cycleIcon.png";
+import elevatorIcon from "@/assets/icons/details/elevvatorIcon.png";
+import golfSimulatorIcon from "@/assets/icons/details/golfSmulatorIcon.png";
+import laundryRoom from "@/assets/icons/details/laundryRoom.png";
+import packageIcon from "@/assets/icons/details/packageIcon.png";
+import screeningRoomIcon from "@/assets/icons/details/screeningRoomIcon.png";
+import sundeckIcon from "@/assets/icons/details/sundeckIcon.png";
+import yogaIcon from "@/assets/icons/details/yogaIcon.png";
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./styles.css";
+import "./Amenities.css";
 
 // images
 import chadViewImg from "@/assets/chad-view.png";
@@ -54,11 +63,11 @@ export default function Amenities() {
               <Swiper
                 watchSlidesProgress={true}
                 slidesPerView={2}
-                className="amenities"
+                className="amenities "
                 ref={swiperRef}
               >
                 {demoAmenities?.map((item, idx) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={idx}>
                     <div>
                       <figure className="w-full h-full rounded-[10px] overflow-hidden">
                         <Image
@@ -83,9 +92,49 @@ export default function Amenities() {
               </Swiper>
             </div>
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+            {/* left site */}
+            <div className="space-y-6">
+              <Items src={cycleIcon} text="Bike Room" />
+              <Items src={conciergeIcon} text="Concierge" />
+              <Items src={elevatorIcon} text="elevator" />
+              <Items src={golfSimulatorIcon} text="golf simulator" />
+              <Items src={laundryRoom} text="laundry room" />
+              <Items src={packageIcon} text="package room" />
+              <Items src={screeningRoomIcon} text="screening room" />
+              <Items src={sundeckIcon} text="sundeck & outdoor patio" />
+              <Items src={yogaIcon} text="yoga/pilates studio" />
+            </div>
+
+            {/* right side */}
+            <div className="space-y-6">
+              <Items src={cycleIcon} text="Bike Room" />
+              <Items src={conciergeIcon} text="Concierge" />
+              <Items src={elevatorIcon} text="elevator" />
+              <Items src={golfSimulatorIcon} text="golf simulator" />
+              <Items src={laundryRoom} text="laundry room" />
+              <Items src={packageIcon} text="package room" />
+              <Items src={screeningRoomIcon} text="screening room" />
+              <Items src={sundeckIcon} text="sundeck & outdoor patio" />
+              <Items src={yogaIcon} text="yoga/pilates studio" />
+            </div>
+          </div>
         </>
       ) : null}
     </>
+  );
+}
+
+// similar Components
+function Items({ src, text }) {
+  return (
+    <div className="flex items-center justify-start gap-5">
+      <figure className="flex items-center justify-center w-[1.375rem] h-[1.69rem] flex-shrink-0">
+        <Image className="w-full h-full" src={src} />
+      </figure>
+      <p className="text-xl font-normal capitalize"> {text}</p>
+    </div>
   );
 }
 
@@ -110,7 +159,6 @@ var demoAmenities = [
       "starred restaurant Crown Shy as well as fine dining experiences on 63rd floor, terrace and bar on the 64th floor.",
   },
 ];
-
 // icons
 var nextButtonIcons = (
   <svg
