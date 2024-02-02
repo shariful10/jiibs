@@ -34,16 +34,7 @@ const footerData = [
 	},
 ];
 
-const FooterItems = ({
-	className,
-	title,
-	item1,
-	item2,
-	item3,
-	item4,
-	item5,
-	item6,
-}) => {
+const FooterItems = () => {
 	return (
 		<>
 			{footerData.map(
