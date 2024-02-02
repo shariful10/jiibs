@@ -1,5 +1,3 @@
-"use client";
-
 import Categories from "@/Components/Categories/Categories";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 import { data } from "@/Components/data";

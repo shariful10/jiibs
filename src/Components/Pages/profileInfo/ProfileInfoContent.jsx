@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProfileInfoContent = ({ className, lavel, title }) => {
+const ProfileInfoContent = ({ className, lavel, title, children }) => {
 	return (
 		<div
 			className={`flex justify-between items-center border-b pb-6 text-lg ${className}`}
@@ -9,7 +9,7 @@ const ProfileInfoContent = ({ className, lavel, title }) => {
 				<h4 className="font-semibold">{lavel}</h4>
 				<p>{title}</p>
 			</div>
-			<button className="font-medium">Edit</button>
+			{children}
 		</div>
 	);
 };
