@@ -30,7 +30,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/Components/Pages/profileInfo/ProfileInfoDetails.jsx"  ],
   "exclude": [
     "node_modules"
   ]
