@@ -3,6 +3,7 @@ import Container from "@/Components/Regular/Container";
 import Link from "next/link";
 import React from "react";
 
+
 const AccountPage = () => {
 	return (
 		<Container>
@@ -24,7 +25,7 @@ const AccountPage = () => {
 						subtitle="Edit your personal profiles"
 					/>
 					<AccountPageCard
-						url="/account"
+						url="/tours-and-open-houses"
 						title="Tours & Open Houses"
 						subtitle="Manage your schedule"
 					/>
