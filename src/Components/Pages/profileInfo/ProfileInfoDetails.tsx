@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
-import ProfileInfoContent from "./ProfileInfoContent";
+import React from "react";
 import InputPass from "./InputPass";
 import InputField from "./InputField";
 import EditFieldLavel from "./EditFieldLavel";
+import InputFieldDetails from "./InputFieldDetails";
+import ProfileInfoContent from "./ProfileInfoContent";
 
 const ProfileInfoDetails = ({
 	rename,
@@ -83,8 +84,9 @@ const ProfileInfoDetails = ({
 							Cancel
 						</button>
 					</EditFieldLavel>
-					<InputField
+					<InputFieldDetails
 						lavel="Email"
+                  type="email"
 						name="email"
 						defaultValue="contact.gmail.com"
 					>
@@ -94,7 +96,7 @@ const ProfileInfoDetails = ({
 						>
 							Save
 						</button>
-					</InputField>
+					</InputFieldDetails>
 				</div>
 			) : (
 				<ProfileInfoContent
@@ -104,7 +106,7 @@ const ProfileInfoDetails = ({
 							: "text-darkGray"
 					}`}
 					lavel="Email address"
-					title="contact.gmail.com"
+					title="contact@gmail.com"
 				>
 					<button
 						onClick={() => setEditEmail(true)}
@@ -124,8 +126,9 @@ const ProfileInfoDetails = ({
 							Cancel
 						</button>
 					</EditFieldLavel>
-					<InputField
+					<InputFieldDetails
 						lavel="Phone number"
+                  type="phone"
 						name="phone"
 						defaultValue="+1*******68"
 					>
@@ -135,7 +138,7 @@ const ProfileInfoDetails = ({
 						>
 							Save
 						</button>
-					</InputField>
+					</InputFieldDetails>
 				</div>
 			) : (
 				<ProfileInfoContent
