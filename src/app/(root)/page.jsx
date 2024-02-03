@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import Modal from "@/Components/Regular/Modal/Modal";
 import Filter from "@/Components/Filters/Filter";
 import Checkbox from "@/Components/Regular/Toggle/Checkbox";
+import Sorting from "@/Components/Filters/Sorting";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,10 +14,6 @@ const Home = () => {
 
   const handleFilterModal = () => {
     setIsModalOpen(!isModalOpen);
-  };
-
-  const handleChecked = () => {
-    setIsChecked(!isChecked);
   };
 
   const apartments = data.apartments;
@@ -31,7 +28,7 @@ const Home = () => {
         name="Filter"
         topRightContent={<h1>Reset</h1>}
       >
-        <Checkbox isChecked={isChecked} onChecked={handleChecked} />
+        <Sorting />
       </Modal>
       <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
         {apartments.map((apartment, index) => (

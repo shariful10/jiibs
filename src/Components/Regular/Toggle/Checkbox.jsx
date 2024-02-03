@@ -1,10 +1,7 @@
 const Checkbox = (props) => {
   const { isChecked, onChecked } = props;
   return (
-    <div
-      className={`flex items-center cursor-pointer p-10`}
-      onClick={onChecked}
-    >
+    <div className={`flex items-center cursor-pointer`} onClick={onChecked}>
       <div
         className={`relative w-[24px] h-[24px] border rounded-full p-[2px] transition overflow-hidden cursor-pointer ${
           isChecked
@@ -21,5 +18,3 @@ const Checkbox = (props) => {
 };
 
 export default Checkbox;
-
-// style={{ boxShadow: "0px 1px 12px 0px #A6A6A6" }}
