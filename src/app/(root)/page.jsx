@@ -1,14 +1,14 @@
 "use client";
+
 import Categories from "@/Components/Categories/Categories";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 import { data } from "@/Components/data";
 import React, { useState } from "react";
 import Modal from "@/Components/Regular/Modal/Modal";
-import Filter from "@/Components/Filters/Filter";
-import Checkbox from "@/Components/Regular/Toggle/Checkbox";
-import Sorting from "@/Components/Filters/Sorting";
 import BedAndBath from "@/Components/Filters/BedAndBath";
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
+import MobileFiltering from "@/Components/Filters/MobileFiltering";
+import RightIcons from "@/Components/Categories/RightIcons";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,7 +20,11 @@ const Home = () => {
   const apartments = data.apartments;
   return (
     <div className="w-full max-w-[1520px] mx-auto pb-20">
-      <Categories handleFilterModal={handleFilterModal} />
+      <div className="flex items-center justify-between gap-[40px]">
+        <Categories />
+        <RightIcons handleFilterModal={handleFilterModal} />
+      </div>
+      <MobileFiltering />
 
       <Modal
         isOpen={isModalOpen}
