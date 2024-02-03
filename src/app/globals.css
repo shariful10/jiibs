@@ -8,3 +8,12 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
