@@ -18,38 +18,7 @@ const AccountPage = () => {
 						Go to profile
 					</Link>
 				</div>
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-					<AccountPageCard
-						url="/account/personal-info"
-						title="Personal info"
-						subtitle="Edit your personal profiles"
-					/>
-					<AccountPageCard
-						url="/tours-and-open-houses"
-						title="Tours & Open Houses"
-						subtitle="Manage your schedule"
-					/>
-					<AccountPageCard
-						url="/account"
-						title="Inbox"
-						subtitle="Check and send all messages"
-					/>
-					<AccountPageCard
-						url="/account"
-						title="Liked Properties"
-						subtitle="Manage all likes properties"
-					/>
-					<AccountPageCard
-						url="/account"
-						title="Custom Optimization"
-						subtitle="Edit your personal profiles"
-					/>
-					<AccountPageCard
-						url="/account"
-						title="Log Out"
-						subtitle="Edit your personal profiles"
-					/>
-				</div>
+            <AccountPageCard />
 			</div>
 		</Container>
 	);
