@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Sorting from "./Sorting";
+import BedAndBath from "./BedAndBath";
 
 const arrowIcon = (
   <svg
@@ -12,7 +14,7 @@ const arrowIcon = (
       d="M1 1L5 5L9 1"
       stroke="#626262"
       stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
@@ -31,32 +33,128 @@ const sortIcon = (
   </svg>
 );
 
-export default function MobileFiltering() {
+export default function MobileFiltering({ handleFilteringModal }) {
+  const [filterModal, setFilterModal] = useState({
+    sortBy: false,
+    lifeStyle: false,
+    price: false,
+    bedAndBath: false,
+  });
+  const isMobileModal = true;
+
+  const handleModalClose = (key) => {
+    setFilterModal({ ...filterModal, [key]: !filterModal[key] });
+  };
+
   return (
-    <div className="flex justify-center items-center gap-[5px]">
-      <div className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer">
-        <span>{sortIcon}</span>
-        <span className="font-semibold text-sm leading-4 text-[#626262]">
-          Sort
-        </span>
+    <div className="sm:hidden pt-6 px-4">
+      <div className="flex justify-between items-center bg-[#F7F7F7] px-[14px] py-2 rounded-full mb-4">
+        <div className="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+          >
+            <path
+              d="M15 8.5H1M1 8.5L8 15.5M1 8.5L8 1.5"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <div>
+            <h3 className="font-semibold text-sm leading-4 text-blackText">
+              Soho, Financial District, 2 More
+            </h3>
+            <span className="font-normal text-xs leading-4 text-darkGray">
+              Buildings, Neighborhoods, Etc.
+            </span>
+          </div>
+        </div>
+        <div>
+          <span className="block p-2 rounded-full border border-[#D1D5DB]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              fill="none"
+            >
+              <path
+                d="M2.66667 5.83301H10.6667M10.6667 5.83301C10.6667 6.93758 11.5621 7.83301 12.6667 7.83301C13.7712 7.83301 14.6667 6.93758 14.6667 5.83301C14.6667 4.72844 13.7712 3.83301 12.6667 3.83301C11.5621 3.83301 10.6667 4.72844 10.6667 5.83301ZM6 11.1663H13.3333M6 11.1663C6 12.2709 5.10457 13.1663 4 13.1663C2.89543 13.1663 2 12.2709 2 11.1663C2 10.0618 2.89543 9.16634 4 9.16634C5.10457 9.16634 6 10.0618 6 11.1663Z"
+                stroke="#111111"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
-      <div className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer">
-        <span className="font-semibold text-sm leading-4 text-[#626262]">
-          Lifestyle
-        </span>
-        <span>{arrowIcon}</span>
-      </div>
-      <div className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer">
-        <span className="font-semibold text-sm leading-4 text-[#626262]">
-          price
-        </span>
-        <span>{arrowIcon}</span>
-      </div>
-      <div className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer">
-        <span className="font-semibold text-sm leading-4 text-[#626262]">
-          Bed & Bath
-        </span>
-        <span>{arrowIcon}</span>
+      <div className="flex justify-center items-center gap-[5px]">
+        <div
+          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          onClick={() =>
+            handleFilteringModal(
+              filterModal?.sortBy,
+              handleModalClose,
+              isMobileModal,
+              "Sort by",
+              <Sorting />
+            )
+          }
+        >
+          <span>{sortIcon}</span>
+          <span className="font-semibold text-sm leading-4 text-[#626262]">
+            Sort
+          </span>
+        </div>
+        <div
+          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          onClick={() =>
+            handleFilteringModal(
+              filterModal?.lifeStyle,
+              handleModalClose,
+              isMobileModal,
+              "Lifestyle",
+              <Sorting />
+            )
+          }
+        >
+          <span className="font-semibold text-sm leading-4 text-[#626262]">
+            Lifestyle
+          </span>
+          <span>{arrowIcon}</span>
+        </div>
+        <div
+          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          onClick={() =>
+            handleFilteringModal("Price", filterModal?.price, isMobileModal)
+          }
+        >
+          <span className="font-semibold text-sm leading-4 text-[#626262]">
+            price
+          </span>
+          <span>{arrowIcon}</span>
+        </div>
+        <div
+          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          onClick={() =>
+            handleFilteringModal(
+              filterModal?.bedAndBath,
+              handleModalClose,
+              isMobileModal,
+              "Bed & Bath",
+              <BedAndBath />
+            )
+          }
+        >
+          <span className="font-semibold text-sm leading-4 text-[#626262]">
+            Bed & Bath
+          </span>
+          <span>{arrowIcon}</span>
+        </div>
       </div>
     </div>
   );

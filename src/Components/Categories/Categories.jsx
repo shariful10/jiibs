@@ -3,7 +3,7 @@ import { categories } from "./categoriesData";
 
 const Categories = () => {
   return (
-    <div className="pt-4 flex items-center overflow-x-auto gap-7 md:gap-5">
+    <div className="pt-4 flex items-center overflow-x-auto overflow-y-hidden gap-7 md:gap-5">
       {categories.map((category) => (
         <CategoryBox
           key={category.label}

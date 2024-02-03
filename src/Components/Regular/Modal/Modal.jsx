@@ -65,6 +65,8 @@ const Modal = ({
     </div>
   );
 
+  console.log("Hello world!");
+
   return (
     <>
       {isOpen && (
