@@ -15,7 +15,17 @@ const filterIcon = (
   </svg>
 );
 
-export default function CategoriesAndFilter({ handleFilterModal }) {
+export default function CategoriesAndFilter({ modal, setModal }) {
+  const handleModal = (modalValue, modalLabel) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: false,
+      modalLabel: modalLabel,
+    });
+  };
+
   return (
     <div>
       <div className="hidden md:flex items-center justify-between gap-[40px] overflow-x-auto overflow-y-hidden mb-12">
@@ -23,7 +33,7 @@ export default function CategoriesAndFilter({ handleFilterModal }) {
         <div className="hidden md:flex flex-wrap gap-3 items-center">
           <button
             className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={handleFilterModal}
+            onClick={() => handleModal("filtering", "Filter")}
           >
             <span>{filterIcon}</span>
             Filters

@@ -1,6 +1,10 @@
-import React, { useState } from "react";
-import Sorting from "./Sorting";
-import BedAndBath from "./BedAndBath";
+import React from "react";
+import {
+  SORT_BY,
+  LIFESTYLE,
+  PRICE,
+  BED_AND_BATHROOM,
+} from "../Regular/Utils/constant";
 
 const arrowIcon = (
   <svg
@@ -33,17 +37,15 @@ const sortIcon = (
   </svg>
 );
 
-export default function MobileFiltering({ handleFilteringModal }) {
-  const [filterModal, setFilterModal] = useState({
-    sortBy: false,
-    lifeStyle: false,
-    price: false,
-    bedAndBath: false,
-  });
-  const isMobileModal = true;
-
-  const handleModalClose = (key) => {
-    setFilterModal({ ...filterModal, [key]: !filterModal[key] });
+export default function MobileFiltering({ modal, setModal }) {
+  const handleModal = (modalValue, modalLabel) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: true,
+      modalLabel: modalLabel,
+    });
   };
 
   return (
@@ -95,15 +97,7 @@ export default function MobileFiltering({ handleFilteringModal }) {
       <div className="flex justify-center items-center gap-[5px]">
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleFilteringModal(
-              filterModal?.sortBy,
-              handleModalClose,
-              isMobileModal,
-              "Sort by",
-              <Sorting />
-            )
-          }
+          onClick={() => handleModal(SORT_BY, "Sort by")}
         >
           <span>{sortIcon}</span>
           <span className="font-semibold text-sm leading-4 text-[#626262]">
@@ -112,15 +106,7 @@ export default function MobileFiltering({ handleFilteringModal }) {
         </div>
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleFilteringModal(
-              filterModal?.lifeStyle,
-              handleModalClose,
-              isMobileModal,
-              "Lifestyle",
-              <Sorting />
-            )
-          }
+          onClick={() => handleModal(LIFESTYLE, "Lifestyle")}
         >
           <span className="font-semibold text-sm leading-4 text-[#626262]">
             Lifestyle
@@ -129,9 +115,7 @@ export default function MobileFiltering({ handleFilteringModal }) {
         </div>
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleFilteringModal("Price", filterModal?.price, isMobileModal)
-          }
+          onClick={() => handleModal(PRICE, "Price")}
         >
           <span className="font-semibold text-sm leading-4 text-[#626262]">
             price
@@ -140,15 +124,7 @@ export default function MobileFiltering({ handleFilteringModal }) {
         </div>
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleFilteringModal(
-              filterModal?.bedAndBath,
-              handleModalClose,
-              isMobileModal,
-              "Bed & Bath",
-              <BedAndBath />
-            )
-          }
+          onClick={() => handleModal(BED_AND_BATHROOM, "Bed & Bath")}
         >
           <span className="font-semibold text-sm leading-4 text-[#626262]">
             Bed & Bath
