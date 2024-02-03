@@ -6,7 +6,7 @@ const uses = () => {
     fullName: "",
   });
 
-  console.log("errors boat ", errors);
+  console.log("errors ", errors);
 
   const handleChange = (e) => {
     return setInputData({
@@ -84,8 +84,6 @@ const uses = () => {
         valid={errors}
       />
 
-<<<<<<< HEAD
-=======
       <InputRadioBox
         serial="1"
         id="expertise_level"
@@ -99,7 +97,6 @@ const uses = () => {
         // ]}
       />
 
->>>>>>> 3c7eb54a968da3f700ae0419d38f7ef0b0bcf8d0
       {/* romance */}
       <InputRadio
         id="considerRomance"

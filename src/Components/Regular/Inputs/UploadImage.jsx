@@ -66,7 +66,7 @@ const UploadImage = ({
               {multipleImages ? (
                 uploadedPhoto?.length &&
                 uploadedPhoto?.map((url, idx) => (
-                  <figure className="w-28 h-28 p-2 bg-white shadow">
+                  <figure key={idx} className="w-28 h-28 p-2 bg-white shadow">
                     <img className="w-full h-full" src={url} alt="" />
                   </figure>
                 ))
