@@ -44,7 +44,7 @@ const Modal = ({
       } bg-white`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
+      <div className="flex justify-between items-center border border-[#E4E4E4] p-4">
         <h3>{name}</h3>
         <span onClick={onClose} className="cursor-pointer">
           <svg
