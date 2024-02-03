@@ -5,12 +5,18 @@ import { data } from "@/Components/data";
 import React, { useState } from "react";
 import Modal from "@/Components/Regular/Modal/Modal";
 import Filter from "@/Components/Filters/Filter";
+import Checkbox from "@/Components/Regular/Toggle/Checkbox";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleFilterModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleChecked = () => {
+    setIsChecked(!isChecked);
   };
 
   const apartments = data.apartments;
@@ -20,11 +26,12 @@ const Home = () => {
 
       <Modal
         isOpen={isModalOpen}
+        isMobileModal={true}
         onClose={handleFilterModal}
         name="Filter"
         topRightContent={<h1>Reset</h1>}
       >
-        <Filter />
+        <Checkbox isChecked={isChecked} onChecked={handleChecked} />
       </Modal>
       <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
         {apartments.map((apartment, index) => (
