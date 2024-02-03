@@ -10,7 +10,7 @@ const Modal = ({
 }) => {
   const desktopModalContent = (
     <div
-      className="max-w-[740px] w-full h-fit rounded-none md:rounded-[32px] mt-0 md:mt-[100px] bg-white overflow-hidden"
+      className="max-w-[740px] w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden"
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
@@ -70,7 +70,7 @@ const Modal = ({
           className="fixed w-full h-full top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-auto scrollbar-hide"
           onClick={onClose}
         >
-          <div className="relative mb-[100px] mx-auto flex justify-center">
+          <div className="relative mb-0 md:my-[100px] mx-auto flex justify-center">
             {/* Modal content  */}
             {isMobileModal ? mobileModalContent : desktopModalContent}
           </div>
