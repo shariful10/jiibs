@@ -106,12 +106,12 @@ export default function AvailableUnits() {
   return (
     <>
       {/* tabs */}
-      <div className="flex items-center justify-start gap-12">
+      <div className="flex items-center justify-start gap-4 md:gap-12">
         <TabButton text="all" onClick={setTabs} active={tabs} />
         <TabButton text="studio" onClick={setTabs} active={tabs} />
         <TabButton text="1 bed" onClick={setTabs} active={tabs} />
         <TabButton text="2 beds" onClick={setTabs} active={tabs} />
-        <TabButton text="3 beds" onClick={setTabs} active={tabs} />
+        <TabButton text="3 beds+" onClick={setTabs} active={tabs} />
       </div>
 
       {/* content */}
@@ -159,7 +159,7 @@ function TabButton({ text, onClick, active }) {
   return (
     <button
       onClick={() => onClick(text)}
-      className={`capitalize border-b-[2.5px] transition duration-300 text-xl font-normal py-[5px] px-5 min-w-max ${
+      className={`capitalize border-b-[2.5px] transition duration-300 text-xl font-normal py-[5px] px-1 md:px-5 min-w-max ${
         text === active ? "border-primary" : "border-transparent"
       } `}
     >
