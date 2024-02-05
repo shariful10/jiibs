@@ -2,12 +2,20 @@ import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const ApartmentCard = ({ apartment = {} }) => {
-  // const { location, price, image, title, bed, bath, squareFit } = apartment;
+const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
+  const handleModal = (modalValue, modalLabel) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: false,
+      modalLabel: modalLabel,
+    });
+  };
 
   return (
     <div>
-      <Link href="/" className="col-span-1 cursor-pointer group">
+      <div className="col-span-1 cursor-pointer group">
         <div className="flex flex-col gap-2 w-full">
           <div className="aspect-square w-full relative overflow-hidden rounded-[20px]">
             <Image
@@ -15,7 +23,10 @@ const ApartmentCard = ({ apartment = {} }) => {
               src={apartment?.image}
               alt="Room"
             />
-            <div className=" absolute top-3 right-3">
+            <div
+              className=" absolute top-3 right-3"
+              onClick={() => handleModal("addWishlist", "Add to wishlist")}
+            >
               <Image src={heartButton} alt="Heart button" />
             </div>
           </div>
@@ -39,7 +50,7 @@ const ApartmentCard = ({ apartment = {} }) => {
             <p>{apartment?.squareFit} Sqft</p>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
