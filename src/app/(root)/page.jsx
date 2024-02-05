@@ -47,13 +47,13 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20">
+    <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter modal={modal} setModal={setModal} />
       {/* Mobile categories and filtering  */}
       <MobileFiltering modal={modal} setModal={setModal} />
 
-      <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
+      <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {apartments.map((apartment, index) => (
           <ApartmentCard key={index} apartment={apartment} />
         ))}
