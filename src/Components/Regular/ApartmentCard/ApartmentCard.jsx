@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
-  // const { location, price, image, title, bed, bath, squareFit } = apartment;
   const handleModal = (modalValue, modalLabel) => {
     setModal({
       ...modal,
@@ -16,7 +15,7 @@ const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
 
   return (
     <div>
-      <Link href="/" className="col-span-1 cursor-pointer group">
+      <div className="col-span-1 cursor-pointer group">
         <div className="flex flex-col gap-2 w-full">
           <div className="aspect-square w-full relative overflow-hidden rounded-[20px]">
             <Image
@@ -26,7 +25,7 @@ const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
             />
             <div
               className=" absolute top-3 right-3"
-              onClick={() => handleModal("wishlist", "Create wishlist")}
+              onClick={() => handleModal("addWishlist", "Add to wishlist")}
             >
               <Image src={heartButton} alt="Heart button" />
             </div>
@@ -51,7 +50,7 @@ const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
             <p>{apartment?.squareFit} Sqft</p>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import Categories from "../Categories/Categories";
+import Link from "next/link";
 
 const filterIcon = (
   <svg
@@ -42,7 +43,7 @@ export default function CategoriesAndFilter({ modal, setModal }) {
             Optimize
           </button>
           <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
-            Sort By
+            <Link href={"/wishlists"}> Sort By</Link>
           </button>
         </div>
       </div>
