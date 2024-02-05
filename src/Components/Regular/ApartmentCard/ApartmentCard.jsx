@@ -2,8 +2,17 @@ import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const ApartmentCard = ({ apartment = {} }) => {
+const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
   // const { location, price, image, title, bed, bath, squareFit } = apartment;
+  const handleModal = (modalValue, modalLabel) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: false,
+      modalLabel: modalLabel,
+    });
+  };
 
   return (
     <div>
@@ -15,7 +24,10 @@ const ApartmentCard = ({ apartment = {} }) => {
               src={apartment?.image}
               alt="Room"
             />
-            <div className=" absolute top-3 right-3">
+            <div
+              className=" absolute top-3 right-3"
+              onClick={() => handleModal("wishlist", "Create wishlist")}
+            >
               <Image src={heartButton} alt="Heart button" />
             </div>
           </div>
