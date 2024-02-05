@@ -7,6 +7,7 @@ import NotLogin from "@/Components/wishlist/NotLogin";
 import midtown from "@/assets/images/apartment/Midtown-East.png";
 import lauren from "@/assets/images/apartment/lauren.png";
 import Image from "next/image";
+import AddWishlist from "@/Components/wishlist/AddWishlist";
 
 const ThreeDot = <svg xmlns="http://www.w3.org/2000/svg" width="5" height="16" viewBox="0 0 5 16" fill="none">
 <path d="M2.56901 0.223145C1.65234 0.223145 0.902344 0.973144 0.902344 1.88981C0.902344 2.80648 1.65234 3.55648 2.56901 3.55648C3.48568 3.55648 4.23568 2.80648 4.23568 1.88981C4.23568 0.973144 3.48568 0.223145 2.56901 0.223145ZM2.56901 11.8898C1.65234 11.8898 0.902344 12.6398 0.902344 13.5565C0.902344 14.4731 1.65234 15.2231 2.56901 15.2231C3.48568 15.2231 4.23568 14.4731 4.23568 13.5565C4.23568 12.6398 3.48568 11.8898 2.56901 11.8898ZM2.56901 6.05648C1.65234 6.05648 0.902344 6.80648 0.902344 7.72314C0.902344 8.63981 1.65234 9.38981 2.56901 9.38981C3.48568 9.38981 4.23568 8.63981 4.23568 7.72314C4.23568 6.80648 3.48568 6.05648 2.56901 6.05648Z" fill="black"/>
@@ -44,6 +45,8 @@ export default function page() {
 
   if (modal?.modalType === "album") {
     modalContent = <AddAlbum />;
+  }else if(modal?.modalType === "addWishlist"){
+    modalContent = <AddWishlist/>
   }
 
   const handleModal = (modalValue, modalLabel) => {
@@ -82,7 +85,7 @@ export default function page() {
                       <span>{CloseIcon}</span>
                       <span>Settings</span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3" onClick={()=> handleModal("addWishlist", "Add to wishlist")}>
                       <span>{editIcon}</span>
                       <span>Edit</span>
                     </div>
