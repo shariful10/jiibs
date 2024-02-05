@@ -1,17 +1,17 @@
 import AboutSide from "./AboutSide/AboutSide";
-import LocationMap from "./LocationMap";
+import LocationMap from "./LocationDetails/LocationMap";
 
 export default function Description() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-20">
+      <div className="flex flex-col-reverse md:flex-row flex-start items-start justify-between gap-10 md:gap-20 w-full">
         {/* about , description */}
-        <div className="md:col-span-8">
+        <div className="w-full md:w-4/6">
           <AboutSide />
         </div>
 
         {/* Location map */}
-        <div className="md:col-span-4">
+        <div className="w-full md:w-2/6">
           <LocationMap />
         </div>
       </div>

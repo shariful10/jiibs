@@ -1,56 +1,57 @@
-import Link from "next/link";
-import ProfileInfoContent from "@/Components/Pages/profileInfo/ProfileInfoContent";
+"use client";
+import { useState } from "react";
+import leftIcon from "@/assets/left-icon.svg";
 import Container from "@/Components/Regular/Container";
+import PageTitle from "@/Components/Pages/profileInfo/PageTitle";
+import ProfileInfoDetails from "@/Components/Pages/profileInfo/ProfileInfoDetails";
+import Image from "next/image";
+import Link from "next/link";
 
 const PersonalInfo = () => {
+	const [rename, setRename] = useState(false);
+	const [editPass, setEditPass] = useState(false);
+	const [editEmail, setEditEmail] = useState(false);
+	const [editPhone, setEditPhone] = useState(false);
+
+	const handleClose = () => {
+		if (rename) setRename(false);
+		if (editPass) setEditPass(false);
+		if (editEmail) setEditEmail(false);
+		if (editPhone) setEditPhone(false);
+	};
+
 	return (
 		<Container>
-         <div className="mt-10 mb-20">
-            <h2 className="text-[36px] font-semibold">Account</h2>
-            <div className="flex items-center gap-2 text-darkGray text-lg">
-               <Link href="/account" className="hover:text-primary">
-                  Account
-               </Link>
-               <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-               >
-                  <path
-                     d="M13.1685 12.5007L8.21875 7.55093L9.63297 6.13672L15.9969 12.5007L9.63297 18.8646L8.21875 17.4504L13.1685 12.5007Z"
-                     fill="#626262"
-                  />
-               </svg>
-               <Link href="/account/personal-info" className="hover:text-primary">
-                  Personal info
-               </Link>
-            </div>
-            <div className="mt-[60px]">
-               <ProfileInfoContent
-                  className="text-darkGray"
-                  lavel="Lagal name"
-                  title="Jane Brandson"
-               />
-               <ProfileInfoContent
-                  className="mt-6 text-darkGray"
-                  lavel="Email address"
-                  title="contact.gmail.com"
-               />
-               <ProfileInfoContent
-                  className="mt-6 text-darkGray"
-                  lavel="Phone number"
-                  title="+1*******68"
-               />
-               <ProfileInfoContent
-                  className="mt-6 text-darkGray"
-                  lavel="Password"
-                  title="***********"
-               />
-            </div>
-         </div>
-      </Container>
+			<div className="mt-10 mb-20">
+				<div className="md:hidden">
+					{rename || editPass || editEmail || editPhone ? (
+						<div className="flex items-center">
+							<Link href="/account/personal-info" onClick={handleClose}>
+								<Image src={leftIcon} alt="leftIcon" />
+							</Link>
+							<p className="w-[80%] text-center">
+								Editing Personal Info
+							</p>
+						</div>
+					) : (
+						<PageTitle />
+					)}
+				</div>
+				<div className="hidden md:block">
+					<PageTitle />
+				</div>
+				<ProfileInfoDetails
+					rename={rename}
+					editPass={editPass}
+					setRename={setRename}
+					editEmail={editEmail}
+					editPhone={editPhone}
+					setEditPass={setEditPass}
+					setEditEmail={setEditEmail}
+					setEditPhone={setEditPhone}
+				/>
+			</div>
+		</Container>
 	);
 };
 

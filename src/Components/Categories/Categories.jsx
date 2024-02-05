@@ -3,7 +3,7 @@ import Image from "next/image";
 import CategoryBox from "./CategoryBox";
 import { categories } from "./categoriesData";
 
-const Categories = () => {
+const Categories = ({ handleFilterModal }) => {
   return (
     <div className="container py-9 mx-auto w-full max-w-[1520px]">
       <div className="flex flex-wrap items-center justify-between w-full gap-12">
@@ -17,7 +17,10 @@ const Categories = () => {
           ))}
         </div>
         <div className="flex flex-wrap gap-3 items-center">
-          <button className="px-5 py-4 rounded-[7px] border-[2px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+          <button
+            className="px-5 py-4 rounded-[7px] border-[2px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+            onClick={handleFilterModal}
+          >
             <Image src={filter} alt="Filter" />
             Filters
           </button>

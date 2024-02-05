@@ -4,6 +4,7 @@ import plateIcons from "@/assets/icons/plateIcons.png";
 import Image from "next/image";
 import AboutDescription from "./AboutDescription";
 import Amenities from "./Amenities";
+import AvailableUnits from "./AvailableUnits";
 import StudioBed from "./StudioBed";
 import Transportation from "./Transportation";
 
@@ -33,7 +34,7 @@ export default function AboutSide() {
 
   return (
     <>
-      <div className="space-y-[3.25rem]">
+      <div className="space-y-8 md:space-y-[3.25rem] mb-5">
         {/* bet studio */}
         <div className="flex items-center justify-between gap-6">
           <StudioBed betData={studioBed} />
@@ -71,6 +72,11 @@ export default function AboutSide() {
         {/* Amenities */}
         <div>
           <Amenities />
+        </div>
+
+        {/* Available Units */}
+        <div>
+          <AvailableUnits />
         </div>
       </div>
     </>
