@@ -8,6 +8,7 @@ import midtown from "@/assets/images/apartment/Midtown-East.png";
 import Image from "next/image";
 import AddWishlist from "@/Components/wishlist/AddWishlist";
 import Album from "@/Components/wishlist/Album";
+import WishlistsMobile from "@/Components/wishlist/WishlistsMobile";
 
 const ThreeDot = (
   <svg
@@ -150,37 +151,44 @@ export default function page() {
         <NotLogin />
       ) : (
         <>
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="font-semibold text-3xl text-blackText">Wishlist</h1>
-            <button
-              className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
-              onClick={() => handleModal("album", "Create wishlist")}
-            >
-              <span>{whitePlusIcon}</span>
-              <span>Create album</span>
-            </button>
+          {/* Wishlist mobile */}
+          <WishlistsMobile />
+          {/* Wishlist desktop */}
+          <div className="hidden sm:bloxk">
+            <div className="hidden sm:flex justify-between items-center mb-8">
+              <h1 className="font-semibold text-3xl text-blackText">
+                Wishlist
+              </h1>
+              <button
+                className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
+                onClick={() => handleModal("album", "Create wishlist")}
+              >
+                <span>{whitePlusIcon}</span>
+                <span>Create album</span>
+              </button>
+            </div>
+            <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
+              <Album />
+              <Album />
+              <Album />
+              <Album />
+              <Album />
+              <Album />
+              <Album />
+              <Album />
+            </div>
           </div>
-          <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
-            <Album />
-            <Album />
-            <Album />
-            <Album />
-            <Album />
-            <Album />
-            <Album />
-            <Album />
-          </div>
-          {modal?.isModalOpen && (
-            <Modal
-              isOpen={modal?.isModalOpen}
-              onClose={handleCloseModal}
-              name={modal?.modalLabel}
-              isMobileModal={modal?.isMobileModal}
-            >
-              {modalContent}
-            </Modal>
-          )}
         </>
+      )}
+      {modal?.isModalOpen && (
+        <Modal
+          isOpen={modal?.isModalOpen}
+          onClose={handleCloseModal}
+          name={modal?.modalLabel}
+          isMobileModal={modal?.isMobileModal}
+        >
+          {modalContent}
+        </Modal>
       )}
     </div>
   );
