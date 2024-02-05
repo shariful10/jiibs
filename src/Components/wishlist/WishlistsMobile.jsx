@@ -76,22 +76,7 @@ export default function WishlistsMobile() {
           <div className="flex flex-col">
             <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="2"
-                    viewBox="0 0 8 2"
-                    fill="none"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7.51172 1C7.51172 1.24063 7.31484 1.4375 7.07422 1.4375H0.921875C0.68125 1.4375 0.484375 1.24063 0.484375 1C0.484375 0.759375 0.68125 0.5625 0.921875 0.5625H7.07422C7.31484 0.5625 7.51172 0.756641 7.51172 1Z"
-                      fill="white"
-                    />
-                  </svg>
-                </span>
+                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-50"></span>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
