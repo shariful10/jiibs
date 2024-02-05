@@ -4,7 +4,7 @@ import DetailsSlider from "@/Components/Regular/DetailsSlider/DetailsSlider";
 import Description from "./Description/Description";
 import Similar from "./Similar/Similar";
 
-export default function BuildingDetail() {
+export default function UnitDetailsPage() {
   return (
     <>
       <div className="relative">
