@@ -18,6 +18,7 @@ import {
   BED_AND_BATHROOM,
 } from "../../Components/Regular/Utils/constant";
 import Filter from "@/Components/Filters/Filter";
+import AddWishlist from "@/Components/wishlist/AddWishlist";
 
 const Home = () => {
   const [modal, setModal] = useState({
@@ -43,6 +44,8 @@ const Home = () => {
     modalContent = <Filter />;
   } else if (modal?.modalType === "wishlist") {
     modalContent = <Filter />;
+  } else if (modal?.modalType === "addWishlist") {
+    modalContent = <AddWishlist />;
   }
   const handleCloseModal = () => {
     setModal({ ...modal, isModalOpen: !modal?.isModalOpen });

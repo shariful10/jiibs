@@ -29,7 +29,7 @@ const Modal = ({
               />
             </svg>
           </span>
-          <h3>{name}</h3>
+          <h3 className="font-semibold text-3xl text-blackText">{name}</h3>
           <div>{topRightContent}</div>
         </div>
         <div>{children}</div>
@@ -45,7 +45,7 @@ const Modal = ({
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center border border-[#E4E4E4] p-4">
-        <h3>{name}</h3>
+        <h3 className="text-[20px] leading-6">{name}</h3>
         <span onClick={onClose} className="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"

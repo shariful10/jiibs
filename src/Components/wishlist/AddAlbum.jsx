@@ -11,18 +11,16 @@ export default function AddAlbum() {
           <div className="flex gap-1">
             <span>$</span>
             <input
-              type="number"
+              type="text"
               id="priceRange"
               placeholder=""
               className="w-full outline-none border-non bg-transparent text-blackText leading-[22px] font-normal"
-              // value={filters?.maxPrice}
-              // onChange={(e) =>
-              //   setFilter({ ...filters, maxPrice: e.target.value })
-              // }
             />
           </div>
         </div>
-        <span>18/53 characters</span>
+        <span className="text-darkGray font-normal text-sm sm:text-base sm:leading-6">
+          18/53 characters
+        </span>
       </div>
       <div className="flex justify-center w-full mt-5">
         <button className="w-full font-semibold text-base leading-5 bg-primary py-4 px-8 outline-none border-none rounded-md text-white text-center">
