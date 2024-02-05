@@ -9,7 +9,7 @@ const Modal = ({
   topRightContent,
 }) => {
   const desktopModalContent = (
-    <div className="relative mb-0 md:my-[100px] mx-auto flex justify-center">
+    <div className="hidden sm:flex relative mb-0 md:my-[100px] mx-auto justify-center">
       <div
         className="max-w-[740px] w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden"
         onClick={(e) => e.stopPropagation()}
@@ -61,7 +61,7 @@ const Modal = ({
           </svg>
         </span>
       </div>
-      {isMobileModal && <div className="">{children}</div>}
+      {children}
     </div>
   );
 
@@ -73,7 +73,8 @@ const Modal = ({
           onClick={onClose}
         >
           {/* Modal content  */}
-          {isMobileModal ? mobileModalContent : desktopModalContent}
+          {desktopModalContent}
+          {isMobileModal && mobileModalContent}
         </div>
       )}
     </>
