@@ -14,7 +14,7 @@ const selectedIcon = (
       r="11.2727"
       fill="#E5F4FD"
       stroke="#1F8AF4"
-      stroke-width="1.40909"
+      strokeWidth="1.40909"
     />
     <circle cx="11.9774" cy="12.5004" r="5.98864" fill="#1F8AF4" />
   </svg>
@@ -33,7 +33,7 @@ const unSelectedIcon = (
       r="11.2727"
       fill="#E7E8E7"
       stroke="#A9A9A9"
-      stroke-width="1.40909"
+      strokeWidth="1.40909"
     />
     <circle cx="12.7045" cy="12.5004" r="5.98864" fill="#A9A9A9" />
   </svg>
