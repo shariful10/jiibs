@@ -14,7 +14,7 @@ export default function InputSearch({ setResult = {} }) {
   //   console.log("inputSearch ", inputSearch);
 
   useEffect(() => {
-    setSearchValue(demoData);
+    setResult(demoData);
   }, []);
 
   return (
