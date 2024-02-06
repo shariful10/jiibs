@@ -1,4 +1,5 @@
 import React from "react";
+import SquareCheckbox from "../Regular/Toggle/SquareCheckbox";
 
 export default function SignUp() {
   return (
@@ -121,6 +122,13 @@ export default function SignUp() {
             className="border border-[#ddd] w-full py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
         </div>
+      </div>
+      <div className="flex flex-col gap-3 mt-6">
+        <SquareCheckbox label="Agree to Terms & Conditions" />
+        <SquareCheckbox
+          label="Subscribe to our newsletter for New York City updates and apartment
+            searching tips"
+        />
       </div>
       <div className="flex justify-center w-full mt-5">
         <button className="w-full font-semibold text-base leading-5 bg-primary py-4 px-8 outline-none border-none rounded-md text-white text-center">
