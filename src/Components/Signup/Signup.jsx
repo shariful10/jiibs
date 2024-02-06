@@ -5,10 +5,12 @@ export default function SignUp() {
   return (
     <div className="p-10">
       <div>
-        <h3>Sign up to JIIBS</h3>
+        <h3 className="font-semibold text-[36px] leading-[45px] text-blackText text-center mb-5">
+          Sign up to JIIBS
+        </h3>
       </div>
       <div className="flex flex-col gap-3">
-        <div className="flex justify-center items-center gap-5 rounded-full border border-[#000000] py-2 px-10">
+        <div className="flex justify-center items-center gap-5 rounded-full border border-[#222222] py-2 px-10 cursor-pointer">
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +34,7 @@ export default function SignUp() {
           </span>
         </div>
 
-        <div className="flex justify-between items-center gap-5 rounded-full border bg-[#4285F4] text-white py-2 px-1">
+        <div className="flex justify-between items-center gap-5 rounded-full border bg-[#4285F4] text-white p-1 cursor-pointer">
           <span className="w-[36px] h-[36px] rounded-full bg-white flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,6 +86,11 @@ export default function SignUp() {
           </span>
           <span></span>
         </div>
+      </div>
+      <div className="flex justify-center items-center gap-[15px] my-8">
+        <span className="block w-full h-[1px] bg-softGray"></span>
+        <span>OR</span>
+        <span className="block w-full h-[1px] bg-softGray"></span>
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex justify-between items-center gap-2">
