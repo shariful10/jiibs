@@ -34,7 +34,7 @@ export default function CategoriesAndFilter({ modal, setModal }) {
         <div className="hidden md:flex flex-wrap gap-3 items-center">
           <button
             className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={() => handleModal("filtering", "Filter")}
+            onClick={() => handleModal("signup")}
           >
             <span>{filterIcon}</span>
             Filters
