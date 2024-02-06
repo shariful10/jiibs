@@ -21,15 +21,16 @@ export default function Amenities() {
 
   const handlePrevButtonClick = () => {
     console.log("swiperRef ", swiperRef);
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
+    // if (swiperRef.current) {
+    //   swiperRef.current.slidePrev();
+    // }
   };
 
   const handleNextButtonClick = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
+    console.log("swiperRef ", swiperRef);
+    // if (swiperRef.current) {
+    //   swiperRef.current.slideNext();
+    // }
   };
 
   return (
@@ -93,7 +94,7 @@ export default function Amenities() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+          <div className="grid w-auto grid-cols-2 gap-6 mt-10">
             {/* left site */}
             <div className="space-y-6">
               <Items src={cycleIcon} text="Bike Room" />
@@ -116,8 +117,8 @@ export default function Amenities() {
               <Items src={laundryRoom} text="laundry room" />
               <Items src={packageIcon} text="package room" />
               <Items src={screeningRoomIcon} text="screening room" />
-              <Items src={sundeckIcon} text="sundeck & outdoor patio" />
               <Items src={yogaIcon} text="yoga/pilates studio" />
+              <Items src={sundeckIcon} text="sundeck & outdoor patio" />
             </div>
           </div>
         </>
@@ -130,10 +131,10 @@ export default function Amenities() {
 function Items({ src, text }) {
   return (
     <div className="flex items-center justify-start gap-5">
-      <figure className="flex items-center justify-center w-[1.375rem] h-[1.69rem] flex-shrink-0">
+      <figure className="flex items-center justify-center w-4 md:w-[1.375rem] h-5 md:h-[1.69rem] flex-shrink-0">
         <Image className="w-full h-full" src={src} />
       </figure>
-      <p className="text-xl font-normal capitalize"> {text}</p>
+      <p className="text-base md:text-xl font-normal capitalize"> {text}</p>
     </div>
   );
 }
