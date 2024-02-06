@@ -40,7 +40,7 @@ const Input = ({
           placeholder={placeholder}
           onChange={(e) => handle(e.target)}
           required={required}
-          className="w-full focus:outline-none border-none p-[10px] text-darkBlue placeholder:text-darkBlue text-sm"
+          className={`w-full focus:outline-none border-none p-[10px] text-darkBlue placeholder:text-darkBlue text-sm`}
         />
 
         {type === "password" ? (
