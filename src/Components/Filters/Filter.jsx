@@ -1,5 +1,5 @@
 "use client";
-import ToggleButton from "@/Components/Regular/Toggle";
+import ToggleButton from "@/Components/Regular/Toggle/ToggleButton";
 import React, { useState } from "react";
 import concierge from "@/assets/images/filters/concierge.png";
 import elevator from "@/assets/images/filters/elevator.png";

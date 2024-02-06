@@ -89,12 +89,12 @@ export default function SignUp() {
           <input
             type="text"
             placeholder="First name"
-            className="border border-[#ddd] w-full sm:w-1/2 py-[14px] px-4 rounded-md"
+            className="border border-[#ddd] w-full sm:w-1/2 py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
           <input
             type="text"
             placeholder="Last name"
-            className="border border-[#ddd] w-full sm:w-1/2 py-[14px] px-4 rounded-md"
+            className="border border-[#ddd] w-full sm:w-1/2 py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
         </div>
 
@@ -102,7 +102,7 @@ export default function SignUp() {
           <input
             type="text"
             placeholder="Email address"
-            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md"
+            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
         </div>
 
@@ -110,7 +110,7 @@ export default function SignUp() {
           <input
             type="Password"
             placeholder="Email address"
-            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md"
+            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
         </div>
 
@@ -118,7 +118,7 @@ export default function SignUp() {
           <input
             type="password"
             placeholder="Confirm password"
-            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md"
+            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
         </div>
       </div>
