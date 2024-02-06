@@ -17,13 +17,14 @@ const filterIcon = (
 );
 
 export default function CategoriesAndFilter({ modal, setModal }) {
-  const handleModal = (modalValue, modalLabel) => {
+  const handleModal = (modalValue, modalLabel, isWidth) => {
     setModal({
       ...modal,
       isModalOpen: !modal?.isModalOpen,
       modalType: modalValue,
       isMobileModal: false,
       modalLabel: modalLabel,
+      isWidth: isWidth,
     });
   };
 
@@ -34,12 +35,15 @@ export default function CategoriesAndFilter({ modal, setModal }) {
         <div className="hidden md:flex flex-wrap gap-3 items-center">
           <button
             className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={() => handleModal("signup")}
+            onClick={() => handleModal("signup", "", "max-w-[480px]")}
           >
             <span>{filterIcon}</span>
             Filters
           </button>
-          <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+          <button
+            className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+            onClick={() => handleModal("signin", "", "max-w-[480px]")}
+          >
             Optimize
           </button>
           <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">

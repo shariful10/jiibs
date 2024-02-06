@@ -7,11 +7,14 @@ const Modal = ({
   children,
   name,
   topRightContent,
+  isWidth,
 }) => {
   const desktopModalContent = (
     <div className="hidden sm:flex relative mb-0 md:my-[100px] mx-auto justify-center">
       <div
-        className="max-w-[740px] w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden"
+        className={`${
+          isWidth ? isWidth : "max-w-[750px]"
+        } w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">

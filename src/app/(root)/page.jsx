@@ -19,7 +19,9 @@ import {
 } from "../../Components/Regular/Utils/constant";
 import Filter from "@/Components/Filters/Filter";
 import AddWishlist from "@/Components/wishlist/AddWishlist";
-import SignUp from "@/Components/Signup/Signup";
+import SignUp from "@/Components/Authentication/Signup/Signup";
+import SignIn from "@/Components/Authentication/SignIn/SignIn";
+import VerifyEmail from "@/Components/Authentication/VerifyEmail/VerifyEmail";
 
 const Home = () => {
   const [modal, setModal] = useState({
@@ -27,6 +29,7 @@ const Home = () => {
     modalType: "",
     isMobileModal: false,
     modalLabel: "",
+    isWidth: "",
   });
   const apartments = data.apartments;
 
@@ -49,6 +52,8 @@ const Home = () => {
     modalContent = <AddWishlist />;
   } else if (modal?.modalType === "signup") {
     modalContent = <SignUp />;
+  } else if (modal?.modalType === "signin") {
+    modalContent = <VerifyEmail />;
   }
   const handleCloseModal = () => {
     setModal({ ...modal, isModalOpen: !modal?.isModalOpen });
@@ -78,6 +83,7 @@ const Home = () => {
           onClose={handleCloseModal}
           name={modal?.modalLabel}
           isMobileModal={modal?.isMobileModal}
+          isWidth={modal?.isWidth}
         >
           {modalContent}
         </Modal>

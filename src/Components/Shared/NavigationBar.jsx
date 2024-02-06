@@ -30,9 +30,9 @@ const NavigationBar = () => {
 
         {/* user , login , sign up */}
         <div className="flex justify-end items-center gap-4">
-          <AuthButton icons={loginUserIcon} title="Login" />
+          <AuthButton icons={loginUserIcon} title="Login" href="/login" />
 
-          <AuthButton icons={signUpIcons} title="Sign Up" />
+          <AuthButton icons={signUpIcons} title="Sign Up" href="/signup" />
         </div>
       </div>
     </Container>
@@ -42,12 +42,15 @@ const NavigationBar = () => {
 export default NavigationBar;
 
 // similar components
-function AuthButton({ icons, title }) {
+function AuthButton({ icons, title, href }) {
   return (
-    <button className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray">
+    <Link
+      href={href}
+      className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray"
+    >
       <figure className="w-6 h-6 text-2xl"> {icons}</figure>
       <span className="text-base font-semibold">{title}</span>
-    </button>
+    </Link>
   );
 }
 
