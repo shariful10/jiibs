@@ -23,6 +23,7 @@ import SignUp from "@/Components/Authentication/Signup/Signup";
 import SignIn from "@/Components/Authentication/SignIn/SignIn";
 import VerifyEmail from "@/Components/Authentication/VerifyEmail/VerifyEmail";
 import Context from "@/Context/Context";
+import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
 
 const Home = () => {
   const { modal, setModal } = useContext(Context);
@@ -48,6 +49,8 @@ const Home = () => {
     modalContent = <SignUp />;
   } else if (modal?.modalType === "signin") {
     modalContent = <VerifyEmail />;
+  } else if (modal?.modalType === "furtherOptimize") {
+    modalContent = <Optimized />;
   }
   const handleCloseModal = () => {
     setModal({ ...modal, isModalOpen: !modal?.isModalOpen });
@@ -82,7 +85,6 @@ const Home = () => {
           {modalContent}
         </Modal>
       )}
-      <MobileBottomMenu />
     </div>
   );
 };

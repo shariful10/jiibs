@@ -52,6 +52,18 @@ export default function CategoriesAndFilter() {
           <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
             <Link href={"/wishlists"}> Sort By</Link>
           </button>
+          <button
+            className="p-3"
+            onClick={() =>
+              handleModal(
+                "furtherOptimize",
+                "Further Optimize",
+                "max-w-[480px]"
+              )
+            }
+          >
+            Test
+          </button>
         </div>
       </div>
     </div>
