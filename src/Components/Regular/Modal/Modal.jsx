@@ -10,7 +10,11 @@ const Modal = ({
   isWidth,
 }) => {
   const desktopModalContent = (
-    <div className="hidden sm:flex relative mb-0 md:my-[100px] mx-auto justify-center">
+    <div
+      className={`sm:flex relative mb-0 md:my-[100px] mx-auto justify-center ${
+        isMobileModal ? "hidden" : "block"
+      }`}
+    >
       <div
         className={`${
           isWidth ? isWidth : "max-w-[750px]"

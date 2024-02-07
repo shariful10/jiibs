@@ -1,19 +1,16 @@
 import Image from "next/image";
-import VerifyEmailImg from "@/assets/verifyEmail.png";
+import JIIBS from "@/assets/jiibs.png";
 
 export default function Optimized() {
   return (
     <div className="p-6">
-      <h3 className="font-semibold text-[36px] leading-[45px] text-blackText text-center mb-5">
-        Login to JIBBS
-      </h3>
-      <div className="flex justify-center ">
-        <div className="max-w-[270px] h-[200px]">
-          <Image src={VerifyEmailImg} className="w-full h-full object-cover" />
+      <div className="flex justify-center my-6">
+        <div className="max-w-[110px]">
+          <Image src={JIIBS} className="w-full h-auto object-cover" />
         </div>
       </div>
-      <div className="mb-8 flex flex-col justify-center">
-        <h3 className="text-center font-normal text-[24px] leading-6 text-black mb-6">
+      <div className="mb-8 flex flex-col items-center justify-center">
+        <h3 className="w-[280px] text-center font-semibold text-[24px] leading-6 text-black mb-2">
           Answer a few questions & personalize your search
         </h3>
         <p className="text-center font-normal text-base leading-6 text-black">

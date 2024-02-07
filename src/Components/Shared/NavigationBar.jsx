@@ -1,7 +1,40 @@
 import Link from "next/link";
 import Container from "../Regular/Container";
+// import { useRouter } from "next/router";
+import { useContext } from "react";
+import Context from "@/Context/Context";
 
 const NavigationBar = () => {
+  const { modal, setModal } = useContext(Context);
+  // const router = useRouter();
+
+  const handleModal = (modalValue, modalLabel, isWidth) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: false,
+      modalLabel: modalLabel,
+      isWidth: isWidth,
+    });
+  };
+  // const handleAuth = ({ buttonType }) => {
+  //   const isMobile = window.innerWidth <= 767;
+  //   if (isMobile) {
+  //     if (buttonType === "signin") {
+  //       router.push("/login");
+  //     } else if (buttonType === "signup") {
+  //       router.push("/signup");
+  //     }
+  //   } else {
+  //     if (buttonType === "signin") {
+  //       handleModal("signin", "", "max-w-[480px]");
+  //     } else if (buttonType === "signup") {
+  //       handleModal("signup", "", "max-w-[480px]");
+  //     }
+  //   }
+  // };
+
   return (
     <Container>
       <div className="bg-base-100 md:flex items-center justify-between hidden py-3">
@@ -30,9 +63,17 @@ const NavigationBar = () => {
 
         {/* user , login , sign up */}
         <div className="flex justify-end items-center gap-4">
-          <AuthButton icons={loginUserIcon} title="Login" href="/login" />
+          <AuthButton
+            icons={loginUserIcon}
+            title="Login"
+            // handleAuthButton={() => handleAuth("signin")}
+          />
 
-          <AuthButton icons={signUpIcons} title="Sign Up" href="/signup" />
+          <AuthButton
+            icons={signUpIcons}
+            title="Sign Up"
+            // handleAuthButton={() => handleAuth("signup")}
+          />
         </div>
       </div>
     </Container>
@@ -42,15 +83,15 @@ const NavigationBar = () => {
 export default NavigationBar;
 
 // similar components
-function AuthButton({ icons, title, href }) {
+function AuthButton({ icons, title, handleAuthButton }) {
   return (
-    <Link
-      href={href}
+    <div
+      onClick={handleAuthButton}
       className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray"
     >
       <figure className="w-6 h-6 text-2xl"> {icons}</figure>
       <span className="text-base font-semibold">{title}</span>
-    </Link>
+    </div>
   );
 }
 
