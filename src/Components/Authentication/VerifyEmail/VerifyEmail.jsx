@@ -1,5 +1,6 @@
 import Image from "next/image";
 import VerifyEmailImg from "@/assets/verifyEmail.png";
+import Link from "next/link";
 
 export default function VerifyEmail() {
   return (
@@ -26,9 +27,12 @@ export default function VerifyEmail() {
         </p>
       </div>
       <div className="flex flex-col gap-3">
-        <button className="w-full font-semibold text-base leading-5 bg-primary py-3 px-8 outline-none border-none rounded-md text-white text-center">
+        <Link
+          href={"/optimised-mobile"}
+          className="w-full font-semibold text-base leading-5 bg-primary py-3 px-8 outline-none border-none rounded-md text-white text-center"
+        >
           Change Email
-        </button>
+        </Link>
 
         <button className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]">
           Resend Verification Email
