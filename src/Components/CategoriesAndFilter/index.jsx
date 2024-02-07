@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Categories from "../Categories/Categories";
 import Link from "next/link";
+import Context from "@/Context/Context";
 
 const filterIcon = (
   <svg
@@ -16,7 +17,9 @@ const filterIcon = (
   </svg>
 );
 
-export default function CategoriesAndFilter({ modal, setModal }) {
+export default function CategoriesAndFilter() {
+  const { modal, setModal } = useContext(Context);
+
   const handleModal = (modalValue, modalLabel, isWidth) => {
     setModal({
       ...modal,

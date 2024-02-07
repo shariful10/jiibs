@@ -2,7 +2,7 @@
 
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 import { data } from "@/Components/data";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "@/Components/Regular/Modal/Modal";
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
@@ -22,17 +22,11 @@ import AddWishlist from "@/Components/wishlist/AddWishlist";
 import SignUp from "@/Components/Authentication/Signup/Signup";
 import SignIn from "@/Components/Authentication/SignIn/SignIn";
 import VerifyEmail from "@/Components/Authentication/VerifyEmail/VerifyEmail";
+import Context from "@/Context/Context";
 
 const Home = () => {
-  const [modal, setModal] = useState({
-    isModalOpen: false,
-    modalType: "",
-    isMobileModal: false,
-    modalLabel: "",
-    isWidth: "",
-  });
+  const { modal, setModal } = useContext(Context);
   const apartments = data.apartments;
-
   // setting modal content
   let modalContent;
 
@@ -62,9 +56,9 @@ const Home = () => {
   return (
     <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
       {/* Desktop categories and filtering  */}
-      <CategoriesAndFilter modal={modal} setModal={setModal} />
+      <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
-      <MobileFiltering modal={modal} setModal={setModal} />
+      <MobileFiltering />
 
       <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {apartments.map((apartment, index) => (
