@@ -10,9 +10,9 @@ export default function page() {
   return (
     <div>
       <div className="flex justify-between items-center pt-5 px-5">
-        <div className="w-[50px] h-auto">
+        <Link href={"/"} className="w-[50px] h-auto">
           <Image src={JIIBS} className="w-full h-auto" />
-        </div>
+        </Link>
         <Link
           href={"/signin-mobile"}
           className="text-primary font-semibold text-base leading-5"
