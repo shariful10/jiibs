@@ -87,7 +87,7 @@ function AuthButton({ icons, title, handleAuthButton }) {
   return (
     <div
       onClick={handleAuthButton}
-      className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray"
+      className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray cursor-pointer"
     >
       <figure className="w-6 h-6 text-2xl"> {icons}</figure>
       <span className="text-base font-semibold">{title}</span>
