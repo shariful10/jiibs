@@ -1,6 +1,7 @@
 import React from "react";
 import Seperator from "../helper/Seperator";
 import LoginWithGoogleAndApple from "../helper/LoginWithGoogleAndApple";
+import Link from "next/link";
 
 export default function SignIn() {
   return (
@@ -26,9 +27,12 @@ export default function SignIn() {
         Don’t have an Upwork account?
       </h4>
       <div className="flex justify-center">
-        <button className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]">
+        <Link
+          href={"/signup-mobile"}
+          className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]"
+        >
           Sign up
-        </button>
+        </Link>
       </div>
     </div>
   );

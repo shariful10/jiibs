@@ -12,16 +12,16 @@ export default function SignUp() {
       <LoginWithGoogleAndApple />
       <Seperator />
       <div className="flex flex-col gap-4">
-        <div className="flex justify-between items-center gap-2">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
           <input
             type="text"
             placeholder="First name"
-            className="border border-[#ddd] w-full sm:w-1/2 py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
+            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
           <input
             type="text"
             placeholder="Last name"
-            className="border border-[#ddd] w-full sm:w-1/2 py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
+            className="border border-[#ddd] w-full py-[14px] px-4 rounded-md outline-none placeholder:font-normal text-sm leading-5"
           />
         </div>
 
