@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Container from "../Regular/Container";
-// import { useRouter } from "next/router";
 import { useContext } from "react";
 import Context from "@/Context/Context";
 
