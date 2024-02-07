@@ -6,7 +6,7 @@ import Seperator from "../helper/Seperator";
 export default function SignUp() {
   return (
     <div className="p-10">
-      <h3 className="font-semibold text-[36px] leading-[45px] text-blackText text-center mb-5">
+      <h3 className="hidden sm:block font-semibold text-[36px] leading-[45px] text-blackText text-center mb-5">
         Sign up to JIIBS
       </h3>
       <LoginWithGoogleAndApple />
