@@ -66,13 +66,13 @@ const NavigationBar = () => {
           <AuthButton
             icons={loginUserIcon}
             title="Login"
-            // handleAuthButton={() => handleAuth("signin")}
+            handleAuthButton={() => handleModal("signin", "", "max-w-[480px]")}
           />
 
           <AuthButton
             icons={signUpIcons}
             title="Sign Up"
-            // handleAuthButton={() => handleAuth("signup")}
+            handleAuthButton={() => handleModal("signup", "", "max-w-[480px]")}
           />
         </div>
       </div>

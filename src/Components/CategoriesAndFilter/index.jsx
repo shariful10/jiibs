@@ -50,7 +50,7 @@ export default function CategoriesAndFilter() {
             Optimize
           </button>
           <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
-            <Link href={"/wishlists"}> Sort By</Link>
+            <Link href={"/wishlists"}>Sort By</Link>
           </button>
           <button
             className="p-3"

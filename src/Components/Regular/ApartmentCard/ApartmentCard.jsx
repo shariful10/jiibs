@@ -1,6 +1,5 @@
 import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
-import Link from "next/link";
 
 const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
   const handleModal = (modalValue, modalLabel) => {

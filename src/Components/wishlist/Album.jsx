@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import midtown from "@/assets/images/apartment/Midtown-East.png";
 import Image from "next/image";
 
@@ -82,27 +82,33 @@ const CloseIcon = (
 );
 
 export default function Album() {
+  const [isExpand, setIsExpand] = useState(false);
   return (
     <div className="relative">
-      <span className="absolute top-4 right-4 w-8 h-8 flex bg-transparent rounded-full justify-center items-center z-50 hover:bg-white transition-all duration-300 cursor-pointer ease-linear">
+      <span
+        className="absolute top-4 right-4 w-8 h-8 flex bg-transparent rounded-full justify-center items-center z-50 hover:bg-white transition-all duration-300 cursor-pointer ease-linear"
+        onClick={() => setIsExpand(!isExpand)}
+      >
         {ThreeDot}
       </span>
-      <div className="absolute top-[55px] right-2 rounded-lg max-w-[132px] w-full bg-white p-3 z-50">
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-3">
-            <span>{CloseIcon}</span>
-            <span>Settings</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <span>{editIcon}</span>
-            <span>Edit</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <span>{DeleteIcon}</span>
-            <span>Delete</span>
+      {isExpand && (
+        <div className="absolute top-[55px] right-2 rounded-lg max-w-[132px] w-full bg-white p-3 z-50">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3">
+              <span>{CloseIcon}</span>
+              <span>Settings</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span>{editIcon}</span>
+              <span>Edit</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span>{DeleteIcon}</span>
+              <span>Delete</span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="aspect-square w-full relative overflow-hidden rounded-[20px]">
         <Image

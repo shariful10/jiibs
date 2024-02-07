@@ -1,10 +1,8 @@
 "use client";
 
-import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
+import React, { useContext } from "react";
 import { data } from "@/Components/data";
-import React, { useContext, useState } from "react";
 import Modal from "@/Components/Regular/Modal/Modal";
-import MobileBottomMenu from "@/Components/MobileBottomMenu";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
 import Sorting from "@/Components/Filters/Sorting";
@@ -24,6 +22,7 @@ import SignIn from "@/Components/Authentication/SignIn/SignIn";
 import VerifyEmail from "@/Components/Authentication/VerifyEmail/VerifyEmail";
 import Context from "@/Context/Context";
 import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
+import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 
 const Home = () => {
   const { modal, setModal } = useContext(Context);
@@ -48,7 +47,7 @@ const Home = () => {
   } else if (modal?.modalType === "signup") {
     modalContent = <SignUp />;
   } else if (modal?.modalType === "signin") {
-    modalContent = <VerifyEmail />;
+    modalContent = <SignIn />;
   } else if (modal?.modalType === "furtherOptimize") {
     modalContent = <Optimized />;
   }
