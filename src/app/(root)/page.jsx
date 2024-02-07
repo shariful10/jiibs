@@ -40,8 +40,6 @@ const Home = () => {
     modalContent = <LifeStyle />;
   } else if (modal?.modalType === "filtering") {
     modalContent = <Filter />;
-  } else if (modal?.modalType === "wishlist") {
-    modalContent = <Filter />;
   } else if (modal?.modalType === "addWishlist") {
     modalContent = <AddWishlist />;
   } else if (modal?.modalType === "signup") {

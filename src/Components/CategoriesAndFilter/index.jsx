@@ -38,7 +38,7 @@ export default function CategoriesAndFilter() {
         <div className="hidden md:flex flex-wrap gap-3 items-center">
           <button
             className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={() => handleModal("signup", "", "max-w-[480px]")}
+            onClick={() => handleModal("addWishlist", "", "")}
           >
             <span>{filterIcon}</span>
             Filters

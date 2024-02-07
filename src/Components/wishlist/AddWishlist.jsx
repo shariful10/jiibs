@@ -3,8 +3,8 @@ import AddWishlistCard from "./AddWishlistCard";
 
 export default function AddWishlist() {
   return (
-    <div className="p-6 overflow-x-auto">
-      <div className="w-[750px] flex gap-6 overflow-x-auto">
+    <div className="p-6">
+      <div className="w-[750px] h-[350px] flex items-start gap-6 overflow-y-auto my-8 custom-scrollbar rounded-2xl custom-scrollbar">
         <AddWishlistCard />
         <AddWishlistCard />
         <AddWishlistCard />
