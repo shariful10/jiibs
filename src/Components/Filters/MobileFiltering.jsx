@@ -96,7 +96,7 @@ export default function MobileFiltering() {
           </span>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-[5px]">
+      <div className="flex justify-center items-center gap-[5px] mb-6">
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() => handleModal(SORT_BY, "Sort by")}

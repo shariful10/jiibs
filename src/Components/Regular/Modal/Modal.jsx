@@ -12,7 +12,7 @@ const Modal = ({
 }) => {
   const desktopModalContent = (
     <div
-      className={`sm:flex relative mb-0 md:pb-[100px] md:my-[100px] mx-auto justify-center ${
+      className={`sm:flex relative justify-center items-center ${
         isMobileModal ? "hidden" : "block"
       } ${
         isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
