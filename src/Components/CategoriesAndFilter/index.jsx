@@ -40,10 +40,7 @@ export default function CategoriesAndFilter() {
             <span>{filterIcon}</span>
             Filters
           </button>
-          <button
-            className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={() => handleModal("signin", "", "max-w-[480px]")}
-          >
+          <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
             Optimize
           </button>
           <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
