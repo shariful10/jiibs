@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Context from "@/Context/Context";
 import Link from "next/link";
 import InputSearchBar from "../Regular/Inputs/InputSearchBar";
+import Container from "../Regular/Container";
 
 const NavigationBar = () => {
   const { modal, setModal } = useContext(Context);
@@ -36,7 +37,7 @@ const NavigationBar = () => {
 
   return (
     // <Container>
-    <div className="w-full max-w-[1520px] mx-auto px-6">
+    <Container>
       <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
         {/* Login */}
         <div className="flex text-[38px] font-semibold text-primary py-3">
@@ -61,7 +62,7 @@ const NavigationBar = () => {
           />
         </div>
       </div>
-    </div>
+    </Container>
 
     // </Container>
   );

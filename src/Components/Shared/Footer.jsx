@@ -32,7 +32,7 @@ const footerBottomData = [
 
 const Footer = () => {
   return (
-    <footer className="pt-[60px] pb-[50px] bg-[#F7F7F7] p-5 md:p-0">
+    <footer className="py-14 bg-[#F7F7F7] px-5 md:px-0">
       <Container>
         <div className="grid md:grid-cols-3 border-b pb-[32px]">
           <FooterItems />

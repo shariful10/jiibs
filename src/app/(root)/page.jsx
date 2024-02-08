@@ -1,28 +1,28 @@
 "use client";
 
-import React, { useContext } from "react";
-import { data } from "@/Components/data";
-import Modal from "@/Components/Regular/Modal/Modal";
-import MobileFiltering from "@/Components/Filters/MobileFiltering";
+import SignIn from "@/Components/Authentication/SignIn/SignIn";
+import SignUp from "@/Components/Authentication/Signup/Signup";
+import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
-import Sorting from "@/Components/Filters/Sorting";
-import Price from "@/Components/Filters/Price";
 import BedAndBath from "@/Components/Filters/BedAndBath";
+import Filter from "@/Components/Filters/Filter";
 import LifeStyle from "@/Components/Filters/LifeStyle";
+import MobileFiltering from "@/Components/Filters/MobileFiltering";
+import Price from "@/Components/Filters/Price";
+import Sorting from "@/Components/Filters/Sorting";
+import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
+import Container from "@/Components/Regular/Container";
+import Modal from "@/Components/Regular/Modal/Modal";
+import { data } from "@/Components/data";
+import AddWishlist from "@/Components/wishlist/AddWishlist";
+import Context from "@/Context/Context";
+import { useContext } from "react";
 import {
-  SORT_BY,
+  BED_AND_BATHROOM,
   LIFESTYLE,
   PRICE,
-  BED_AND_BATHROOM,
+  SORT_BY,
 } from "../../Components/Regular/Utils/constant";
-import Filter from "@/Components/Filters/Filter";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
-import SignUp from "@/Components/Authentication/Signup/Signup";
-import SignIn from "@/Components/Authentication/SignIn/SignIn";
-import VerifyEmail from "@/Components/Authentication/VerifyEmail/VerifyEmail";
-import Context from "@/Context/Context";
-import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
-import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 
 const Home = () => {
   const { modal, setModal } = useContext(Context);
@@ -54,13 +54,13 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20 pt-10 px-6">
+    <Container className="py-10">
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
       <MobileFiltering />
 
-      <div className="pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      <div className="pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:max-w-[1280px] mx-auto">
         {apartments.map((apartment, index) => (
           <ApartmentCard
             key={index}
@@ -82,7 +82,7 @@ const Home = () => {
           {modalContent}
         </Modal>
       )}
-    </div>
+    </Container>
   );
 };
 
