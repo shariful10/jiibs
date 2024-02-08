@@ -1,5 +1,6 @@
 import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
+import theSun from "@/assets/images/apartment/the-sun.png";
 
 const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
   const handleModal = (modalValue, modalLabel) => {
@@ -19,12 +20,12 @@ const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
           <div className="aspect-square w-full relative overflow-hidden rounded-[20px]">
             <Image
               className="object-cover h-full w-full group-hover:scale-110 duration-300"
-              src={apartment?.image}
+              src={theSun}
               alt="Room"
             />
             <div
               className=" absolute top-3 right-3"
-              onClick={() => handleModal("addWishlist", "Add to wishlist")}
+              // onClick={() => handleModal("addWishlist", "Add to wishlist")}
             >
               <Image src={heartButton} alt="Heart button" />
             </div>
