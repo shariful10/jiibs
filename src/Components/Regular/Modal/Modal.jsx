@@ -10,6 +10,7 @@ const Modal = ({
   isMobileMiddle = true,
   isWidth,
 }) => {
+  console.log(isWidth);
   const desktopModalContent = (
     <div
       className={`sm:flex relative justify-center items-center ${

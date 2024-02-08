@@ -18,7 +18,7 @@ const arrowIcon = (
     <path
       d="M1 1L5 5L9 1"
       stroke="#626262"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -65,7 +65,7 @@ export default function MobileFiltering() {
               d="M15 8.5H1M1 8.5L8 15.5M1 8.5L8 1.5"
               stroke="black"
               strokeWidth="2"
-              stroke-linecap="round"
+              strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>

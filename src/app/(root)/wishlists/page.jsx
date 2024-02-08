@@ -131,13 +131,14 @@ export default function page() {
     modalContent = <AddWishlist />;
   }
 
-  const handleModal = (modalValue, modalLabel) => {
+  const handleModal = (modalValue, modalLabel, isWidth) => {
     setModal({
       ...modal,
       isModalOpen: !modal?.isModalOpen,
       modalType: modalValue,
       isMobileModal: true,
       modalLabel: modalLabel,
+      isWidth: isWidth,
     });
   };
 
@@ -163,7 +164,9 @@ export default function page() {
               </h1>
               <button
                 className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
-                onClick={() => handleModal("album", "Create wishlist")}
+                onClick={() =>
+                  handleModal("album", "Create wishlist", "max-w-[700px]")
+                }
               >
                 <span>{whitePlusIcon}</span>
                 <span>Create album</span>
