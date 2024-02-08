@@ -19,7 +19,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 5px;
+  height: 5px;
 }
 
 /* Handle */

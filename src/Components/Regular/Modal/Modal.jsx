@@ -7,12 +7,15 @@ const Modal = ({
   children,
   name,
   topRightContent,
+  isMobileMiddle = true,
   isWidth,
 }) => {
   const desktopModalContent = (
     <div
       className={`sm:flex relative mb-0 md:my-[100px] mx-auto justify-center ${
         isMobileModal ? "hidden" : "block"
+      } ${
+        isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       }`}
     >
       <div
@@ -39,7 +42,7 @@ const Modal = ({
           <h3 className="font-semibold text-3xl text-blackText">{name}</h3>
           <div>{topRightContent}</div>
         </div>
-        <div>{children}</div>
+        {children}
       </div>
     </div>
   );
