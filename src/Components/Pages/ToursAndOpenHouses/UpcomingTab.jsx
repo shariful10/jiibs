@@ -30,9 +30,9 @@ const demoData = [
 const UpcomingTab = () => {
 	const [openState, setOpenState] = useState(null);
 
-   const toggleOpenState = (id) => {
-      setOpenState((prevState) => (prevState === id ? null : id));
-    };
+	const toggleOpenState = (id) => {
+		setOpenState((prevState) => (prevState === id ? null : id));
+	};
 
 	return (
 		<div className="">
@@ -70,13 +70,21 @@ const UpcomingTab = () => {
 							{openState === id && (
 								<div className="absolute top-7 right-0 rounded-md border p-2 md:p-3 flex flex-col gap-2 bg-white z-10">
 									<button className="font-semibold w-[140px] py-1.5 rounded-full border flex justify-center gap-2 items-center">
-                              <Image src={sync} className="h-5 w-5" alt="sync" />
-                              Reschedule
-                           </button>
-                           <button className="font-semibold px-4 py-1.5 rounded-full border border-lightRed text-lightRed flex justify-center gap-2 items-center">
-                              <Image src={close} className="h-5 w-5" alt="close" />
-                              Cancel
-                           </button>
+										<Image
+											src={sync}
+											className="h-5 w-5"
+											alt="sync"
+										/>
+										Reschedule
+									</button>
+									<button className="font-semibold px-4 py-1.5 rounded-full border border-lightRed text-lightRed flex justify-center gap-2 items-center">
+										<Image
+											src={close}
+											className="h-5 w-5"
+											alt="close"
+										/>
+										Cancel
+									</button>
 								</div>
 							)}
 						</div>

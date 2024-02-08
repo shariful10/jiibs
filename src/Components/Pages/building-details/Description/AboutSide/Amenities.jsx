@@ -1,7 +1,7 @@
 "use client";
 import conciergeIcon from "@/assets/icons/details/conciergeIcon.png";
 import cycleIcon from "@/assets/icons/details/cycleIcon.png";
-import elevatorIcon from "@/assets/icons/details/elevvatorIcon.png";
+import elevatorIcon from "@/assets/icons/details/elevatorIcon.png";
 import golfSimulatorIcon from "@/assets/icons/details/golfSmulatorIcon.png";
 import laundryRoom from "@/assets/icons/details/laundryRoom.png";
 import packageIcon from "@/assets/icons/details/packageIcon.png";
