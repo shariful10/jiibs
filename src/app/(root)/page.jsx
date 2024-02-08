@@ -54,7 +54,7 @@ const Home = () => {
   };
 
   return (
-    <Container className="py-10">
+    <Container className="py-10 px-6 md:px-0">
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
