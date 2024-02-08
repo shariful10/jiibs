@@ -1,13 +1,13 @@
 "use client";
 import conciergeIcon from "@/assets/icons/details/conciergeIcon.png";
 import cycleIcon from "@/assets/icons/details/cycleIcon.png";
-import elevatorIcon from "@/assets/icons/details/elevvatorIcon.png";
+import elevatorIcon from "@/assets/icons/details/elevatorIcon.png";
 import golfSimulatorIcon from "@/assets/icons/details/golfSmulatorIcon.png";
 import laundryRoom from "@/assets/icons/details/laundryRoom.png";
 import packageIcon from "@/assets/icons/details/packageIcon.png";
 import screeningRoomIcon from "@/assets/icons/details/screeningRoomIcon.png";
 import sundeckIcon from "@/assets/icons/details/sundeckIcon.png";
-import yogaIcon from "@/assets/icons/details/yogaIcon.png";
+import yogaIcon from "@/assets/icons/details/yogaicon.png";
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
