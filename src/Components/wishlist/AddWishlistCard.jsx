@@ -14,7 +14,7 @@ export default function AddWishlistCard() {
     // </div>
     <Image
       src={midtown}
-      className="w-[325px] h-[275px] object-cover rounded-2xl"
+      className="w-[325px] h-[275px] object-cover rounded-2xl custom-scrollbar"
       alt="image"
     />
   );
