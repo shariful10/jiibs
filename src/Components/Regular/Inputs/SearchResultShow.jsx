@@ -11,9 +11,9 @@ import ButtonPrimary from "../Buttons/ButtonPrimary";
 
 const { default: Logo } = require("../Logo");
 
-export default function SearchResultShow({ data = [] }) {
+export default function SearchResultShow({ data = [], setOpenDropDown }) {
   const [tabs, setTabs] = useState("building");
-  console.log("data ", data);
+  console.log("search data ", data);
 
   return (
     <>
@@ -32,7 +32,10 @@ export default function SearchResultShow({ data = [] }) {
               />
             </div>
             <div>
-              <button className="w-5 h-5 rounded-full flex items-center justify-center font-extrabold text-3xl">
+              <button
+                onClick={() => setOpenDropDown(false)}
+                className="w-5 h-5 rounded-full flex items-center justify-center font-extrabold text-3xl"
+              >
                 <RxCross1 />
               </button>
             </div>
