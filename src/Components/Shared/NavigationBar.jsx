@@ -1,36 +1,84 @@
-import Container from "../Regular/Container";
+import { useContext } from "react";
+import Context from "@/Context/Context";
+import Link from "next/link";
 import InputSearchBar from "../Regular/Inputs/InputSearchBar";
-import Logo from "../Regular/Logo";
 
 const NavigationBar = () => {
+  const { modal, setModal } = useContext(Context);
+  // const router = useRouter();
+
+  const handleModal = (modalValue, modalLabel, isWidth) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: false,
+      modalLabel: modalLabel,
+      isWidth: isWidth,
+    });
+  };
+  // const handleAuth = ({ buttonType }) => {
+  //   const isMobile = window.innerWidth <= 767;
+  //   if (isMobile) {
+  //     if (buttonType === "signin") {
+  //       router.push("/login");
+  //     } else if (buttonType === "signup") {
+  //       router.push("/signup");
+  //     }
+  //   } else {
+  //     if (buttonType === "signin") {
+  //       handleModal("signin", "", "max-w-[480px]");
+  //     } else if (buttonType === "signup") {
+  //       handleModal("signup", "", "max-w-[480px]");
+  //     }
+  //   }
+  // };
+
   return (
-    <Container>
-      <div className="bg-base-100 md:flex items-center justify-between hidden py-3">
-        {/* Logo */}
-        <Logo />
+    // <Container>
+    <div className="w-full max-w-[1520px] mx-auto px-6">
+      <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
+        {/* Login */}
+        <div className="flex text-[38px] font-semibold text-primary py-3">
+          <Link href="/">JIBBS.</Link>
+        </div>
+
         {/* search input */}
         <InputSearchBar />
 
         {/* user , login , sign up */}
         <div className="flex justify-end items-center gap-4">
-          <AuthButton icons={loginUserIcon} title="Login" />
+          <AuthButton
+            icons={loginUserIcon}
+            title="Login"
+            handleAuthButton={() => handleModal("signin", "", "max-w-[480px]")}
+          />
 
-          <AuthButton icons={signUpIcons} title="Sign Up" />
+          <AuthButton
+            icons={signUpIcons}
+            title="Sign Up"
+            handleAuthButton={() => handleModal("signup", "", "max-w-[480px]")}
+          />
         </div>
       </div>
-    </Container>
+    </div>
+
+    // </Container>
   );
 };
 
 export default NavigationBar;
 
 // similar components
-function AuthButton({ icons, title }) {
+function AuthButton({ icons, title, handleAuthButton }) {
   return (
-    <button className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray">
+    <div
+      onClick={handleAuthButton}
+      className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray cursor-pointer"
+    >
       <figure className="w-6 h-6 text-2xl"> {icons}</figure>
       <span className="text-base font-semibold">{title}</span>
-    </button>
+    </div>
   );
 }
 

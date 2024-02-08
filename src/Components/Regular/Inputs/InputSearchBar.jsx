@@ -4,7 +4,7 @@ import InputSearch from "./InputSearch";
 import SearchResultShow from "./SearchResultShow";
 
 export default function InputSearchBar() {
-  const [openDropDown, setOpenDropDown] = useState(true);
+  const [openDropDown, setOpenDropDown] = useState(false);
   const [searchResult, setSearchResult] = useState({
     data: [],
     type: "",
@@ -15,6 +15,7 @@ export default function InputSearchBar() {
   return (
     <>
       {/* {searchResult?.data?.length ? ( */}
+      {/* {!searchResult ? ( */}
       {openDropDown ? (
         <SearchResultShow
           data={searchResult}

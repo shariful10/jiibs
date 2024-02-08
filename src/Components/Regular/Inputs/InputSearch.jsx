@@ -40,8 +40,8 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
             className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize"
             name="searchType"
             id="searchType"
-            onChange={(e) => setSelectType(e.target.value)}
-            onClick={() => setOpenDropDown(true)}
+            // onChange={(e) => setSelectType(e.target.value)}
+            onChange={() => setOpenDropDown(true)}
             defaultValue={selectType}
           >
             <option value="units"> units </option>

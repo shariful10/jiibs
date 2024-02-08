@@ -1,8 +1,9 @@
+import Link from "next/link";
 import React from "react";
 
 export default function MobileBottomMenu() {
   return (
-    <div className="md:hidden fixed bottom-0 left-0 w-full flex justify-center gap-7 bg-white py-3 border border-[#E4E4E4]">
+    <div className="md:hidden fixed bottom-0 left-0 w-full flex justify-center gap-7 bg-white py-3 border border-[#E4E4E4] z-50">
       <div className="flex flex-col gap-1 items-center hover:text-[#2AB7DD] hover:cursor-pointer">
         <span>
           <svg
@@ -45,7 +46,10 @@ export default function MobileBottomMenu() {
         <span>Save</span>
       </div>
 
-      <div className="flex flex-col gap-1 items-center hover:text-[#2AB7DD] hover:cursor-pointer">
+      <Link
+        href={"/signin-mobile"}
+        className="flex flex-col gap-1 items-center hover:text-[#2AB7DD] hover:cursor-pointer"
+      >
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +68,7 @@ export default function MobileBottomMenu() {
           </svg>
         </span>
         <span>Log in</span>
-      </div>
+      </Link>
     </div>
   );
 }

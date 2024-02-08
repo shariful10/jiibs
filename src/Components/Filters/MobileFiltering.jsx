@@ -1,9 +1,10 @@
-import React from "react";
+import Context from "@/Context/Context";
+import { useContext } from "react";
 import {
-  SORT_BY,
+  BED_AND_BATHROOM,
   LIFESTYLE,
   PRICE,
-  BED_AND_BATHROOM,
+  SORT_BY,
 } from "../Regular/Utils/constant";
 
 const arrowIcon = (
@@ -37,7 +38,8 @@ const sortIcon = (
   </svg>
 );
 
-export default function MobileFiltering({ modal, setModal }) {
+export default function MobileFiltering() {
+  const { modal, setModal } = useContext(Context);
   const handleModal = (modalValue, modalLabel) => {
     setModal({
       ...modal,
@@ -64,7 +66,7 @@ export default function MobileFiltering({ modal, setModal }) {
               stroke="black"
               strokeWidth={2}
               strokeLinecap="round"
-              strokeLineJoin="round"
+              strokeLinejoin="round"
             />
           </svg>
           <div>
