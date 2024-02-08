@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Categories from "../Categories/Categories";
 import Link from "next/link";
+import Context from "@/Context/Context";
 
 const filterIcon = (
   <svg
@@ -16,25 +17,28 @@ const filterIcon = (
   </svg>
 );
 
-export default function CategoriesAndFilter({ modal, setModal }) {
-  const handleModal = (modalValue, modalLabel) => {
+export default function CategoriesAndFilter() {
+  const { modal, setModal } = useContext(Context);
+
+  const handleModal = (modalValue, modalLabel, isWidth) => {
     setModal({
       ...modal,
       isModalOpen: !modal?.isModalOpen,
       modalType: modalValue,
       isMobileModal: false,
       modalLabel: modalLabel,
+      isWidth: isWidth,
     });
   };
 
   return (
     <div>
-      <div className="hidden md:flex items-center justify-between gap-[40px] overflow-x-auto overflow-y-hidden mb-12">
+      <div className="hidden md:flex items-center justify-between gap-[40px] overflow-x-auto overflow-y-hidden mb-8">
         <Categories />
         <div className="hidden md:flex flex-wrap gap-3 items-center">
           <button
             className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={() => handleModal("filtering", "Filter")}
+            onClick={() => handleModal("filtering", "Filter", "max-w-[750px]")}
           >
             <span>{filterIcon}</span>
             Filters
@@ -43,7 +47,7 @@ export default function CategoriesAndFilter({ modal, setModal }) {
             Optimize
           </button>
           <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
-            <Link href={"/wishlists"}> Sort By</Link>
+            <Link href={"/wishlists"}>Sort By</Link>
           </button>
         </div>
       </div>

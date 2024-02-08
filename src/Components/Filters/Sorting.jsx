@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Checkbox from "../Regular/Toggle/Checkbox";
+import CircleCheckbox from "../Regular/Toggle/CircleCheckbox";
 
 export default function Sorting() {
   const [sorting, setSorting] = useState([
@@ -35,7 +35,7 @@ export default function Sorting() {
           className="flex items-center justify-between py-0 px-4"
         >
           <span>{option?.label}</span>
-          <Checkbox
+          <CircleCheckbox
             isChecked={option?.isFiltered}
             onChecked={() => {
               handleChecked(index);

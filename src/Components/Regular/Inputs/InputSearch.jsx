@@ -6,7 +6,7 @@ import building3 from "@/assets/building-3.jpg";
 import roadUnit from "@/assets/road.jpg";
 import { useEffect, useState } from "react";
 
-export default function InputSearch({ setResult = {} }) {
+export default function InputSearch({ setResult = {}, setOpenDropDown }) {
   const [searchValue, setSearchValue] = useState("");
   const [selectType, setSelectType] = useState("units");
   const [inputSearch, setInputSearch] = useState("");
@@ -14,7 +14,12 @@ export default function InputSearch({ setResult = {} }) {
   //   console.log("inputSearch ", inputSearch);
 
   useEffect(() => {
-    setSearchValue(demoData);
+    // setResult((pre) => {
+    //   return {
+    //     ...pre,
+    //     data: demoData,
+    //   };
+    // });
   }, []);
 
   return (
@@ -35,7 +40,8 @@ export default function InputSearch({ setResult = {} }) {
             className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize"
             name="searchType"
             id="searchType"
-            onChange={(e) => setSelectType(e.target.value)}
+            // onChange={(e) => setSelectType(e.target.value)}
+            onChange={() => setOpenDropDown(true)}
             defaultValue={selectType}
           >
             <option value="units"> units </option>
