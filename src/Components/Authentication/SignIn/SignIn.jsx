@@ -26,7 +26,12 @@ export default function SignIn() {
       <h4 className="font-normal text-base leading-6 text-blackText pt-8 pb-6 text-center">
         Don’t have an Upwork account?
       </h4>
-      <div className="flex justify-center">
+      <div className="hidden sm:flex justify-center">
+        <button className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]">
+          Sign up
+        </button>
+      </div>
+      <div className="flex sm:hidden justify-center">
         <Link
           href={"/signup-mobile"}
           className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]"
