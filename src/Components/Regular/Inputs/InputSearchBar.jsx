@@ -11,7 +11,7 @@ export default function InputSearchBar() {
 
   return (
     <>
-      {searchResult ? (
+      {!searchResult ? (
         <SearchResultShow
           data={searchResult?.data}
           selectType={searchResult?.type}

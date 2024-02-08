@@ -7,11 +7,21 @@ const Modal = ({
   children,
   name,
   topRightContent,
+  isMobileMiddle = true,
+  isWidth,
 }) => {
   const desktopModalContent = (
-    <div className="hidden sm:flex relative mb-0 md:my-[100px] mx-auto justify-center">
+    <div
+      className={`sm:flex relative mb-0 md:my-[100px] mx-auto justify-center ${
+        isMobileModal ? "hidden" : "block"
+      } ${
+        isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      }`}
+    >
       <div
-        className="max-w-[740px] w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden"
+        className={`${
+          isWidth ? isWidth : "w-fit"
+        } w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
@@ -32,7 +42,7 @@ const Modal = ({
           <h3 className="font-semibold text-3xl text-blackText">{name}</h3>
           <div>{topRightContent}</div>
         </div>
-        <div>{children}</div>
+        {children}
       </div>
     </div>
   );
