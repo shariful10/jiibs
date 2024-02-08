@@ -33,7 +33,7 @@ export default function CategoriesAndFilter() {
 
   return (
     <div>
-      <div className="hidden md:flex items-center justify-between gap-[40px] overflow-x-auto overflow-y-hidden mb-12">
+      <div className="hidden md:flex items-center justify-between gap-[40px] overflow-x-auto overflow-y-hidden mb-8">
         <Categories />
         <div className="hidden md:flex flex-wrap gap-3 items-center">
           <button

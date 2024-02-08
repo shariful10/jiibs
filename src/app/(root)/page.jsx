@@ -54,13 +54,13 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
+    <div className="w-full max-w-[1520px] mx-auto pb-20 pt-10 px-6">
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
       <MobileFiltering />
 
-      <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      <div className="pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {apartments.map((apartment, index) => (
           <ApartmentCard
             key={index}
