@@ -113,15 +113,15 @@ export default function Album() {
         {isExpand && (
           <div className="absolute top-[55px] right-2 rounded-lg max-w-[132px] w-full bg-white p-3 z-50">
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 cursor-pointer">
                 <span>{CloseIcon}</span>
                 <span>Settings</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 cursor-pointer">
                 <span>{editIcon}</span>
                 <span>Edit</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 cursor-pointer">
                 <span>{DeleteIcon}</span>
                 <span>Delete</span>
               </div>
