@@ -7,7 +7,7 @@ import laundryRoom from "@/assets/icons/details/laundryRoom.png";
 import packageIcon from "@/assets/icons/details/packageIcon.png";
 import screeningRoomIcon from "@/assets/icons/details/screeningRoomIcon.png";
 import sundeckIcon from "@/assets/icons/details/sundeckIcon.png";
-import yogaIcon from "@/assets/icons/details/yogaIcon.png";
+import yogaIcon from "@/assets/icons/details/yogaicon.png";
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
