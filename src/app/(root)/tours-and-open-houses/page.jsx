@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Container from "@/Components/Regular/Container";
-import UpcomingTab from "@/Components/pages/ToursAndOpenHouses/UpcomingTab";
+import UpcomingTab from "@/Components/Pages/ToursAndOpenHouses/UpcomingTab";
 
 const ToursAndOpenHouses = () => {
 	const [tab, setTab] = useState("upcoming");

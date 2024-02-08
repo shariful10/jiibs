@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdOutlineVerifiedUser } from "react-icons/md";
 
-const Form = () => {
+const Form = ({ setUserInfo }) => {
   const currentYear = new Date().getFullYear();
 
   let days = [];
@@ -30,9 +30,10 @@ const Form = () => {
 
     const phoneNumber = form.phone.value;
 
-    const userInfo = { firstName, lastName, email, birthDate, phoneNumber };
+    // const userInfo = { firstName, lastName, email, birthDate, phoneNumber };
 
-    console.log(userInfo);
+    setUserInfo({ firstName, lastName, email, birthDate, phoneNumber });
+    form.reset();
   };
 
   return (

@@ -1,17 +1,25 @@
+"use client";
+
 import ButtonBlack from "@/Components/Regular/Buttons/ButtonBlack";
 import ButtonPrimary from "@/Components/Regular/Buttons/ButtonPrimary";
 import MapLocator from "./MapLocator";
 
 export default function LocationMap() {
+  // Request a Tour
+  const handleTour = () => {};
+
+  // Get in Touch
+  const handleTouch = () => {};
+
   return (
     <div>
       {/* head address part */}
       <div>
         <h1 className="text-3xl font-semibold">70 Pine Street</h1>
-        <p className="text-xl font-normal">
+        <p className="text-xl font-normal mt-3">
           70 Pine Street, New York, new york 100005
         </p>
-        <div className="flex gap-4 items-center justify-between">
+        <div className="flex gap-4 items-center justify-between flex-wrap mt-2">
           <UnitsStories name={`150 Units`} icons={buildingIcons} />
           <UnitsStories name={`66 Stories`} icons={storiesUpIcons} />
           <UnitsStories name={`2024 Built Year`} icons={calenderIcons} />
@@ -19,17 +27,25 @@ export default function LocationMap() {
       </div>
 
       {/* buttons */}
-      <div className="py-5 md:py-8 space-y-4 absolute md:">
-        <ButtonPrimary>
-          <span>Request a Tour</span>
-        </ButtonPrimary>
-        <ButtonBlack styleReverse={true}>
-          <span>Get in Touch</span>
-        </ButtonBlack>
+      <div className="fixed bottom-0 inset-x-0 w-full mdx:static z-50">
+        <div className="bg-white mdx:bg-transparent w-full">
+          <div className="py-5 px-4 mdx:px-0 mdx:py-8 mdx:block flex flex-row-reverse items-center gap-3.5 justify-between">
+            <ButtonPrimary onClick={handleTour}>
+              <span>Request a Tour</span>
+            </ButtonPrimary>
+            <ButtonBlack
+              onClick={handleTouch}
+              className="mdx:mt-4"
+              styleReverse={true}
+            >
+              <span>Get in Touch</span>
+            </ButtonBlack>
+          </div>
+        </div>
       </div>
 
       {/* locator */}
-      <div className="hidden md:block">
+      <div className="hidden mdx:block">
         <MapLocator />
       </div>
     </div>
@@ -39,7 +55,7 @@ export default function LocationMap() {
 // mini components
 function UnitsStories({ name, icons }) {
   return (
-    <div className="flex gap-2 items-center justify-start">
+    <div className="flex gap-2 items-center justify-start min-w-max">
       <figure> {icons} </figure>
       <p> {name} </p>
     </div>

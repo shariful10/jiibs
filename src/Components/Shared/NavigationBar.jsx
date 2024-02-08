@@ -1,53 +1,84 @@
+import { useContext } from "react";
+import Context from "@/Context/Context";
 import Link from "next/link";
-import Container from "../Regular/Container";
+import InputSearchBar from "../Regular/Inputs/InputSearchBar";
 
 const NavigationBar = () => {
+  const { modal, setModal } = useContext(Context);
+  // const router = useRouter();
+
+  const handleModal = (modalValue, modalLabel, isWidth) => {
+    setModal({
+      ...modal,
+      isModalOpen: !modal?.isModalOpen,
+      modalType: modalValue,
+      isMobileModal: false,
+      modalLabel: modalLabel,
+      isWidth: isWidth,
+    });
+  };
+  // const handleAuth = ({ buttonType }) => {
+  //   const isMobile = window.innerWidth <= 767;
+  //   if (isMobile) {
+  //     if (buttonType === "signin") {
+  //       router.push("/login");
+  //     } else if (buttonType === "signup") {
+  //       router.push("/signup");
+  //     }
+  //   } else {
+  //     if (buttonType === "signin") {
+  //       handleModal("signin", "", "max-w-[480px]");
+  //     } else if (buttonType === "signup") {
+  //       handleModal("signup", "", "max-w-[480px]");
+  //     }
+  //   }
+  // };
+
   return (
-    <Container>
-      <div className="bg-base-100 md:flex items-center justify-between hidden py-3">
+    // <Container>
+    <div className="w-full max-w-[1520px] mx-auto px-6">
+      <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
         {/* Login */}
         <div className="flex text-[38px] font-semibold text-primary py-3">
           <Link href="/">JIBBS.</Link>
         </div>
 
         {/* search input */}
-        <div className="flex-none gap-2">
-          <div className="form-control m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
-            <div className="flex-1 flex items-center justify-start gap-5">
-              <figure>{magnifyGlassIcons}</figure>
-              <input
-                type="text"
-                placeholder="Search Apartments "
-                className="outline-none text-[17px] font-normal"
-              />
-            </div>
-            <button className="ml-2 focus:outline-none pl-6 flex items-center justify-end gap-2">
-              <span>Units</span>
-              <figure>{dropDownIcons}</figure>
-            </button>
-          </div>
-        </div>
+        <InputSearchBar />
 
         {/* user , login , sign up */}
         <div className="flex justify-end items-center gap-4">
-          <AuthButton icons={loginUserIcon} title="Login" />
+          <AuthButton
+            icons={loginUserIcon}
+            title="Login"
+            handleAuthButton={() => handleModal("signin", "", "max-w-[480px]")}
+          />
 
-          <AuthButton icons={signUpIcons} title="Sign Up" />
+          <AuthButton
+            icons={signUpIcons}
+            title="Sign Up"
+            handleAuthButton={() => handleModal("signup", "", "max-w-[480px]")}
+          />
         </div>
       </div>
-    </Container>
+    </div>
+
+    // </Container>
   );
 };
 
 export default NavigationBar;
 
 // similar components
-function AuthButton({ icons, title }) {
+function AuthButton({ icons, title, handleAuthButton }) {
   return (
-    <button className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray">
+    <div
+      onClick={handleAuthButton}
+      className="py-[7px] px-[15px] gap-2.5 rounded-[100px] flex items-center justify-center bg-lightGray cursor-pointer"
+    >
       <figure className="w-6 h-6 text-2xl"> {icons}</figure>
       <span className="text-base font-semibold">{title}</span>
-    </button>
+    </div>
   );
 }
 
@@ -66,7 +97,6 @@ var loginUserIcon = (
     />
   </svg>
 );
-
 var signUpIcons = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -86,31 +116,6 @@ var signUpIcons = (
         <rect width={24} height={24} fill="white" />
       </clipPath>
     </defs>
-  </svg>
-);
-var magnifyGlassIcons = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="21"
-    height="21"
-    viewBox="0 0 23 22"
-    fill="none"
-  >
-    <rect
-      x="0.719395"
-      y="0.00516561"
-      width="2.75919"
-      height="9.03236"
-      rx="0.5"
-      transform="matrix(0.724382 -0.689399 0.714407 0.69973 12.7493 14.978)"
-      fill="#626262"
-      stroke="#626262"
-    />
-    <path
-      d="M16.1755 8.52356C16.1755 12.3697 12.936 15.5471 8.86511 15.5471C4.79427 15.5471 1.55469 12.3697 1.55469 8.52356C1.55469 4.67738 4.79427 1.5 8.86511 1.5C12.936 1.5 16.1755 4.67738 16.1755 8.52356Z"
-      stroke="#626262"
-      strokeWidth="2"
-    />
   </svg>
 );
 var dropDownIcons = (

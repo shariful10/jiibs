@@ -1,13 +1,13 @@
 "use client";
 import conciergeIcon from "@/assets/icons/details/conciergeIcon.png";
 import cycleIcon from "@/assets/icons/details/cycleIcon.png";
-import elevatorIcon from "@/assets/icons/details/elevvatorIcon.png";
+import elevatorIcon from "@/assets/icons/details/elevatorIcon.png";
 import golfSimulatorIcon from "@/assets/icons/details/golfSmulatorIcon.png";
 import laundryRoom from "@/assets/icons/details/laundryRoom.png";
 import packageIcon from "@/assets/icons/details/packageIcon.png";
 import screeningRoomIcon from "@/assets/icons/details/screeningRoomIcon.png";
 import sundeckIcon from "@/assets/icons/details/sundeckIcon.png";
-import yogaIcon from "@/assets/icons/details/yogaIcon.png";
+import yogaIcon from "@/assets/icons/details/yogaicon.png";
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -132,7 +132,7 @@ function Items({ src, text }) {
   return (
     <div className="flex items-center justify-start gap-5">
       <figure className="flex items-center justify-center w-4 md:w-[1.375rem] h-5 md:h-[1.69rem] flex-shrink-0">
-        <Image className="w-full h-full" src={src} />
+        <Image className="w-full h-full" src={src} alt="" />
       </figure>
       <p className="text-base md:text-xl font-normal capitalize"> {text}</p>
     </div>

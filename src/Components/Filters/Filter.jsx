@@ -1,5 +1,5 @@
 "use client";
-import ToggleButton from "@/Components/Regular/Toggle";
+import ToggleButton from "@/Components/Regular/Toggle/ToggleButton";
 import React, { useState } from "react";
 import concierge from "@/assets/images/filters/concierge.png";
 import elevator from "@/assets/images/filters/elevator.png";
@@ -127,27 +127,27 @@ export default function Filter() {
         </span>
         <div className="flex flex-wrap gap-4 mb-6">
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
-            <Image src={concierge} />
+            <Image src={concierge} alt="" />
             <span>Bike room</span>
           </div>
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
-            <Image src={concierge} />
+            <Image src={concierge} alt="" />
             <span>Concierge</span>
           </div>
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
-            <Image src={elevator} />
+            <Image src={elevator} alt="" />
             <span>Elevator</span>
           </div>
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
-            <Image src={golf} />
+            <Image src={golf} alt="" />
             <span>Golf simulators</span>
           </div>
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
-            <Image src={laundry_basket} />
+            <Image src={laundry_basket} alt="" />
             <span>Laundry Room</span>
           </div>
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
-            <Image src={package_room} />
+            <Image src={package_room} alt="" />
             <span>Package Room</span>
           </div>
         </div>

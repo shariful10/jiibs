@@ -1,9 +1,10 @@
-import React from "react";
+import Context from "@/Context/Context";
+import { useContext } from "react";
 import {
-  SORT_BY,
+  BED_AND_BATHROOM,
   LIFESTYLE,
   PRICE,
-  BED_AND_BATHROOM,
+  SORT_BY,
 } from "../Regular/Utils/constant";
 
 const arrowIcon = (
@@ -17,7 +18,7 @@ const arrowIcon = (
     <path
       d="M1 1L5 5L9 1"
       stroke="#626262"
-      stroke-linecap="round"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   </svg>
@@ -37,7 +38,8 @@ const sortIcon = (
   </svg>
 );
 
-export default function MobileFiltering({ modal, setModal }) {
+export default function MobileFiltering() {
+  const { modal, setModal } = useContext(Context);
   const handleModal = (modalValue, modalLabel) => {
     setModal({
       ...modal,
@@ -54,16 +56,16 @@ export default function MobileFiltering({ modal, setModal }) {
         <div className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="17"
+            width={16}
+            height={17}
             viewBox="0 0 16 17"
             fill="none"
           >
             <path
               d="M15 8.5H1M1 8.5L8 15.5M1 8.5L8 1.5"
               stroke="black"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth={2}
+              strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
@@ -94,7 +96,7 @@ export default function MobileFiltering({ modal, setModal }) {
           </span>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-[5px]">
+      <div className="flex justify-center items-center gap-[5px] mb-6">
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() => handleModal(SORT_BY, "Sort by")}
