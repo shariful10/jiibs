@@ -21,7 +21,7 @@ const Modal = ({
       <div
         className={`${
           isWidth ? isWidth : "w-fit"
-        } h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden`}
+        } w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">

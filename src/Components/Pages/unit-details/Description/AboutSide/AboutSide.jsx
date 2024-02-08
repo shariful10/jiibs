@@ -4,8 +4,6 @@ import plateIcons from "@/assets/icons/plateIcons.png";
 import Image from "next/image";
 import AboutDescription from "./AboutDescription";
 import Amenities from "./Amenities";
-import AvailableUnits from "./AvailableUnits";
-import StudioBed from "./StudioBed";
 import Transportation from "./Transportation";
 
 export default function AboutSide() {
@@ -37,7 +35,18 @@ export default function AboutSide() {
       <div className="space-y-8 md:space-y-[3.25rem] mb-5">
         {/* bet studio */}
         <div className="flex items-center justify-between gap-6">
-          <StudioBed betData={studioBed} />
+          <div className="flex gap-4 items-center justify-start">
+            <figure className="w-[75px] h-[75px] rounded-full overflow-hidden">
+              <span className="w-full h-full bg-gray-300 inline-block"></span>
+            </figure>
+            <div>
+              <h3 className="font-semibold text-3xl"> 70 Pine Street </h3>
+              <p className="font-normal text-lg flex items-center justify-start gap-6">
+                <span>612 Units</span>
+                <span>2 Active Listings</span>
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* About Description */}
@@ -72,11 +81,6 @@ export default function AboutSide() {
         {/* Amenities */}
         <div>
           <Amenities />
-        </div>
-
-        {/* Available Units */}
-        <div>
-          <AvailableUnits />
         </div>
       </div>
     </>
