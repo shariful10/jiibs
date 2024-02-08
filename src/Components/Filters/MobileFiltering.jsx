@@ -64,7 +64,7 @@ export default function MobileFiltering() {
             <path
               d="M15 8.5H1M1 8.5L8 15.5M1 8.5L8 1.5"
               stroke="black"
-              stroke-width="2"
+              strokeWidth="2"
               stroke-linecap="round"
               strokeLinejoin="round"
             />

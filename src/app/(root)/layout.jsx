@@ -16,14 +16,12 @@ const Layout = ({ children }) => {
   });
 
   return (
-    <div>
-      <Context.Provider value={{ modal: modal, setModal: setModal }}>
-        <NavigationBar />
-        <MobileBottomMenu />
-        {children}
-        <Footer />
-      </Context.Provider>
-    </div>
+    <Context.Provider value={{ modal: modal, setModal: setModal }}>
+      <NavigationBar />
+      <MobileBottomMenu />
+      {children}
+      <Footer />
+    </Context.Provider>
   );
 };
 
