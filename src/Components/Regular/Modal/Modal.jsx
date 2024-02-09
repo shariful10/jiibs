@@ -1,13 +1,5 @@
 import React from "react";
 
-// ${
-//   isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-// }
-
-// ${
-//   isMobileModal ? "hidden" : "block"
-// }
-
 const Modal = ({
   isOpen,
   onClose,
@@ -15,13 +7,12 @@ const Modal = ({
   children,
   name,
   topRightContent,
-  isMobileMiddle = true,
   isWidth,
 }) => {
   const desktopModalContent = (
     <div
-      className={`${
-        isWidth ? `${isWidth} w-full` : "w-fit"
+      className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
+        isMobileModal ? "hidden" : "block"
       } mx-5 max-h-[90vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
