@@ -22,19 +22,19 @@ const Modal = ({
     <div
       className={`${
         isWidth ? isWidth : "w-fit"
-      } max-h-[85vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
+      } max-h-[95vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
     >
+      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
+        <span onClick={onClose} className="cursor-pointer">
+          {closeIcon}
+        </span>
+        <h3 className="font-semibold text-3xl text-blackText">{name}</h3>
+        <div>{topRightContent}</div>
+      </div>
       <div
-        className="w-full h-full overflow-y-auto"
+        className="w-full max-h-[600px] h-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
-          <span onClick={onClose} className="cursor-pointer">
-            {closeIcon}
-          </span>
-          <h3 className="font-semibold text-3xl text-blackText">{name}</h3>
-          <div>{topRightContent}</div>
-        </div>
         {children}
       </div>
     </div>
