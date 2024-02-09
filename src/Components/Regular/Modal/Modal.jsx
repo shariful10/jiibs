@@ -21,8 +21,8 @@ const Modal = ({
   const desktopModalContent = (
     <div
       className={`${
-        isWidth ? isWidth : "w-fit"
-      } max-h-[95vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
+        isWidth ? `${isWidth} w-full` : "w-fit"
+      } mx-5 max-h-[90vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
         <span onClick={onClose} className="cursor-pointer">
@@ -32,8 +32,11 @@ const Modal = ({
         <div>{topRightContent}</div>
       </div>
       <div
-        className="w-full max-h-[600px] h-full overflow-y-auto"
+        className="w-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
+        style={{
+          height: `calc(100% - 128px)`,
+        }}
       >
         {children}
       </div>
