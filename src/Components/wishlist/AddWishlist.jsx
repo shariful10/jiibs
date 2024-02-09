@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function AddWishlist() {
   return (
-    <div className="w-full p-6 overflow-hidden">
-      <div className="w-[750px] flex gap-6 overflow-x-auto rounded-2xl">
+    <div className="w-[750px] p-6 overflow-x-auto">
+      <div className="w-[950px] flex gap-6 overflow-x-auto rounded-2xl">
         <div className="w-[325px] h-[250px] bg-slate-200 p-2 rounded-lg">
           <Image
             src={midtown}
