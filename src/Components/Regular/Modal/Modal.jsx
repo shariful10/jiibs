@@ -15,6 +15,7 @@ import SignUp from "@/Components/Authentication/Signup/Signup";
 import SignIn from "@/Components/Authentication/SignIn/SignIn";
 import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
 import Context from "@/Context/Context";
+import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const Modal = ({
   isOpen,
@@ -45,13 +46,12 @@ const Modal = ({
     modalContent = <SignIn />;
   } else if (modalType === "furtherOptimize") {
     modalContent = <Optimized />;
+  } else if (modalType === "createWishlist") {
+    modalContent = <AddAlbum />;
   }
   const handleCloseModal = () => {
     setModal({ ...modal, isOpen: !isOpen });
   };
-
-  console.log(isOpen);
-
   const desktopModalContent = (
     <div
       className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
