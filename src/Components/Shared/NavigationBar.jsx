@@ -6,16 +6,15 @@ import Container from "../Regular/Container";
 
 const NavigationBar = () => {
   const { modal, setModal } = useContext(Context);
-  // const router = useRouter();
 
-  const handleModal = (modalValue, modalLabel, isWidth) => {
+  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
     setModal({
       ...modal,
-      isModalOpen: !modal?.isModalOpen,
-      modalType: modalValue,
-      isMobileModal: false,
-      modalLabel: modalLabel,
-      isWidth: isWidth,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      isWidth,
     });
   };
   // const handleAuth = ({ buttonType }) => {
@@ -36,7 +35,6 @@ const NavigationBar = () => {
   // };
 
   return (
-    // <Container>
     <Container>
       <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
         {/* Login */}
@@ -52,19 +50,30 @@ const NavigationBar = () => {
           <AuthButton
             icons={loginUserIcon}
             title="Login"
-            handleAuthButton={() => handleModal("signin", "", "max-w-[480px]")}
+            handleAuthButton={() =>
+              handleModal({
+                modalType: "signin",
+                modalLabel: "Add to wishlist",
+                isMobileModal: false,
+                isWidth: "max-w-[480px]",
+              })
+            }
           />
-
           <AuthButton
             icons={signUpIcons}
             title="Sign Up"
-            handleAuthButton={() => handleModal("signup", "", "max-w-[480px]")}
+            handleAuthButton={() =>
+              handleModal({
+                modalType: "signup",
+                modalLabel: "Add to wishlist",
+                isMobileModal: false,
+                isWidth: "max-w-[480px]",
+              })
+            }
           />
         </div>
       </div>
     </Container>
-
-    // </Container>
   );
 };
 

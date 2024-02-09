@@ -1,38 +1,73 @@
-import React from "react";
+import React, { useContext } from "react";
+import {
+  BED_AND_BATHROOM,
+  LIFESTYLE,
+  PRICE,
+  SORT_BY,
+} from "@/Components/Regular/Utils/constant";
+import Sorting from "@/Components/Filters/Sorting";
+import Price from "@/Components/Filters/Price";
+import BedAndBath from "@/Components/Filters/BedAndBath";
+import LifeStyle from "@/Components/Filters/LifeStyle";
+import Filter from "@/Components/Filters/Filter";
+import AddWishlist from "@/Components/wishlist/AddWishlist";
+import SignUp from "@/Components/Authentication/Signup/Signup";
+import SignIn from "@/Components/Authentication/SignIn/SignIn";
+import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
+import Context from "@/Context/Context";
+import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const Modal = ({
   isOpen,
-  onClose,
+  modalType,
   isMobileModal,
-  children,
-  name,
+  modalLabel,
   topRightContent,
-  isMobileMiddle = true,
   isWidth,
 }) => {
-  console.log(isWidth);
+  const { modal, setModal } = useContext(Context);
+  let modalContent;
+
+  if (modalType === SORT_BY) {
+    modalContent = <Sorting />;
+  } else if (modalType === PRICE) {
+    modalContent = <Price />;
+  } else if (modalType === BED_AND_BATHROOM) {
+    modalContent = <BedAndBath />;
+  } else if (modalType === LIFESTYLE) {
+    modalContent = <LifeStyle />;
+  } else if (modalType === "filtering") {
+    modalContent = <Filter />;
+  } else if (modalType === "addWishlist") {
+    modalContent = <AddWishlist />;
+  } else if (modalType === "signup") {
+    modalContent = <SignUp />;
+  } else if (modalType === "signin") {
+    modalContent = <SignIn />;
+  } else if (modalType === "furtherOptimize") {
+    modalContent = <Optimized />;
+  } else if (modalType === "createWishlist") {
+    modalContent = <AddAlbum />;
+  }
+  const handleCloseModal = () => {
+    setModal({ ...modal, isOpen: !isOpen });
+  };
   const desktopModalContent = (
     <div
-      className={`sm:flex relative justify-center items-center ${
+      className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
         isMobileModal ? "hidden" : "block"
-      } ${
-        isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      }`}
+      } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
+      onClick={(e) => e.stopPropagation()}
     >
-      <div
-        className={`${
-          isWidth ? isWidth : "w-fit"
-        } w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden`}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
-          <span onClick={onClose} className="cursor-pointer">
-            {closeIcon}
-          </span>
-          <h3 className="font-semibold text-3xl text-blackText">{name}</h3>
-          <div>{topRightContent}</div>
-        </div>
-        {children}
+      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
+        <span onClick={handleCloseModal} className="cursor-pointer">
+          {closeIcon}
+        </span>
+        <h3 className="font-semibold text-3xl text-blackText">{modalLabel}</h3>
+        <div>{topRightContent}</div>
+      </div>
+      <div className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
+        {modalContent}
       </div>
     </div>
   );
@@ -45,12 +80,12 @@ const Modal = ({
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center border border-[#E4E4E4] p-4">
-        <h3 className="text-[20px] leading-6">{name}</h3>
-        <span onClick={onClose} className="cursor-pointer">
+        <h3 className="text-[20px] leading-6">{modalLabel}</h3>
+        <span onClick={handleCloseModal} className="cursor-pointer">
           {closeIcon}
         </span>
       </div>
-      {children}
+      {modalContent}
     </div>
   );
 
@@ -58,8 +93,8 @@ const Modal = ({
     <>
       {isOpen && (
         <div
-          className="fixed w-full h-full top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-auto scrollbar-hide"
-          onClick={onClose}
+          className="fixed w-full h-full top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-auto flex justify-center items-center scrollbar-hide"
+          onClick={handleCloseModal}
         >
           {/* Modal content  */}
           {desktopModalContent}

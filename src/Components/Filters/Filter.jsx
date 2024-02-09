@@ -13,7 +13,7 @@ export default function Filter() {
     maxPrice: "",
     minPrice: "",
     bedroom: ["Any", "Studio"],
-    bathroom: [],
+    bathroom: ["Any"],
     petFriendly: false,
     instantMove: true,
     specialOffer: true,
@@ -32,8 +32,15 @@ export default function Filter() {
     }
   };
 
-  const handleSelectBathroom = () => {
-    console.log("Select bathroom");
+  const handleSelectBathroom = (value) => {
+    const index = filters.bathroom.indexOf(value);
+    if (index !== -1) {
+      const newArr = [...filters.bathroom];
+      newArr.splice(index, 1);
+      setFilter({ ...filters, bathroom: newArr });
+    } else {
+      setFilter({ ...filters, bathroom: [...filters.bathroom, value] });
+    }
   };
 
   return (
@@ -87,12 +94,12 @@ export default function Filter() {
         <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-4">
           Bedrooms
         </span>
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-3 sm:gap-5">
           {bedroom?.map((option, index) => (
             <span
               key={index}
               onClick={() => handleSelectBedroom(option)}
-              className={`block border border-softGray py-[10px] px-[30px] rounded-full text-[20px] leading-6 hover:cursor-pointer ${
+              className={`block border border-softGray py-[10px] px-[30px] rounded-full text-[12px] leading-4 sm:text-[20px] sm:leading-6 hover:cursor-pointer ${
                 filters.bedroom.includes(option)
                   ? "bg-primary text-white"
                   : "bg-white"
@@ -108,12 +115,16 @@ export default function Filter() {
         <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-4">
           Bathroom
         </span>
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-wrap gap-3 sm:gap-5">
           {bathroom?.map((option, index) => (
             <span
               key={index}
               onClick={() => handleSelectBathroom(option)}
-              className="block border border-softGray py-[10px] px-[30px] rounded-full text-[20px] leading-6 hover:cursor-pointer"
+              className={`block border border-softGray py-[10px] px-[30px] rounded-full text-[12px] leading-4 sm:text-[20px] sm:leading-6 hover:cursor-pointer ${
+                filters.bathroom.includes(option)
+                  ? "bg-primary text-white"
+                  : "bg-white"
+              }`}
             >
               {option}
             </span>
@@ -125,7 +136,7 @@ export default function Filter() {
         <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-8">
           Features & Amenities
         </span>
-        <div className="flex flex-wrap gap-4 mb-6">
+        <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
             <Image src={concierge} alt="" />
             <span>Bike room</span>
@@ -134,21 +145,29 @@ export default function Filter() {
             <Image src={concierge} alt="" />
             <span>Concierge</span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
             <Image src={elevator} alt="" />
-            <span>Elevator</span>
+            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
+              Elevator
+            </span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
             <Image src={golf} alt="" />
-            <span>Golf simulators</span>
+            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
+              Golf simulators
+            </span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
             <Image src={laundry_basket} alt="" />
-            <span>Laundry Room</span>
+            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
+              Laundry Room
+            </span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
             <Image src={package_room} alt="" />
-            <span>Package Room</span>
+            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
+              Package Room
+            </span>
           </div>
         </div>
 
@@ -165,7 +184,7 @@ export default function Filter() {
               fill="#222222"
             />
           </svg>
-          <span className="inline-block font-semibold text-[18px] leading-6 text-blackText">
+          <span className="inline-block font-semibold text-sm sm:text-[18px] leading-6 text-blackText">
             Show More
           </span>
         </div>
@@ -178,10 +197,10 @@ export default function Filter() {
         <div className="flex flex-col gap-5">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-[18px] leading-5 text-blackText">
+              <h3 className="font-semibold text-[15px] sm:text-[18px] leading-4 sm:leading-5 text-blackText mb-[10px]">
                 Instant Move-In
               </h3>
-              <p className="text-base leading-6 font-normal text-blackText">
+              <p className="text-sm leading-4 sm:text-base sm:leading-6 font-normal text-blackText">
                 Listings you can book without waiting for Host approval
               </p>
             </div>
@@ -197,10 +216,10 @@ export default function Filter() {
           </div>
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-[18px] leading-5 text-blackText">
+              <h3 className="font-semibold text-[15px] sm:text-[18px] leading-4 sm:leading-5 text-blackText mb-[10px]">
                 Pet-Friendly
               </h3>
-              <p className="text-base leading-6 font-normal text-blackText">
+              <p className="text-sm leading-4 sm:text-base sm:leading-6 font-normal text-blackText">
                 Listings you can book without waiting for Host approval
               </p>
             </div>
@@ -216,10 +235,10 @@ export default function Filter() {
           </div>
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-[18px] leading-5 text-blackText">
+              <h3 className="font-semibold text-[15px] sm:text-[18px] leading-4 sm:leading-5 text-blackText mb-[10px]">
                 Special Offers
               </h3>
-              <p className="text-base leading-6 font-normal text-blackText">
+              <p className="text-sm leading-4 sm:text-base sm:leading-6 font-normal text-blackText">
                 Listings you can book without waiting for Host approval
               </p>
             </div>

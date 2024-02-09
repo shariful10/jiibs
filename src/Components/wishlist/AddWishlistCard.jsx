@@ -4,17 +4,12 @@ import Image from "next/image";
 
 export default function AddWishlistCard() {
   return (
-    <span className="block w-[325px] h-[250px]">
+    <div className="w-[325px] h-[250px] bg-slate-200 p-3">
       <Image
         src={midtown}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: "8px",
-        }}
+        className="w-full h-full object-cover rounded-lg"
         alt="image"
       />
-    </span>
+    </div>
   );
 }
