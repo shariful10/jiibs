@@ -13,7 +13,7 @@ const Modal = ({
     <div
       className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
         isMobileModal ? "hidden" : "block"
-      } mx-5 max-h-[90vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
+      } mx-5 max-h-[90vh] h-auto rounded-none md:rounded-[32px] bg-white overflow-y-auto`}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
         <span onClick={onClose} className="cursor-pointer">
