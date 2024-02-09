@@ -49,7 +49,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 -mt-[22px]">
             <Image src={facebook} alt="" />
             <Image src={instragram} alt="" />
             <Image src={twitter} alt="" />

@@ -13,13 +13,12 @@ const Categories = () => {
   return (
     <div>
       <Swiper
-        slidesPerView={7}
         freeMode={true}
         // pagination={{
         //   clickable: true,
         // }}
         modules={[FreeMode, Pagination]}
-        className="mySwiper md:max-w-[450px] mdx:max-w-[630px] lg:max-w-[720px] elg:max-w-[960px]"
+        className="mySwiper md:max-w-[380px] mdx:max-w-[630px] lg:max-w-[720px] elg:max-w-[960px]"
       >
         {categories.map((category) => (
           <SwiperSlide key={category.label}>
