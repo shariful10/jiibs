@@ -1,5 +1,13 @@
 import React from "react";
 
+// ${
+//   isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+// }
+
+// ${
+//   isMobileModal ? "hidden" : "block"
+// }
+
 const Modal = ({
   isOpen,
   onClose,
@@ -10,19 +18,14 @@ const Modal = ({
   isMobileMiddle = true,
   isWidth,
 }) => {
-  console.log(isWidth);
   const desktopModalContent = (
     <div
-      className={`sm:flex relative justify-center items-center ${
-        isMobileModal ? "hidden" : "block"
-      } ${
-        isMobileMiddle && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      }`}
+      className={`${
+        isWidth ? isWidth : "w-fit"
+      } max-h-[85vh] h-full rounded-none md:rounded-[32px] bg-white overflow-hidden`}
     >
       <div
-        className={`${
-          isWidth ? isWidth : "w-fit"
-        } w-full h-fit rounded-none md:rounded-[32px] bg-white overflow-hidden`}
+        className="w-full h-full overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
@@ -58,7 +61,7 @@ const Modal = ({
     <>
       {isOpen && (
         <div
-          className="fixed w-full h-full top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-auto scrollbar-hide"
+          className="fixed w-full h-full top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 z-50 overflow-x-hidden overflow-y-auto flex justify-center items-center scrollbar-hide"
           onClick={onClose}
         >
           {/* Modal content  */}
