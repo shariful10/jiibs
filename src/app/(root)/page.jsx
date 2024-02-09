@@ -5,9 +5,6 @@ import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 import Container from "@/Components/Regular/Container";
 import { data } from "@/Components/data";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
-import midtown from "@/assets/images/apartment/Midtown-East.png";
-import Image from "next/image";
 
 const Home = () => {
   const apartments = data.apartments;
