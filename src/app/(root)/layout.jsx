@@ -5,22 +5,26 @@ import Footer from "@/Components/Shared/Footer";
 import NavigationBar from "@/Components/Shared/NavigationBar";
 import Context from "@/Context/Context";
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
+import Modal from "@/Components/Regular/Modal/Modal";
 
 const Layout = ({ children }) => {
   const [modal, setModal] = useState({
-    isModalOpen: false,
+    isOpen: false,
     modalType: "",
     isMobileModal: false,
     modalLabel: "",
     isWidth: "",
+    topRightContent: "",
   });
 
   return (
-    <Context.Provider value={{ modal: modal, setModal: setModal }}>
+    <Context.Provider value={{ modal, setModal }}>
       <NavigationBar />
       <MobileBottomMenu />
       {children}
       <Footer />
+      {/* Modal  */}
+      {modal?.isOpen && <Modal {...modal} />}
     </Context.Provider>
   );
 };

@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import Modal from "@/Components/Regular/Modal/Modal";
-import AddAlbum from "@/Components/wishlist/AddAlbum";
+import React, { useContext } from "react";
 import NotLogin from "@/Components/wishlist/NotLogin";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
 import Album from "@/Components/wishlist/Album";
 import WishlistsMobile from "@/Components/wishlist/WishlistsMobile";
+import Context from "@/Context/Context";
 
 const whitePlusIcon = (
   <svg
@@ -36,36 +34,18 @@ const whitePlusIcon = (
 );
 
 export default function page() {
-  const [modal, setModal] = useState({
-    isModalOpen: false,
-    modalType: "",
-    isMobileModal: false,
-    modalLabel: "",
-  });
+  const { modal, setModal } = useContext(Context);
   const isLogin = false;
 
-  // setting modal content
-  let modalContent;
-
-  if (modal?.modalType === "album") {
-    modalContent = <AddAlbum />;
-  } else if (modal?.modalType === "addWishlist") {
-    modalContent = <AddWishlist />;
-  }
-
-  const handleModal = (modalValue, modalLabel, isWidth) => {
+  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
     setModal({
       ...modal,
-      isModalOpen: !modal?.isModalOpen,
-      modalType: modalValue,
-      isMobileModal: true,
-      modalLabel: modalLabel,
-      isWidth: isWidth,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      isWidth,
     });
-  };
-
-  const handleCloseModal = () => {
-    setModal({ ...modal, isModalOpen: !modal?.isModalOpen });
   };
 
   return (
@@ -86,9 +66,14 @@ export default function page() {
               </h1>
               <button
                 className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
-                // onClick={() =>
-                //   handleModal("album", "Create wishlist", "max-w-[700px]")
-                // }
+                onClick={() =>
+                  handleModal({
+                    modalType: "createWishlist",
+                    modalLabel: "Create wishlist",
+                    isMobileModal: false,
+                    isWidth: "max-w-[700px]",
+                  })
+                }
               >
                 <span>{whitePlusIcon}</span>
                 <span>Create album</span>
@@ -106,16 +91,6 @@ export default function page() {
             </div>
           </div>
         </>
-      )}
-      {modal?.isModalOpen && (
-        <Modal
-          isOpen={modal?.isModalOpen}
-          onClose={handleCloseModal}
-          name={modal?.modalLabel}
-          isMobileModal={modal?.isMobileModal}
-        >
-          {modalContent}
-        </Modal>
       )}
     </div>
   );

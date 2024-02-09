@@ -1,15 +1,18 @@
 import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
 import theSun from "@/assets/images/apartment/the-sun.png";
+import Context from "@/Context/Context";
+import { useContext } from "react";
 
-const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
-  const handleModal = (modalValue, modalLabel) => {
+const ApartmentCard = ({ apartment = {} }) => {
+  const { modal, setModal } = useContext(Context);
+  const handleModal = ({ modalType, modalLabel, isMobileModal }) => {
     setModal({
       ...modal,
-      isModalOpen: !modal?.isModalOpen,
-      modalType: modalValue,
-      isMobileModal: false,
-      modalLabel: modalLabel,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
     });
   };
 
@@ -25,7 +28,13 @@ const ApartmentCard = ({ apartment = {}, modal, setModal }) => {
             />
             <div
               className=" absolute top-3 right-3"
-              // onClick={() => handleModal("addWishlist", "Add to wishlist")}
+              onClick={() =>
+                handleModal({
+                  modalType: "addWishlist",
+                  modalLabel: "Add to wishlist",
+                  isMobileModal: false,
+                })
+              }
             >
               <Image src={heartButton} alt="Heart button" />
             </div>
