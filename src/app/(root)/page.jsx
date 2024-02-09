@@ -19,16 +19,6 @@ const Home = () => {
       {/* Mobile categories and filtering  */}
       <MobileFiltering />
 
-      <div className="w-[750px] flex gap-6 overflow-x-auto rounded-2xl">
-        <div className="w-[325px] h-[250px] bg-slate-200 p-2 rounded-lg">
-          <Image
-            src={midtown}
-            alt="Image 1" // Or provide layout prop if needed
-          />
-        </div>
-        {/* Repeat for other images, ensuring dimensions and `src` are correct */}
-      </div>
-
       <div className="pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:max-w-[1280px] mx-auto">
         {apartments.map((apartment, index) => (
           <ApartmentCard key={index} apartment={apartment} />
