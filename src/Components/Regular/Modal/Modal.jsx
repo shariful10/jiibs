@@ -56,7 +56,7 @@ const Modal = ({
     <div
       className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
         isMobileModal ? "hidden" : "block"
-      } mx-5 max-h-[90vh] h-auto rounded-none md:rounded-[32px] bg-white overflow-y-auto`}
+      } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
         <span onClick={handleCloseModal} className="cursor-pointer">
@@ -66,11 +66,8 @@ const Modal = ({
         <div>{topRightContent}</div>
       </div>
       <div
-        className="w-full overflow-y-auto"
+        className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar"
         onClick={(e) => e.stopPropagation()}
-        style={{
-          height: `calc(100% - 128px)`,
-        }}
       >
         {modalContent}
       </div>
