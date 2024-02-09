@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { MdOutlineVerifiedUser } from "react-icons/md";
 
 const Form = ({ setUserInfo }) => {
   const currentYear = new Date().getFullYear();
+  const router = useRouter();
 
   let days = [];
   for (let i = 1; i <= 31; i++) {
@@ -34,6 +35,7 @@ const Form = ({ setUserInfo }) => {
 
     setUserInfo({ firstName, lastName, email, birthDate, phoneNumber });
     form.reset();
+    router.push("/success");
   };
 
   return (
