@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <div className="p-10">
+    <div className="p-10 max-w-[450px] w-full mx-auto">
       <h3 className="font-semibold text-[36px] leading-[45px] text-blackText text-center mb-5">
         Login to JIBBS
       </h3>

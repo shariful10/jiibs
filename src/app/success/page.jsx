@@ -1,4 +1,4 @@
-import RegistrationSuccess from "@/Components/Success/RegistrationSuccess";
+import RegistrationSuccess from "@/Components/CreateProfile/Success/RegistrationSuccess";
 import React from "react";
 
 const page = () => {
