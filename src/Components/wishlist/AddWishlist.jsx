@@ -4,19 +4,22 @@ import Image from "next/image";
 
 export default function AddWishlist() {
   return (
-    <div className="w-[750px] p-6 overflow-x-auto">
-      <div className="w-[950px] flex gap-6 overflow-x-auto rounded-2xl">
-        <div className="w-[325px] h-[250px] bg-slate-200 p-2 rounded-lg">
+    <div className="w-full p-6 overflow-hidden">
+      <div className="w-[750px] grid grid-cols-2 gap-6 overflow-x-auto rounded-2xl">
+        <div className="w-[325px] bg-slate-400 p-2 rounded-lg">
           <Image
             src={midtown}
             alt="image"
-            width="325px"
+            width="100%"
             height="250px"
             objectFit="contain"
             layout="responsive"
+            className="w-full"
           />
+          <h4>sdsd</h4>
+          <p>sdsd</p>
         </div>
-        <div className="w-[325px] h-[250px] bg-slate-200 p-2 rounded-lg">
+        <div className="w-[325px] bg-slate-200 p-2 rounded-lg">
           <Image
             src={midtown}
             alt="image"
@@ -25,8 +28,10 @@ export default function AddWishlist() {
             objectFit="contain"
             layout="responsive"
           />
+          <h4>sdsd</h4>
+          <p>sdsd</p>
         </div>
-        <div className="w-[325px] h-[250px] bg-slate-200 p-2 rounded-lg">
+        <div className="w-[325px] bg-slate-200 p-2 rounded-lg">
           <Image
             src={midtown}
             alt="image"
@@ -35,6 +40,8 @@ export default function AddWishlist() {
             objectFit="contain"
             layout="responsive"
           />
+          <h4>sdsd</h4>
+          <p>sdsd</p>
         </div>
       </div>
       <div className="flex justify-center w-full mt-5">
