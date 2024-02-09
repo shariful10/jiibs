@@ -1,6 +1,5 @@
 "use client";
 
-import Categ from "@/Components/Cat";
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
