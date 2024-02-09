@@ -50,6 +50,8 @@ const Modal = ({
     setModal({ ...modal, isOpen: !isOpen });
   };
 
+  console.log(isOpen);
+
   const desktopModalContent = (
     <div
       className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${

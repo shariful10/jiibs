@@ -17,16 +17,14 @@ const Layout = ({ children }) => {
     topRightContent: "",
   });
 
-  console.log(modal);
-
   return (
-    <Context.Provider value={{ modal: modal, setModal: setModal }}>
+    <Context.Provider value={{ modal, setModal }}>
       <NavigationBar />
       <MobileBottomMenu />
       {children}
       <Footer />
       {/* Modal  */}
-      {modal?.isModalOpen && <Modal {...modal} />}
+      {modal?.isOpen && <Modal {...modal} />}
     </Context.Provider>
   );
 };
