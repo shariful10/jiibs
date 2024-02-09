@@ -23,7 +23,7 @@ export default function CategoriesAndFilter() {
   const handleModal = (modalValue, modalLabel, isWidth) => {
     setModal({
       ...modal,
-      isModalOpen: !modal?.isModalOpen,
+      isOpen: !modal?.isOpen,
       modalType: modalValue,
       isMobileModal: false,
       modalLabel: modalLabel,
