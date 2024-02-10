@@ -10,7 +10,7 @@ const Home = () => {
   const apartments = data.apartments;
 
   return (
-    <Container className="py-10 px-6 md:px-0">
+    <>
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
@@ -21,7 +21,7 @@ const Home = () => {
           <ApartmentCard key={index} apartment={apartment} />
         ))}
       </div>
-    </Container>
+    </>
   );
 };
 

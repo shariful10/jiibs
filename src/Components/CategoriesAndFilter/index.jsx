@@ -19,37 +19,46 @@ const filterIcon = (
 
 export default function CategoriesAndFilter() {
   const { modal, setModal } = useContext(Context);
-
-  const handleModal = (modalValue, modalLabel, isWidth) => {
+  const handleModal = ({ modalType, modalLabel, isWidth, topRightContent }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
-      modalType: modalValue,
+      modalType,
       isMobileModal: false,
-      modalLabel: modalLabel,
-      isWidth: isWidth,
+      modalLabel,
+      isWidth,
+      topRightContent,
     });
   };
 
   return (
-    <div>
-      <div className="hidden md:flex items-center justify-between gap-12 overflow-x-auto overflow-y-hidden mb-8">
-        <Categories />
-        <div className="hidden md:flex flex-nowrap justify-end whitespace-nowrap gap-3 items-center max-w-[350px] w-full">
-          <button
-            className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
-            onClick={() => handleModal("filtering", "Filter", "max-w-[750px]")}
-          >
-            <span>{filterIcon}</span>
-            Filters
-          </button>
-          <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
-            Optimize
-          </button>
-          <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
-            <Link href={"/wishlists"}>Sort By</Link>
-          </button>
-        </div>
+    <div className="hidden md:flex items-center justify-between gap-12 overflow-x-auto overflow-y-hidden mb-8">
+      <Categories />
+      <div className="hidden md:flex flex-nowrap justify-end whitespace-nowrap gap-3 items-center max-w-[350px] w-full">
+        <button
+          className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+          onClick={() =>
+            handleModal({
+              modalType: "filtering",
+              modalLabel: "Filter",
+              isWidth: "max-w-[750px]",
+              topRightContent: (
+                <span className="inline-block font-semibold text-xl leading-6 text-primary">
+                  Reset
+                </span>
+              ),
+            })
+          }
+        >
+          <span>{filterIcon}</span>
+          Filters
+        </button>
+        <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+          Optimize
+        </button>
+        <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+          <Link href={"/wishlists"}>Sort By</Link>
+        </button>
       </div>
     </div>
   );
