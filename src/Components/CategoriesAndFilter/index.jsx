@@ -2,6 +2,12 @@ import React, { useContext } from "react";
 import Categories from "../Categories/Categories";
 import Link from "next/link";
 import Context from "@/Context/Context";
+import {
+  FILTERING,
+  FURTHER_OPTIMIZE,
+} from "@/Components/Regular/Utils/constant";
+import Filter from "../Filters/Filter";
+import Optimized from "../Authentication/VerifyEmail/Optimised";
 
 const filterIcon = (
   <svg
@@ -19,7 +25,13 @@ const filterIcon = (
 
 export default function CategoriesAndFilter() {
   const { modal, setModal } = useContext(Context);
-  const handleModal = ({ modalType, modalLabel, isWidth, topRightContent }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isWidth,
+    topRightContent,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
@@ -28,9 +40,19 @@ export default function CategoriesAndFilter() {
       modalLabel,
       isWidth,
       topRightContent,
+      modalContent,
     });
   };
-
+  const handleCloseModal = () => {
+    setModal({
+      isOpen: false,
+      modalType: "",
+      isMobileModal: "",
+      modalLabel: "",
+      topRightContent: "",
+      modalContent: "",
+    });
+  };
   return (
     <div className="hidden md:flex items-center justify-between gap-12 overflow-x-auto overflow-y-hidden pt-10">
       <Categories />
@@ -39,9 +61,10 @@ export default function CategoriesAndFilter() {
           className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
           onClick={() =>
             handleModal({
-              modalType: "filtering",
-              modalLabel: "Filter",
+              modalType: FILTERING?.value,
+              modalLabel: FILTERING?.label,
               isWidth: "max-w-[750px]",
+              modalContent: <Filter />,
               topRightContent: (
                 <span className="inline-block font-semibold text-xl leading-6 text-primary">
                   Reset
@@ -53,7 +76,25 @@ export default function CategoriesAndFilter() {
           <span>{filterIcon}</span>
           Filters
         </button>
-        <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+        <button
+          className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+          onClick={() =>
+            handleModal({
+              modalType: FURTHER_OPTIMIZE?.value,
+              modalLabel: FURTHER_OPTIMIZE?.label,
+              isWidth: "max-w-[480px]",
+              modalContent: <Optimized />,
+              topRightContent: (
+                <span
+                  className="inline-block font-semibold text-xl leading-6 cursor-pointer text-blackText"
+                  onClick={handleCloseModal}
+                >
+                  Skip
+                </span>
+              ),
+            })
+          }
+        >
           Optimize
         </button>
         <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
