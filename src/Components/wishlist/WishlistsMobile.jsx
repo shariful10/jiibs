@@ -1,5 +1,6 @@
 import Context from "@/Context/Context";
 import React, { useContext, useState } from "react";
+import WishlistDetailsMobile from "./WishlistDetailsMobile";
 
 const newAlbumIcon = (
   <svg
@@ -31,6 +32,7 @@ export default function WishlistsMobile() {
   };
   return (
     <div>
+      <WishlistDetailsMobile />
       <div className="flex justify-between items-center">
         <div className="flex gap-5 items-center py-5">
           <span
@@ -62,7 +64,7 @@ export default function WishlistsMobile() {
           className="font-semibold text-base leading-5 text-blackText cursor-pointer"
           onClick={() => setIsEdit(true)}
         >
-          Edit
+          {isEdit ? "Done" : "Edit"}
         </p>
       </div>
 

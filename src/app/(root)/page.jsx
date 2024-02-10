@@ -3,7 +3,6 @@
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
-import Container from "@/Components/Regular/Container";
 import { data } from "@/Components/data";
 
 const Home = () => {
