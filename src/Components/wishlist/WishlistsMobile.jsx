@@ -93,11 +93,14 @@ export default function WishlistsMobile() {
           My albums
         </h2>
         {/* albums  */}
-        <div className="flex flex-wrap gap-x-3 gap-y-3">
+        <div
+          // className="flex flex-wrap gap-x-3 gap-y-3"
+          className="pt-4 pb-20 grid grid-cols-2 gap-x-3 gap-y-3"
+        >
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md relative">
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-50"></span>
+                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
@@ -109,7 +112,11 @@ export default function WishlistsMobile() {
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md"></div>
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
+              {isEdit && (
+                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+              )}
+            </div>
             <div className="flex flex-col gap-1 mt-2">
               <h3 className="font-semibold text-base leading-4 text-blackText">
                 Building
@@ -119,7 +126,11 @@ export default function WishlistsMobile() {
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md"></div>
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
+              {isEdit && (
+                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+              )}
+            </div>
             <div className="flex flex-col gap-1 mt-2">
               <h3 className="font-semibold text-base leading-4 text-blackText">
                 Building
@@ -129,7 +140,11 @@ export default function WishlistsMobile() {
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md"></div>
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
+              {isEdit && (
+                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+              )}
+            </div>
             <div className="flex flex-col gap-1 mt-2">
               <h3 className="font-semibold text-base leading-4 text-blackText">
                 Building
