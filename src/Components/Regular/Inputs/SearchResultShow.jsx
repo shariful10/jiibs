@@ -17,11 +17,12 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
 
   return (
     <>
-      <div className="bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md">
+      {/* desktop mode */}
+      <div className="block bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md px-3 md:px-0 pt-4 md:pt-0">
         <Container>
           {/* logo, search, close */}
           <div className="flex items-center justify-between gap-4">
-            <div className="">
+            <div className="hidden md:block">
               <Logo />
             </div>
             <div className="flex-1">
@@ -41,35 +42,70 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
             </div>
           </div>
 
-          {/* show items */}
-          <div className="py-5 ">
-            <div className="flex items-center justify-start gap-3 border-b-[4px] border-b-softGray ">
-              <TabItems tabs={tabs} handle={setTabs} title="building" />
-              <TabItems tabs={tabs} handle={setTabs} title="unit" />
+          <div className="flex items-center justify-between gap-4">
+            <div className="invisible hidden md:block">
+              <Logo />
             </div>
 
-            {/* search items */}
-            <div className="w-full flex flex-col items-center justify-start gap-4 py-8">
-              {demoData?.length ? (
-                <>
-                  {demoData?.map((item, idx) => (
-                    <SearchItem item={item} key={idx} />
-                  ))}
-                </>
-              ) : (
-                ""
-              )}
+            <div className="flex-1">
+              {/* show items */}
+              <div className="py-5 ">
+                <div className="flex items-center justify-start gap-3 border-b-[4px] border-b-softGray ">
+                  <TabItems tabs={tabs} handle={setTabs} title="building" />
+                  <TabItems tabs={tabs} handle={setTabs} title="unit" />
+                </div>
+
+                {/* search items */}
+                <div className="w-full flex flex-col items-center justify-start gap-4 py-8">
+                  {demoData?.length ? (
+                    <>
+                      {demoData?.map((item, idx) => (
+                        <SearchItem item={item} key={idx} />
+                      ))}
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="invisible">
+              <button
+                onClick={() => setOpenDropDown(false)}
+                className="w-5 h-5 rounded-full flex items-center justify-center font-extrabold text-3xl"
+              >
+                <RxCross1 />
+              </button>
             </div>
           </div>
         </Container>
+
         {/* clear & show button */}
         <div className="py-5 border-t-2 border-lightGray">
           <Container>
             <div className="flex items-center justify-between gap-4">
-              <button>Clear all </button>
-              <ButtonPrimary className="!w-max !py-2">
-                <span> {`Show ${demoData?.length} Rentals`} </span>
-              </ButtonPrimary>
+              <div className="invisible hidden md:block">
+                <Logo />
+              </div>
+
+              <div className="flex-1">
+                <div className="flex items-center justify-between gap-4">
+                  <button>Clear all </button>
+                  <ButtonPrimary className="!w-max !py-2">
+                    <span> {`Show ${demoData?.length} Rentals`} </span>
+                  </ButtonPrimary>
+                </div>
+              </div>
+
+              <div className="invisible">
+                <button
+                  onClick={() => setOpenDropDown(false)}
+                  className="w-5 h-5 rounded-full flex items-center justify-center font-extrabold text-3xl"
+                >
+                  <RxCross1 />
+                </button>
+              </div>
             </div>
           </Container>
         </div>
