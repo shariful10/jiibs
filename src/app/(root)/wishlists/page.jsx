@@ -37,14 +37,12 @@ export default function page() {
   const { modal, setModal } = useContext(Context);
   const isLogin = false;
 
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({ modalType, modalLabel }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
       modalType,
-      isMobileModal,
       modalLabel,
-      isWidth,
     });
   };
 
