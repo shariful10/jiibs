@@ -4,12 +4,15 @@ import Image from "next/image";
 
 export default function AddWishlistCard() {
   return (
-    <div className="w-[325px] h-[250px] bg-slate-200 p-3">
+    <div className="min-w-[325px] rounded-lg">
       <Image
         src={midtown}
-        className="w-full h-full object-cover rounded-lg"
+        style={{ boxShadow: "5px 5px 17px 4px #B1B1B140" }}
+        className="w-full h-[250px] border-lightGray border-[5px] object-cover rounded-xl"
         alt="image"
       />
+      <h2>Buildings</h2>
+      <p>Saved 1</p>
     </div>
   );
 }
