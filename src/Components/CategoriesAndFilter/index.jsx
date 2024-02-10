@@ -33,9 +33,9 @@ export default function CategoriesAndFilter() {
 
   return (
     <div>
-      <div className="hidden md:flex items-center justify-between gap-[40px] overflow-x-auto overflow-y-hidden mb-8">
+      <div className="hidden md:flex items-center justify-between gap-12 overflow-x-auto overflow-y-hidden mb-8">
         <Categories />
-        <div className="hidden md:flex flex-wrap gap-3 items-center">
+        <div className="hidden md:flex flex-nowrap justify-end whitespace-nowrap gap-3 items-center max-w-[350px] w-full">
           <button
             className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
             onClick={() => handleModal("filtering", "Filter", "max-w-[750px]")}
