@@ -32,7 +32,6 @@ export default function WishlistsMobile() {
   };
   return (
     <div>
-      <WishlistDetailsMobile />
       <div className="flex justify-between items-center">
         <div className="flex gap-5 items-center py-5">
           <span
