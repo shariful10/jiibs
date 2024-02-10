@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import Categories from "../Categories/Categories";
 import Link from "next/link";
 import Context from "@/Context/Context";
-import { FILTERING } from "@/Components/Regular/Utils/constant";
+import {
+  FILTERING,
+  FURTHER_OPTIMIZE,
+} from "@/Components/Regular/Utils/constant";
 import Filter from "../Filters/Filter";
+import Optimized from "../Authentication/VerifyEmail/Optimised";
 
 const filterIcon = (
   <svg
@@ -63,7 +67,22 @@ export default function CategoriesAndFilter() {
           <span>{filterIcon}</span>
           Filters
         </button>
-        <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+        <button
+          className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+          onClick={() =>
+            handleModal({
+              modalType: FURTHER_OPTIMIZE?.value,
+              modalLabel: FURTHER_OPTIMIZE?.label,
+              isWidth: "max-w-[480px]",
+              modalContent: <Optimized />,
+              topRightContent: (
+                <span className="inline-block font-semibold text-xl leading-6 text-blackText">
+                  Skip
+                </span>
+              ),
+            })
+          }
+        >
           Optimize
         </button>
         <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
