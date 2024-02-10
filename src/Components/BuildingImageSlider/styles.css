@@ -1,0 +1,17 @@
+/* slider arrow button style  */
+.swiper-Btn {
+  @apply w-[38px] h-[38px] rounded-full bg-black/75 text-xl;
+}
+.swiper-Btn::after {
+  @apply text-2xl font-extrabold;
+}
+.swiper-button-next {
+  @apply swiper-Btn pl-1;
+}
+.swiper-button-prev {
+  @apply swiper-Btn;
+}
+
+.swiper-button-prev .swiper-button-disabled {
+  cursor: not-allowed !important;
+}
