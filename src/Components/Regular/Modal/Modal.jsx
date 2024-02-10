@@ -54,9 +54,9 @@ const Modal = ({
   };
   const desktopModalContent = (
     <div
-      className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
+      className={`${
         isMobileModal ? "hidden" : "block"
-      } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
+      } w-fit mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-6 px-10">
