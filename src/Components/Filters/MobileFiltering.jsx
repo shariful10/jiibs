@@ -99,7 +99,7 @@ export default function MobileFiltering() {
       </div>
       <div className="flex justify-center items-center gap-[5px]">
         <div
-          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
               modalType: SORT_BY,
@@ -109,12 +109,12 @@ export default function MobileFiltering() {
           }
         >
           <span>{sortIcon}</span>
-          <span className="font-semibold text-sm leading-4 text-[#626262]">
+          <span className="font-semibold text-sm leading-4 text-darkGray">
             Sort
           </span>
         </div>
         <div
-          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
               modalType: LIFESTYLE,
@@ -123,13 +123,13 @@ export default function MobileFiltering() {
             })
           }
         >
-          <span className="font-semibold text-sm leading-4 text-[#626262]">
+          <span className="font-semibold text-sm leading-4 text-darkGray">
             Lifestyle
           </span>
           <span>{arrowIcon}</span>
         </div>
         <div
-          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
               modalType: PRICE,
@@ -138,13 +138,13 @@ export default function MobileFiltering() {
             })
           }
         >
-          <span className="font-semibold text-sm leading-4 text-[#626262]">
+          <span className="font-semibold text-sm leading-4 text-darkGray">
             price
           </span>
           <span>{arrowIcon}</span>
         </div>
         <div
-          className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
+          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
               modalType: BED_AND_BATHROOM,
@@ -153,7 +153,7 @@ export default function MobileFiltering() {
             })
           }
         >
-          <span className="font-semibold text-sm leading-4 text-[#626262]">
+          <span className="font-semibold text-sm leading-4 text-darkGray">
             Bed & Bath
           </span>
           <span>{arrowIcon}</span>
