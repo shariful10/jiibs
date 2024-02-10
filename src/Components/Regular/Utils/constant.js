@@ -23,11 +23,11 @@ export const ADD_WISHLIST = {
   value: "addWishlist",
 };
 export const SIGNUP = {
-  label: "",
+  label: "Sign up to JIIBS",
   value: "signup",
 };
 export const SIGNIN = {
-  label: "",
+  label: "Login to JIIBS",
   value: "signin",
 };
 export const FURTHER_OPTIMIZE = {

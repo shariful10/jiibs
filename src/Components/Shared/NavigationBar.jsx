@@ -2,7 +2,9 @@ import { useContext } from "react";
 import Context from "@/Context/Context";
 import Link from "next/link";
 import InputSearchBar from "../Regular/Inputs/InputSearchBar";
-import Container from "../Regular/Container";
+import { SIGNIN, SIGNUP } from "../Regular/Utils/constant";
+import SignUp from "../Authentication/Signup/Signup";
+import SignIn from "../Authentication/SignIn/SignIn";
 
 const NavigationBar = () => {
   const { modal, setModal } = useContext(Context);
@@ -17,22 +19,6 @@ const NavigationBar = () => {
       isWidth,
     });
   };
-  // const handleAuth = ({ buttonType }) => {
-  //   const isMobile = window.innerWidth <= 767;
-  //   if (isMobile) {
-  //     if (buttonType === "signin") {
-  //       router.push("/login");
-  //     } else if (buttonType === "signup") {
-  //       router.push("/signup");
-  //     }
-  //   } else {
-  //     if (buttonType === "signin") {
-  //       handleModal("signin", "", "max-w-[480px]");
-  //     } else if (buttonType === "signup") {
-  //       handleModal("signup", "", "max-w-[480px]");
-  //     }
-  //   }
-  // };
 
   return (
     <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
@@ -51,10 +37,11 @@ const NavigationBar = () => {
           title="Login"
           handleAuthButton={() =>
             handleModal({
-              modalType: "signin",
-              modalLabel: "Login to JIIBS",
+              modalType: SIGNIN?.value,
+              modalLabel: SIGNIN?.label,
               isMobileModal: false,
               isWidth: "max-w-[480px]",
+              modalContent: <SignIn />,
             })
           }
         />
@@ -63,10 +50,11 @@ const NavigationBar = () => {
           title="Sign Up"
           handleAuthButton={() =>
             handleModal({
-              modalType: "signup",
-              modalLabel: "Sign up to JIIBS",
+              modalType: SIGNUP?.value,
+              modalLabel: SIGNUP?.label,
               isMobileModal: false,
               isWidth: "max-w-[480px]",
+              modalContent: <SignUp />,
             })
           }
         />
@@ -91,7 +79,7 @@ function AuthButton({ icons, title, handleAuthButton }) {
 }
 
 // icons
-var loginUserIcon = (
+const loginUserIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -105,7 +93,7 @@ var loginUserIcon = (
     />
   </svg>
 );
-var signUpIcons = (
+const signUpIcons = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
@@ -124,22 +112,5 @@ var signUpIcons = (
         <rect width={24} height={24} fill="white" />
       </clipPath>
     </defs>
-  </svg>
-);
-var dropDownIcons = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="11"
-    height="10"
-    viewBox="0 0 11 10"
-    fill="none"
-  >
-    <path d="M7.94531 4.5L4.94531 7.5L1.94531 4.5" fill="#222222" />
-    <path
-      d="M7.94531 4.5L4.94531 7.5L1.94531 4.5"
-      stroke="#222222"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
   </svg>
 );
