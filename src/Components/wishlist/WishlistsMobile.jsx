@@ -93,14 +93,13 @@ export default function WishlistsMobile() {
           My albums
         </h2>
         {/* albums  */}
-        <div
-          // className="flex flex-wrap gap-x-3 gap-y-3"
-          className="pt-4 pb-20 grid grid-cols-2 gap-x-3 gap-y-3"
-        >
+        <div className="pt-4 pb-20 grid grid-cols-2 gap-x-3 gap-y-3">
           <div className="flex flex-col">
             <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
@@ -114,7 +113,9 @@ export default function WishlistsMobile() {
           <div className="flex flex-col">
             <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
@@ -128,7 +129,9 @@ export default function WishlistsMobile() {
           <div className="flex flex-col">
             <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
@@ -142,7 +145,9 @@ export default function WishlistsMobile() {
           <div className="flex flex-col">
             <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-30"></span>
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
