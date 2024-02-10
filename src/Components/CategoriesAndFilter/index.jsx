@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import Categories from "../Categories/Categories";
 import Link from "next/link";
 import Context from "@/Context/Context";
+import { FILTERING } from "@/Components/Regular/Utils/constant";
+import Filter from "../Filters/Filter";
 
 const filterIcon = (
   <svg
@@ -19,7 +21,13 @@ const filterIcon = (
 
 export default function CategoriesAndFilter() {
   const { modal, setModal } = useContext(Context);
-  const handleModal = ({ modalType, modalLabel, isWidth, topRightContent }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isWidth,
+    topRightContent,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
@@ -28,6 +36,7 @@ export default function CategoriesAndFilter() {
       modalLabel,
       isWidth,
       topRightContent,
+      modalContent,
     });
   };
 
@@ -39,9 +48,10 @@ export default function CategoriesAndFilter() {
           className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
           onClick={() =>
             handleModal({
-              modalType: "filtering",
-              modalLabel: "Filter",
+              modalType: FILTERING?.value,
+              modalLabel: FILTERING?.label,
               isWidth: "max-w-[750px]",
+              modalContent: <Filter />,
               topRightContent: (
                 <span className="inline-block font-semibold text-xl leading-6 text-primary">
                   Reset

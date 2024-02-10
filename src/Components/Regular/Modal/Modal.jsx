@@ -1,49 +1,16 @@
 import React, { useContext } from "react";
-import {
-  BED_AND_BATHROOM,
-  LIFESTYLE,
-  PRICE,
-  SORT_BY,
-} from "@/Components/Regular/Utils/constant";
-import Sorting from "@/Components/Filters/Sorting";
-import Price from "@/Components/Filters/Price";
-import BedAndBath from "@/Components/Filters/BedAndBath";
-import LifeStyle from "@/Components/Filters/LifeStyle";
-import Filter from "@/Components/Filters/Filter";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
-import SignUp from "@/Components/Authentication/Signup/Signup";
-import SignIn from "@/Components/Authentication/SignIn/SignIn";
-import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
 import Context from "@/Context/Context";
-import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const Modal = ({
   isOpen,
-  modalType,
   isMobileModal,
   modalLabel,
   topRightContent,
   modalContent,
   isWidth,
 }) => {
-  const { modal, setModal } = useContext(Context);
-  // let modalContent;
+  const { setModal } = useContext(Context);
 
-  if (modalType === "filtering") {
-    modalContent = <Filter />;
-  } else if (modalType === "addWishlist") {
-    modalContent = <AddWishlist />;
-  } else if (modalType === "signup") {
-    modalContent = <SignUp />;
-  } else if (modalType === "signin") {
-    modalContent = <SignIn />;
-  } else if (modalType === "furtherOptimize") {
-    modalContent = <Optimized />;
-  } else if (modalType === "createWishlist") {
-    modalContent = <AddAlbum />;
-  } else if (modalType === "createWishlistMobile") {
-    modalContent = <AddAlbum />;
-  }
   const handleCloseModal = () => {
     setModal({
       isOpen: !isOpen,

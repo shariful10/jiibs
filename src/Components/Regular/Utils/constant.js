@@ -42,3 +42,17 @@ export const CREATE_WISHLIST_MOBILE = {
   label: "",
   value: "createWishlistMobile",
 };
+
+if (modalType === "addWishlist") {
+  modalContent = <AddWishlist />;
+} else if (modalType === "signup") {
+  modalContent = <SignUp />;
+} else if (modalType === "signin") {
+  modalContent = <SignIn />;
+} else if (modalType === "furtherOptimize") {
+  modalContent = <Optimized />;
+} else if (modalType === "createWishlist") {
+  modalContent = <AddAlbum />;
+} else if (modalType === "createWishlistMobile") {
+  modalContent = <AddAlbum />;
+}
