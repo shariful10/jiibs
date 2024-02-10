@@ -5,6 +5,8 @@ import NotLogin from "@/Components/wishlist/NotLogin";
 import Album from "@/Components/wishlist/Album";
 import WishlistsMobile from "@/Components/wishlist/WishlistsMobile";
 import Context from "@/Context/Context";
+import { CREATE_WISHLIST } from "@/Components/Regular/Utils/constant";
+import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const whitePlusIcon = (
   <svg
@@ -37,12 +39,14 @@ export default function page() {
   const { modal, setModal } = useContext(Context);
   const isLogin = false;
 
-  const handleModal = ({ modalType, modalLabel }) => {
+  const handleModal = ({ modalType, modalLabel, isWidth, modalContent }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
       modalType,
       modalLabel,
+      isWidth,
+      modalContent,
     });
   };
 
@@ -66,10 +70,11 @@ export default function page() {
                 className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
                 onClick={() =>
                   handleModal({
-                    modalType: "createWishlist",
-                    modalLabel: "Create wishlist",
+                    modalType: CREATE_WISHLIST?.value,
+                    modalLabel: CREATE_WISHLIST?.label,
                     isMobileModal: false,
-                    isWidth: "max-w-[700px]",
+                    isWidth: "max-w-[630px]",
+                    modalContent: <AddAlbum />,
                   })
                 }
               >

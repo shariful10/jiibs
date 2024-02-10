@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <div className="p-10 max-w-[450px] w-full mx-auto">
+    <div className="p-10 w-full">
       <div className="flex justify-between items-center gap-2">
         <input
           type="text"

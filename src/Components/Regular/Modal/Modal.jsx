@@ -1,55 +1,16 @@
 import React, { useContext } from "react";
-import {
-  BED_AND_BATHROOM,
-  LIFESTYLE,
-  PRICE,
-  SORT_BY,
-} from "@/Components/Regular/Utils/constant";
-import Sorting from "@/Components/Filters/Sorting";
-import Price from "@/Components/Filters/Price";
-import BedAndBath from "@/Components/Filters/BedAndBath";
-import LifeStyle from "@/Components/Filters/LifeStyle";
-import Filter from "@/Components/Filters/Filter";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
-import SignUp from "@/Components/Authentication/Signup/Signup";
-import SignIn from "@/Components/Authentication/SignIn/SignIn";
-import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
 import Context from "@/Context/Context";
-import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const Modal = ({
   isOpen,
-  modalType,
   isMobileModal,
   modalLabel,
   topRightContent,
+  modalContent,
+  isWidth,
 }) => {
-  const { modal, setModal } = useContext(Context);
-  let modalContent;
+  const { setModal } = useContext(Context);
 
-  if (modalType === SORT_BY) {
-    modalContent = <Sorting />;
-  } else if (modalType === PRICE) {
-    modalContent = <Price />;
-  } else if (modalType === BED_AND_BATHROOM) {
-    modalContent = <BedAndBath />;
-  } else if (modalType === LIFESTYLE) {
-    modalContent = <LifeStyle />;
-  } else if (modalType === "filtering") {
-    modalContent = <Filter />;
-  } else if (modalType === "addWishlist") {
-    modalContent = <AddWishlist />;
-  } else if (modalType === "signup") {
-    modalContent = <SignUp />;
-  } else if (modalType === "signin") {
-    modalContent = <SignIn />;
-  } else if (modalType === "furtherOptimize") {
-    modalContent = <Optimized />;
-  } else if (modalType === "createWishlist") {
-    modalContent = <AddAlbum />;
-  } else if (modalType === "createWishlistMobile") {
-    modalContent = <AddAlbum />;
-  }
   const handleCloseModal = () => {
     setModal({
       isOpen: !isOpen,
@@ -62,9 +23,9 @@ const Modal = ({
 
   const desktopModalContent = (
     <div
-      className={`${
+      className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
         isMobileModal ? "hidden" : "block"
-      } w-fit mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
+      } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-6 px-10">
@@ -74,7 +35,7 @@ const Modal = ({
         <h3 className="font-semibold text-3xl text-blackText">{modalLabel}</h3>
         <div>{topRightContent && topRightContent}</div>
       </div>
-      <div className="w-fit max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
+      <div className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
         {modalContent}
       </div>
     </div>

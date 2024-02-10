@@ -7,6 +7,10 @@ import {
   PRICE,
   SORT_BY,
 } from "../Regular/Utils/constant";
+import Sorting from "./Sorting";
+import LifeStyle from "./LifeStyle";
+import Price from "./Price";
+import BedAndBath from "./BedAndBath";
 
 const arrowIcon = (
   <svg
@@ -41,7 +45,13 @@ const sortIcon = (
 
 export default function MobileFiltering() {
   const { modal, setModal } = useContext(Context);
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    isWidth,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
@@ -49,6 +59,7 @@ export default function MobileFiltering() {
       isMobileModal,
       modalLabel,
       isWidth,
+      modalContent,
     });
   };
 
