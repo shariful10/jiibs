@@ -43,7 +43,16 @@ export default function CategoriesAndFilter() {
       modalContent,
     });
   };
-
+  const handleCloseModal = () => {
+    setModal({
+      isOpen: false,
+      modalType: "",
+      isMobileModal: "",
+      modalLabel: "",
+      topRightContent: "",
+      modalContent: "",
+    });
+  };
   return (
     <div className="hidden md:flex items-center justify-between gap-12 overflow-x-auto overflow-y-hidden pt-10">
       <Categories />
@@ -76,7 +85,10 @@ export default function CategoriesAndFilter() {
               isWidth: "max-w-[480px]",
               modalContent: <Optimized />,
               topRightContent: (
-                <span className="inline-block font-semibold text-xl leading-6 text-blackText">
+                <span
+                  className="inline-block font-semibold text-xl leading-6 cursor-pointer text-blackText"
+                  onClick={handleCloseModal}
+                >
                   Skip
                 </span>
               ),
