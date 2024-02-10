@@ -47,10 +47,19 @@ const Modal = ({
     modalContent = <Optimized />;
   } else if (modalType === "createWishlist") {
     modalContent = <AddAlbum />;
+  } else if (modalType === "createWishlistMobile") {
+    modalContent = <AddAlbum />;
   }
   const handleCloseModal = () => {
-    setModal({ ...modal, isOpen: !isOpen });
+    setModal({
+      isOpen: !isOpen,
+      modalType: "",
+      isMobileModal: "",
+      modalLabel: "",
+      topRightContent: "",
+    });
   };
+
   const desktopModalContent = (
     <div
       className={`${

@@ -33,7 +33,7 @@ const footerBottomData = [
 const Footer = () => {
   return (
     <footer className="pt-[60px] pb-28 md:pb-14 bg-[#F7F7F7]">
-      <div className="max-w-[1120px] mx-auto px-6">
+      <Container>
         <div className="grid md:grid-cols-3 border-b pb-[32px]">
           <FooterItems />
         </div>
@@ -55,7 +55,7 @@ const Footer = () => {
             <Image src={twitter} alt="" />
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

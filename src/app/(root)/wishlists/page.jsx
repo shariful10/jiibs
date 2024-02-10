@@ -53,11 +53,11 @@ export default function page() {
       ) : (
         <>
           {/* Wishlist mobile */}
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <WishlistsMobile />
           </div>
           {/* Wishlist desktop */}
-          <div className="hidden sm:block">
+          <div className="hidden md:block">
             <div className="hidden sm:flex justify-between items-center">
               <h1 className="font-semibold text-3xl text-blackText">
                 Wishlist
