@@ -37,7 +37,7 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
           </div>
 
           <select
-            className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize"
+            className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white"
             name="searchType"
             id="searchType"
             // onChange={(e) => setSelectType(e.target.value)}

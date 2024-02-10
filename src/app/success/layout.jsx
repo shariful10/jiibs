@@ -1,6 +1,7 @@
 "use client";
 
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
+import Container from "@/Components/Regular/Container";
 import Modal from "@/Components/Regular/Modal/Modal";
 import NavigationBar from "@/Components/Shared/NavigationBar";
 import Context from "@/Context/Context";
@@ -18,11 +19,13 @@ const SuccessLayout = ({ children }) => {
 
   return (
     <Context.Provider value={{ modal, setModal }}>
-      <NavigationBar />
-      <MobileBottomMenu />
-      {children}
-      {/* Modal  */}
-      {modal?.isOpen && <Modal {...modal} />}
+      <Container>
+        <NavigationBar />
+        <MobileBottomMenu />
+        {children}
+        {/* Modal  */}
+        {modal?.isOpen && <Modal {...modal} />}
+      </Container>
     </Context.Provider>
   );
 };
