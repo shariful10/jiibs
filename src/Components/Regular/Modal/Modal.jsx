@@ -47,6 +47,8 @@ const Modal = ({
     modalContent = <Optimized />;
   } else if (modalType === "createWishlist") {
     modalContent = <AddAlbum />;
+  } else if (modalType === "createWishlistMobile") {
+    modalContent = <AddAlbum />;
   }
   const handleCloseModal = () => {
     setModal({ ...modal, isOpen: !isOpen });

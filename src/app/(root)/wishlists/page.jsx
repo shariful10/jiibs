@@ -53,7 +53,7 @@ export default function page() {
       ) : (
         <>
           {/* Wishlist mobile */}
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <WishlistsMobile />
           </div>
           {/* Wishlist desktop */}

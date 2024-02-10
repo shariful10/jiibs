@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import Context from "@/Context/Context";
+import React, { useContext, useState } from "react";
 
 const newAlbumIcon = (
   <svg
@@ -17,6 +18,17 @@ const newAlbumIcon = (
 
 export default function WishlistsMobile() {
   const [isEdit, setIsEdit] = useState(false);
+  const { modal, setModal } = useContext(Context);
+  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+    setModal({
+      ...modal,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      isWidth,
+    });
+  };
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -47,7 +59,7 @@ export default function WishlistsMobile() {
           </h1>
         </div>
         <p
-          className="font-semibold text-base leading-5 text-blackText"
+          className="font-semibold text-base leading-5 text-blackText cursor-pointer"
           onClick={() => setIsEdit(true)}
         >
           Edit
@@ -56,7 +68,16 @@ export default function WishlistsMobile() {
 
       <hr />
       <div className="mt-6">
-        <div className="flex flex-col">
+        <div
+          className="flex flex-col cursor-pointer"
+          onClick={() =>
+            handleModal({
+              modalType: "createWishlistMobile",
+              isMobileModal: true,
+              modalLabel: "Create wishlist",
+            })
+          }
+        >
           <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md flex justify-center items-center">
             <span>{newAlbumIcon}</span>
           </div>
