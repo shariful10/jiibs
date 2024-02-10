@@ -23,20 +23,13 @@ const Modal = ({
   isMobileModal,
   modalLabel,
   topRightContent,
+  modalContent,
   isWidth,
 }) => {
   const { modal, setModal } = useContext(Context);
-  let modalContent;
+  // let modalContent;
 
-  if (modalType === SORT_BY) {
-    modalContent = <Sorting />;
-  } else if (modalType === PRICE) {
-    modalContent = <Price />;
-  } else if (modalType === BED_AND_BATHROOM) {
-    modalContent = <BedAndBath />;
-  } else if (modalType === LIFESTYLE) {
-    modalContent = <LifeStyle />;
-  } else if (modalType === "filtering") {
+  if (modalType === "filtering") {
     modalContent = <Filter />;
   } else if (modalType === "addWishlist") {
     modalContent = <AddWishlist />;

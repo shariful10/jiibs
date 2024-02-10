@@ -6,6 +6,10 @@ import {
   PRICE,
   SORT_BY,
 } from "../Regular/Utils/constant";
+import Sorting from "./Sorting";
+import LifeStyle from "./LifeStyle";
+import Price from "./Price";
+import BedAndBath from "./BedAndBath";
 
 const arrowIcon = (
   <svg
@@ -40,7 +44,13 @@ const sortIcon = (
 
 export default function MobileFiltering() {
   const { modal, setModal } = useContext(Context);
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    isWidth,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
@@ -48,6 +58,7 @@ export default function MobileFiltering() {
       isMobileModal,
       modalLabel,
       isWidth,
+      modalContent,
     });
   };
 
@@ -102,9 +113,10 @@ export default function MobileFiltering() {
           className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
-              modalType: SORT_BY,
-              modalLabel: "Sort by",
+              modalType: SORT_BY?.value,
+              modalLabel: SORT_BY?.label,
               isMobileModal: true,
+              modalContent: <Sorting />,
             })
           }
         >
@@ -117,9 +129,10 @@ export default function MobileFiltering() {
           className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
-              modalType: LIFESTYLE,
-              modalLabel: "Lifestyle",
+              modalType: LIFESTYLE?.value,
+              modalLabel: LIFESTYLE?.label,
               isMobileModal: true,
+              modalContent: <LifeStyle />,
             })
           }
         >
@@ -132,9 +145,10 @@ export default function MobileFiltering() {
           className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
-              modalType: PRICE,
-              modalLabel: "Price",
+              modalType: PRICE?.value,
+              modalLabel: PRICE?.label,
               isMobileModal: true,
+              modalContent: <Price />,
             })
           }
         >
@@ -147,9 +161,10 @@ export default function MobileFiltering() {
           className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
             handleModal({
-              modalType: BED_AND_BATHROOM,
-              modalLabel: "Bed & Bath",
+              modalType: BED_AND_BATHROOM?.value,
+              modalLabel: BED_AND_BATHROOM?.label,
               isMobileModal: true,
+              modalContent: <BedAndBath />,
             })
           }
         >
