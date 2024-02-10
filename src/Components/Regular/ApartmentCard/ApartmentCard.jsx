@@ -5,17 +5,25 @@ import Image from "next/image";
 import theSun from "@/assets/images/apartment/the-sun.png";
 import Context from "@/Context/Context";
 import { useContext } from "react";
+import AddWishlist from "@/Components/wishlist/AddWishlist";
+import { ADD_WISHLIST } from "../Utils/constant";
 
 const ApartmentCard = ({ apartment = {} }) => {
   const { modal, setModal } = useContext(Context);
 
-  const handleModal = ({ modalType, modalLabel, isMobileModal }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
       modalType,
       isMobileModal,
       modalLabel,
+      modalContent,
     });
   };
 
@@ -33,9 +41,10 @@ const ApartmentCard = ({ apartment = {} }) => {
               className=" absolute top-3 right-3"
               onClick={() =>
                 handleModal({
-                  modalType: "addWishlist",
-                  modalLabel: "Add to wishlist",
+                  modalType: ADD_WISHLIST?.value,
+                  modalLabel: ADD_WISHLIST?.label,
                   isMobileModal: false,
+                  modalContent: <AddWishlist />,
                 })
               }
             >

@@ -19,7 +19,7 @@ export const FILTERING = {
   value: "filtering",
 };
 export const ADD_WISHLIST = {
-  label: "addWishlist",
+  label: "Add to wishlist",
   value: "addWishlist",
 };
 export const SIGNUP = {
@@ -43,16 +43,14 @@ export const CREATE_WISHLIST_MOBILE = {
   value: "createWishlistMobile",
 };
 
-if (modalType === "addWishlist") {
-  modalContent = <AddWishlist />;
-} else if (modalType === "signup") {
-  modalContent = <SignUp />;
-} else if (modalType === "signin") {
-  modalContent = <SignIn />;
-} else if (modalType === "furtherOptimize") {
-  modalContent = <Optimized />;
-} else if (modalType === "createWishlist") {
-  modalContent = <AddAlbum />;
-} else if (modalType === "createWishlistMobile") {
-  modalContent = <AddAlbum />;
-}
+// if (modalType === "signup") {
+//   modalContent = <SignUp />;
+// } else if (modalType === "signin") {
+//   modalContent = <SignIn />;
+// } else if (modalType === "furtherOptimize") {
+//   modalContent = <Optimized />;
+// } else if (modalType === "createWishlist") {
+//   modalContent = <AddAlbum />;
+// } else if (modalType === "createWishlistMobile") {
+//   modalContent = <AddAlbum />;
+// }
