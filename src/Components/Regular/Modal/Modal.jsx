@@ -23,6 +23,7 @@ const Modal = ({
   isMobileModal,
   modalLabel,
   topRightContent,
+  isWidth,
 }) => {
   const { modal, setModal } = useContext(Context);
   let modalContent;
@@ -62,9 +63,9 @@ const Modal = ({
 
   const desktopModalContent = (
     <div
-      className={`${
+      className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
         isMobileModal ? "hidden" : "block"
-      } w-fit mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
+      } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
       onClick={(e) => e.stopPropagation()}
     >
       <div className="flex justify-between items-center border-b border-[#E4E4E4] py-6 px-10">
@@ -74,7 +75,7 @@ const Modal = ({
         <h3 className="font-semibold text-3xl text-blackText">{modalLabel}</h3>
         <div>{topRightContent && topRightContent}</div>
       </div>
-      <div className="w-fit max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
+      <div className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
         {modalContent}
       </div>
     </div>
