@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AddAlbum() {
   return (
-    <div className="md:w-[630px] w-full p-6 overflow-hidden">
+    <div className="w-full p-6 overflow-hidden">
       <div className="flex flex-col gap-3">
         <div className="w-full rounded-xl border border-[#E4E4E4] flex flex-col px-4 py-2">
           <label htmlFor="minimumPrice" className="font-normal text-xs">

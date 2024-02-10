@@ -9,7 +9,13 @@ import SignIn from "../Authentication/SignIn/SignIn";
 const NavigationBar = () => {
   const { modal, setModal } = useContext(Context);
 
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    isWidth,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
@@ -17,6 +23,7 @@ const NavigationBar = () => {
       isMobileModal,
       modalLabel,
       isWidth,
+      modalContent,
     });
   };
 

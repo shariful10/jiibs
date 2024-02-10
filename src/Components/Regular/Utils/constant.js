@@ -35,7 +35,7 @@ export const FURTHER_OPTIMIZE = {
   value: "furtherOptimize",
 };
 export const CREATE_WISHLIST = {
-  label: "",
+  label: "Create wishlist",
   value: "createWishlist",
 };
 export const CREATE_WISHLIST_MOBILE = {
@@ -43,10 +43,6 @@ export const CREATE_WISHLIST_MOBILE = {
   value: "createWishlistMobile",
 };
 
-// if (modalType === "signup") {
-//   modalContent = <SignUp />;
-// } else if (modalType === "signin") {
-//   modalContent = <SignIn />;
 // } else if (modalType === "furtherOptimize") {
 //   modalContent = <Optimized />;
 // } else if (modalType === "createWishlist") {
