@@ -49,7 +49,7 @@ export default function page() {
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
+    <div className="w-full max-w-[1520px] mx-auto pt-10 pb-20">
       {isLogin ? (
         <NotLogin />
       ) : (
