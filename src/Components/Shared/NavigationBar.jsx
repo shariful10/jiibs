@@ -52,7 +52,7 @@ const NavigationBar = () => {
           handleAuthButton={() =>
             handleModal({
               modalType: "signin",
-              modalLabel: "Add to wishlist",
+              modalLabel: "Login to JIIBS",
               isMobileModal: false,
               isWidth: "max-w-[480px]",
             })
@@ -64,7 +64,7 @@ const NavigationBar = () => {
           handleAuthButton={() =>
             handleModal({
               modalType: "signup",
-              modalLabel: "Add to wishlist",
+              modalLabel: "Sign up to JIIBS",
               isMobileModal: false,
               isWidth: "max-w-[480px]",
             })

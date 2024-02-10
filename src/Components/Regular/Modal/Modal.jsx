@@ -64,7 +64,7 @@ const Modal = ({
           {closeIcon}
         </span>
         <h3 className="font-semibold text-3xl text-blackText">{modalLabel}</h3>
-        <div>{topRightContent}</div>
+        <div>{topRightContent && topRightContent}</div>
       </div>
       <div className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
         {modalContent}
