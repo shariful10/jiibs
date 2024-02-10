@@ -21,6 +21,7 @@ module.exports = {
         lightRed: "#ED4D4D",
         yellow: "#FCCC0A",
         blackText: "#222222",
+        lightGrayBorder: "#D1D5DB",
       },
       boxShadow: {
         "3xl": "0 23px 37px 0 #1FBAFF10",

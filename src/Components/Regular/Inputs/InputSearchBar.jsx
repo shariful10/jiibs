@@ -10,8 +10,6 @@ export default function InputSearchBar() {
     type: "",
   });
 
-  console.log("searchResult ", searchResult);
-
   return (
     <>
       {/* {searchResult?.data?.length ? ( */}

@@ -37,19 +37,17 @@ export default function page() {
   const { modal, setModal } = useContext(Context);
   const isLogin = false;
 
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({ modalType, modalLabel }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
       modalType,
-      isMobileModal,
       modalLabel,
-      isWidth,
     });
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
+    <div className="w-full max-w-[1520px] mx-auto pt-10 pb-20">
       {isLogin ? (
         <NotLogin />
       ) : (
@@ -60,7 +58,7 @@ export default function page() {
           </div>
           {/* Wishlist desktop */}
           <div className="hidden sm:block">
-            <div className="hidden sm:flex justify-between items-center mb-8">
+            <div className="hidden sm:flex justify-between items-center">
               <h1 className="font-semibold text-3xl text-blackText">
                 Wishlist
               </h1>
@@ -79,7 +77,7 @@ export default function page() {
                 <span>Create album</span>
               </button>
             </div>
-            <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
+            <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-10">
               <Album />
               <Album />
               <Album />

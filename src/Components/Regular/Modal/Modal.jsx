@@ -23,7 +23,6 @@ const Modal = ({
   isMobileModal,
   modalLabel,
   topRightContent,
-  isWidth,
 }) => {
   const { modal, setModal } = useContext(Context);
   let modalContent;
@@ -54,19 +53,19 @@ const Modal = ({
   };
   const desktopModalContent = (
     <div
-      className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
+      className={`${
         isMobileModal ? "hidden" : "block"
-      } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
+      } w-fit mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
+      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-6 px-10">
         <span onClick={handleCloseModal} className="cursor-pointer">
           {closeIcon}
         </span>
         <h3 className="font-semibold text-3xl text-blackText">{modalLabel}</h3>
-        <div>{topRightContent}</div>
+        <div>{topRightContent && topRightContent}</div>
       </div>
-      <div className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
+      <div className="w-fit max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
         {modalContent}
       </div>
     </div>
@@ -74,7 +73,7 @@ const Modal = ({
 
   const mobileModalContent = (
     <div
-      className={`w-full max-h-[80%] h-auto sm:hidden absolute left-0 bottom-0 overflow-hidden rounded-tl-xl rounded-tr-xl transition-all duration-700 ease-linear overflow-y-auto ${
+      className={`w-full max-h-[80%] h-auto md:hidden absolute left-0 bottom-0 overflow-hidden rounded-tl-xl rounded-tr-xl transition-all duration-700 ease-linear overflow-y-auto ${
         isOpen ? "bottom-0" : "bottom-28"
       } bg-white`}
       onClick={(e) => e.stopPropagation()}

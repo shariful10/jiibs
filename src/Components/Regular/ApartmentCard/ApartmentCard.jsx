@@ -1,3 +1,5 @@
+"use client";
+
 import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
 import theSun from "@/assets/images/apartment/the-sun.png";
@@ -6,6 +8,7 @@ import { useContext } from "react";
 
 const ApartmentCard = ({ apartment = {} }) => {
   const { modal, setModal } = useContext(Context);
+
   const handleModal = ({ modalType, modalLabel, isMobileModal }) => {
     setModal({
       ...modal,
