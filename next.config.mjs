@@ -3,6 +3,7 @@ const nextConfig = {
   images: {
     domains: ["i0.wp.com"],
   },
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;

@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import Footer from "@/Components/Shared/Footer";
-import NavigationBar from "@/Components/Shared/NavigationBar";
-import Context from "@/Context/Context";
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
 import Modal from "@/Components/Regular/Modal/Modal";
+import NavigationBar from "@/Components/Shared/NavigationBar";
+import Context from "@/Context/Context";
+import { useState } from "react";
 
 const Layout = ({ children }) => {
   const [modal, setModal] = useState({
