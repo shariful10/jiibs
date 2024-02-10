@@ -3,10 +3,9 @@ import Container from "@/Components/Regular/Container";
 import Link from "next/link";
 import React from "react";
 
-
 const AccountPage = () => {
 	return (
-		<Container>
+		<Container className="px-6 md:px-0">
 			<div className="mt-10 mb-20">
 				<h2 className="text-[36px] font-semibold">Account</h2>
 				<div className="flex items-end gap-4 mb-10 text-darkGray">
@@ -18,7 +17,7 @@ const AccountPage = () => {
 						Go to profile
 					</Link>
 				</div>
-            <AccountPageCard />
+				<AccountPageCard />
 			</div>
 		</Container>
 	);

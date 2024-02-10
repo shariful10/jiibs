@@ -1,21 +1,53 @@
+"use client";
+
 import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
-import Link from "next/link";
+import theSun from "@/assets/images/apartment/the-sun.png";
+import Context from "@/Context/Context";
+import { useContext } from "react";
+import AddWishlist from "@/Components/wishlist/AddWishlist";
+import { ADD_WISHLIST } from "../Utils/constant";
 
 const ApartmentCard = ({ apartment = {} }) => {
-  // const { location, price, image, title, bed, bath, squareFit } = apartment;
+  const { modal, setModal } = useContext(Context);
+
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    modalContent,
+  }) => {
+    setModal({
+      ...modal,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      modalContent,
+    });
+  };
 
   return (
     <div>
-      <Link href="/" className="col-span-1 cursor-pointer group">
+      <div className="col-span-1 cursor-pointer group">
         <div className="flex flex-col gap-2 w-full">
           <div className="aspect-square w-full relative overflow-hidden rounded-[20px]">
             <Image
               className="object-cover h-full w-full group-hover:scale-110 duration-300"
-              src={apartment?.image}
+              src={theSun}
               alt="Room"
             />
-            <div className=" absolute top-3 right-3">
+            <div
+              className=" absolute top-3 right-3"
+              onClick={() =>
+                handleModal({
+                  modalType: ADD_WISHLIST?.value,
+                  modalLabel: ADD_WISHLIST?.label,
+                  isMobileModal: false,
+                  modalContent: <AddWishlist />,
+                })
+              }
+            >
               <Image src={heartButton} alt="Heart button" />
             </div>
           </div>
@@ -39,7 +71,7 @@ const ApartmentCard = ({ apartment = {} }) => {
             <p>{apartment?.squareFit} Sqft</p>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

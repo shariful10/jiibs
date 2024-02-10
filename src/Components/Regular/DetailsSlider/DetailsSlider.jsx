@@ -72,6 +72,7 @@ export default function DetailsSlider() {
                   <Image
                     className="w-full h-full object-cover"
                     src={image?.image}
+                    alt=""
                   />
                 </SwiperSlide>
               ))
@@ -92,7 +93,7 @@ export default function DetailsSlider() {
           {images?.length
             ? images?.map((image, idx) => (
                 <SwiperSlide key={idx}>
-                  <Image src={image?.image} />
+                  <Image src={image?.image} alt="" />
                 </SwiperSlide>
               ))
             : null}

@@ -110,8 +110,8 @@ function SimilarItem({ handle, name, items, id, defaultV = "" }) {
       >
         <option value="">{defaultV}</option>
         {items &&
-          items.map((d) => (
-            <option key={d} value={d}>
+          items.map((d, idx) => (
+            <option key={idx} value={d}>
               {d}
             </option>
           ))}
