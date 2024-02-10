@@ -35,45 +35,43 @@ const NavigationBar = () => {
   // };
 
   return (
-    <Container>
-      <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
-        {/* Login */}
-        <div className="flex text-[38px] font-semibold text-primary py-3">
-          <Link href="/">JIBBS.</Link>
-        </div>
-
-        {/* search input */}
-        <InputSearchBar />
-
-        {/* user , login , sign up */}
-        <div className="flex justify-end items-center gap-4">
-          <AuthButton
-            icons={loginUserIcon}
-            title="Login"
-            handleAuthButton={() =>
-              handleModal({
-                modalType: "signin",
-                modalLabel: "Add to wishlist",
-                isMobileModal: false,
-                isWidth: "max-w-[480px]",
-              })
-            }
-          />
-          <AuthButton
-            icons={signUpIcons}
-            title="Sign Up"
-            handleAuthButton={() =>
-              handleModal({
-                modalType: "signup",
-                modalLabel: "Add to wishlist",
-                isMobileModal: false,
-                isWidth: "max-w-[480px]",
-              })
-            }
-          />
-        </div>
+    <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
+      {/* Login */}
+      <div className="flex text-[38px] leading-[47px] font-semibold text-primary py-3">
+        <Link href="/">JIBBS.</Link>
       </div>
-    </Container>
+
+      {/* search input */}
+      <InputSearchBar />
+
+      {/* user , login , sign up */}
+      <div className="flex justify-end items-center gap-4">
+        <AuthButton
+          icons={loginUserIcon}
+          title="Login"
+          handleAuthButton={() =>
+            handleModal({
+              modalType: "signin",
+              modalLabel: "Add to wishlist",
+              isMobileModal: false,
+              isWidth: "max-w-[480px]",
+            })
+          }
+        />
+        <AuthButton
+          icons={signUpIcons}
+          title="Sign Up"
+          handleAuthButton={() =>
+            handleModal({
+              modalType: "signup",
+              modalLabel: "Add to wishlist",
+              isMobileModal: false,
+              isWidth: "max-w-[480px]",
+            })
+          }
+        />
+      </div>
+    </div>
   );
 };
 
