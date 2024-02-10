@@ -1,57 +1,26 @@
 import React, { useContext } from "react";
-import {
-  BED_AND_BATHROOM,
-  LIFESTYLE,
-  PRICE,
-  SORT_BY,
-} from "@/Components/Regular/Utils/constant";
-import Sorting from "@/Components/Filters/Sorting";
-import Price from "@/Components/Filters/Price";
-import BedAndBath from "@/Components/Filters/BedAndBath";
-import LifeStyle from "@/Components/Filters/LifeStyle";
-import Filter from "@/Components/Filters/Filter";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
-import SignUp from "@/Components/Authentication/Signup/Signup";
-import SignIn from "@/Components/Authentication/SignIn/SignIn";
-import Optimized from "@/Components/Authentication/VerifyEmail/Optimised";
 import Context from "@/Context/Context";
-import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const Modal = ({
   isOpen,
-  modalType,
   isMobileModal,
   modalLabel,
   topRightContent,
+  modalContent,
   isWidth,
 }) => {
-  const { modal, setModal } = useContext(Context);
-  let modalContent;
+  const { setModal } = useContext(Context);
 
-  if (modalType === SORT_BY) {
-    modalContent = <Sorting />;
-  } else if (modalType === PRICE) {
-    modalContent = <Price />;
-  } else if (modalType === BED_AND_BATHROOM) {
-    modalContent = <BedAndBath />;
-  } else if (modalType === LIFESTYLE) {
-    modalContent = <LifeStyle />;
-  } else if (modalType === "filtering") {
-    modalContent = <Filter />;
-  } else if (modalType === "addWishlist") {
-    modalContent = <AddWishlist />;
-  } else if (modalType === "signup") {
-    modalContent = <SignUp />;
-  } else if (modalType === "signin") {
-    modalContent = <SignIn />;
-  } else if (modalType === "furtherOptimize") {
-    modalContent = <Optimized />;
-  } else if (modalType === "createWishlist") {
-    modalContent = <AddAlbum />;
-  }
   const handleCloseModal = () => {
-    setModal({ ...modal, isOpen: !isOpen });
+    setModal({
+      isOpen: !isOpen,
+      modalType: "",
+      isMobileModal: "",
+      modalLabel: "",
+      topRightContent: "",
+    });
   };
+
   const desktopModalContent = (
     <div
       className={`${isWidth ? `${isWidth} w-full` : "w-fit"} ${
@@ -59,12 +28,12 @@ const Modal = ({
       } mx-5 h-auto rounded-[16px] md:rounded-[32px] bg-white overflow-hidden`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-8 px-10">
+      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-6 px-10">
         <span onClick={handleCloseModal} className="cursor-pointer">
           {closeIcon}
         </span>
         <h3 className="font-semibold text-3xl text-blackText">{modalLabel}</h3>
-        <div>{topRightContent}</div>
+        <div>{topRightContent && topRightContent}</div>
       </div>
       <div className="w-full max-h-[80vh] h-full overflow-y-auto custom-scrollbar">
         {modalContent}
@@ -74,7 +43,7 @@ const Modal = ({
 
   const mobileModalContent = (
     <div
-      className={`w-full max-h-[80%] h-auto sm:hidden absolute left-0 bottom-0 overflow-hidden rounded-tl-xl rounded-tr-xl transition-all duration-700 ease-linear overflow-y-auto ${
+      className={`w-full max-h-[80%] h-auto md:hidden absolute left-0 bottom-0 overflow-hidden rounded-tl-xl rounded-tr-xl transition-all duration-700 ease-linear overflow-y-auto ${
         isOpen ? "bottom-0" : "bottom-28"
       } bg-white`}
       onClick={(e) => e.stopPropagation()}

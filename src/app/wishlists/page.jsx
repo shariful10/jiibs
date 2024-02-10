@@ -5,6 +5,8 @@ import NotLogin from "@/Components/wishlist/NotLogin";
 import Album from "@/Components/wishlist/Album";
 import WishlistsMobile from "@/Components/wishlist/WishlistsMobile";
 import Context from "@/Context/Context";
+import { CREATE_WISHLIST } from "@/Components/Regular/Utils/constant";
+import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const whitePlusIcon = (
   <svg
@@ -37,30 +39,30 @@ export default function page() {
   const { modal, setModal } = useContext(Context);
   const isLogin = false;
 
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({ modalType, modalLabel, isWidth, modalContent }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
       modalType,
-      isMobileModal,
       modalLabel,
       isWidth,
+      modalContent,
     });
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
+    <div className="w-full max-w-[1520px] mx-auto pt-10 pb-20">
       {isLogin ? (
         <NotLogin />
       ) : (
         <>
           {/* Wishlist mobile */}
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <WishlistsMobile />
           </div>
           {/* Wishlist desktop */}
-          <div className="hidden sm:block">
-            <div className="hidden sm:flex justify-between items-center mb-8">
+          <div className="hidden md:block">
+            <div className="hidden sm:flex justify-between items-center">
               <h1 className="font-semibold text-3xl text-blackText">
                 Wishlist
               </h1>
@@ -68,10 +70,11 @@ export default function page() {
                 className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
                 onClick={() =>
                   handleModal({
-                    modalType: "createWishlist",
-                    modalLabel: "Create wishlist",
+                    modalType: CREATE_WISHLIST?.value,
+                    modalLabel: CREATE_WISHLIST?.label,
                     isMobileModal: false,
-                    isWidth: "max-w-[700px]",
+                    isWidth: "max-w-[630px]",
+                    modalContent: <AddAlbum />,
                   })
                 }
               >
@@ -79,7 +82,7 @@ export default function page() {
                 <span>Create album</span>
               </button>
             </div>
-            <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
+            <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-10">
               <Album />
               <Album />
               <Album />

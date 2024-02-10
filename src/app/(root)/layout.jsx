@@ -5,6 +5,7 @@ import NavigationBar from "@/Components/Shared/NavigationBar";
 import Context from "@/Context/Context";
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
 import Modal from "@/Components/Regular/Modal/Modal";
+import Container from "@/Components/Regular/Container";
 import Footer from "@/Components/Shared/Footer";
 
 const Layout = ({ children }) => {
@@ -19,9 +20,11 @@ const Layout = ({ children }) => {
 
   return (
     <Context.Provider value={{ modal, setModal }}>
-      <NavigationBar />
-      <MobileBottomMenu />
-      {children}
+      <Container>
+        <NavigationBar />
+        <MobileBottomMenu />
+        {children}
+      </Container>
       <Footer />
       {/* Modal  */}
       {modal?.isOpen && <Modal {...modal} />}

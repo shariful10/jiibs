@@ -5,10 +5,7 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <div className="p-10 max-w-[450px] w-full mx-auto">
-      <h3 className="font-semibold text-[36px] leading-[45px] text-blackText text-center mb-5">
-        Login to JIBBS
-      </h3>
+    <div className="p-10 w-full">
       <div className="flex justify-between items-center gap-2">
         <input
           type="text"
@@ -26,12 +23,12 @@ export default function SignIn() {
       <h4 className="font-normal text-base leading-6 text-blackText pt-8 pb-6 text-center">
         Don’t have an Upwork account?
       </h4>
-      <div className="hidden sm:flex justify-center">
+      <div className="hidden md:flex justify-center">
         <button className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]">
           Sign up
         </button>
       </div>
-      <div className="flex sm:hidden justify-center">
+      <div className="flex md:hidden justify-center">
         <Link
           href={"/signup-mobile"}
           className="text-[#2AB7DD] py-3 px-10 border rounded-md border-[#2AB7DD]"
