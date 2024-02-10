@@ -51,8 +51,15 @@ const Modal = ({
     modalContent = <AddAlbum />;
   }
   const handleCloseModal = () => {
-    setModal({ ...modal, isOpen: !isOpen });
+    setModal({
+      isOpen: !isOpen,
+      modalType: "",
+      isMobileModal: "",
+      modalLabel: "",
+      topRightContent: "",
+    });
   };
+
   const desktopModalContent = (
     <div
       className={`${
