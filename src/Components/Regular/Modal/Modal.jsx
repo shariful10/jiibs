@@ -74,7 +74,7 @@ const Modal = ({
 
   const mobileModalContent = (
     <div
-      className={`w-full max-h-[80%] h-auto sm:hidden absolute left-0 bottom-0 overflow-hidden rounded-tl-xl rounded-tr-xl transition-all duration-700 ease-linear overflow-y-auto ${
+      className={`w-full max-h-[80%] h-auto md:hidden absolute left-0 bottom-0 overflow-hidden rounded-tl-xl rounded-tr-xl transition-all duration-700 ease-linear overflow-y-auto ${
         isOpen ? "bottom-0" : "bottom-28"
       } bg-white`}
       onClick={(e) => e.stopPropagation()}
