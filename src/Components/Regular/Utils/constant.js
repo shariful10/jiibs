@@ -39,14 +39,12 @@ export const CREATE_WISHLIST = {
   value: "createWishlist",
 };
 export const CREATE_WISHLIST_MOBILE = {
-  label: "",
+  label: "Create wishlist",
   value: "createWishlistMobile",
 };
 
 // } else if (modalType === "furtherOptimize") {
 //   modalContent = <Optimized />;
-// } else if (modalType === "createWishlist") {
-//   modalContent = <AddAlbum />;
-// } else if (modalType === "createWishlistMobile") {
+// }  else if (modalType === "createWishlistMobile") {
 //   modalContent = <AddAlbum />;
 // }

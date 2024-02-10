@@ -1,6 +1,8 @@
 import Context from "@/Context/Context";
 import React, { useContext, useState } from "react";
 import WishlistDetailsMobile from "./WishlistDetailsMobile";
+import { CREATE_WISHLIST_MOBILE } from "../Regular/Utils/constant";
+import AddAlbum from "./AddAlbum";
 
 const newAlbumIcon = (
   <svg
@@ -20,7 +22,13 @@ const newAlbumIcon = (
 export default function WishlistsMobile() {
   const [isEdit, setIsEdit] = useState(false);
   const { modal, setModal } = useContext(Context);
-  const handleModal = ({ modalType, modalLabel, isMobileModal, isWidth }) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    isWidth,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
       isOpen: !modal?.isOpen,
@@ -28,6 +36,7 @@ export default function WishlistsMobile() {
       isMobileModal,
       modalLabel,
       isWidth,
+      modalContent,
     });
   };
   return (
@@ -73,9 +82,10 @@ export default function WishlistsMobile() {
           className="flex flex-col cursor-pointer"
           onClick={() =>
             handleModal({
-              modalType: "createWishlistMobile",
+              modalType: CREATE_WISHLIST_MOBILE?.value,
               isMobileModal: true,
-              modalLabel: "Create wishlist",
+              modalLabel: CREATE_WISHLIST_MOBILE?.label,
+              modalContent: <AddAlbum />,
             })
           }
         >
