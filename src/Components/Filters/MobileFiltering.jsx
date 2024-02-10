@@ -52,8 +52,8 @@ export default function MobileFiltering() {
   };
 
   return (
-    <div className="sm:hidden pt-6 px-4">
-      <div className="flex justify-between items-center bg-[#F7F7F7] px-[14px] py-2 rounded-full mb-4">
+    <div className="md:hidden pt-6">
+      <div className="flex justify-between items-center bg-lightGray px-[14px] py-2 rounded-full mb-4">
         <div className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ export default function MobileFiltering() {
           </div>
         </div>
         <div>
-          <span className="block p-2 rounded-full border border-[#D1D5DB]">
+          <span className="block p-2 rounded-full border border-lightGrayBorder">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -97,7 +97,7 @@ export default function MobileFiltering() {
           </span>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-[5px] mb-6">
+      <div className="flex justify-center items-center gap-[5px]">
         <div
           className="flex items-center gap-[6px] border border-[#D1D5DB] py-[6px] px-2 rounded-full cursor-pointer"
           onClick={() =>
