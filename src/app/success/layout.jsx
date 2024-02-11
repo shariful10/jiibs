@@ -1,11 +1,13 @@
 "use client";
 
-import NavigationBar from "@/Components/Shared/NavigationBar";
-import React, { useState } from "react";
-import Context from "@/Context/Context";
 import MobileBottomMenu from "@/Components/MobileBottomMenu";
+import Container from "@/Components/Regular/Container";
+import Modal from "@/Components/Regular/Modal/Modal";
+import NavigationBar from "@/Components/Shared/NavigationBar";
+import Context from "@/Context/Context";
+import { useState } from "react";
 
-const layout = ({ children }) => {
+const SuccessLayout = ({ children }) => {
   const [modal, setModal] = useState({
     isOpen: false,
     modalType: "",
@@ -17,11 +19,15 @@ const layout = ({ children }) => {
 
   return (
     <Context.Provider value={{ modal, setModal }}>
-      <NavigationBar />
-      {children}
-      <MobileBottomMenu />
+      <Container>
+        <NavigationBar />
+        <MobileBottomMenu />
+        {children}
+        {/* Modal  */}
+        {modal?.isOpen && <Modal {...modal} />}
+      </Container>
     </Context.Provider>
   );
 };
 
-export default layout;
+export default SuccessLayout;

@@ -1,13 +1,16 @@
 "use client";
-
-import building1 from "@/assets/building-1.jpg";
-import building2 from "@/assets/building-2.jpg";
-import building3 from "@/assets/building-3.jpg";
-import roadUnit from "@/assets/road.jpg";
 import { useEffect, useState } from "react";
+import { LuBuilding2 } from "react-icons/lu";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { RiCommunityLine } from "react-icons/ri";
 
 export default function InputSearch({ setResult = {}, setOpenDropDown }) {
+  const [openOptions, setOpenOptions] = useState(true);
   const [searchValue, setSearchValue] = useState("");
+  const [options, setOptions] = useState([
+    { _id: 1, title: "building", icons: <LuBuilding2 /> },
+    { _id: 2, title: "unit", icons: <RiCommunityLine /> },
+  ]);
   const [selectType, setSelectType] = useState("units");
   const [inputSearch, setInputSearch] = useState("");
   //   console.log("selectType ", selectType);
@@ -36,22 +39,46 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
             />
           </div>
 
-          <select
-            className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize"
-            name="searchType"
-            id="searchType"
-            // onChange={(e) => setSelectType(e.target.value)}
-            onChange={() => setOpenDropDown(true)}
-            defaultValue={selectType}
-          >
-            <option value="units"> units </option>
-            <option value="building"> building </option>
-          </select>
+          <div className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
+            <button
+              className="bg-transparent capitalize cursor-pointer hover:bg-primary/15 transition duration-200 px-1"
+              onClick={() => setOpenOptions(true)}
+            >
+              <span className="flex items-center gap-2">
+                <span>{selectType}</span> <MdKeyboardArrowDown />
+              </span>
+            </button>
+
+            <div
+              className={`transition-all duration-200 absolute ${
+                openOptions
+                  ? "top-9  opacity-100 scale-100 z-50"
+                  : "-top-40 opacity-0 scale-0 z-0"
+              }`}
+            >
+              <div className="bg-white shadow-md px-1 py-2">
+                {options?.map((option) => (
+                  <button
+                    className="capitalize flex gap-4 items-center px-3 py-1 cursor-pointer hover:bg-primary/15 transition duration-200 rounded-lg w-full"
+                    key={option?._id}
+                    onClick={() => setOpenOptions(false)}
+                  >
+                    <figure className="inline-block text-lg">
+                      {option?.icons}
+                    </figure>
+                    <p>{option?.title}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 }
+
+// search options
 
 // icons
 var magnifyGlassIcons = (
@@ -79,46 +106,3 @@ var magnifyGlassIcons = (
     />
   </svg>
 );
-
-var demoData = [
-  {
-    id: 1,
-    name: "Im flexible",
-    image: roadUnit,
-    available: 234,
-    select: false,
-    type: "unit",
-  },
-  {
-    id: 2,
-    name: "soho",
-    image: building1,
-    available: 234,
-    select: true,
-    type: "unit",
-  },
-  {
-    id: 3,
-    name: "Financial District",
-    image: building2,
-    available: 234,
-    select: true,
-    type: "building",
-  },
-  {
-    id: 4,
-    name: "Morningside heights",
-    image: building3,
-    available: 234,
-    select: false,
-    type: "building",
-  },
-  {
-    id: 5,
-    name: "Morningside heights",
-    image: building3,
-    available: 234,
-    select: true,
-    type: "building",
-  },
-];

@@ -112,6 +112,67 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
       </div>
     </>
   );
+  return (
+    <>
+      <div className="bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md">
+        <Container>
+          {/* logo, search, close */}
+          <div className="flex items-center justify-between gap-4">
+            <div className="">
+              <Logo />
+            </div>
+            <div className="flex-1">
+              <input
+                type="text"
+                placeholder="Search Apartments, Neighborhoods, Etc."
+                className={`w-full bg-lightGray text-blackText focus:outline-none border-none p-3 text-sm rounded-full`}
+              />
+            </div>
+            <div>
+              <button
+                onClick={() => setOpenDropDown(false)}
+                className="w-5 h-5 rounded-full flex items-center justify-center font-extrabold text-3xl"
+              >
+                <RxCross1 />
+              </button>
+            </div>
+          </div>
+
+          {/* show items */}
+          <div className="py-5 ">
+            <div className="flex items-center justify-start gap-3 border-b-[4px] border-b-softGray ">
+              <TabItems tabs={tabs} handle={setTabs} title="building" />
+              <TabItems tabs={tabs} handle={setTabs} title="unit" />
+            </div>
+
+            {/* search items */}
+            <div className="w-full flex flex-col items-center justify-start gap-4 py-8">
+              {demoData?.length ? (
+                <>
+                  {demoData?.map((item, idx) => (
+                    <SearchItem item={item} key={idx} />
+                  ))}
+                </>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+        </Container>
+        {/* clear & show button */}
+        <div className="py-5 border-t-2 border-lightGray">
+          <Container>
+            <div className="flex items-center justify-between gap-4">
+              <button>Clear all </button>
+              <ButtonPrimary className="!w-max !py-2">
+                <span> {`Show ${demoData?.length} Rentals`} </span>
+              </ButtonPrimary>
+            </div>
+          </Container>
+        </div>
+      </div>
+    </>
+  );
 }
 
 // Search Item

@@ -1,5 +1,5 @@
 .swiper-wrapper {
-  @apply w-full flex items-start justify-between gap-6;
+	@apply w-full flex items-start justify-between gap-6;
 }
 
 /* .swiper-slide {
