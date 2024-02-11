@@ -1,5 +1,6 @@
 import Context from "@/Context/Context";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import SearchResultShow from "../Regular/Inputs/SearchResultShow";
 import {
   BED_AND_BATHROOM,
   LIFESTYLE,
@@ -62,36 +63,56 @@ export default function MobileFiltering() {
     });
   };
 
+  const [openDropDown, setOpenDropDown] = useState(true);
+  const [searchResult, setSearchResult] = useState({
+    data: [],
+    type: "",
+  });
+
   return (
-    <div className="md:hidden pt-6">
-      <div className="flex justify-between items-center bg-lightGray px-[14px] py-2 rounded-full mb-4">
-        <div className="flex items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={16}
-            height={17}
-            viewBox="0 0 16 17"
-            fill="none"
-          >
-            <path
-              d="M15 8.5H1M1 8.5L8 15.5M1 8.5L8 1.5"
-              stroke="black"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <div>
-            <h3 className="font-semibold text-sm leading-4 text-blackText">
-              Soho, Financial District, 2 More
-            </h3>
-            <span className="font-normal text-xs leading-4 text-darkGray">
-              Buildings, Neighborhoods, Etc.
-            </span>
-          </div>
-        </div>
-        <div>
-          <span className="block p-2 rounded-full border border-lightGrayBorder">
+    <>
+      {openDropDown ? (
+        <SearchResultShow
+          data={searchResult}
+          setOpenDropDown={setOpenDropDown}
+        />
+      ) : (
+        <>
+          <div className="md:hidden pt-6">
+            <div className="flex justify-between items-center bg-lightGray px-[14px] py-2 rounded-full mb-4">
+              <div className="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={16}
+                  height={17}
+                  viewBox="0 0 16 17"
+                  fill="none"
+                >
+                  <path
+                    d="M15 8.5H1M1 8.5L8 15.5M1 8.5L8 1.5"
+                    stroke="black"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-sm leading-4 text-blackText">
+                    Soho, Financial District, 2 More
+                  </h3>
+                  <span className="font-normal text-xs leading-4 text-darkGray">
+                    Buildings, Neighborhoods, Etc.
+                  </span>
+                </div>
+              </div>
+              <div>
+                <button
+                  onClick={() => setOpenDropDown(true)}
+                  className="block p-2 rounded-full border border-lightGrayBorder cursor-pointer"
+                >
+                  {magnifyGlassIcon}
+                </button>
+                {/* <span className="block p-2 rounded-full border border-lightGrayBorder">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -105,75 +126,99 @@ export default function MobileFiltering() {
                 strokeLinecap="round"
               />
             </svg>
-          </span>
-        </div>
-      </div>
-      <div className="flex justify-center items-center gap-[5px]">
-        <div
-          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleModal({
-              modalType: SORT_BY?.value,
-              modalLabel: SORT_BY?.label,
-              isMobileModal: true,
-              modalContent: <Sorting />,
-            })
-          }
-        >
-          <span>{sortIcon}</span>
-          <span className="font-semibold text-sm leading-4 text-darkGray">
-            Sort
-          </span>
-        </div>
-        <div
-          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleModal({
-              modalType: LIFESTYLE?.value,
-              modalLabel: LIFESTYLE?.label,
-              isMobileModal: true,
-              modalContent: <LifeStyle />,
-            })
-          }
-        >
-          <span className="font-semibold text-sm leading-4 text-darkGray">
-            Lifestyle
-          </span>
-          <span>{arrowIcon}</span>
-        </div>
-        <div
-          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleModal({
-              modalType: PRICE?.value,
-              modalLabel: PRICE?.label,
-              isMobileModal: true,
-              modalContent: <Price />,
-            })
-          }
-        >
-          <span className="font-semibold text-sm leading-4 text-darkGray">
-            price
-          </span>
-          <span>{arrowIcon}</span>
-        </div>
-        <div
-          className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
-          onClick={() =>
-            handleModal({
-              modalType: BED_AND_BATHROOM?.value,
-              modalLabel: BED_AND_BATHROOM?.label,
-              isMobileModal: true,
-              modalContent: <BedAndBath />,
-            })
-          }
-        >
-          <span className="font-semibold text-sm leading-4 text-darkGray">
-            Bed & Bath
-          </span>
-          <span>{arrowIcon}</span>
-        </div>
-      </div>
-    </div>
+          </span> */}
+              </div>
+            </div>
+
+            <div className="flex justify-center items-center gap-[5px]">
+              <div
+                className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
+                onClick={() =>
+                  handleModal({
+                    modalType: SORT_BY,
+                    modalLabel: "Sort by",
+                    isMobileModal: true,
+                  })
+                }
+              >
+                <span>{sortIcon}</span>
+                <span className="font-semibold text-sm leading-4 text-darkGray">
+                  Sort
+                </span>
+              </div>
+              <div
+                className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
+                onClick={() =>
+                  handleModal({
+                    modalType: LIFESTYLE,
+                    modalLabel: "Lifestyle",
+                    isMobileModal: true,
+                  })
+                }
+              >
+                <span className="font-semibold text-sm leading-4 text-darkGray">
+                  Lifestyle
+                </span>
+                <span>{arrowIcon}</span>
+              </div>
+              <div
+                className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
+                onClick={() =>
+                  handleModal({
+                    modalType: PRICE,
+                    modalLabel: "Price",
+                    isMobileModal: true,
+                  })
+                }
+              >
+                <span className="font-semibold text-sm leading-4 text-darkGray">
+                  price
+                </span>
+                <span>{arrowIcon}</span>
+              </div>
+              <div
+                className="flex items-center gap-[6px] border border-lightGrayBorder py-[6px] px-2 rounded-full cursor-pointer"
+                onClick={() =>
+                  handleModal({
+                    modalType: BED_AND_BATHROOM,
+                    modalLabel: "Bed & Bath",
+                    isMobileModal: true,
+                  })
+                }
+              >
+                <span className="font-semibold text-sm leading-4 text-darkGray">
+                  Bed & Bath
+                </span>
+                <span>{arrowIcon}</span>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 }
+
+// icons
+var magnifyGlassIcon = (
+  <svg
+    width={16}
+    height={17}
+    viewBox="0 0 16 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      width="1.43024"
+      height="7.73143"
+      rx="0.71512"
+      transform="matrix(0.707045 -0.707168 0.696812 0.717254 9.125 11.249)"
+      fill="#222222"
+    />
+    <path
+      d="M11.8528 6.54377C11.8528 9.64038 9.38155 12.132 6.35606 12.132C3.33057 12.132 0.859375 9.64038 0.859375 6.54377C0.859375 3.44717 3.33057 0.955566 6.35606 0.955566C9.38155 0.955566 11.8528 3.44717 11.8528 6.54377Z"
+      stroke="#222222"
+      strokeWidth="1.5"
+    />
+  </svg>
+);
