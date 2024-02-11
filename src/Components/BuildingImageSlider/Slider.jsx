@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import "./styles.css";
+
 export default function BuildingSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -34,12 +35,12 @@ export default function BuildingSlider() {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
-        className="w-full rounded-lg mySwiper"
+        className="w-full rounded-lg"
       >
         {images?.map((img, index) => (
           <SwiperSlide
             key={index}
-            className="min-w-full h-[600px] rounded-lg overflow-hidden"
+            className="min-w-full h-[600px] rounded-lg overflow-hidden !m-0"
           >
             <Image
               src={sliderImage}
@@ -52,13 +53,12 @@ export default function BuildingSlider() {
 
       <Swiper
         onSwiper={setThumbsSwiper}
-        loop={true}
         spaceBetween={10}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
-        modules={[Navigation, Thumbs]}
-        className="md:w-3/12 flex flex-row md:!flex-col sliderPreviewTabs"
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="swiper_tabs"
       >
         {images?.map((image, idx) => (
           <SwiperSlide key={idx}>
