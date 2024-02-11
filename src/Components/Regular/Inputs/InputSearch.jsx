@@ -5,7 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiCommunityLine } from "react-icons/ri";
 
 export default function InputSearch({ setResult = {}, setOpenDropDown }) {
-  const [openOptions, setOpenOptions] = useState(true);
+  const [openOptions, setOpenOptions] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [options, setOptions] = useState([
     { _id: 1, title: "building", icons: <LuBuilding2 /> },
@@ -30,7 +30,12 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
       <div className="flex-none gap-2">
         <div className="m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
           <div className="flex-1 flex items-center justify-start gap-5">
-            <figure>{magnifyGlassIcons}</figure>
+            <figure
+              className="hover:!text-primary transition duration-200 rounded-lg cursor-pointer"
+              onClick={() => setOpenDropDown(true)}
+            >
+              {magnifyGlassIcons}
+            </figure>
             <input
               type="text"
               placeholder="Search Apartments "
@@ -42,7 +47,9 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
           <div className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
             <button
               className="bg-transparent capitalize cursor-pointer hover:bg-primary/15 transition duration-200 px-1"
-              onClick={() => setOpenOptions(true)}
+              onClick={() => {
+                setOpenOptions(true);
+              }}
             >
               <span className="flex items-center gap-2">
                 <span>{selectType}</span> <MdKeyboardArrowDown />
@@ -61,7 +68,10 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
                   <button
                     className="capitalize flex gap-4 items-center px-3 py-1 cursor-pointer hover:bg-primary/15 transition duration-200 rounded-lg w-full"
                     key={option?._id}
-                    onClick={() => setOpenOptions(false)}
+                    onClick={() => {
+                      setOpenOptions(false);
+                      setSelectType(option?.title);
+                    }}
                   >
                     <figure className="inline-block text-lg">
                       {option?.icons}
