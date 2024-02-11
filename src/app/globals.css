@@ -50,14 +50,3 @@ input[type="number"] {
   background-color: #20a5c9;
   cursor: pointer;
 }
-
-.swiper-slide {
-  width: fit-content !important;
-  height: 100% !important;
-}
-
-.swiper-wrapper {
-  align-items: flex-end !important;
-  justify-content: space-between !important;
-  gap: 29px !important;
-}

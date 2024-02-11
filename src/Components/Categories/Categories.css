@@ -1,0 +1,10 @@
+.swiper-slide {
+  width: fit-content !important;
+  height: 100% !important;
+}
+
+.swiper-wrapper {
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 29px !important;
+}
