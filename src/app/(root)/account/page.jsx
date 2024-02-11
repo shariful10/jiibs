@@ -1,14 +1,12 @@
-import AccountPageCard from "@/Components/AccountPageCard";
 import Container from "@/Components/Regular/Container";
-import Link from "next/link";
-import React from "react";
+import AccountPageCard from "@/Components/AccountPageCard";
 
 const AccountPage = () => {
 	return (
 		<Container className="px-6 md:px-0">
 			<div className="mt-10 mb-20">
-				<h2 className="text-[36px] font-semibold">Account</h2>
-				<div className="flex items-end gap-4 mb-10 text-darkGray">
+				<h2 className="text-[36px] font-semibold mb-10">Account</h2>
+				{/* <div className="flex items-end gap-4 mb-10 text-darkGray">
 					<h4 className="text-2xl font-semibold ">Jane smith</h4>
 					<Link
 						href="#"
@@ -16,7 +14,7 @@ const AccountPage = () => {
 					>
 						Go to profile
 					</Link>
-				</div>
+				</div> */}
 				<AccountPageCard />
 			</div>
 		</Container>
