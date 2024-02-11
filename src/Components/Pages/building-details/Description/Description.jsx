@@ -11,7 +11,7 @@ export default function Description() {
         </div>
 
         {/* Location map */}
-        <div className="w-full mdx:w-[30%] mb-4 mdx:mb-0 sticky top-0">
+        <div className="w-full mdx:w-[30%] mb-4 mdx:mb-0 static md:sticky md:top-0">
           <LocationMap />
         </div>
       </div>

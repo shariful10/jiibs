@@ -1,6 +1,4 @@
 import Breadcrumbs from "@/Components/Regular/Breadcrumbs/Breadcrumbs";
-import Container from "@/Components/Regular/Container";
-import DetailsSlider from "@/Components/Regular/DetailsSlider/DetailsSlider";
 import Description from "./Description/Description";
 import Similar from "./Similar/Similar";
 import BuildingSlider from "@/Components/BuildingImageSlider/Slider";
