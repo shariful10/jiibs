@@ -2,19 +2,19 @@ import React from "react";
 
 export default function AddAlbum() {
   return (
-    <div className="p-6">
+    <div className="w-full p-6 overflow-hidden">
       <div className="flex flex-col gap-3">
         <div className="w-full rounded-xl border border-[#E4E4E4] flex flex-col px-4 py-2">
           <label htmlFor="minimumPrice" className="font-normal text-xs">
             Minimum
           </label>
-          <div className="flex gap-1">
+          <div className="w-full flex gap-1">
             <span>$</span>
             <input
               type="text"
               id="priceRange"
               placeholder=""
-              className="w-full outline-none border-non bg-transparent text-blackText leading-[22px] font-normal"
+              className="block w-full outline-none border-non bg-transparent text-blackText leading-[22px] font-normal"
             />
           </div>
         </div>

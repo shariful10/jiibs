@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import Context from "@/Context/Context";
+import React, { useContext, useState } from "react";
+import WishlistDetailsMobile from "./WishlistDetailsMobile";
+import { CREATE_WISHLIST_MOBILE } from "../Regular/Utils/constant";
+import AddAlbum from "./AddAlbum";
 
 const newAlbumIcon = (
   <svg
@@ -17,6 +21,24 @@ const newAlbumIcon = (
 
 export default function WishlistsMobile() {
   const [isEdit, setIsEdit] = useState(false);
+  const { modal, setModal } = useContext(Context);
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    isWidth,
+    modalContent,
+  }) => {
+    setModal({
+      ...modal,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      isWidth,
+      modalContent,
+    });
+  };
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -47,16 +69,26 @@ export default function WishlistsMobile() {
           </h1>
         </div>
         <p
-          className="font-semibold text-base leading-5 text-blackText"
+          className="font-semibold text-base leading-5 text-blackText cursor-pointer"
           onClick={() => setIsEdit(true)}
         >
-          Edit
+          {isEdit ? "Done" : "Edit"}
         </p>
       </div>
 
       <hr />
       <div className="mt-6">
-        <div className="flex flex-col">
+        <div
+          className="flex flex-col cursor-pointer"
+          onClick={() =>
+            handleModal({
+              modalType: CREATE_WISHLIST_MOBILE?.value,
+              isMobileModal: true,
+              modalLabel: CREATE_WISHLIST_MOBILE?.label,
+              modalContent: <AddAlbum />,
+            })
+          }
+        >
           <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md flex justify-center items-center">
             <span>{newAlbumIcon}</span>
           </div>
@@ -72,11 +104,13 @@ export default function WishlistsMobile() {
           My albums
         </h2>
         {/* albums  */}
-        <div className="flex flex-wrap gap-x-3 gap-y-3">
+        <div className="pt-4 pb-20 grid grid-cols-2 gap-x-3 gap-y-3">
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md relative">
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
               {isEdit && (
-                <span className="w-[14px] h-[14px] absolute top-4 right-4 p-2 rounded-full bg-red flex justify-center items-center z-50"></span>
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
               )}
             </div>
             <div className="flex flex-col gap-1 mt-2">
@@ -88,7 +122,13 @@ export default function WishlistsMobile() {
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md"></div>
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
+              {isEdit && (
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
+              )}
+            </div>
             <div className="flex flex-col gap-1 mt-2">
               <h3 className="font-semibold text-base leading-4 text-blackText">
                 Building
@@ -98,7 +138,13 @@ export default function WishlistsMobile() {
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md"></div>
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
+              {isEdit && (
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
+              )}
+            </div>
             <div className="flex flex-col gap-1 mt-2">
               <h3 className="font-semibold text-base leading-4 text-blackText">
                 Building
@@ -108,7 +154,13 @@ export default function WishlistsMobile() {
           </div>
 
           <div className="flex flex-col">
-            <div className="w-[166px] h-[166px] bg-[#E4E4E4] rounded-md"></div>
+            <div className="w-full h-[166px] bg-[#E4E4E4] rounded-md relative">
+              {isEdit && (
+                <div className="w-[20px] h-[20px] absolute top-4 right-4 rounded-full bg-red flex justify-center items-center z-30">
+                  <div className="inline-block w-[60%] h-[2px] bg-sky-50"></div>
+                </div>
+              )}
+            </div>
             <div className="flex flex-col gap-1 mt-2">
               <h3 className="font-semibold text-base leading-4 text-blackText">
                 Building

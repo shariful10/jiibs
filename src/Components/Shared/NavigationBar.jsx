@@ -2,69 +2,71 @@ import { useContext } from "react";
 import Context from "@/Context/Context";
 import Link from "next/link";
 import InputSearchBar from "../Regular/Inputs/InputSearchBar";
-import Container from "../Regular/Container";
+import { SIGNIN, SIGNUP } from "../Regular/Utils/constant";
+import SignUp from "../Authentication/Signup/Signup";
+import SignIn from "../Authentication/SignIn/SignIn";
 
 const NavigationBar = () => {
   const { modal, setModal } = useContext(Context);
-  // const router = useRouter();
 
-  const handleModal = (modalValue, modalLabel, isWidth) => {
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    isWidth,
+    modalContent,
+  }) => {
     setModal({
       ...modal,
-      isModalOpen: !modal?.isModalOpen,
-      modalType: modalValue,
-      isMobileModal: false,
-      modalLabel: modalLabel,
-      isWidth: isWidth,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      isWidth,
+      modalContent,
     });
   };
-  // const handleAuth = ({ buttonType }) => {
-  //   const isMobile = window.innerWidth <= 767;
-  //   if (isMobile) {
-  //     if (buttonType === "signin") {
-  //       router.push("/login");
-  //     } else if (buttonType === "signup") {
-  //       router.push("/signup");
-  //     }
-  //   } else {
-  //     if (buttonType === "signin") {
-  //       handleModal("signin", "", "max-w-[480px]");
-  //     } else if (buttonType === "signup") {
-  //       handleModal("signup", "", "max-w-[480px]");
-  //     }
-  //   }
-  // };
 
   return (
-    // <Container>
-    <Container>
-      <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
-        {/* Login */}
-        <div className="flex text-[38px] font-semibold text-primary py-3">
-          <Link href="/">JIBBS.</Link>
-        </div>
-
-        {/* search input */}
-        <InputSearchBar />
-
-        {/* user , login , sign up */}
-        <div className="flex justify-end items-center gap-4">
-          <AuthButton
-            icons={loginUserIcon}
-            title="Login"
-            handleAuthButton={() => handleModal("signin", "", "max-w-[480px]")}
-          />
-
-          <AuthButton
-            icons={signUpIcons}
-            title="Sign Up"
-            handleAuthButton={() => handleModal("signup", "", "max-w-[480px]")}
-          />
-        </div>
+    <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
+      {/* Login */}
+      <div className="flex text-[38px] leading-[47px] font-semibold text-primary py-3">
+        <Link href="/">JIBBS.</Link>
       </div>
-    </Container>
 
-    // </Container>
+      {/* search input */}
+      <InputSearchBar />
+
+      {/* user , login , sign up */}
+      <div className="flex justify-end items-center gap-4">
+        <AuthButton
+          icons={loginUserIcon}
+          title="Login"
+          handleAuthButton={() =>
+            handleModal({
+              modalType: SIGNIN?.value,
+              modalLabel: SIGNIN?.label,
+              isMobileModal: false,
+              isWidth: "max-w-[480px]",
+              modalContent: <SignIn />,
+            })
+          }
+        />
+        <AuthButton
+          icons={signUpIcons}
+          title="Sign Up"
+          handleAuthButton={() =>
+            handleModal({
+              modalType: SIGNUP?.value,
+              modalLabel: SIGNUP?.label,
+              isMobileModal: false,
+              isWidth: "max-w-[480px]",
+              modalContent: <SignUp />,
+            })
+          }
+        />
+      </div>
+    </div>
   );
 };
 
@@ -84,7 +86,7 @@ function AuthButton({ icons, title, handleAuthButton }) {
 }
 
 // icons
-var loginUserIcon = (
+const loginUserIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -98,7 +100,7 @@ var loginUserIcon = (
     />
   </svg>
 );
-var signUpIcons = (
+const signUpIcons = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
@@ -117,22 +119,5 @@ var signUpIcons = (
         <rect width={24} height={24} fill="white" />
       </clipPath>
     </defs>
-  </svg>
-);
-var dropDownIcons = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="11"
-    height="10"
-    viewBox="0 0 11 10"
-    fill="none"
-  >
-    <path d="M7.94531 4.5L4.94531 7.5L1.94531 4.5" fill="#222222" />
-    <path
-      d="M7.94531 4.5L4.94531 7.5L1.94531 4.5"
-      stroke="#222222"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
   </svg>
 );

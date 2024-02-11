@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-import Modal from "@/Components/Regular/Modal/Modal";
-import AddAlbum from "@/Components/wishlist/AddAlbum";
+import React, { useContext } from "react";
 import NotLogin from "@/Components/wishlist/NotLogin";
-import AddWishlist from "@/Components/wishlist/AddWishlist";
 import Album from "@/Components/wishlist/Album";
 import WishlistsMobile from "@/Components/wishlist/WishlistsMobile";
+import Context from "@/Context/Context";
+import { CREATE_WISHLIST } from "@/Components/Regular/Utils/constant";
+import AddAlbum from "@/Components/wishlist/AddAlbum";
 
 const whitePlusIcon = (
   <svg
@@ -36,65 +36,53 @@ const whitePlusIcon = (
 );
 
 export default function page() {
-  const [modal, setModal] = useState({
-    isModalOpen: false,
-    modalType: "",
-    isMobileModal: false,
-    modalLabel: "",
-  });
+  const { modal, setModal } = useContext(Context);
   const isLogin = false;
 
-  // setting modal content
-  let modalContent;
-
-  if (modal?.modalType === "album") {
-    modalContent = <AddAlbum />;
-  } else if (modal?.modalType === "addWishlist") {
-    modalContent = <AddWishlist />;
-  }
-
-  const handleModal = (modalValue, modalLabel, isWidth) => {
+  const handleModal = ({ modalType, modalLabel, isWidth, modalContent }) => {
     setModal({
       ...modal,
-      isModalOpen: !modal?.isModalOpen,
-      modalType: modalValue,
-      isMobileModal: true,
-      modalLabel: modalLabel,
-      isWidth: isWidth,
+      isOpen: !modal?.isOpen,
+      modalType,
+      modalLabel,
+      isWidth,
+      modalContent,
     });
   };
 
-  const handleCloseModal = () => {
-    setModal({ ...modal, isModalOpen: !modal?.isModalOpen });
-  };
-
   return (
-    <div className="w-full max-w-[1520px] mx-auto pb-20 p-10">
+    <div className="w-full max-w-[1520px] mx-auto pt-10 pb-20">
       {isLogin ? (
         <NotLogin />
       ) : (
         <>
           {/* Wishlist mobile */}
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <WishlistsMobile />
           </div>
           {/* Wishlist desktop */}
-          <div className="hidden sm:block">
-            <div className="hidden sm:flex justify-between items-center mb-8">
+          <div className="hidden md:block">
+            <div className="hidden sm:flex justify-between items-center">
               <h1 className="font-semibold text-3xl text-blackText">
                 Wishlist
               </h1>
               <button
                 className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
-                // onClick={() =>
-                //   handleModal("album", "Create wishlist", "max-w-[700px]")
-                // }
+                onClick={() =>
+                  handleModal({
+                    modalType: CREATE_WISHLIST?.value,
+                    modalLabel: CREATE_WISHLIST?.label,
+                    isMobileModal: false,
+                    isWidth: "max-w-[630px]",
+                    modalContent: <AddAlbum />,
+                  })
+                }
               >
                 <span>{whitePlusIcon}</span>
                 <span>Create album</span>
               </button>
             </div>
-            <div className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0">
+            <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-10">
               <Album />
               <Album />
               <Album />
@@ -106,16 +94,6 @@ export default function page() {
             </div>
           </div>
         </>
-      )}
-      {modal?.isModalOpen && (
-        <Modal
-          isOpen={modal?.isModalOpen}
-          onClose={handleCloseModal}
-          name={modal?.modalLabel}
-          isMobileModal={modal?.isMobileModal}
-        >
-          {modalContent}
-        </Modal>
       )}
     </div>
   );
