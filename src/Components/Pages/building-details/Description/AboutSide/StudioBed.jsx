@@ -20,8 +20,14 @@ const StudioBedSlide = ({ betData = [] }) => {
         "--swiper-navigation-color": "#fff",
         "--swiper-pagination-color": "#fff",
       }}
+      navigation={{
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }}
       className="w-full rounded-lg studio_slider"
     >
+      <div className="swiper-button-next bg-slate-200" />
+      <div className="swiper-button-prev bg-slate-200" />
       {betData?.map((bet, index) => (
         <SwiperSlide
           key={index}
