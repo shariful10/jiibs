@@ -22,7 +22,6 @@ export default function BuildingSlider() {
 
   return (
     <div className="flex justify-between gap-3 h-[650px]">
-      {/* <BuildingImageSlider /> */}
       <Swiper
         direction={"vertical"}
         slidesPerView={1}
@@ -54,6 +53,7 @@ export default function BuildingSlider() {
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
+        direction={"vertical"}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
