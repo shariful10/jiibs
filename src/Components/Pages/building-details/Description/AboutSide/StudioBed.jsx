@@ -31,7 +31,7 @@ const StudioBedSlide = ({ betData = [] }) => {
       {betData?.map((bet, index) => (
         <SwiperSlide
           key={index}
-          className="max-w-[180px] !w-full flex items-center justify-between gap-6 studio_slider_slide !m-0 cursor-pointer"
+          className="max-w-[181px] !w-full flex items-center justify-between gap-6 studio_slider_slide !m-0 cursor-pointer"
         >
           <BetStudio studio={bet} />
         </SwiperSlide>
