@@ -28,7 +28,8 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
   return (
     <>
       <div className="flex-none gap-2">
-        <div className="m-auto flex flex-row items-center border border-gray-500 rounded-full h-[45px] px-[24px] relative divide-x">
+        <div className="m-auto flex flex-row items-center border border-lightGrayBorder rounded-full h-[45px] px-[24px] relative divide-x">
+          {/* search input */}
           <div className="flex-1 flex items-center justify-start gap-5">
             <figure
               className="hover:!text-primary transition duration-200 rounded-lg cursor-pointer"
@@ -38,6 +39,7 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
             </figure>
             <input
               type="text"
+              onClick={() => setOpenDropDown(true)}
               placeholder="Search Apartments "
               className="outline-none text-[17px] font-normal"
               onChange={(e) => setInputSearch(e.target.value)}
@@ -45,10 +47,11 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
           </div>
 
           <div className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
+            {/* search unit options */}
             <button
               className="bg-transparent capitalize cursor-pointer hover:bg-primary/15 transition duration-200 px-1"
               onClick={() => {
-                setOpenOptions(true);
+                setOpenOptions(!openOptions);
               }}
             >
               <span className="flex items-center gap-2">
@@ -63,7 +66,7 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
                   : "-top-40 opacity-0 scale-0 z-0"
               }`}
             >
-              <div className="bg-white shadow-md px-1 py-2">
+              <div className="bg-white shadow-md p-2">
                 {options?.map((option) => (
                   <button
                     className="capitalize flex gap-4 items-center px-3 py-1 cursor-pointer hover:bg-primary/15 transition duration-200 rounded-lg w-full"

@@ -7,10 +7,6 @@ import {
   PRICE,
   SORT_BY,
 } from "../Regular/Utils/constant";
-import Sorting from "./Sorting";
-import LifeStyle from "./LifeStyle";
-import Price from "./Price";
-import BedAndBath from "./BedAndBath";
 
 const arrowIcon = (
   <svg
@@ -63,7 +59,7 @@ export default function MobileFiltering() {
     });
   };
 
-  const [openDropDown, setOpenDropDown] = useState(true);
+  const [openDropDown, setOpenDropDown] = useState(false);
   const [searchResult, setSearchResult] = useState({
     data: [],
     type: "",
