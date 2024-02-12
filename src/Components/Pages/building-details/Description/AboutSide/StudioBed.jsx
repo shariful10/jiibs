@@ -3,6 +3,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import "./Studio.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,10 +25,11 @@ const StudioBedSlide = ({ betData = [] }) => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       }}
-      className="w-full rounded-lg studio_slider"
+      className="w-full !flex rounded-lg studio_slider"
     >
       <div className="swiper-button-next bg-slate-200" />
       <div className="swiper-button-prev bg-slate-200" />
+
       {betData?.map((bet, index) => (
         <SwiperSlide
           key={index}
