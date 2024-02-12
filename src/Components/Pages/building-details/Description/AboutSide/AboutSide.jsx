@@ -5,7 +5,7 @@ import Image from "next/image";
 import AboutDescription from "./AboutDescription";
 import Amenities from "./Amenities";
 import AvailableUnits from "./AvailableUnits";
-// import StudioBed from "./StudioBed";
+import StudioBed from "./StudioBed";
 import Transportation from "./Transportation";
 import StudioBedSlide from "./StudioBed";
 
@@ -67,11 +67,11 @@ export default function AboutSide() {
     <>
       <div className="space-y-8 md:space-y-[3.25rem] mb-5">
         {/* bet studio */}
-        {/* <div className="flex items-center justify-between gap-6">
+        <div className="flex items-center justify-between gap-6">
           <StudioBed betData={studioBed} />
-        </div> */}
+        </div>
 
-        <StudioBedSlide betData={studioBed} />
+        {/* <StudioBedSlide betData={studioBed} /> */}
 
         {/* About Description */}
         <div>
