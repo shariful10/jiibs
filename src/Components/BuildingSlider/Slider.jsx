@@ -21,7 +21,7 @@ export default function BuildingSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="flex justify-between gap-3 h-[480px]">
+    <div className="flex justify-between gap-3 h-[480px] xl:h-[600px]">
       <Swiper
         direction={"vertical"}
         slidesPerView={1}

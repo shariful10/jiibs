@@ -12,7 +12,7 @@ export default function LocationMap() {
   const handleTouch = () => {};
 
   return (
-    <div>
+    <div className="w-full">
       {/* head address part */}
       <div>
         <h1 className="text-3xl font-semibold">70 Pine Street</h1>

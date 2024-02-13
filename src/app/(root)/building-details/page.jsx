@@ -1,9 +1,47 @@
-import BuildingDetails from "@/Components/Pages/building-details/BuildingDetails";
+import BuildingSlider from "@/Components/BuildingSlider/Slider";
+import AboutSide from "@/Components/Pages/building-details/Description/AboutSide/AboutSide";
+import LocationMap from "@/Components/Pages/building-details/Description/LocationDetails/LocationMap";
+import Similar from "@/Components/Pages/building-details/Similar/Similar";
+import Breadcrumbs from "@/Components/Regular/Breadcrumbs/Breadcrumbs";
 
-export default function Home() {
+export default function BuildingDetail() {
   return (
     <div className="w-full">
-      <BuildingDetails />
+      {/* title and slider part */}
+      <section className="py-4">
+        {/* Header part */}
+        <div className="md:flex flex-col md:flex-row gap-4 justify-between items-center py-[18px] hidden">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">
+            70 Pine Street, New York, New york 10005
+          </h1>
+
+          <div className="hidden md:block">
+            <Breadcrumbs
+              paths={[
+                { name: "buildings", link: "#" },
+                { name: "Downtown", link: "#" },
+                { name: "Financial district", link: "#" },
+                { name: "70 pine street", link: "#" },
+              ]}
+            />
+          </div>
+        </div>
+
+        {/* preview slider */}
+        <BuildingSlider />
+      </section>
+      <section className="flex flex-col-reverse md:flex-row flex-start items-start justify-between gap-[9%] md:gap-20 w-full mt-6">
+        {/* about , description */}
+        <div className="w-full md:w-[61%] overflow-hidden">
+          <AboutSide />
+        </div>
+
+        {/* Location map */}
+        <div className="w-full md:w-[30%] mb-4 md:mb-0 static md:sticky md:top-0">
+          <LocationMap />
+        </div>
+      </section>
+      <Similar />
     </div>
   );
 }
