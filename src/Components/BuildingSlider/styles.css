@@ -25,14 +25,14 @@
   height: 100%;
 }
 
-.swiper_tabs .swiper-wrapper {
+.swiper_tabs > .swiper-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 6px !important;
 }
 
-.swiper_tabs .swiper-slide {
+.swiper_tabs > .swiper-slide {
   width: 100% !important;
   height: 100%;
   opacity: 0.4;
@@ -43,11 +43,11 @@
   cursor: pointer !important;
 }
 
-.swiper_tabs .swiper-slide-thumb-active {
+.swiper_tabs > .swiper-slide-thumb-active {
   opacity: 1;
 }
 
-.swiper-slide img {
+.swiper-slide > img {
   display: block;
   width: 100%;
   height: 100%;
