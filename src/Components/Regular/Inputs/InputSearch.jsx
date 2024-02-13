@@ -49,7 +49,9 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
           <div className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
             {/* search unit options */}
             <button
-              className="bg-transparent capitalize cursor-pointer hover:bg-primary/15 transition duration-200 px-1"
+              className={`bg-transparent capitalize cursor-pointer hover:bg-primary/15 transition duration-200 px-2 rounded-md ${
+                openOptions ? "bg-primary/15" : ""
+              }`}
               onClick={() => {
                 setOpenOptions(!openOptions);
               }}
@@ -60,23 +62,21 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
             </button>
 
             <div
-              className={`transition-all duration-200 absolute ${
-                openOptions
-                  ? "top-9  opacity-100 scale-100 z-50"
-                  : "-top-40 opacity-0 scale-0 z-0"
-              }`}
+              className={`transition-all top-9 duration-200 absolute 
+              ${openOptions ? "block opacity-100 z-50" : "hidden opacity-0 z-0"}
+              `}
             >
-              <div className="bg-white shadow-md p-2">
+              <div className="bg-white shadow-md shadow-black/30 py-2 w-[14rem] space-y-2 rounded-md">
                 {options?.map((option) => (
                   <button
-                    className="capitalize flex gap-4 items-center px-3 py-1 cursor-pointer hover:bg-primary/15 transition duration-200 rounded-lg w-full"
+                    className="capitalize flex gap-4 items-center px-3 py-1 cursor-pointer hover:bg-primary/15 transition duration-200  w-full"
                     key={option?._id}
                     onClick={() => {
                       setOpenOptions(false);
                       setSelectType(option?.title);
                     }}
                   >
-                    <figure className="inline-block text-lg">
+                    <figure className="inline-block text-xl">
                       {option?.icons}
                     </figure>
                     <p>{option?.title}</p>
