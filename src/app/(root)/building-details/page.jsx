@@ -1,4 +1,5 @@
 import BuildingSlider from "@/Components/BuildingSlider/Slider";
+import BuildingSliderMobile from "@/Components/BuildingSlider/SliderMobile";
 import AboutSide from "@/Components/Pages/building-details/Description/AboutSide/AboutSide";
 import LocationMap from "@/Components/Pages/building-details/Description/LocationDetails/LocationMap";
 import Similar from "@/Components/Pages/building-details/Similar/Similar";
@@ -28,7 +29,9 @@ export default function BuildingDetail() {
         </div>
 
         {/* preview slider */}
+        <div></div>
         <BuildingSlider />
+        <BuildingSliderMobile />
       </section>
       <section className="flex flex-col-reverse md:flex-row flex-start items-start justify-between gap-[9%] md:gap-20 w-full mt-6">
         {/* about , description */}

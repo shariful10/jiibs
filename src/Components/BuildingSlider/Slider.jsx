@@ -5,8 +5,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import sliderImage from "@/assets/slider.webp";
-// import BuildingImageSlider from "@/Components/BuildingImageSlider/BuildingImageSlider";
-
 const images = [1, 2, 3, 4, 5];
 
 // Import Swiper styles
@@ -21,7 +19,7 @@ export default function BuildingSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="flex justify-between gap-3 h-[480px] xl:h-[600px]">
+    <div className="hidden md:flex justify-between gap-3 h-[480px] xl:h-[600px]">
       <Swiper
         direction={"vertical"}
         slidesPerView={1}
