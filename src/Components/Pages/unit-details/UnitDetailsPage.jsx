@@ -11,7 +11,7 @@ export default function UnitDetailsPage() {
         {/* title and slider part */}
         <Container className="py-4">
           {/* Header part */}
-          <div className=" mdx:flex flex-col mdx:flex-row gap-4 justify-between items-center py-[18px] hidden">
+          <div className="md:flex flex-col md:flex-row gap-4 justify-between items-center py-[18px] hidden">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">
               70 Pine Street, New York, New york 10005
             </h1>

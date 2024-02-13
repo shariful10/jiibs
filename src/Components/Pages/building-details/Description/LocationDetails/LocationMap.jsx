@@ -27,15 +27,15 @@ export default function LocationMap() {
       </div>
 
       {/* buttons */}
-      <div className="fixed bottom-0 inset-x-0 w-full mdx:static z-50">
-        <div className="bg-white mdx:bg-transparent w-full">
-          <div className="py-5 px-4 mdx:px-0 mdx:py-8 mdx:block flex flex-row-reverse items-center gap-3.5 justify-between">
+      <div className="fixed bottom-0 inset-x-0 w-full md:static z-50">
+        <div className="bg-white md:bg-transparent w-full">
+          <div className="py-5 px-4 md:px-0 md:py-8 md:block flex flex-row-reverse items-center gap-3.5 justify-between">
             <ButtonPrimary onClick={handleTour}>
               <span>Request a Tour</span>
             </ButtonPrimary>
             <ButtonBlack
               onClick={handleTouch}
-              className="mdx:mt-4"
+              className="md:mt-4"
               styleReverse={true}
             >
               <span>Get in Touch</span>
@@ -45,7 +45,7 @@ export default function LocationMap() {
       </div>
 
       {/* locator */}
-      <div className="hidden mdx:block">
+      <div className="hidden md:block">
         <MapLocator />
       </div>
     </div>
