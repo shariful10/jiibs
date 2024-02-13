@@ -13,9 +13,6 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
   ]);
   const [selectType, setSelectType] = useState("units");
   const [inputSearch, setInputSearch] = useState("");
-  //   console.log("selectType ", selectType);
-  //   console.log("inputSearch ", inputSearch);
-
   useEffect(() => {
     // setResult((pre) => {
     //   return {
@@ -24,6 +21,23 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
     //   };
     // });
   }, []);
+
+  const handleOutsideClick = (event) => {
+    if (event.target.closest(".dropdown-container") === null) {
+      setOpenOptions(false);
+    }
+  };
+  useEffect(() => {
+    if (openOptions) {
+      document.addEventListener("click", handleOutsideClick);
+    } else {
+      document.removeEventListener("click", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [openOptions]);
 
   return (
     <>
@@ -49,9 +63,7 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
           <div className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
             {/* search unit options */}
             <button
-              className={`bg-transparent capitalize cursor-pointer hover:bg-primary/15 transition duration-200 px-2 rounded-md ${
-                openOptions ? "bg-primary/15" : ""
-              }`}
+              className={`bg-transparent capitalize cursor-pointer px-2`}
               onClick={() => {
                 setOpenOptions(!openOptions);
               }}
@@ -62,14 +74,14 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
             </button>
 
             <div
-              className={`transition-all top-9 duration-200 absolute 
+              className={`transition-all left-0 top-9 duration-200 absolute 
               ${openOptions ? "block opacity-100 z-50" : "hidden opacity-0 z-0"}
               `}
             >
-              <div className="bg-white shadow-md shadow-black/30 py-2 w-[14rem] space-y-2 rounded-md">
+              <div className="bg-white shadow-md shadow-black/30 py-2 w-[14rem] space-y-1 rounded-md">
                 {options?.map((option) => (
                   <button
-                    className="capitalize flex gap-4 items-center px-3 py-1 cursor-pointer hover:bg-primary/15 transition duration-200  w-full"
+                    className="capitalize flex gap-4 items-center px-3 py-2 cursor-pointer hover:bg-primary/10 transition duration-200  w-full"
                     key={option?._id}
                     onClick={() => {
                       setOpenOptions(false);

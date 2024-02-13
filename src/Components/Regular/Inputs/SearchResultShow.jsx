@@ -13,12 +13,12 @@ const { default: Logo } = require("../Logo");
 
 export default function SearchResultShow({ data = [], setOpenDropDown }) {
   const [tabs, setTabs] = useState("building");
-  console.log("search data ", data);
+  // console.log("search data ", data);
 
   return (
     <>
       {/* desktop mode */}
-      <div className="block bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md px-3 md:px-0 pt-4 md:pt-0">
+      <div className="block bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md px-3 md:px-0 pt-4 md:pt-2">
         <Container>
           {/* logo, search, close */}
           <div className="flex items-center justify-between gap-4">
