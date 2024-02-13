@@ -17,7 +17,7 @@ const images = [1, 2, 3, 4, 5];
 
 export default function BuildingSliderMobile() {
   return (
-    <div className="flex justify-center md:hidden h-[375px]">
+    <div className="flex justify-center !gap-0 md:hidden h-[375px]">
       <Swiper
         pagination={{
           type: "fraction",
