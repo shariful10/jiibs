@@ -21,8 +21,7 @@ export default function BuildingSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="flex justify-between gap-3 h-[650px]">
-      {/* <BuildingImageSlider /> */}
+    <div className="flex justify-between gap-3 h-[480px]">
       <Swiper
         direction={"vertical"}
         slidesPerView={1}
@@ -40,7 +39,7 @@ export default function BuildingSlider() {
         {images?.map((img, index) => (
           <SwiperSlide
             key={index}
-            className="min-w-full h-[600px] rounded-lg overflow-hidden !m-0"
+            className="min-w-full !h-full !mb-2 rounded-lg"
           >
             <Image
               src={sliderImage}
@@ -54,6 +53,7 @@ export default function BuildingSlider() {
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
+        direction={"vertical"}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
@@ -62,7 +62,7 @@ export default function BuildingSlider() {
       >
         {images?.map((image, idx) => (
           <SwiperSlide key={idx}>
-            <Image src={sliderImage} className="w-full h-8" alt="" />
+            <Image src={sliderImage} className="w-full" alt="" />
           </SwiperSlide>
         ))}
       </Swiper>
