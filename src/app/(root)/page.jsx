@@ -20,6 +20,13 @@ const Home = () => {
           <ApartmentCard key={index} apartment={apartment} />
         ))}
       </div>
+
+      <div className="py-5 md:py-10 lg:pb-[3.75rem] text-center">
+        {/* load more */}
+        <button className="border border-softGray py-3 px-4 rounded-[7px] font-semibold text-xl">
+          Load More
+        </button>
+      </div>
     </>
   );
 };
