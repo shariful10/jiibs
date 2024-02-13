@@ -5,14 +5,15 @@ import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 import Container from "@/Components/Regular/Container";
 import { data } from "@/Components/data";
+import React from "react";
 
 const Home = () => {
   const apartments = data.apartments;
 
   return (
-    <Container>
+    <React.Fragment>
       {/* Desktop categories and filtering  */}
-      <CategoriesAndFilter />
+      {/* <CategoriesAndFilter /> */}
       {/* Mobile categories and filtering  */}
       <MobileFiltering />
 
@@ -28,7 +29,7 @@ const Home = () => {
           Load More
         </button>
       </div>
-    </Container>
+    </React.Fragment>
   );
 };
 
