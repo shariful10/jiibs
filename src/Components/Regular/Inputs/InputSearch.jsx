@@ -22,6 +22,7 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
     // });
   }, []);
 
+  // outside click close dropdown
   const handleOutsideClick = (event) => {
     if (event.target.closest(".dropdown-container") === null) {
       setOpenOptions(false);
@@ -68,7 +69,7 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
                 setOpenOptions(!openOptions);
               }}
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-2 min-w-20 text-center justify-center">
                 <span>{selectType}</span> <MdKeyboardArrowDown />
               </span>
             </button>
