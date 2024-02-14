@@ -1,53 +1,67 @@
-"use client";
+// "use client";
 
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "./Studio.css";
+const { describe } = require("node:test");
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/free-mode";
+// import React from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
+// import "./Studio.css";
 
-const StudioBedSlide = ({ betData = [] }) => {
+// // Import Swiper styles
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+// import "swiper/css/free-mode";
+
+// const StudioBedSlide = ({ betData = [] }) => {
+//   return (
+//     <Swiper
+//       slidesPerView={4}
+//       spaceBetween={10}
+//       modules={[Navigation]}
+//       style={{
+//         "--swiper-navigation-color": "#fff",
+//         "--swiper-pagination-color": "#fff",
+//       }}
+//       navigation={{
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//       }}
+//       className="w-full !flex rounded-lg studio_slider"
+//     >
+//       <div className="swiper-button-next bg-slate-200" />
+//       <div className="swiper-button-prev bg-slate-200" />
+
+//       {betData?.map((bet, index) => (
+//         <SwiperSlide
+//           key={index}
+//           className="max-w-[181px] !w-full flex items-center justify-between gap-6 studio_slider_slide !m-0 cursor-pointer"
+//         >
+//           <BetStudio studio={bet} />
+//         </SwiperSlide>
+//       ))}
+//     </Swiper>
+//   );
+// };
+
+// export default StudioBedSlide;
+
+const StudioBed = ({ betData = [] }) => {
   return (
-    <Swiper
-      slidesPerView={4}
-      spaceBetween={10}
-      modules={[Navigation]}
-      style={{
-        "--swiper-navigation-color": "#fff",
-        "--swiper-pagination-color": "#fff",
-      }}
-      navigation={{
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      }}
-      className="w-full !flex rounded-lg studio_slider"
-    >
-      <div className="swiper-button-next bg-slate-200" />
-      <div className="swiper-button-prev bg-slate-200" />
-
+    <div className="min-w-[181px] w-full flex items-center justify-between gap-6">
       {betData?.map((bet, index) => (
-        <SwiperSlide
-          key={index}
-          className="max-w-[181px] !w-full flex items-center justify-between gap-6 studio_slider_slide !m-0 cursor-pointer"
-        >
-          <BetStudio studio={bet} />
-        </SwiperSlide>
+        <BetStudio key={index} studio={bet} />
       ))}
-    </Swiper>
+    </div>
   );
 };
 
-export default StudioBedSlide;
+export default StudioBed;
 
-// // mini components
+// bet studio components
 function BetStudio({ studio }) {
   return (
-    <div className="capitalize border rounded-lg p-3 min-w-min">
+    <div className="w-full capitalize border rounded-lg p-3 min-w-min">
       <h4 className="text-xl md:text-[21px] font-normal"> {studio?.space}</h4>
       <strong className="md:text-base text-xs font-normal">
         ${studio?.price?.min} - ${studio?.price?.max}

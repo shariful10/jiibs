@@ -31,41 +31,11 @@ export default function AboutSide() {
       price: { min: 3975, max: 4350 },
       available: 2,
     },
-    {
-      space: "3 bed+",
-      price: { min: 3975, max: 4350 },
-      available: 2,
-    },
-    {
-      space: "3 bed+",
-      price: { min: 3975, max: 4350 },
-      available: 2,
-    },
-    {
-      space: "3 bed+",
-      price: { min: 3975, max: 4350 },
-      available: 2,
-    },
-    {
-      space: "3 bed+",
-      price: { min: 3975, max: 4350 },
-      available: 2,
-    },
-    {
-      space: "3 bed+",
-      price: { min: 3975, max: 4350 },
-      available: 2,
-    },
-    {
-      space: "3 bed+",
-      price: { min: 3975, max: 4350 },
-      available: 2,
-    },
   ];
 
   return (
     <>
-      <div className="space-y-8 md:space-y-[3.25rem] mb-5">
+      <div className="w-full space-y-8 md:space-y-[3.25rem] mb-5">
         {/* bet studio */}
         <div className="flex items-center justify-between gap-6">
           <StudioBed betData={studioBed} />
