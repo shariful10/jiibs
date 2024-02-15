@@ -25,9 +25,6 @@ const ProfileInfoDetails = ({
 							<h4 className="text-[15px] text-blackText font-semibold">
 								Legal Name
 							</h4>
-							<p className="text-sm text-darkGray">
-								Change your current name
-							</p>
 						</div>
 						<button
 							onClick={() => setRename(false)}
@@ -44,7 +41,7 @@ const ProfileInfoDetails = ({
 								defaultValue="Jane"
 							/>
 							<InputField
-								lavel="First name"
+								lavel="Last name"
 								name="last_name"
 								defaultValue="Smith"
 							/>
@@ -52,7 +49,7 @@ const ProfileInfoDetails = ({
 						<div className="flex flex-col items-center md:items-start">
 							<button
 								onClick={() => setRename(false)}
-								className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
+								className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
 							>
 								Save
 							</button>
@@ -69,35 +66,44 @@ const ProfileInfoDetails = ({
 					lavel="Lagal name"
 					title="Jane Brandson"
 				>
-					<button onClick={() => setRename(true)} className="font-medium">
+					<button onClick={() => setRename(true)} className="font-medium text-blackText">
 						Edit
 					</button>
 				</ProfileInfoContent>
 			)}
 			{editEmail ? (
-				<div className="mt-6">
-					<EditFieldLavel heading="Email address" subHeading="email">
-						<button
-							onClick={() => setEditEmail(false)}
-							className="text-[15px] text-blackText font-semibold cursor-pointer"
-						>
-							Cancel
-						</button>
-					</EditFieldLavel>
-					<InputFieldDetails
-						lavel="Email"
-                  type="email"
-						name="email"
-						defaultValue="contact.gmail.com"
-					>
-						<button
-							onClick={() => setEditEmail(false)}
-							className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
-						>
-							Save
-						</button>
-					</InputFieldDetails>
-				</div>
+				<div>
+               <div className="flex justify-between items-center mt-5 md:mt-10">
+                  <div className="flex flex-col gap-1">
+                     <h4 className="text-[15px] text-blackText font-semibold">
+                        Email Address
+                     </h4>
+                  </div>
+                  <button
+                     onClick={() => setEditEmail(false)}
+                     className="text-[15px] text-blackText font-semibold cursor-pointer"
+                  >
+                     Cancel
+                  </button>
+               </div>
+               <div className="">
+                  <div className="mt-5">
+                     <InputField
+                        lavel="Your email"
+                        name="email"
+                        defaultValue="Contact@gmail.com"
+                     />
+                  </div>
+                  <div className="flex flex-col items-center md:items-start">
+                     <button
+                        onClick={() => setEditEmail(false)}
+                        className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
+                     >
+                        Save
+                     </button>
+                  </div>
+               </div>
+            </div>
 			) : (
 				<ProfileInfoContent
 					className={`mt-6 ${
@@ -110,7 +116,7 @@ const ProfileInfoDetails = ({
 				>
 					<button
 						onClick={() => setEditEmail(true)}
-						className="font-medium"
+						className="font-medium text-blackText"
 					>
 						Edit
 					</button>
@@ -118,7 +124,7 @@ const ProfileInfoDetails = ({
 			)}
 			{editPhone ? (
 				<div className="mt-6">
-					<EditFieldLavel heading="Phone number" subHeading="phone number">
+					<EditFieldLavel heading="Your Phone number">
 						<button
 							onClick={() => setEditPhone(false)}
 							className="text-[15px] text-blackText font-semibold cursor-pointer"
@@ -126,19 +132,19 @@ const ProfileInfoDetails = ({
 							Cancel
 						</button>
 					</EditFieldLavel>
-					<InputFieldDetails
-						lavel="Phone number"
-                  type="phone"
-						name="phone"
-						defaultValue="+1*******68"
-					>
-						<button
-							onClick={() => setEditPhone(false)}
-							className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
-						>
-							Save
-						</button>
-					</InputFieldDetails>
+					<div className="mt-5">
+                  <InputField
+                     lavel="Phone number"
+                     name="phone"
+                     defaultValue="+1*******68"
+                  />
+               </div>
+               <button
+                  onClick={() => setEditPhone(false)}
+                  className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
+               >
+                  Save
+               </button>
 				</div>
 			) : (
 				<ProfileInfoContent
@@ -152,7 +158,7 @@ const ProfileInfoDetails = ({
 				>
 					<button
 						onClick={() => setEditPhone(true)}
-						className="font-medium"
+						className="font-medium text-blackText"
 					>
 						Edit
 					</button>
@@ -179,7 +185,7 @@ const ProfileInfoDetails = ({
 					<div className="flex flex-col items-center md:items-start">
 						<button
 							onClick={() => setEditPass(false)}
-							className="text-white bg-primary font-semibold py-2 px-3 mt-5 rounded-md"
+							className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
 						>
 							Update Password
 						</button>
@@ -197,7 +203,7 @@ const ProfileInfoDetails = ({
 				>
 					<button
 						onClick={() => setEditPass(true)}
-						className="font-medium"
+						className="font-medium text-blackText"
 					>
 						Edit
 					</button>
