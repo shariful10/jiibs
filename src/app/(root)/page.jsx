@@ -1,5 +1,6 @@
 "use client";
 
+import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
 import { data } from "@/Components/data";
