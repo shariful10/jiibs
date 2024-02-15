@@ -25,9 +25,41 @@ const demoData = [
 		title: "121 Founders",
 		address: "121 Founders, New York, New York 10003",
 	},
+   {
+		id: 3,
+		date: "Sunday, January 14, 2024",
+		image: tour1,
+		time: "09:00am - 09:15 am",
+		title: "The Sun",
+		address: "506 Drew Circle, New York, New York 10006",
+	},
+	{
+		id: 4,
+		date: "Monday, January 15, 2024",
+		image: tour2,
+		time: "02:00am - 03:15 pm",
+		title: "121 Founders",
+		address: "121 Founders, New York, New York 10003",
+	},
+   {
+		id: 5,
+		date: "Sunday, January 14, 2024",
+		image: tour1,
+		time: "09:00am - 09:15 am",
+		title: "The Sun",
+		address: "506 Drew Circle, New York, New York 10006",
+	},
+	{
+		id: 6,
+		date: "Monday, January 15, 2024",
+		image: tour2,
+		time: "02:00am - 03:15 pm",
+		title: "121 Founders",
+		address: "121 Founders, New York, New York 10003",
+	},
 ];
 
-const UpcomingTab = () => {
+const UpcomingTab = ({ from, to }) => {
 	const [openState, setOpenState] = useState(null);
 
 	const toggleOpenState = (id) => {
@@ -36,7 +68,7 @@ const UpcomingTab = () => {
 
 	return (
 		<div className="">
-			{demoData.map(({ id, date, image, time, title, address }) => (
+			{demoData.slice(from, to).map(({ id, date, image, time, title, address }) => (
 				<div key={id}>
 					<div className="bg-lightGray p-3 md:p-4">
 						<p className="text-blackText">{date}</p>
@@ -69,7 +101,7 @@ const UpcomingTab = () => {
 							</button>
 							{openState === id && (
 								<div className="absolute top-7 right-0 rounded-md border p-2 md:p-3 flex flex-col gap-2 bg-white z-10">
-									<button className="font-semibold w-[140px] py-1.5 rounded-full border flex justify-center gap-2 items-center">
+									<button className="font-semibold w-[140px] py-2 px-4 rounded-full border flex gap-2 items-center">
 										<Image
 											src={sync}
 											className="h-5 w-5"
@@ -77,7 +109,7 @@ const UpcomingTab = () => {
 										/>
 										Reschedule
 									</button>
-									<button className="font-semibold px-4 py-1.5 rounded-full border border-lightRed text-lightRed flex justify-center gap-2 items-center">
+									<button className="font-semibold px-4 py-2 rounded-full border border-lightRed text-lightRed flex gap-2 items-center">
 										<Image
 											src={close}
 											className="h-5 w-5"

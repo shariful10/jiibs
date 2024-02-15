@@ -8,7 +8,7 @@ const ToursAndOpenHouses = () => {
 	const [tab, setTab] = useState("upcoming");
 
 	return (
-		<Container className="px-6 md:px-0">
+		<Container className="px-6 md:px-0 min-h-[calc(100vh-95px)]">
 			<div className="my-10">
 				<div className="flex justify-between items-center">
 					<div className="text-darkGray flex items-center gap-6">
@@ -41,15 +41,13 @@ const ToursAndOpenHouses = () => {
 				</div>
 				{tab === "upcoming" && (
 					<div className="mt-10">
-						<UpcomingTab />
+						<UpcomingTab from={0} to={6} />
 					</div>
 				)}
 				{tab === "past" && (
 					<div className="mt-10">
-						<h2 className="text-2xl font-semibold text-center">
-							Coming soon
-						</h2>
-					</div>
+               <UpcomingTab from={0} to={2} />
+            </div>
 				)}
 			</div>
 		</Container>
