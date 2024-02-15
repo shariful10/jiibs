@@ -162,7 +162,7 @@ const CreateUserProfile = () => {
                         id="First_Name"
                         type="text"
                         placeholder="Rachel"
-                        className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
+                        className="rounded-lg py-[13px] xxl:py-[15px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
                         required
                       />
                     </div>
@@ -175,7 +175,7 @@ const CreateUserProfile = () => {
                         id="Last_Name"
                         type="text"
                         placeholder="Green"
-                        className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
+                        className="rounded-lg py-[13px] xxl:py-[15px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
                         required
                       />
                     </div>
@@ -190,7 +190,7 @@ const CreateUserProfile = () => {
                       id="email"
                       type="text"
                       placeholder="rachel.green@gmail.com"
-                      className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
+                      className="rounded-lg py-[13px] xxl:py-[15px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
                       required
                       disabled
                     />
@@ -209,7 +209,7 @@ const CreateUserProfile = () => {
                         <select
                           name="date"
                           id="date"
-                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
+                          className="rounded-lg py-[13px] xxl:py-[15px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
                           <option disabled selected>
@@ -224,7 +224,7 @@ const CreateUserProfile = () => {
                         <select
                           name="month"
                           id="month"
-                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
+                          className="rounded-lg py-[13px] xxl:py-[15px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
                           <option disabled selected>
@@ -246,7 +246,7 @@ const CreateUserProfile = () => {
                         <select
                           name="year"
                           id="year"
-                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
+                          className="rounded-lg py-[13px] xxl:py-[15px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
                           <option disabled selected>
@@ -271,7 +271,7 @@ const CreateUserProfile = () => {
                       <select
                         name="country"
                         id="country"
-                        className="py-[13px] xxl:py-[18px] px-2 rounded-l-lg"
+                        className="py-[13px] xxl:py-[15px] px-2 rounded-l-lg"
                         required
                       >
                         <option value="US">US</option>
@@ -284,7 +284,7 @@ const CreateUserProfile = () => {
                         name="phone"
                         id="phone"
                         type="number"
-                        className="py-[13px] xxl:py-[18px] px-5 focus:outline-none w-full rounded-r-lg"
+                        className="py-[13px] xxl:py-[15px] px-5 focus:outline-none w-full rounded-r-lg"
                         required
                       />
                     </div>
