@@ -15,8 +15,8 @@ const filterIcon = (
     fill="currentColor"
     strokeWidth="0"
     viewBox="0 0 512 512"
-    height="1em"
-    width="1em"
+    height="0.8em"
+    width="0.8em"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path>
@@ -54,11 +54,11 @@ export default function CategoriesAndFilter() {
     });
   };
   return (
-    <div className="w-full hidden md:flex items-center justify-between gap-12 pt-10">
+    <div className="w-full hidden md:flex items-center justify-between gap-5 pt-10">
       <Categories />
       <div className="hidden md:flex flex-nowrap justify-end whitespace-nowrap gap-3 items-center">
         <button
-          className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+          className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white"
           onClick={() =>
             handleModal({
               modalType: FILTERING?.value,
@@ -77,7 +77,7 @@ export default function CategoriesAndFilter() {
           Filters
         </button>
         <button
-          className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold"
+          className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white"
           onClick={() =>
             handleModal({
               modalType: FURTHER_OPTIMIZE?.value,
@@ -97,7 +97,7 @@ export default function CategoriesAndFilter() {
         >
           Optimize
         </button>
-        <button className="px-5 py-3 rounded-[7px] border-[1.5px] border-softGray flex gap-2 items-center text-[17px] font-semibold">
+        <button className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white">
           <Link href={"/wishlists"}>Sort By</Link>
         </button>
       </div>

@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <React.Fragment>
       {/* Desktop categories and filtering  */}
-      {/* <CategoriesAndFilter /> */}
+      <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
       <MobileFiltering />
 

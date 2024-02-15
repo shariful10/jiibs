@@ -6,3 +6,17 @@
   align-items: flex-end !important;
   gap: 29px !important;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+/* .swiper-button-next {
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  width: 10px !important;
+  height: 10px !important;
+} */
