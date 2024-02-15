@@ -20,8 +20,8 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
       <div className="block bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md px-3 md:px-0 pt-4">
         <Container>
           {/* Dropdown logo, search, close */}
-          <div className="flex items-center justify-between gap-4">
-            <div className="hidden md:block  py-1.5">
+          <div className="flex items-center justify-between gap-4 py-1.5">
+            <div className="hidden md:block">
               {/* logo */}
               <Logo />
             </div>
@@ -29,7 +29,7 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
               <input
                 type="text"
                 placeholder="Search Apartments, Neighborhoods, Etc."
-                className={`w-full bg-lightGray text-blackText focus:outline-none border-none p-3 text-sm rounded-full outline-none text-[14px] font-normal`}
+                className={`w-full bg-lightGray text-blackText focus:outline-none border-none px-3 py-2 text-sm rounded-full outline-none text-[14px] font-normal`}
               />
             </div>
             <div>
@@ -119,7 +119,7 @@ function SearchItem({ item }) {
   return (
     <>
       <div
-        className={`flex items-center justify-between gap-4 rounded-[20px] py-1 px-3 w-full cursor-pointer hover:bg-darkGray/30 transition duration-200 ${
+        className={`flex items-center justify-between gap-4 rounded-[20px] py-1 px-3 w-full cursor-pointer hover:bg-lightGray transition duration-200 ${
           item?.select ? "bg-lightGray" : "bg-transparent"
         }`}
       >
