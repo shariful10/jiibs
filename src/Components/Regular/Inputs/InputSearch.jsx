@@ -43,9 +43,9 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
   return (
     <>
       <div className="flex-none gap-2  w-full max-w-[400px]">
-        <div className="m-auto flex flex-row items-center border border-lightGrayBorder rounded-full h-[45px] px-[24px] relative divide-x">
+        <div className="m-auto flex flex-row items-center  rounded-full px-[24px] relative divide-x h-[40px] border border-lightGrayBorder">
           {/* search input */}
-          <div className="flex-1 flex items-center justify-start gap-5 w-full">
+          <div className="flex-1 flex items-center justify-start gap-2.5 w-full">
             <figure
               className="hover:!text-primary transition duration-200 rounded-lg cursor-pointer"
               onClick={() => setOpenDropDown(true)}
@@ -56,16 +56,16 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
               type="text"
               onClick={() => setOpenDropDown(true)}
               placeholder="Search Apartments "
-              className="outline-none text-[14px] font-normal"
+              className="outline-none text-[14px] font-normal px-[15px] "
               onChange={(e) => setInputSearch(e.target.value)}
             />
           </div>
 
           {/* select options */}
-          <div className="ml-1 focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
+          <div className=" focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
             {/* search unit options */}
             <button
-              className={`bg-transparent capitalize cursor-pointer px-2`}
+              className={`bg-transparent capitalize cursor-pointer`}
               onClick={() => {
                 setOpenOptions(!openOptions);
               }}
