@@ -1,22 +1,21 @@
-import Container from "../Regular/Container";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import CategoryBox from "./CategoryBox";
 import { categories } from "./categoriesData";
-import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "./Categories.css";
 
-import { FreeMode, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 const Categories = () => {
   return (
-    <div>
+    <div className="relative w-full md:max-w-[380px] lg:max-w-[630px] elg:max-w-[700px] xl:max-w-[800px] xxl:max-w-[1040px]">
       <Swiper
         slidesPerView={7}
-        // navigation={true}
-        modules={[FreeMode, Navigation]}
-        className="mySwiper w-full md:max-w-[380px] mdx:max-w-[630px] lg:max-w-[720px] elg:max-w-[960px]"
+        modules={[Navigation]}
+        className="mySwiper px-5"
       >
         {categories.map((category) => (
           <SwiperSlide key={category.label}>
