@@ -21,7 +21,7 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
         <Container>
           {/* Dropdown logo, search, close */}
           <div className="flex items-center justify-between gap-4">
-            <div className="hidden md:block">
+            <div className="hidden md:block  py-1.5">
               {/* logo */}
               <Logo />
             </div>
