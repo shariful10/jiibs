@@ -1,5 +1,4 @@
 import Context from "@/Context/Context";
-import Link from "next/link";
 import { useContext } from "react";
 import SignIn from "../Authentication/SignIn/SignIn";
 import SignUp from "../Authentication/Signup/Signup";
@@ -29,9 +28,11 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
+    <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3 ">
       {/* logo */}
-      <Logo />
+      <div className="py-2.5">
+        <Logo />
+      </div>
 
       {/* search input */}
       <InputSearchBar />
@@ -76,7 +77,7 @@ function AuthButton({ icons, title, handleAuthButton }) {
   return (
     <div
       onClick={handleAuthButton}
-      className="p-[5px] gap-[5px] rounded-[100px] flex items-center justify-center bg-lightGray cursor-pointer"
+      className="py-2.5 px-[15px] gap-[8px] rounded-[100px] flex items-center justify-center bg-lightGray cursor-pointer"
     >
       <figure className="w-5 h-5"> {icons}</figure>
       <span className="text-[14px] font-semibold">{title}</span>
