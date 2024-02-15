@@ -161,6 +161,7 @@ const CreateUserProfile = () => {
                         name="firstName"
                         id="First_Name"
                         type="text"
+                        placeholder="Rachel"
                         className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
                         required
                       />
@@ -173,6 +174,7 @@ const CreateUserProfile = () => {
                         name="lastName"
                         id="Last_Name"
                         type="text"
+                        placeholder="Green"
                         className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
                         required
                       />
@@ -187,8 +189,10 @@ const CreateUserProfile = () => {
                       name="email"
                       id="email"
                       type="text"
+                      placeholder="rachel.green@gmail.com"
                       className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray italic"
                       required
+                      disabled
                     />
                     <p className="flex items-center gap-1 text-green-500">
                       {" "}
@@ -208,7 +212,9 @@ const CreateUserProfile = () => {
                           className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
-                          <option disabled>Day</option>
+                          <option disabled selected>
+                            Day
+                          </option>
                           {days?.map((day, index) => (
                             <option key={index} value={day}>
                               {day}
@@ -221,7 +227,9 @@ const CreateUserProfile = () => {
                           className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
-                          <option disabled>Month</option>
+                          <option disabled selected>
+                            Month
+                          </option>
                           <option value="January">January</option>
                           <option value="February">February</option>
                           <option value="March">March</option>
@@ -241,7 +249,9 @@ const CreateUserProfile = () => {
                           className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
-                          <option disabled>Year</option>
+                          <option disabled selected>
+                            Year
+                          </option>
                           {years?.map((year, index) => (
                             <option key={index} value={year}>
                               {year}
@@ -291,7 +301,7 @@ const CreateUserProfile = () => {
         <div className="flex justify-between">
           {activeTab > 1 && (
             <button
-              className="mr-2 bg-softGray text-blackText px-5 md:px-10 py-3 rounded-md font-semibold"
+              className="mr-2 bg-softGray text-blackText px-[30px] py-2.5 rounded-[5px] text-[14px] font-semibold"
               onClick={() => setActiveTab(activeTab - 1)}
             >
               Back
@@ -304,7 +314,7 @@ const CreateUserProfile = () => {
             </div>
             <button
               type="submit"
-              className="bg-primary text-white px-5 md:px-10 py-3 rounded-md"
+              className="bg-primary text-white px-[30px] py-2.5 rounded-[5px] text-[14px]"
               onClick={() => {
                 activeTab <= 3 && setActiveTab(activeTab + 1),
                   handleCreateProfile();
