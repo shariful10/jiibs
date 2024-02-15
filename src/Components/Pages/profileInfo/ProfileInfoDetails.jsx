@@ -216,7 +216,7 @@ const ProfileInfoDetails = ({
 					<div className="flex flex-col items-center md:items-start">
 						<button
 							onClick={() => setEditPass(false)}
-							className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
+							className="text-sm text-white bg-primary font-semibold py-[8px] px-[20px] mt-5 rounded-md"
 						>
 							Update Password
 						</button>

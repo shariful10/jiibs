@@ -3,7 +3,7 @@ import React from "react";
 const InputPass = ({ lavel }) => {
 	return (
 		<div className=" mt-2">
-			<h2 className="text-lg text-darkGray">{lavel}  Password?</h2>
+			<h2 className="text-base text-darkGray">{lavel}  Password?</h2>
 			<input
 				type="password"
 				name="password"
