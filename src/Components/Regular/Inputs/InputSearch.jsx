@@ -42,27 +42,28 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
 
   return (
     <>
-      <div className="flex-none gap-2  w-full max-w-[400px]">
-        <div className="m-auto flex flex-row items-center  rounded-full px-[24px] relative divide-x h-[40px] border border-lightGrayBorder">
+      {/* <div className="flex-none gap-2  w-full max-w-[350px]"> */}
+      <div className="w-full md:max-w-[230px] lg:max-w-[350px] absolute top-[28px] left-1/2 -translate-x-1/2 z-10">
+        <div className="m-auto flex flex-row items-center  rounded-full px-[15px] relative divide-x h-[40px] border border-lightGrayBorder">
           {/* search input */}
-          <div className="flex-1 flex items-center justify-start gap-2.5 w-full">
+          <div className="flex-1 flex items-center justify-start gap-0 w-full">
             <figure
-              className="hover:!text-primary transition duration-200 rounded-lg cursor-pointer"
+              className="hover:!text-primary transition duration-200 rounded-lg cursor-pointer h-[15px] w-[15px]"
               onClick={() => setOpenDropDown(true)}
             >
-              {magnifyGlassIcons}
+              <span className="h-[15px] w-[15px]">{magnifyGlassIcons}</span>
             </figure>
             <input
               type="text"
               onClick={() => setOpenDropDown(true)}
               placeholder="Search Apartments "
-              className="outline-none text-[14px] font-normal px-[15px] "
+              className="outline-none text-[14px] font-normal px-[15px] w-full"
               onChange={(e) => setInputSearch(e.target.value)}
             />
           </div>
 
           {/* select options */}
-          <div className=" focus:outline-none pl-6 flex items-center justify-end gap-2 capitalize bg-white relative">
+          <div className=" focus:outline-none pl-2.5 flex items-center justify-end gap-2 capitalize bg-white relative z-[999999]">
             {/* search unit options */}
             <button
               className={`bg-transparent capitalize cursor-pointer`}
@@ -70,20 +71,20 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
                 setOpenOptions(!openOptions);
               }}
             >
-              <span className="flex items-center gap-2 min-w-20 text-center justify-center text-sm">
+              <span className="flex items-center gap-0.5 min-w-20 text-center justify-center text-sm">
                 <span>{selectType}</span> <MdKeyboardArrowDown />
               </span>
             </button>
 
             <div
-              className={`transition-all left-0 top-9 duration-200 absolute 
-              ${openOptions ? "block opacity-100 z-50" : "hidden opacity-0 z-0"}
+              className={`transition-all left-0 top-9 duration-200 absolute z-[99999] 
+              ${openOptions ? "block" : "hidden"}
               `}
             >
-              <div className="bg-white shadow-md shadow-black/30 py-4 w-[14rem] space-y-1 rounded-md">
+              <div className="bg-white shadow-md shadow-black/30 py-0 w-[14rem] space-y-1 rounded-md">
                 {options?.map((option) => (
                   <button
-                    className="capitalize flex gap-4 items-center px-3 py-2 cursor-pointer hover:bg-primary/10 transition duration-200  w-full"
+                    className="capitalize flex gap-4 items-center px-3 py-3 cursor-pointer hover:bg-primary/10 transition duration-200  w-full"
                     key={option?._id}
                     onClick={() => {
                       setOpenOptions(false);
@@ -105,14 +106,12 @@ export default function InputSearch({ setResult = {}, setOpenDropDown }) {
   );
 }
 
-// search options
-
 // icons
 var magnifyGlassIcons = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="21"
-    height="21"
+    width="100%"
+    height="100%"
     viewBox="0 0 23 22"
     fill="none"
   >
