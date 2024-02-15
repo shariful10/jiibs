@@ -201,11 +201,11 @@ const CreateUserProfile = () => {
                       <span className="font-semibold">
                         <label htmlFor="birth-date">Birth Date</label>
                       </span>
-                      <div className="md:flex items-center justify-between gap-5">
+                      <div className="md:flex items-center justify-between gap-5 space-y-5 md:space-y-0">
                         <select
                           name="date"
                           id="date"
-                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray w-full"
+                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
                           <option disabled>Day</option>
@@ -218,7 +218,7 @@ const CreateUserProfile = () => {
                         <select
                           name="month"
                           id="month"
-                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray w-full"
+                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
                           <option disabled>Month</option>
@@ -238,7 +238,7 @@ const CreateUserProfile = () => {
                         <select
                           name="year"
                           id="year"
-                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none bg-[#F7F7F7] text-darkGray w-full"
+                          className="rounded-lg py-[13px] xxl:py-[18px] px-5 border border-[#E4E4E4] focus:outline-none  text-darkGray w-full"
                           required
                         >
                           <option disabled>Year</option>
