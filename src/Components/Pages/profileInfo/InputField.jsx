@@ -2,7 +2,7 @@ import React from 'react'
 
 const InputField = ({ lavel, name, defaultValue }) => {
    return (
-      <div className="text-base">
+      <div className="text-[15px]">
          <p className="text-blackText mb-3">{lavel}</p>
          <input
             name={name}

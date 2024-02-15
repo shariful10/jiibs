@@ -4,7 +4,7 @@ import Link from "next/link";
 const PageTitle = () => {
    return (
       <>
-         <h2 className="text-[36px] font-semibold">Account</h2>
+         <h2 className="text-[34px] font-semibold">Account</h2>
          <div className="flex items-center gap-2 text-darkGray text-lg">
             <Link href="/account" className="hover:text-primary">
                Account

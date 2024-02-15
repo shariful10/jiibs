@@ -34,7 +34,7 @@ const ToursAndOpenHouses = () => {
 						</p>
 					</div>
 					<Link href="#">
-						<button className="text-white bg-primary py-2 px-4 rounded-md">
+						<button className="text-[15px] text-white bg-primary py-2.5 px-6 rounded-md">
 							Explore
 						</button>
 					</Link>

@@ -51,12 +51,12 @@ const AccountPageCard = () => {
 					className="p-4 md:p-6 border-2 border-lightGrayBorder hover:bg-lightGray rounded-md duration-[0.4s]"
 				>
 					<Link href={url}>
-						<Image src={avatar} alt="avatar" />
-						<div className="mt-6">
-							<h1 className="text-2xl text-blackText font-semibold mb-2">
+						<Image src={avatar} className="w-[30px]" alt="avatar" />
+						<div className="mt-2">
+							<h1 className="text-xl text-blackText font-semibold mb-2">
 								{title}
 							</h1>
-							<p className="text-xl text-darkGray">{subtitle}</p>
+							<p className="text-lg text-darkGray">{subtitle}</p>
 						</div>
 					</Link>
 				</div>

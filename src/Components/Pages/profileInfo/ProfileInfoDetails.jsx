@@ -49,7 +49,7 @@ const ProfileInfoDetails = ({
 						<div className="flex flex-col items-center md:items-start">
 							<button
 								onClick={() => setRename(false)}
-								className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
+								className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
 							>
 								Save
 							</button>
@@ -66,7 +66,7 @@ const ProfileInfoDetails = ({
 					lavel="Lagal name"
 					title="Jane Brandson"
 				>
-					<button onClick={() => setRename(true)} className="font-medium">
+					<button onClick={() => setRename(true)} className="font-medium text-blackText">
 						Edit
 					</button>
 				</ProfileInfoContent>
@@ -97,7 +97,7 @@ const ProfileInfoDetails = ({
                   <div className="flex flex-col items-center md:items-start">
                      <button
                         onClick={() => setEditEmail(false)}
-                        className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
+                        className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
                      >
                         Save
                      </button>
@@ -116,7 +116,7 @@ const ProfileInfoDetails = ({
 				>
 					<button
 						onClick={() => setEditEmail(true)}
-						className="font-medium"
+						className="font-medium text-blackText"
 					>
 						Edit
 					</button>
@@ -141,7 +141,7 @@ const ProfileInfoDetails = ({
                </div>
                <button
                   onClick={() => setEditPhone(false)}
-                  className="text-white bg-primary font-semibold py-1 px-3 mt-5 rounded-md"
+                  className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
                >
                   Save
                </button>
@@ -158,7 +158,7 @@ const ProfileInfoDetails = ({
 				>
 					<button
 						onClick={() => setEditPhone(true)}
-						className="font-medium"
+						className="font-medium text-blackText"
 					>
 						Edit
 					</button>
@@ -185,7 +185,7 @@ const ProfileInfoDetails = ({
 					<div className="flex flex-col items-center md:items-start">
 						<button
 							onClick={() => setEditPass(false)}
-							className="text-white bg-primary font-semibold py-2 px-3 mt-5 rounded-md"
+							className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
 						>
 							Update Password
 						</button>
@@ -203,7 +203,7 @@ const ProfileInfoDetails = ({
 				>
 					<button
 						onClick={() => setEditPass(true)}
-						className="font-medium"
+						className="font-medium text-blackText"
 					>
 						Edit
 					</button>
