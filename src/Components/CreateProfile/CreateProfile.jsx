@@ -154,7 +154,7 @@ const CreateUserProfile = () => {
                 <form onSubmit={handleOnSubmit}>
                   <div className="md:flex justify-between items-center gap-6 ">
                     <div className="flex flex-col gap-2 w-full">
-                      <span className="font-semibold">
+                      <span className="font-semibold text-[15px]">
                         <label htmlFor="First_Name">First Name</label>
                       </span>
                       <input
@@ -167,7 +167,7 @@ const CreateUserProfile = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-2 w-full">
-                      <span className="font-semibold">
+                      <span className="font-semibold text-[15px]">
                         <label htmlFor="Last_Name">Last Name</label>
                       </span>
                       <input
@@ -182,7 +182,7 @@ const CreateUserProfile = () => {
                   </div>
                   {/* Email */}
                   <div className="flex flex-col gap-2 w-full mt-3">
-                    <span className="font-semibold">
+                    <span className="font-semibold text-[15px]">
                       <label htmlFor="email">Email</label>
                     </span>
                     <input
@@ -202,7 +202,7 @@ const CreateUserProfile = () => {
                   {/* Birth Date */}
                   <div>
                     <div className="flex flex-col gap-2 w-full mt-3">
-                      <span className="font-semibold">
+                      <span className="font-semibold text-[15px]">
                         <label htmlFor="birth-date">Birth Date</label>
                       </span>
                       <div className="md:flex items-center justify-between gap-5 space-y-5 md:space-y-0">
@@ -264,14 +264,14 @@ const CreateUserProfile = () => {
 
                   {/* Phone */}
                   <div className="flex flex-col gap-2 w-full mt-3">
-                    <span className="font-semibold">
+                    <span className="font-semibold text-[15px]">
                       <label htmlFor="phone">Phone Number</label>
                     </span>
                     <div className="flex gap-2 rounded-lg border border-[#E4E4E4] text-darkGray divide-x-2">
                       <select
                         name="country"
                         id="country"
-                        className="py-[13px] xxl:py-[15px] px-2 rounded-l-lg"
+                        className="py-[13px] xxl:py-[15px] pl-2 -pr-[4px] rounded-l-lg"
                         required
                       >
                         <option value="US">US</option>
@@ -284,6 +284,7 @@ const CreateUserProfile = () => {
                         name="phone"
                         id="phone"
                         type="number"
+                        placeholder="+1 (555) 000-0000"
                         className="py-[13px] xxl:py-[15px] px-5 focus:outline-none w-full rounded-r-lg"
                         required
                       />
