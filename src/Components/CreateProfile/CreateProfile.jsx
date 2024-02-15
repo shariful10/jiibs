@@ -83,7 +83,7 @@ const CreateUserProfile = () => {
 
   return (
     <div
-      className={`w-full mx-auto mt-5 mb-10 xxl:mb-28 p-5 md:p-0 ${
+      className={`w-full mx-auto mt-5 p-5 md:p-0 ${
         activeTab === 4 ? "max-w-2xl" : " max-w-4xl"
       }`}
     >
@@ -271,7 +271,7 @@ const CreateUserProfile = () => {
                       <select
                         name="country"
                         id="country"
-                        className="py-[13px] xxl:py-[15px] pl-2 -pr-[4px] rounded-l-lg"
+                        className="py-[13px] xxl:py-[15px] pl-2 -pr-[4px] rounded-l-lg focus:outline-none"
                         required
                       >
                         <option value="US">US</option>

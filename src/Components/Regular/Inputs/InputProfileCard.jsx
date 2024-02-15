@@ -23,11 +23,9 @@ const InputProfileCard = ({
           <MdCheckCircle size={25} />
         </div>
       )}
-      <Image src={image} alt={title} />
-      <h3 className="text-2xl font-semibold text-blackText mt-3 mb-2">
-        {title}
-      </h3>
-      <p className="text-darkGray">{subTitle}</p>
+      <Image src={image} alt={title} width={50} height={50} />
+      <h3 className="text-xl font-semibold text-blackText my-2">{title}</h3>
+      <p className="text-darkGray text-lg">{subTitle}</p>
     </div>
   );
 };
