@@ -2,14 +2,13 @@ import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import Container from "../Container";
 
+import Logo from "@/Components/Shared/Logo";
 import building1 from "@/assets/building-1.jpg";
 import building2 from "@/assets/building-2.jpg";
 import building3 from "@/assets/building-3.jpg";
 import roadUnit from "@/assets/road.jpg";
 import Image from "next/image";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
-
-const { default: Logo } = require("../Logo");
 
 export default function SearchResultShow({ data = [], setOpenDropDown }) {
   const [tabs, setTabs] = useState("building");
@@ -18,18 +17,19 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
   return (
     <>
       {/* desktop mode */}
-      <div className="block bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md px-3 md:px-0 pt-4 md:pt-2">
+      <div className="block bg-white w-full absolute top-0 inset-x-0 z-50 shadow-md px-3 md:px-0 pt-4">
         <Container>
           {/* Dropdown logo, search, close */}
           <div className="flex items-center justify-between gap-4">
             <div className="hidden md:block">
+              {/* logo */}
               <Logo />
             </div>
             <div className="flex-1">
               <input
                 type="text"
                 placeholder="Search Apartments, Neighborhoods, Etc."
-                className={`w-full bg-lightGray text-blackText focus:outline-none border-none p-3 text-sm rounded-full`}
+                className={`w-full bg-lightGray text-blackText focus:outline-none border-none p-3 text-sm rounded-full outline-none text-[14px] font-normal`}
               />
             </div>
             <div>
