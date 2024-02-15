@@ -7,7 +7,7 @@ const InputPass = ({ lavel }) => {
 			<input
 				type="password"
 				name="password"
-				className="border border-softGray w-full rounded-[6px] mt-2 py-4 px-4 focus:outline-primary"
+				className="border border-softGray w-full rounded-[6px] mt-2 py-3 px-4 focus:outline-primary"
 				id=""
 			/>
 		</div>

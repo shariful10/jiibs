@@ -58,7 +58,7 @@ const ProfileInfoDetails = ({
         <ProfileInfoContent
           className={`${
             editPass || editEmail || editPhone
-              ? "text-[#c9c7c7] hidden md:block"
+              ? "text-[#c9c7c7] hidden"
               : "text-darkGray"
           }`}
           lavel="Legal Name"
@@ -96,7 +96,7 @@ const ProfileInfoDetails = ({
             <div className="text-center md:text-start">
               <button
                 onClick={() => setEditEmail(false)}
-                className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
+                className="text-sm text-white bg-primary font-semibold py-[8px] px-[20px] mt-5 rounded-md"
               >
                 Save
               </button>
@@ -107,7 +107,7 @@ const ProfileInfoDetails = ({
         <ProfileInfoContent
           className={`mt-6 ${
             rename || editPass || editPhone
-              ? "text-[#c9c7c7] hidden md:block"
+              ? "text-[#c9c7c7] hidden"
               : "text-darkGray"
           }`}
           lavel="Email address"
@@ -140,7 +140,7 @@ const ProfileInfoDetails = ({
           </div>
           <button
             onClick={() => setEditPhone(false)}
-            className="text-sm text-white bg-primary font-semibold py-[5px] px-[15px] mt-5 rounded-md"
+            className="text-sm text-white bg-primary font-semibold py-[8px] px-[20px] mt-5 rounded-md"
           >
             Save
           </button>
@@ -149,7 +149,7 @@ const ProfileInfoDetails = ({
         <ProfileInfoContent
           className={`mt-6 ${
             rename || editEmail || editPass
-              ? "text-[#c9c7c7] hidden md:block"
+              ? "text-[#c9c7c7] hidden"
               : "text-darkGray"
           }`}
           lavel="Phone number"
@@ -192,7 +192,7 @@ const ProfileInfoDetails = ({
         <ProfileInfoContent
           className={`mt-6 ${
             rename || editEmail || editPhone
-              ? "text-[#c9c7c7] hidden md:block"
+              ? "text-[#c9c7c7] hidden"
               : "text-darkGray"
           }`}
           lavel="Password"
