@@ -29,7 +29,7 @@ export default function SearchResultShow({ data = [], setOpenDropDown }) {
               <input
                 type="text"
                 placeholder="Search Apartments, Neighborhoods, Etc."
-                className={`w-full bg-lightGray text-blackText focus:outline-none border-none px-3 py-2 text-sm rounded-full outline-none text-[14px] font-normal`}
+                className={`w-full bg-lightGray text-blackText focus:outline-none border-none p-3 text-sm rounded-full outline-none text-[14px] font-normal`}
               />
             </div>
             <div>
