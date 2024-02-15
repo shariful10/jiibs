@@ -3,7 +3,6 @@ import React from "react";
 import InputPass from "./InputPass";
 import InputField from "./InputField";
 import EditFieldLavel from "./EditFieldLavel";
-import InputFieldDetails from "./InputFieldDetails";
 import ProfileInfoContent from "./ProfileInfoContent";
 
 const ProfileInfoDetails = ({
