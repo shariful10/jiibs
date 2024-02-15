@@ -9,16 +9,16 @@ const RegistrationSuccess = () => {
       <div className="flex justify-center items-center flex-col">
         <Image
           src={earth}
-          width={315}
-          height={320}
+          width={250}
+          height={250}
           alt="Earth emote"
-          className="w-[200px] md:w-[315px]"
+          className=""
         />
         <div className="text-center my-5 md:my-10">
-          <h3 className="text-3xl font-bold lg:text-6xl text-blackText">
+          <h3 className="text-3xl font-bold lg:text-[36px] text-blackText">
             Congratulations
           </h3>
-          <p className="md:text-xl text-darkGray mt-3">
+          <p className="text-darkGray mt-3">
             You’ve successfully created your organization {"JD Mobbin"} and your
             first project App analytics
           </p>

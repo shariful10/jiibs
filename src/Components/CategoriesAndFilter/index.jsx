@@ -98,7 +98,7 @@ export default function CategoriesAndFilter() {
           Optimize
         </button>
         <button className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white">
-          <Link href={"/wishlists"}>Sort By</Link>
+          <Link href="">Sort By</Link>
         </button>
       </div>
     </div>
