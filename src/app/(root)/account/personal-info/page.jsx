@@ -21,7 +21,7 @@ const PersonalInfo = () => {
   };
 
   return (
-    <Container className="px-6 md:px-0">
+    <Container className="px-6 md:px-0 min-h-[calc(100vh-95px)]">
       <div className="mt-10 mb-20">
         <div className="md:hidden">
           {rename || editPass || editEmail || editPhone ? (
