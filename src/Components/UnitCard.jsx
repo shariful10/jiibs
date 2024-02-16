@@ -39,17 +39,15 @@ const UnitCard = () => {
         className=" rounded-[20px] "
       ></Image>
       <div className="flex flex-col mt-[10px]">
-        <p className="text-sm md:text-base font-semibold text-[#626262]">
-          Midtown East
-        </p>
-        <h3 className="text-[20px] mt-[4px] leading-6 font-semibold">
+        <p className="text-sm font-semibold text-[#626262]">Midtown East</p>
+        <h3 className="text-lg mt-[4px] leading-6 font-semibold">
           The Somerset
         </h3>
-        <p className="text-base font-semibold leading-[22px] text-darkGray">
+        <p className="text-sm font-semibold leading-[20px] text-darkGray">
           Private rooftop terrace overlooking Central Park & world class
           concierge service
         </p>
-        <p className="text-base md:text-lg mt-[4px]">From $4456</p>
+        <p className="text-base mt-[4px]">From $4456</p>
       </div>
     </div>
   );

@@ -15,7 +15,20 @@ const StudioBed = ({ betData = [] }) => {
   return (
     <Swiper
       slidesPerView={4}
-      spaceBetween={0}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 10,
+        },
+      }}
       className="w-full !flex rounded-lg studio_slider"
     >
       {/* <div className="swiper-button-next bg-slate-200" />
