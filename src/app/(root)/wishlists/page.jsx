@@ -82,7 +82,7 @@ export default function page() {
                 <span>Create album</span>
               </button>
             </div>
-            <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-10">
+            <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-6">
               <Album />
               <Album />
               <Album />
