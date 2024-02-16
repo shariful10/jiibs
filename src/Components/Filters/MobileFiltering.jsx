@@ -1,3 +1,5 @@
+"use client";
+
 import Context from "@/Context/Context";
 import { useContext, useState } from "react";
 import SearchResultShow from "../Regular/Inputs/SearchResultShow";

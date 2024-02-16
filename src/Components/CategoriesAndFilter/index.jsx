@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import Categories from "../Categories/Categories";
 import Link from "next/link";

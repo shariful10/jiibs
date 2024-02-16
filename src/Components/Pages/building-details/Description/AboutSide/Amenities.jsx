@@ -66,7 +66,7 @@ export default function Amenities() {
               <Swiper
                 watchSlidesProgress={true}
                 slidesPerView={2}
-                className="amenities "
+                className="amenities"
                 ref={swiperRef}
               >
                 {demoAmenities?.map((item, idx) => (

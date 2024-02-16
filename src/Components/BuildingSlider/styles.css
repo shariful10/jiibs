@@ -38,7 +38,7 @@
   opacity: 0.4;
   border-radius: 10px;
   margin-right: 0px !important;
-  margin-bottom: 4px !important;
+  margin-bottom: 0 !important;
   overflow: hidden;
   cursor: pointer !important;
 }
