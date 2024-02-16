@@ -11,8 +11,8 @@ import AddAlbum from "@/Components/wishlist/AddAlbum";
 const whitePlusIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="21"
+    width="16"
+    height="16"
     viewBox="0 0 20 21"
     fill="none"
   >
@@ -51,7 +51,7 @@ export default function page() {
   };
 
   return (
-    <div className="w-full max-w-[1520px] mx-auto pt-10 pb-20">
+    <div className="w-full mx-auto pt-10 pb-8">
       {isLogin ? (
         <NotLogin />
       ) : (
@@ -63,11 +63,11 @@ export default function page() {
           {/* Wishlist desktop */}
           <div className="hidden md:block">
             <div className="hidden sm:flex justify-between items-center">
-              <h1 className="font-semibold text-3xl text-blackText">
+              <h1 className="font-semibold text-[26px] xxl:text-3xl text-blackText">
                 Wishlist
               </h1>
               <button
-                className="flex items-center gap-2 bg-primary rounded-lg py-4 px-7 text-white"
+                className="flex items-center gap-2 bg-primary rounded-md py-3 px-4 text-white text-sm"
                 onClick={() =>
                   handleModal({
                     modalType: CREATE_WISHLIST?.value,
