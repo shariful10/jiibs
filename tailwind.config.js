@@ -11,7 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {},
+      fontFamily: {
+        roboto: "Roboto, sans-serif",
+      },
       colors: {
         primary: "#2AB7DD",
         softGray: "#E4E4E4",
