@@ -16,7 +16,7 @@ const Home = () => {
       {/* Mobile categories and filtering  */}
       <MobileFiltering />
 
-      <div className="pt-5 md:pt-[55px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-9">
+      <div className="pt-5 md:pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-9">
         {apartments.map((apartment, index) => (
           <ApartmentCard key={index} apartment={apartment} />
         ))}
