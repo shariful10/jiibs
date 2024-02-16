@@ -15,11 +15,13 @@ export default function LocationMap() {
     <div className="w-full">
       {/* head address part */}
       <div>
-        <h1 className="text-3xl font-semibold">70 Pine Street</h1>
-        <p className="text-xl font-normal mt-3">
+        <h1 className="md:text-[26px] xxl:text-3xl font-semibold">
+          70 Pine Street
+        </h1>
+        <p className="text-lg xxl:text-xl font-normal mt-3">
           70 Pine Street, New York, new york 100005
         </p>
-        <div className="flex gap-4 items-center justify-between flex-wrap mt-2">
+        <div className="flex gap-4 items-center justify-start flex-wrap mt-2">
           <UnitsStories name={`150 Units`} icons={buildingIcons} />
           <UnitsStories name={`66 Stories`} icons={storiesUpIcons} />
           <UnitsStories name={`2024 Built Year`} icons={calenderIcons} />
@@ -55,7 +57,7 @@ export default function LocationMap() {
 // mini components
 function UnitsStories({ name, icons }) {
   return (
-    <div className="flex gap-2 items-center justify-start min-w-max">
+    <div className="flex gap-2 items-center justify-start min-w-max mr-3">
       <figure> {icons} </figure>
       <p> {name} </p>
     </div>

@@ -39,7 +39,9 @@ export default function Amenities() {
         <>
           <div>
             <div className="mb-[1.3145rem] flex items-center justify-between gap-5">
-              <h3 className="text-3xl font-semibold text-left"> Amenities </h3>
+              <h3 className="md:text-[26px] xxl:text-3xl font-semibold">
+                Amenities
+              </h3>
               <div className="flex items-center gap-4">
                 {/* prev button */}
                 <button

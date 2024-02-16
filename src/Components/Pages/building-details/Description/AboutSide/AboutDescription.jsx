@@ -4,30 +4,27 @@ import ButtonWhite from "@/Components/Regular/Buttons/ButtonWhite";
 import { useState } from "react";
 
 export default function AboutDescription() {
-	const [lineCallUp, setLineCallUp] = useState(true);
+  const [lineCallUp, setLineCallUp] = useState(true);
 
-	return (
-		<>
-			<h2 className="text-3xl font-semibold mb-6"> About </h2>
+  return (
+    <>
+      <h2 className="md:text-[26px] xxl:text-3xl font-semibold mb-6">About</h2>
 
-			<p
-				className={`text-base font-normal transition duration-300 ${
-					lineCallUp ? "line-clamp-6" : null
-				}`}
-			>
-				{textTemp}
-			</p>
+      <p
+        className={`text-base font-normal transition duration-300 ${
+          lineCallUp ? "line-clamp-6" : null
+        }`}
+      >
+        {textTemp}
+      </p>
 
-			<div className="mt-7">
-				<ButtonWhite
-					onclick={() => setLineCallUp(!lineCallUp)}
-					icons={true}
-				>
-					Read Full Description
-				</ButtonWhite>
-			</div>
-		</>
-	);
+      <div className="mt-7">
+        <ButtonWhite onclick={() => setLineCallUp(!lineCallUp)} icons={true}>
+          Read Full Description
+        </ButtonWhite>
+      </div>
+    </>
+  );
 }
 
 // text
