@@ -1,12 +1,16 @@
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
+import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import UnitCard from "@/Components/UnitCard";
 import React from "react";
 
 const page = () => {
   return (
     <React.Fragment>
+      {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
-      <div className="md:pt-[55px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-9">
+      {/* Mobile categories and filtering  */}
+      <MobileFiltering />
+      <div className="pt-5 md:pt-[55px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-9">
         <UnitCard />
         <UnitCard />
         <UnitCard />
