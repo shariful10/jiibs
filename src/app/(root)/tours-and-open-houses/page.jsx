@@ -33,7 +33,7 @@ const ToursAndOpenHouses = () => {
               Past
             </p>
           </div>
-          <Link href="#">
+          <Link href="/">
             <button className="text-[15px] text-white bg-primary py-2.5 px-6 rounded-md">
               Explore
             </button>
