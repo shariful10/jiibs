@@ -81,11 +81,11 @@ export default function Amenities() {
                       </figure>
 
                       <article>
-                        <h3 className="text-[1.375rem] font-semibold mt-4 mb-2.5">
+                        <h3 className="text-xl font-semibold mt-4 mb-2.5">
                           {item?.title}
                         </h3>
 
-                        <p className="text-base font-normal">
+                        <p className="text-sm leading-[26px] font-normal">
                           {item?.description}
                         </p>
                       </article>
@@ -133,10 +133,10 @@ export default function Amenities() {
 function Items({ src, text }) {
   return (
     <div className="flex items-center justify-start gap-5">
-      <figure className="flex items-center justify-center w-4 md:w-[1.375rem] h-5 md:h-[1.69rem] flex-shrink-0">
+      <figure className="flex items-center justify-center w-[18px] h-[22px] flex-shrink-0">
         <Image className="w-full h-full" src={src} alt="" />
       </figure>
-      <p className="text-base md:text-xl font-normal capitalize"> {text}</p>
+      <p className="text-base font-normal capitalize"> {text}</p>
     </div>
   );
 }

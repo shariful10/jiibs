@@ -42,7 +42,7 @@ function TableRow({ wall = null, runningTimes = null, dots = null }) {
       {dots ? (
         <div className="flex items-center justify-start gap-3.5"> {dots} </div>
       ) : null}
-      {wall ? <div> {wall} </div> : null}
+      {wall ? <div className="text-base"> {wall} </div> : null}
       {runningTimes ? <div> {runningTimes} </div> : null}
     </div>
   );
