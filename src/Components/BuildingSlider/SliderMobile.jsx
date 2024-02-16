@@ -8,10 +8,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "./styles.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import Image from "next/image";
 const images = [1, 2, 3, 4, 5];
 
@@ -22,12 +22,12 @@ export default function BuildingSliderMobile() {
         pagination={{
           type: "fraction",
         }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="!w-full !h-full !m-0 !relative"
+        navigation={false}
+        modules={[Pagination]}
+        className="!w-full !h-full rounded-lg !relative swiper_mobile_building_details"
       >
         {images?.map((img, index) => (
-          <SwiperSlide key={index} className="!w-full !h-full !m-0 rounded-lg">
+          <SwiperSlide key={index} className="!w-full !h-full rounded-lg">
             <Image
               src={sliderImage}
               className="w-full h-full rounded-lg"
