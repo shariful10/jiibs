@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import unitImage from "../../public/unitImage.jpeg";
+import building_image from "../assets/building_image.png";
 
 const UnitCard = () => {
   return (
@@ -32,7 +32,7 @@ const UnitCard = () => {
       </div>
 
       <Image
-        src={unitImage}
+        src={building_image}
         alt="Description of the image"
         width={500}
         height={300}
