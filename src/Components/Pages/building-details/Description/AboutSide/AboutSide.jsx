@@ -99,13 +99,11 @@ function DiningClass({ icons = null, title = null, paragraph = null }) {
 
         <div className="flex flex-col gap-1 justify-start items-start">
           {title ? (
-            <h4 className="text-[1.4rem] font-semibold leading-none">
-              {title}
-            </h4>
+            <h4 className="text-xl font-semibold leading-none">{title}</h4>
           ) : null}
 
           {paragraph ? (
-            <p className="text-base font-normal"> {paragraph} </p>
+            <p className="text-sm leading-[26px] font-normal"> {paragraph} </p>
           ) : null}
         </div>
       </div>

@@ -12,7 +12,7 @@ export default function BuildingDetail() {
       <section className="py-4">
         {/* Header part */}
         <div className="md:flex flex-col md:flex-row gap-4 justify-between items-center py-[18px] hidden">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">
+          <h1 className="md:text-[26px] xxl:text-3xl font-semibold">
             70 Pine Street, New York, New york 10005
           </h1>
 
@@ -29,7 +29,6 @@ export default function BuildingDetail() {
         </div>
 
         {/* preview slider */}
-        <div></div>
         <BuildingSlider />
         <BuildingSliderMobile />
       </section>
@@ -40,7 +39,7 @@ export default function BuildingDetail() {
         </div>
 
         {/* Location map */}
-        <div className="w-full md:w-[30%] mb-4 md:mb-0 static md:sticky md:top-0">
+        <div className="w-full md:w-[33%] mb-4 md:mb-0 static md:sticky md:top-0">
           <LocationMap />
         </div>
       </section>
