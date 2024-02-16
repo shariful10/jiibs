@@ -1,8 +1,30 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import building_image from "../assets/building_image.png";
+import Context from "@/Context/Context";
+import { ADD_WISHLIST } from "./Regular/Utils/constant";
+import AddWishlist from "./wishlist/AddWishlist";
 
 const UnitCard = () => {
+  const { modal, setModal } = useContext(Context);
+
+  const handleModal = ({
+    modalType,
+    modalLabel,
+    isMobileModal,
+    modalContent,
+  }) => {
+    setModal({
+      ...modal,
+      isOpen: !modal?.isOpen,
+      modalType,
+      isMobileModal,
+      modalLabel,
+      modalContent,
+    });
+  };
   return (
     <div className="relative col-span-1 cursor-pointer group">
       <button className="absolute top-[16px] left-[16px] bg-white text-black px-3 py-1 rounded-full h-[24px] w-[101px] text-[12px]">
@@ -10,7 +32,17 @@ const UnitCard = () => {
       </button>
 
       {/* Favorite Icon */}
-      <div className="absolute top-[16px] right-[16px]">
+      <div
+        className="absolute top-[16px] right-[16px]"
+        onClick={() =>
+          handleModal({
+            modalType: ADD_WISHLIST?.value,
+            modalLabel: ADD_WISHLIST?.label,
+            isMobileModal: false,
+            modalContent: <AddWishlist />,
+          })
+        }
+      >
         {/* Your favorite icon here */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +70,14 @@ const UnitCard = () => {
         height={300}
         className=" rounded-[20px] "
       ></Image>
-      <div className="flex flex-col mt-[10px]">
-        <p className="text-sm md:text-base font-semibold text-[#626262]">
-          Midtown East
-        </p>
-        <h3 className="text-[20px] mt-[4px] leading-6 font-semibold">
-          The Somerset
-        </h3>
-        <p className="text-base font-semibold leading-[22px] text-darkGray">
+      <div className="flex flex-col gap-1 mt-[10px]">
+        <p className="text-sm font-semibold text-[#626262]">Midtown East</p>
+        <h3 className="text-lg leading-6 font-semibold">The Somerset</h3>
+        <p className="text-sm font-semibold leading-[20px] text-darkGray">
           Private rooftop terrace overlooking Central Park & world class
           concierge service
         </p>
-        <p className="text-base md:text-lg mt-[4px]">From $4456</p>
+        <p className="text-base">From $4456</p>
       </div>
     </div>
   );
