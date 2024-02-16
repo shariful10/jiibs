@@ -57,7 +57,7 @@ export default function LocationMap() {
 // mini components
 function UnitsStories({ name, icons }) {
   return (
-    <div className="flex gap-2 items-center justify-start min-w-max mr-3">
+    <div className="flex gap-2 items-center justify-start min-w-max mr-0 md:mr-1 xxl:mr-3">
       <figure> {icons} </figure>
       <p> {name} </p>
     </div>

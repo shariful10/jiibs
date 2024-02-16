@@ -39,7 +39,7 @@ export default function BuildingDetail() {
         </div>
 
         {/* Location map */}
-        <div className="w-full md:w-[30%] mb-4 md:mb-0 static md:sticky md:top-0">
+        <div className="w-full md:w-[33%] mb-4 md:mb-0 static md:sticky md:top-0">
           <LocationMap />
         </div>
       </section>
