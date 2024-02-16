@@ -83,7 +83,7 @@ const CreateUserProfile = () => {
 
   return (
     <div
-      className={`w-full mx-auto mt-5 p-5 md:p-0 ${
+      className={`w-full mx-auto mt-5 p-5 md:p-0 lg:pb-20 ${
         activeTab === 4 ? "max-w-2xl" : " max-w-4xl"
       }`}
     >
@@ -151,8 +151,8 @@ const CreateUserProfile = () => {
               />
             ) : (
               activeTab === 4 && (
-                <form onSubmit={handleOnSubmit}>
-                  <div className="md:flex justify-between items-center gap-6 ">
+                <form onSubmit={handleOnSubmit} className="pb-5">
+                  <div className="md:flex justify-between items-center gap-6">
                     <div className="flex flex-col gap-2 w-full">
                       <span className="font-semibold text-[15px]">
                         <label htmlFor="First_Name">First Name</label>
