@@ -18,7 +18,7 @@ export default function AboutDescription() {
         {textTemp}
       </p>
 
-      <div className="mt-7">
+      <div className="mt-4">
         <ButtonWhite
           onclick={() => setLineCallUp(!lineCallUp)}
           icons={true}
