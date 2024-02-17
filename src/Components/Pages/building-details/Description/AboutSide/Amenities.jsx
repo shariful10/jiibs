@@ -68,7 +68,7 @@ export default function Amenities() {
                 ref={swiperRef}
               >
                 {demoAmenities?.map((item, idx) => (
-                  <SwiperSlide key={idx}>
+                  <SwiperSlide key={idx} className="!max-w-[400px] !w-full">
                     <div>
                       <figure className="w-full h-full rounded-[10px] overflow-hidden">
                         <Image
