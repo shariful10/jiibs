@@ -20,17 +20,15 @@ export default function Amenities() {
   const swiperRef = useRef(null);
 
   const handlePrevButtonClick = () => {
-    console.log("swiperRef ", swiperRef);
-    // if (swiperRef.current) {
-    //   swiperRef.current.slidePrev();
-    // }
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
   };
 
   const handleNextButtonClick = () => {
-    console.log("swiperRef ", swiperRef);
-    // if (swiperRef.current) {
-    //   swiperRef.current.slideNext();
-    // }
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
   };
 
   return (
