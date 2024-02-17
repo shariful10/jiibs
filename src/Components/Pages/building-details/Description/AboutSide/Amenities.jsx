@@ -63,12 +63,22 @@ export default function Amenities() {
             <div>
               <Swiper
                 watchSlidesProgress={true}
-                slidesPerView={2}
+                breakpoints={{
+                  140: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 2,
+                  },
+                }}
                 className="amenities"
                 ref={swiperRef}
               >
                 {demoAmenities?.map((item, idx) => (
-                  <SwiperSlide key={idx} className="!max-w-[400px] !w-full">
+                  <SwiperSlide key={idx}>
                     <div>
                       <figure className="w-full h-full rounded-[10px] overflow-hidden">
                         <Image

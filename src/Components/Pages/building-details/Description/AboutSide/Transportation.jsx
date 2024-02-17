@@ -44,8 +44,12 @@ function TableRow({ wall = null, runningTimes = null, dots = null }) {
           {dots}
         </div>
       ) : null}
-      {wall ? <div className="text-base flex-1"> {wall} </div> : null}
-      {runningTimes ? <div className="flex-1"> {runningTimes} </div> : null}
+      {wall ? (
+        <div className="text-base flex-1 flex justify-center"> {wall} </div>
+      ) : null}
+      {runningTimes ? (
+        <div className="flex-1 flex justify-end"> {runningTimes} </div>
+      ) : null}
     </div>
   );
 }
