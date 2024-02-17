@@ -18,13 +18,14 @@ export default function AboutDescription() {
         {textTemp}
       </p>
 
-      <div className="mt-7">
+      <div className="mt-4">
         <ButtonWhite
           onclick={() => setLineCallUp(!lineCallUp)}
           icons={true}
           className="py-[10px] px-6 text-sm"
+          isIconRotate={!lineCallUp}
         >
-          Read Full Description
+          {lineCallUp ? "Read Full Description" : "Hide full description"}
         </ButtonWhite>
       </div>
     </>

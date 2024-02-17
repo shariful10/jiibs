@@ -73,9 +73,7 @@ export default function AboutSide() {
         </div>
 
         {/* Amenities */}
-        <div>
-          <Amenities />
-        </div>
+        <Amenities />
 
         {/* Available Units */}
         <div>

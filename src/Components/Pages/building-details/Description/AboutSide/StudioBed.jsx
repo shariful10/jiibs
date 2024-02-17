@@ -2,44 +2,36 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-// import "./Studio.css";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/free-mode";
 
 const StudioBed = ({ betData = [] }) => {
   return (
     <Swiper
-      slidesPerView={4}
+      slidesPerView={1}
+      spaceBetween={10}
       breakpoints={{
         640: {
           slidesPerView: 2,
-          spaceBetween: 10,
+          spaceBetween: 20,
         },
         768: {
           slidesPerView: 4,
-          spaceBetween: 10,
+          spaceBetween: 40,
         },
         1024: {
           slidesPerView: 4,
-          spaceBetween: 10,
+          spaceBetween: 50,
         },
       }}
-      className="w-full !flex rounded-lg studio_slider"
+      className="!w-full rounded-lg"
     >
-      {/* <div className="swiper-button-next bg-slate-200" />
-      <div className="swiper-button-prev bg-slate-200" /> */}
-
       {betData?.map((bet, index) => (
-        <SwiperSlide
-          key={index}
-          className="max-w-[181px] !w-full flex items-center justify-between gap-6 studio_slider_slide !m-0 cursor-pointer"
-        >
-          <BetStudio studio={bet} />
+        <SwiperSlide key={index} className="!w-[180px]">
+          <div className="flex items-center justify-between gap-6 cursor-pointer">
+            <BetStudio studio={bet} />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
@@ -47,18 +39,6 @@ const StudioBed = ({ betData = [] }) => {
 };
 
 export default StudioBed;
-
-// const StudioBed = ({ betData = [] }) => {
-//   return (
-//     <div className="min-w-[181px] w-full flex items-center justify-between gap-6">
-//       {betData?.map((bet, index) => (
-//         <BetStudio key={index} studio={bet} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default StudioBed;
 
 // bet studio components
 function BetStudio({ studio }) {
@@ -74,7 +54,3 @@ function BetStudio({ studio }) {
     </div>
   );
 }
-// style={{
-//   "--swiper-navigation-color": "#fff",
-//   "--swiper-pagination-color": "#fff",
-// }}
