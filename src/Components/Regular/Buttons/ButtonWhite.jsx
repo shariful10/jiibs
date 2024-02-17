@@ -3,7 +3,9 @@ export default function ButtonWhite({
   className,
   icons = false,
   onclick,
+  isIconRotate,
 }) {
+  console.log(isIconRotate);
   return (
     <>
       {children ? (
@@ -15,7 +17,11 @@ export default function ButtonWhite({
             }`}
           >
             <span>{children}</span>
-            {icons ? <span>{arrowIcons}</span> : null}
+            {icons ? (
+              <span className={`${isIconRotate ? "rotate-[180deg]" : ""}`}>
+                {arrowIcons}
+              </span>
+            ) : null}
           </button>
         </>
       ) : null}
