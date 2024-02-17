@@ -40,13 +40,16 @@ function TableRow({ wall = null, runningTimes = null, dots = null }) {
   return (
     <div className="flex items-center justify-between gap-3.5">
       {dots ? (
-        <div className="flex items-center justify-start gap-3.5"> {dots} </div>
+        <div className="flex items-center justify-start gap-3.5 flex-1">
+          {dots}
+        </div>
       ) : null}
-      {wall ? <div className="text-base"> {wall} </div> : null}
-      {runningTimes ? <div> {runningTimes} </div> : null}
+      {wall ? <div className="text-base flex-1"> {wall} </div> : null}
+      {runningTimes ? <div className="flex-1"> {runningTimes} </div> : null}
     </div>
   );
 }
+
 function RedDot({ text }) {
   return (
     <strong className="w-6 h-6 flex items-center justify-center rounded-full bg-red text-white">
@@ -54,6 +57,7 @@ function RedDot({ text }) {
     </strong>
   );
 }
+
 function YellowDot({ text }) {
   return (
     <strong className="w-6 h-6 flex items-center justify-center rounded-full bg-yellow text-black">
