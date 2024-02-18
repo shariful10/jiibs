@@ -11,7 +11,7 @@ export default function AboutDescription() {
       <h2 className="md:text-[26px] xxl:text-3xl font-semibold mb-6">About</h2>
 
       <p
-        className={`text-sm leading-[26px] md:text-base md:leading-7 font-normal transition duration-300 ${
+        className={`text-sm leading-[26px] xxl:text-base md:leading-7 font-normal transition duration-300 ${
           lineCallUp ? "line-clamp-6" : null
         }`}
       >

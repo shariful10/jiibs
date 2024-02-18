@@ -11,8 +11,8 @@ export default function BuildingDetail() {
       {/* title and slider part */}
       <section className="py-4">
         {/* Header part */}
-        <div className="md:flex flex-col md:flex-row gap-4 justify-between items-center py-[18px] hidden">
-          <h1 className="md:text-[26px] xxl:text-3xl font-semibold">
+        <div className="md:flex flex-col md:flex-row gap-4 justify-between items-center py-[14px] hidden">
+          <h1 className="md:text-[24px] xxl:text-3xl font-semibold">
             70 Pine Street, New York, New york 10005
           </h1>
 
