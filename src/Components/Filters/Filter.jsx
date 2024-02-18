@@ -44,9 +44,9 @@ export default function Filter() {
   };
 
   return (
-    <div className="bg-white py-8 px-10">
+    <div className="bg-white py-7 px-10">
       <div className="mb-10">
-        <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-8">
+        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
           Price range
         </span>
         <div className="flex items-center gap-[10px]">
@@ -91,15 +91,15 @@ export default function Filter() {
       </div>
 
       <div className="mb-4">
-        <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-4">
+        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
           Bedrooms
         </span>
-        <div className="flex flex-wrap gap-3 sm:gap-5">
+        <div className="flex flex-wrap gap-3">
           {bedroom?.map((option, index) => (
             <span
               key={index}
               onClick={() => handleSelectBedroom(option)}
-              className={`block border border-softGray py-[10px] px-[30px] rounded-full text-[12px] leading-4 sm:text-[20px] sm:leading-6 hover:cursor-pointer ${
+              className={`block border border-softGray py-[10px] px-[25px] rounded-full text-sm leading-4 hover:cursor-pointer ${
                 filters.bedroom.includes(option)
                   ? "bg-primary text-white"
                   : "bg-white"
@@ -112,15 +112,15 @@ export default function Filter() {
       </div>
 
       <div className="mb-10">
-        <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-4">
+        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
           Bathroom
         </span>
-        <div className="flex flex-wrap gap-3 sm:gap-5">
+        <div className="flex flex-wrap gap-3">
           {bathroom?.map((option, index) => (
             <span
               key={index}
               onClick={() => handleSelectBathroom(option)}
-              className={`block border border-softGray py-[10px] px-[30px] rounded-full text-[12px] leading-4 sm:text-[20px] sm:leading-6 hover:cursor-pointer ${
+              className={`block border border-softGray py-[10px] px-[25px] rounded-full text-sm leading-4 hover:cursor-pointer ${
                 filters.bathroom.includes(option)
                   ? "bg-primary text-white"
                   : "bg-white"
@@ -133,49 +133,41 @@ export default function Filter() {
       </div>
 
       <div>
-        <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-8">
+        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
           Features & Amenities
         </span>
         <div className="grid grid-cols-3 gap-4 mb-6">
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[25px] rounded-lg text-[18px] leading-6">
             <Image src={concierge} alt="" />
-            <span>Bike room</span>
+            <span className="text-base text-center">Bike room</span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg text-[18px] leading-6">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[25px] rounded-lg text-[18px] leading-6">
             <Image src={concierge} alt="" />
-            <span>Concierge</span>
+            <span className="text-base text-center">Concierge</span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[25px] rounded-lg">
             <Image src={elevator} alt="" />
-            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
-              Elevator
-            </span>
+            <span className="text-base text-center">Elevator</span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[25px] rounded-lg">
             <Image src={golf} alt="" />
-            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
-              Golf simulators
-            </span>
+            <span className="text-base text-center">Golf simulators</span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[25px] rounded-lg">
             <Image src={laundry_basket} alt="" />
-            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
-              Laundry Room
-            </span>
+            <span className="text-base text-center">Laundry Room</span>
           </div>
-          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[30px] rounded-lg">
+          <div className="flex flex-col items-center gap-2 max-w-[195px] w-full shrink border border-softGray py-[10px] px-[25px] rounded-lg">
             <Image src={package_room} alt="" />
-            <span className="text-base leading-4 sm:text-[18px] sm:leading-6">
-              Package Room
-            </span>
+            <span className="text-base text-center">Package Room</span>
           </div>
         </div>
 
         <div className="flex items-center gap-[10px] mb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
+            width="10"
+            height="10"
             viewBox="0 0 12 12"
             fill="none"
           >
@@ -184,14 +176,14 @@ export default function Filter() {
               fill="#222222"
             />
           </svg>
-          <span className="inline-block font-semibold text-sm sm:text-[18px] leading-6 text-blackText">
+          <span className="inline-block font-semibold text-base leading-3 text-blackText">
             Show More
           </span>
         </div>
       </div>
 
       <div className="mb-10">
-        <span className="block font-semibold text-[20px] leading-6 text-darkGray mb-6">
+        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
           Additional
         </span>
         <div className="flex flex-col gap-5">
@@ -256,7 +248,7 @@ export default function Filter() {
       </div>
       <hr />
       <div className="flex justify-end mt-5">
-        <button className="font-semibold text-base leading-5 bg-primary py-4 px-8 outline-none border-none rounded-md text-white">
+        <button className="border border-softGray py-2.5 px-6 rounded-md font-semibold text-[15px] bg-primary text-white">
           Show 9999 rental
         </button>
       </div>
