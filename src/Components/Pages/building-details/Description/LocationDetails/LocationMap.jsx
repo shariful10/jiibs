@@ -18,7 +18,7 @@ export default function LocationMap() {
         <h1 className="md:text-[26px] xxl:text-3xl font-semibold">
           70 Pine Street
         </h1>
-        <p className="text-lg xxl:text-xl font-normal mt-3">
+        <p className="text-lg xxl:text-xl font-normal mt-2">
           70 Pine Street, New York, new york 100005
         </p>
         <div className="flex gap-4 items-center justify-start flex-wrap mt-2">
@@ -31,13 +31,16 @@ export default function LocationMap() {
       {/* buttons */}
       <div className="fixed bottom-0 inset-x-0 w-full md:static z-50">
         <div className="bg-white md:bg-transparent w-full">
-          <div className="py-5 px-4 md:px-0 md:py-8 md:block flex flex-row-reverse items-center gap-3.5 justify-between">
-            <ButtonPrimary onClick={handleTour}>
+          <div className="py-5 px-4 md:px-0 md:py-6 md:block flex flex-row-reverse items-center gap-3.5 justify-between">
+            <ButtonPrimary
+              onClick={handleTour}
+              className="hover:!bg-primary hover:!text-white !py-3"
+            >
               <span>Request a Tour</span>
             </ButtonPrimary>
             <ButtonBlack
               onClick={handleTouch}
-              className="md:mt-4"
+              className="md:mt-4 !py-3"
               styleReverse={true}
             >
               <span>Get in Touch</span>
