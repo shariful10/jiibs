@@ -28,7 +28,7 @@ const Modal = ({
       } mx-5 h-auto rounded-2xl bg-white overflow-hidden`}
       onClick={(e) => e.stopPropagation()}
     >
-      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-4 px-10">
+      <div className="flex justify-between items-center border-b border-[#E4E4E4] py-4 px-8">
         <span onClick={handleCloseModal} className="cursor-pointer">
           {closeIcon}
         </span>
