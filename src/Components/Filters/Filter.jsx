@@ -46,7 +46,7 @@ export default function Filter() {
   return (
     <div className="bg-white py-7 px-10">
       <div className="mb-10">
-        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
+        <span className="block font-semibold text-xl leading-5 text-darkGray mb-6">
           Price range
         </span>
         <div className="flex items-center gap-[10px]">
@@ -91,7 +91,7 @@ export default function Filter() {
       </div>
 
       <div className="mb-4">
-        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
+        <span className="block font-semibold text-xl leading-5 text-darkGray mb-6">
           Bedrooms
         </span>
         <div className="flex flex-wrap gap-3">
@@ -112,7 +112,7 @@ export default function Filter() {
       </div>
 
       <div className="mb-10">
-        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
+        <span className="block font-semibold text-xl leading-5 text-darkGray mb-6">
           Bathroom
         </span>
         <div className="flex flex-wrap gap-3">
@@ -133,7 +133,7 @@ export default function Filter() {
       </div>
 
       <div>
-        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
+        <span className="block font-semibold text-xl leading-5 text-darkGray mb-6">
           Features & Amenities
         </span>
         <div className="grid grid-cols-3 gap-4 mb-6">
@@ -183,7 +183,7 @@ export default function Filter() {
       </div>
 
       <div className="mb-10">
-        <span className="block font-semibold text-lg leading-5 text-darkGray mb-6">
+        <span className="block font-semibold text-xl leading-5 text-darkGray mb-6">
           Additional
         </span>
         <div className="flex flex-col gap-5">
