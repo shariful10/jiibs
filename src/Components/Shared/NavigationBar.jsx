@@ -47,7 +47,7 @@ const NavigationBar = () => {
               modalType: SIGNIN?.value,
               modalLabel: SIGNIN?.label,
               isMobileModal: false,
-              isWidth: "max-w-[480px]",
+              isWidth: "md:max-w-[400px] xxl:max-w-[480px]",
               modalContent: <SignIn />,
             })
           }
@@ -60,7 +60,7 @@ const NavigationBar = () => {
               modalType: SIGNUP?.value,
               modalLabel: SIGNUP?.label,
               isMobileModal: false,
-              isWidth: "max-w-[480px]",
+              isWidth: "md:max-w-[400px] xxl:max-w-[480px]",
               modalContent: <SignUp />,
             })
           }

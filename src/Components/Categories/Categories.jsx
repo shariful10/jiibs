@@ -28,7 +28,7 @@ const Categories = () => {
       {/* prev button */}
       <button
         onClick={handlePrevButtonClick}
-        className="absolute left-1 top-2 transition duration-300 z-[1000] rounded-full"
+        className="absolute left-1 top-2 transition duration-300 z-40 rounded-full"
         style={{
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
@@ -42,7 +42,7 @@ const Categories = () => {
           boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
         }}
         onClick={handleNextButtonClick}
-        className="absolute right-1 top-2 transition duration-300 z-[1000] rounded-full"
+        className="absolute right-1 top-2 transition duration-300 z-40 rounded-full"
       >
         <figure>{nextButtonIcons}</figure>
       </button>
