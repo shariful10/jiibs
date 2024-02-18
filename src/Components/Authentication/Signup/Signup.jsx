@@ -5,7 +5,7 @@ import Seperator from "../helper/Seperator";
 
 export default function SignUp() {
   return (
-    <div className="max-w-400 w-full p-10 overflow-hidden">
+    <div className="max-w-400 w-full p-[30px] overflow-hidden">
       <LoginWithGoogleAndApple />
       <Seperator />
       <div className="flex flex-col gap-4">
