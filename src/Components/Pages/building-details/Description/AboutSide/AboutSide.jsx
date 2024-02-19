@@ -101,7 +101,10 @@ function DiningClass({ icons = null, title = null, paragraph = null }) {
           ) : null}
 
           {paragraph ? (
-            <p className="text-sm leading-[26px] font-normal"> {paragraph} </p>
+            <p className="text-sm xxl:text-base leading-[26px] font-normal">
+              {" "}
+              {paragraph}{" "}
+            </p>
           ) : null}
         </div>
       </div>

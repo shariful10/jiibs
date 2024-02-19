@@ -54,17 +54,19 @@ const ApartmentCard = ({ apartment = {} }) => {
 
         {/* content */}
         <div className="space-y-[0px] mt-2.5">
-          <p className="text-[14px] text-[#626262] font-semibold">
+          <p className="text-[14px] text-darkGray font-semibold">
             {apartment?.location}
           </p>
-          <h4 className="text-blackText font-semibold text-lg">
-            {apartment?.title}
-          </h4>
-          <div className="flex flex-row items-center gap-1">
-            <p className="text-blackText font-semibold text-lg">
-              ${apartment?.price}
-            </p>
-            <p className="font-semibold text-base">/month</p>
+          <div className="flex flex-row md:flex-col justify-between items-start">
+            <h4 className="text-blackText font-semibold text-[22px]">
+              {apartment?.title}
+            </h4>
+            <div className="flex flex-row items-center gap-1">
+              <p className="text-blackText font-semibold text-xl">
+                ${apartment?.price}
+              </p>
+              <p className="font-semibold text-base">/month</p>
+            </div>
           </div>
           <div className="flex items-center gap-2 text-[14px] font-semibold text-darkGray mt-2">
             <p>{apartment?.bed} Bed</p>
