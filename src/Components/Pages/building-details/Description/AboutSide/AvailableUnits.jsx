@@ -135,7 +135,7 @@ export default function AvailableUnits() {
             <div className="py-6 border-t-2">
               {showData?.length > 3 ? (
                 <button
-                  className="border border-softGray py-2.5 px-6 rounded-md font-semibold text-[15px]"
+                  className="border border-softGray py-2.5 px-6 rounded-md font-semibold text-sm"
                   onClick={() => setLoadData(!loadData)}
                 >
                   {loadData ? "See Less " : "Load More"}

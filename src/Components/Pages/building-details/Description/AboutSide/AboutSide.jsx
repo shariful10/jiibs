@@ -90,14 +90,14 @@ function DiningClass({ icons = null, title = null, paragraph = null }) {
     <>
       <div className="flex gap-6 justify-start items-start">
         {icons ? (
-          <figure className="w-6 h-6">
+          <figure className="w-[25px] h-[25px]">
             <Image className="w-full h-full object-cover" src={icons} />
           </figure>
         ) : null}
 
         <div className="flex flex-col gap-1 justify-start items-start">
           {title ? (
-            <h4 className="text-xl font-semibold leading-none">{title}</h4>
+            <h4 className="text-lg font-semibold leading-none">{title}</h4>
           ) : null}
 
           {paragraph ? (
