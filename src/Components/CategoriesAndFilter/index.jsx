@@ -65,10 +65,10 @@ export default function CategoriesAndFilter() {
             handleModal({
               modalType: FILTERING?.value,
               modalLabel: FILTERING?.label,
-              isWidth: "max-w-[750px]",
+              isWidth: "max-w-[600px]",
               modalContent: <Filter />,
               topRightContent: (
-                <span className="inline-block font-semibold text-xl leading-6 text-primary">
+                <span className="inline-block font-semibold text-base leading-6 text-primary">
                   Reset
                 </span>
               ),

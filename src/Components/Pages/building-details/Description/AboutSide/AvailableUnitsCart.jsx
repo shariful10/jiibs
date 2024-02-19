@@ -28,7 +28,7 @@ export default function AvailableUnitsCart({ cart }) {
           </p>
         </div>
 
-        <figure className="w-full max-w-[140px] h-full max-h-[120px] border border-softGray rounded-lg overflow-hidden">
+        <figure className="w-full max-w-[140px] h-full max-h-[130px] border border-softGray rounded-lg overflow-hidden">
           <Image
             className="w-full h-full object-cover rounded-lg"
             src={cart?.ArchitectImage}

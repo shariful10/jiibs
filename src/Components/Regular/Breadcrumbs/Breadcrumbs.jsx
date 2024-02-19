@@ -6,10 +6,10 @@ export default function Breadcrumbs({ paths = [] }) {
       {paths.length ? (
         <Link
           href={`${paths?.link}`}
-          className="flex gap-[14px] items-center flex-wrap"
+          className="flex gap-[8px] items-center flex-wrap"
         >
           {paths?.map((item, idx) => (
-            <div key={idx} className="flex gap-[14px] items-center min-w-max">
+            <div key={idx} className="flex gap-[8px] items-center min-w-max">
               <p
                 className="text-sm xxl:text-base font-normal capitalize min-w-max"
                 key={idx}
