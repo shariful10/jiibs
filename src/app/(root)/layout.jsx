@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
         <MobileBottomMenu />
         {children}
       </Container>
-      <Footer />
+      {/* <Footer /> */}
       {/* Modal  */}
       {modal?.isOpen && <Modal {...modal} />}
     </Context.Provider>

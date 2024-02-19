@@ -32,14 +32,14 @@ export default function BuildingDetail() {
         <BuildingSlider />
         <BuildingSliderMobile />
       </section>
-      <section className="flex flex-col-reverse md:flex-row flex-start items-start justify-between gap-[9%] md:gap-20 w-full mt-6">
+      <section className="flex flex-col-reverse md:flex-row flex-start items-start justify-between gap-[9%] md:gap-20 w-full mt-2 md:mt-6">
         {/* about , description */}
         <div className="w-full md:w-[61%] overflow-hidden">
           <AboutSide />
         </div>
 
         {/* Location map */}
-        <div className="w-full md:w-[33%] mb-4 md:mb-0 static md:sticky md:top-0">
+        <div className="w-full md:w-[33%] mb-4 md:mb-14 static md:sticky md:top-0">
           <LocationMap />
         </div>
       </section>

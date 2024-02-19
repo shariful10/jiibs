@@ -19,7 +19,7 @@ export default function BuildingSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="hidden md:flex justify-between gap-2 h-[500px] slider_desktop">
+    <div className="hidden md:flex justify-between gap-2 h-[500px] xxl:h-[600px] slider_desktop">
       <Swiper
         direction={"vertical"}
         slidesPerView={1}
@@ -37,7 +37,7 @@ export default function BuildingSlider() {
         {images?.map((img, index) => (
           <SwiperSlide
             key={index}
-            className="min-w-full !h-full !mb-[6px] rounded-lg"
+            className="min-w-full !h-full rounded-lg"
           >
             <Image
               src={sliderImage}
