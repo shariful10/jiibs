@@ -77,7 +77,10 @@ export default function MobileFiltering() {
       ) : (
         <>
           <div className="md:hidden pt-6">
-            <div className="flex justify-between items-center bg-lightGray px-[14px] py-2 rounded-full mb-4">
+            <div
+              onClick={() => setOpenDropDown(true)}
+              className="flex justify-between items-center bg-lightGray px-[14px] py-2 rounded-full mb-4 cursor-pointer"
+            >
               <div className="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -104,10 +107,7 @@ export default function MobileFiltering() {
                 </div>
               </div>
               <div>
-                <button
-                  onClick={() => setOpenDropDown(true)}
-                  className="block p-2 rounded-full border border-lightGrayBorder cursor-pointer"
-                >
+                <button className="block p-2 rounded-full border border-lightGrayBorder cursor-pointer">
                   {magnifyGlassIcon}
                 </button>
                 {/* <span className="block p-2 rounded-full border border-lightGrayBorder">
