@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useContext } from "react";
-import Categories from "../Categories/Categories";
-import Link from "next/link";
-import Context from "@/Context/Context";
 import {
   FILTERING,
   FURTHER_OPTIMIZE,
 } from "@/Components/Regular/Utils/constant";
-import Filter from "../Filters/Filter";
+import Context from "@/Context/Context";
+import Link from "next/link";
+import React, { useContext } from "react";
 import Optimized from "../Authentication/VerifyEmail/Optimised";
+import Categories from "../Categories/Categories";
+import Filter from "../Filters/Filter";
 
 const filterIcon = (
   <svg
@@ -57,51 +57,58 @@ export default function CategoriesAndFilter() {
   };
   return (
     <div className="w-full hidden md:flex items-center justify-between gap-5 pt-10">
-      <Categories />
-      <div className="hidden md:flex flex-nowrap justify-end whitespace-nowrap gap-3 items-center">
-        <button
-          className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white"
-          onClick={() =>
-            handleModal({
-              modalType: FILTERING?.value,
-              modalLabel: FILTERING?.label,
-              isWidth: "max-w-[600px]",
-              modalContent: <Filter />,
-              topRightContent: (
-                <span className="inline-block font-semibold text-base leading-6 text-primary">
-                  Reset
-                </span>
-              ),
-            })
-          }
-        >
-          <span>{filterIcon}</span>
-          Filters
-        </button>
-        <button
-          className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white"
-          onClick={() =>
-            handleModal({
-              modalType: FURTHER_OPTIMIZE?.value,
-              modalLabel: FURTHER_OPTIMIZE?.label,
-              isWidth: "max-w-[480px]",
-              modalContent: <Optimized />,
-              topRightContent: (
-                <span
-                  className="inline-block font-semibold text-xl leading-6 cursor-pointer text-blackText"
-                  onClick={handleCloseModal}
-                >
-                  Skip
-                </span>
-              ),
-            })
-          }
-        >
-          Optimize
-        </button>
-        <button className="px-[15px] py-2.5 rounded-[5px] border-[1px] border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white">
-          <Link href="">Sort By</Link>
-        </button>
+      <div className="flex items-center justify-between w-full ">
+        {/* category filters */}
+        <div className="[width: calc(100% - 300px)]">
+          <Categories />
+        </div>
+
+        {/* filters buttons */}
+        <div className="hidden md:flex min-w-[300px] flex-nowrap justify-end gap-3 items-center">
+          <button
+            className="px-[15px] py-2.5 rounded-[5px] border border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white"
+            onClick={() =>
+              handleModal({
+                modalType: FILTERING?.value,
+                modalLabel: FILTERING?.label,
+                isWidth: "max-w-[600px]",
+                modalContent: <Filter />,
+                topRightContent: (
+                  <span className="inline-block font-semibold text-base leading-6 text-primary">
+                    Reset
+                  </span>
+                ),
+              })
+            }
+          >
+            <span>{filterIcon}</span>
+            Filters
+          </button>
+          <button
+            className="px-[15px] py-2.5 rounded-[5px] border border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white"
+            onClick={() =>
+              handleModal({
+                modalType: FURTHER_OPTIMIZE?.value,
+                modalLabel: FURTHER_OPTIMIZE?.label,
+                isWidth: "max-w-[480px]",
+                modalContent: <Optimized />,
+                topRightContent: (
+                  <span
+                    className="inline-block font-semibold text-xl leading-6 cursor-pointer text-blackText"
+                    onClick={handleCloseModal}
+                  >
+                    Skip
+                  </span>
+                ),
+              })
+            }
+          >
+            Optimize
+          </button>
+          <button className="px-[15px] py-2.5 rounded-[5px] border border-[#D3D3D3] flex gap-2 items-center text-[14px] font-semibold text-[#414143] bg-white">
+            <Link href="">Sort By</Link>
+          </button>
+        </div>
       </div>
     </div>
   );
