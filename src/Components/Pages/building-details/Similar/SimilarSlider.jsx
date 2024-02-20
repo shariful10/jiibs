@@ -14,27 +14,9 @@ export default function SimilarSlider() {
 
   return (
     <div>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        breakpoints={{
-          400: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-        }}
-        className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0"
-      >
+      <Swiper slidesPerView={"auto"} spaceBetween={30}>
         {apartments?.map((apartment, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="max-w-[320px] !w-full">
             <UnitCard />
           </SwiperSlide>
         ))}
@@ -42,3 +24,18 @@ export default function SimilarSlider() {
     </div>
   );
 }
+// breakpoints={{
+//   400: {
+//     slidesPerView: 2,
+//     spaceBetween: 20,
+//   },
+//   768: {
+//     slidesPerView: 4,
+//     spaceBetween: 40,
+//   },
+//   1024: {
+//     slidesPerView: 4,
+//     spaceBetween: 30,
+//   },
+// }}
+// className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0"
