@@ -1,8 +1,8 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CategoryBox from "./CategoryBox";
 import { categories } from "./categoriesData";
-import { useRef } from "react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,45 +12,70 @@ import { Navigation } from "swiper/modules";
 
 const Categories = () => {
   const swiperRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(false);
+  const [isEnd, setIsEnd] = useState(true);
   const handlePrevButtonClick = () => {
     if (swiperRef.current) {
       swiperRef.current.swiper.slidePrev();
     }
   };
-
   const handleNextButtonClick = () => {
     if (swiperRef.current) {
       swiperRef.current.swiper.slideNext();
     }
   };
+
+  const handleSlideChange = (slide) => {
+    setIsBeginning(!slide?.isBeginning);
+
+    // const virtualSize = slide?.virtualSize;
+    // const slidesGrid = slide?.slidesGrid[categories?.length - 1];
+    // const previousTranslate = -slide?.previousTranslate;
+    // const endPoint = slidesGrid + previousTranslate;
+
+    // if (virtualSize <= endPoint) {
+    //   setIsEnd(false);
+    // } else {
+    //   setIsEnd(true);
+    // }
+
+    setIsEnd(!slide?.isEnd);
+  };
+
   return (
-    <div className="relative w-full md:max-w-[380px] lg:max-w-[630px] elg:max-w-[700px] xl:max-w-[800px] xxl:max-w-[1040px]">
+    <div className="relative w-full md:max-w-[380px] lg:max-w-[630px] elg:max-w-[700px] xl:max-w-[800px] xxl:max-w-[1040px] select-none">
       {/* prev button */}
-      <button
-        onClick={handlePrevButtonClick}
-        className="absolute left-1 top-2 transition duration-300 z-40 rounded-full"
-        style={{
-          boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-        }}
-      >
-        <figure>{prevButtonIcons}</figure>
-      </button>
+      {isBeginning && (
+        <button
+          onClick={handlePrevButtonClick}
+          className="absolute left-1 top-2 transition duration-300 z-40 rounded-full"
+          style={{
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+          }}
+        >
+          <figure>{prevButtonIcons}</figure>
+        </button>
+      )}
 
       {/* next button */}
-      <button
-        style={{
-          boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
-        }}
-        onClick={handleNextButtonClick}
-        className="absolute right-1 top-2 transition duration-300 z-40 rounded-full"
-      >
-        <figure>{nextButtonIcons}</figure>
-      </button>
+      {isEnd && (
+        <button
+          style={{
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+          }}
+          onClick={handleNextButtonClick}
+          className="absolute right-1 top-2 transition duration-300 z-40 rounded-full"
+        >
+          <figure>{nextButtonIcons}</figure>
+        </button>
+      )}
+
       <Swiper
         slidesPerView={7}
         modules={[Navigation]}
         ref={swiperRef}
         className="mySwiper px-5"
+        onSlideChange={handleSlideChange}
       >
         {categories.map((category) => (
           <SwiperSlide key={category.label}>
