@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AvailableUnitsCart from "./AvailableUnitsCart";
+import AvailableUnitsCart from "./components/AvailableUnitsCart";
 
 // Available Units
 export default function AvailableUnits() {
@@ -111,7 +111,10 @@ export default function AvailableUnits() {
   };
 
   return (
-    <>
+    <div>
+      <h3 className="text-xl md:text-[26px] xxl:text-3xl font-semibold mb-6">
+        Available Units
+      </h3>
       {/* tabs */}
       <div className="flex items-center justify-start gap-3">
         {["all", "studio", "1 bed", "2 beds", "3 beds+"].map((tab) => (
@@ -141,7 +144,7 @@ export default function AvailableUnits() {
           </p>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

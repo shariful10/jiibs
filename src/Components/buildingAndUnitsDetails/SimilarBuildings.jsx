@@ -1,7 +1,7 @@
 import Container from "@/Components/Regular/Container";
-import SimilarSlider from "./SimilarSlider";
+import SimilarSlider from "./components/SimilarSlider";
 
-export default function Similar() {
+export default function SimilarBuildings() {
   return (
     <>
       <Container className="!px-0">

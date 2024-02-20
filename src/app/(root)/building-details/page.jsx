@@ -1,10 +1,14 @@
 import BuildingSlider from "@/Components/BuildingSlider/Slider";
-import BuildingSliderMobile from "@/Components/BuildingSlider/SliderMobile";
-import AboutSide from "@/Components/Pages/building-details/Description/AboutSide/AboutSide";
-import LocationMap from "@/Components/Pages/building-details/Description/LocationDetails/LocationMap";
-import Similar from "@/Components/Pages/building-details/Similar/Similar";
 import Breadcrumbs from "@/Components/Regular/Breadcrumbs/Breadcrumbs";
 import Container from "@/Components/Regular/Container";
+import Amenities from "@/Components/buildingAndUnitsDetails/Amenities";
+import Facilities from "@/Components/buildingAndUnitsDetails/Facilities";
+import Transportation from "@/Components/buildingAndUnitsDetails/Transportation";
+import AvailableUnits from "@/Components/buildingAndUnitsDetails/AvailableUnits";
+import AboutDescription from "@/Components/buildingAndUnitsDetails/AboutDescription";
+import BuildingSliderMobile from "@/Components/BuildingSlider/SliderMobile";
+import LocationMap from "@/Components/buildingAndUnitsDetails/LocationMap";
+import SimilarBuildings from "@/Components/buildingAndUnitsDetails/SimilarBuildings";
 
 export default function BuildingDetail() {
   return (
@@ -35,9 +39,12 @@ export default function BuildingDetail() {
           <BuildingSlider />
         </section>
         <section className="flex flex-col-reverse md:flex-row flex-start items-start justify-between gap-[9%] md:gap-20 w-full mt-2 md:mt-6">
-          {/* about , description */}
-          <div className="w-full md:w-[61%] overflow-hidden">
-            <AboutSide />
+          <div className="w-full md:w-[61%] overflow-hidden flex flex-col gap-[60px]">
+            <AboutDescription />
+            <Facilities />
+            <Transportation />
+            <Amenities />
+            <AvailableUnits />
           </div>
 
           {/* Location map */}
@@ -45,7 +52,7 @@ export default function BuildingDetail() {
             <LocationMap />
           </div>
         </section>
-        <Similar />
+        <SimilarBuildings />
       </Container>
     </div>
   );
