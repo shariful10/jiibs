@@ -2,7 +2,9 @@ export default function Transportation() {
   return (
     <>
       <div>
-        <h2 className="text-3xl font-semibold">Transportation </h2>
+        <h2 className="text-xl md:text-[26px] xxl:text-3xl font-semibold">
+          Transportation
+        </h2>
         <div className="mt-5 space-y-6">
           <TableRow
             dots={
@@ -36,15 +38,22 @@ export default function Transportation() {
 // similar components
 function TableRow({ wall = null, runningTimes = null, dots = null }) {
   return (
-    <div className="flex items-center justify-between gap-3.5">
+    <div className="grid grid-cols-3 justify-between gap-3.5">
       {dots ? (
-        <div className="flex items-center justify-start gap-3.5"> {dots} </div>
+        <div className="grid grid-cols-4 lg:grid-cols-6 justify-start gap-3.5 md:gap-1 flex-1">
+          {dots}
+        </div>
       ) : null}
-      {wall ? <div> {wall} </div> : null}
-      {runningTimes ? <div> {runningTimes} </div> : null}
+      {wall ? (
+        <div className="text-base flex-1 flex justify-center"> {wall} </div>
+      ) : null}
+      {runningTimes ? (
+        <div className="flex-1 flex justify-end"> {runningTimes} </div>
+      ) : null}
     </div>
   );
 }
+
 function RedDot({ text }) {
   return (
     <strong className="w-6 h-6 flex items-center justify-center rounded-full bg-red text-white">
@@ -52,6 +61,7 @@ function RedDot({ text }) {
     </strong>
   );
 }
+
 function YellowDot({ text }) {
   return (
     <strong className="w-6 h-6 flex items-center justify-center rounded-full bg-yellow text-black">

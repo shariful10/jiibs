@@ -2,7 +2,7 @@
 
 import ButtonBlack from "@/Components/Regular/Buttons/ButtonBlack";
 import ButtonPrimary from "@/Components/Regular/Buttons/ButtonPrimary";
-import MapLocator from "./MapLocator";
+import MapLocator from "./components/MapLocator";
 
 export default function LocationMap() {
   // Request a Tour
@@ -15,10 +15,10 @@ export default function LocationMap() {
     <div className="w-full">
       {/* head address part */}
       <div>
-        <h1 className="md:text-[26px] xxl:text-3xl font-semibold">
+        <h1 className="text-xl md:text-[26px] xxl:text-3xl font-semibold">
           70 Pine Street
         </h1>
-        <p className="text-lg xxl:text-xl font-normal mt-2">
+        <p className="text-sm xxl:text-xl font-normal mt-2">
           70 Pine Street, New York, new york 100005
         </p>
         <div className="flex gap-4 items-center justify-start flex-wrap mt-2">
@@ -60,9 +60,9 @@ export default function LocationMap() {
 // mini components
 function UnitsStories({ name, icons }) {
   return (
-    <div className="flex gap-2 items-center justify-start min-w-max mr-0 md:mr-1 xxl:mr-3">
-      <figure> {icons} </figure>
-      <p> {name} </p>
+    <div className="flex gap-2 items-center justify-start min-w-max mr-0 md:mr-1 xxl:mr-3 text-sm xxl:text-xl">
+      <figure className=""> {icons} </figure>
+      <p className=""> {name} </p>
     </div>
   );
 }

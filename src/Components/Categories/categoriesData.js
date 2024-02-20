@@ -43,11 +43,35 @@ export const categories = [
     icon: nightLife,
   },
   {
-    label: "Quite Area",
-    icon: quiteArea,
+    label: "All",
+    icon: checked,
   },
   {
-    label: "Luxury",
-    icon: luxury,
+    label: "Cool Amenities",
+    icon: CoolAmenties,
+  },
+  {
+    label: "Gym",
+    icon: Gym,
+  },
+  {
+    label: "Trending",
+    icon: trending,
+  },
+  {
+    label: "Transportation",
+    icon: transportation,
+  },
+  {
+    label: "Great Views",
+    icon: greatViews,
+  },
+  {
+    label: "New Development",
+    icon: newDevelopment,
+  },
+  {
+    label: "Night Life",
+    icon: nightLife,
   },
 ];

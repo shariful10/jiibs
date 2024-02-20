@@ -7,8 +7,10 @@ export default function AboutDescription() {
   const [lineCallUp, setLineCallUp] = useState(true);
 
   return (
-    <>
-      <h2 className="md:text-[26px] xxl:text-3xl font-semibold mb-6">About</h2>
+    <div>
+      <h2 className="text-xl md:text-[26px] xxl:text-3xl font-semibold mb-6">
+        About
+      </h2>
 
       <p
         className={`text-sm leading-[26px] xxl:text-base md:leading-7 font-normal transition duration-300 ${
@@ -28,7 +30,7 @@ export default function AboutDescription() {
           {lineCallUp ? "Read Full Description" : "Hide full description"}
         </ButtonWhite>
       </div>
-    </>
+    </div>
   );
 }
 

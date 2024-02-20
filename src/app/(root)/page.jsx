@@ -3,6 +3,7 @@
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
 import ApartmentCard from "@/Components/Regular/ApartmentCard/ApartmentCard";
+import Container from "@/Components/Regular/Container";
 import { data } from "@/Components/data";
 import React from "react";
 
@@ -10,7 +11,8 @@ const Home = () => {
   const apartments = data.apartments;
 
   return (
-    <React.Fragment>
+    <Container>
+      {/* <CatSlider /> */}
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
@@ -28,7 +30,7 @@ const Home = () => {
           Load More
         </button>
       </div>
-    </React.Fragment>
+    </Container>
   );
 };
 

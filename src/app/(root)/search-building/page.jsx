@@ -1,11 +1,12 @@
 import CategoriesAndFilter from "@/Components/CategoriesAndFilter";
 import MobileFiltering from "@/Components/Filters/MobileFiltering";
+import Container from "@/Components/Regular/Container";
 import UnitCard from "@/Components/UnitCard";
 import React from "react";
 
 const page = () => {
   return (
-    <React.Fragment>
+    <Container>
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}
@@ -26,11 +27,11 @@ const page = () => {
       </div>
       <div className="pt-10 pb-[60px]  text-center">
         {/* load more */}
-        <button className="border border-softGray py-2.5 px-6 rounded-md font-semibold text-[15px]">
+        <button className="border border-softGray py-2.5 px-6 rounded-md font-semibold text-sm">
           Load More
         </button>
       </div>
-    </React.Fragment>
+    </Container>
   );
 };
 

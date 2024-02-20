@@ -11,7 +11,7 @@ import yogaIcon from "@/assets/icons/details/yogaicon.png";
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./Amenities.css";
+import "./styles/Amenities.css";
 
 // images
 import chadViewImg from "@/assets/chad-view.png";
@@ -20,26 +20,26 @@ export default function Amenities() {
   const swiperRef = useRef(null);
 
   const handlePrevButtonClick = () => {
-    console.log("swiperRef ", swiperRef);
-    // if (swiperRef.current) {
-    //   swiperRef.current.slidePrev();
-    // }
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
   };
 
   const handleNextButtonClick = () => {
-    console.log("swiperRef ", swiperRef);
-    // if (swiperRef.current) {
-    //   swiperRef.current.slideNext();
-    // }
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
   };
 
   return (
-    <>
+    <div>
       {demoAmenities?.length ? (
         <>
-          <div>
-            <div className="mb-5 flex items-center justify-between gap-5">
-              <h3 className="text-3xl font-semibold text-left"> Amenities </h3>
+          <div className="w-full">
+            <div className="mb-[1.3145rem] flex items-center justify-between gap-5 w-full">
+              <h3 className="text-xl md:text-[26px] xxl:text-3xl font-semibold">
+                Amenities
+              </h3>
               <div className="flex items-center gap-4">
                 {/* prev button */}
                 <button
@@ -60,33 +60,43 @@ export default function Amenities() {
             </div>
 
             {/* slider */}
-            <div>
+            <div className="w-full">
               <Swiper
                 watchSlidesProgress={true}
-                slidesPerView={2}
-                className="amenities "
+                breakpoints={{
+                  140: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                  },
+                }}
+                className="amenities"
                 ref={swiperRef}
               >
                 {demoAmenities?.map((item, idx) => (
                   <SwiperSlide key={idx}>
                     <div>
-                      <figure className="w-full h-full rounded-[10px] overflow-hidden">
+                      <div className="h-[200px] xxl:h-[250px]">
                         <Image
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover rounded-[10px]"
                           src={item?.image}
                           alt={item?.title}
                         />
-                      </figure>
-
-                      <article>
-                        <h3 className="text-[1.375rem] font-semibold mt-4 mb-2.5">
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold mt-4 mb-2.5">
                           {item?.title}
                         </h3>
 
-                        <p className="text-base font-normal">
+                        <p className="text-sm leading-[26px] font-normal">
                           {item?.description}
                         </p>
-                      </article>
+                      </div>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -123,7 +133,7 @@ export default function Amenities() {
           </div>
         </>
       ) : null}
-    </>
+    </div>
   );
 }
 
@@ -131,10 +141,10 @@ export default function Amenities() {
 function Items({ src, text }) {
   return (
     <div className="flex items-center justify-start gap-5">
-      <figure className="flex items-center justify-center w-4 md:w-[1.375rem] h-5 md:h-[1.69rem] flex-shrink-0">
+      <figure className="flex items-center justify-center w-[18px] h-[22px] flex-shrink-0">
         <Image className="w-full h-full" src={src} alt="" />
       </figure>
-      <p className="text-base md:text-xl font-normal capitalize"> {text}</p>
+      <p className="text-base font-normal capitalize"> {text}</p>
     </div>
   );
 }

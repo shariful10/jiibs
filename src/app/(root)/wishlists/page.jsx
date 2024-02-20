@@ -7,6 +7,7 @@ import WishlistsMobile from "@/Components/wishlist/WishlistsMobile";
 import Context from "@/Context/Context";
 import { CREATE_WISHLIST } from "@/Components/Regular/Utils/constant";
 import AddAlbum from "@/Components/wishlist/AddAlbum";
+import Container from "@/Components/Regular/Container";
 
 const whitePlusIcon = (
   <svg
@@ -51,50 +52,52 @@ export default function page() {
   };
 
   return (
-    <div className="w-full mx-auto pt-10 pb-8">
-      {isLogin ? (
-        <NotLogin />
-      ) : (
-        <>
-          {/* Wishlist mobile */}
-          <div className="md:hidden">
-            <WishlistsMobile />
-          </div>
-          {/* Wishlist desktop */}
-          <div className="hidden md:block">
-            <div className="hidden sm:flex justify-between items-center">
-              <h1 className="font-semibold text-[26px] xxl:text-3xl text-blackText">
-                Wishlist
-              </h1>
-              <button
-                className="flex items-center gap-2 bg-primary rounded-md py-3 px-4 text-white text-sm"
-                onClick={() =>
-                  handleModal({
-                    modalType: CREATE_WISHLIST?.value,
-                    modalLabel: CREATE_WISHLIST?.label,
-                    isMobileModal: false,
-                    isWidth: "max-w-[630px]",
-                    modalContent: <AddAlbum />,
-                  })
-                }
-              >
-                <span>{whitePlusIcon}</span>
-                <span>Create album</span>
-              </button>
+    <Container>
+      <div className="w-full mx-auto pt-10 pb-8">
+        {isLogin ? (
+          <NotLogin />
+        ) : (
+          <>
+            {/* Wishlist mobile */}
+            <div className="md:hidden">
+              <WishlistsMobile />
             </div>
-            <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-              <Album />
-              <Album />
-              <Album />
-              <Album />
-              <Album />
-              <Album />
-              <Album />
-              <Album />
+            {/* Wishlist desktop */}
+            <div className="hidden md:block">
+              <div className="hidden sm:flex justify-between items-center">
+                <h1 className="font-semibold text-[26px] xxl:text-3xl text-blackText">
+                  Wishlist
+                </h1>
+                <button
+                  className="flex items-center gap-2 bg-primary rounded-md py-3 px-4 text-white text-sm"
+                  onClick={() =>
+                    handleModal({
+                      modalType: CREATE_WISHLIST?.value,
+                      modalLabel: CREATE_WISHLIST?.label,
+                      isMobileModal: false,
+                      isWidth: "max-w-[630px]",
+                      modalContent: <AddAlbum />,
+                    })
+                  }
+                >
+                  <span>{whitePlusIcon}</span>
+                  <span>Create album</span>
+                </button>
+              </div>
+              <div className="pt-4 md:pt-8 pb-20 grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <Album />
+                <Album />
+                <Album />
+                <Album />
+                <Album />
+                <Album />
+                <Album />
+                <Album />
+              </div>
             </div>
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </Container>
   );
 }

@@ -5,6 +5,7 @@ import SignUp from "../Authentication/Signup/Signup";
 import InputSearchBar from "../Regular/Inputs/InputSearchBar";
 import { SIGNIN, SIGNUP } from "../Regular/Utils/constant";
 import Logo from "./Logo";
+import Container from "../Regular/Container";
 
 const NavigationBar = () => {
   const { modal, setModal } = useContext(Context);
@@ -28,45 +29,47 @@ const NavigationBar = () => {
   };
 
   return (
-    <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3 ">
-      {/* logo */}
-      <div className="py-2.5">
-        <Logo />
-      </div>
+    <Container>
+      <div className="w-full hidden bg-base-100 md:flex items-center justify-between py-3">
+        {/* logo */}
+        <div className="py-2.5">
+          <Logo />
+        </div>
 
-      {/* search input */}
-      <InputSearchBar />
+        {/* search input */}
+        <InputSearchBar />
 
-      {/* user , login , sign up */}
-      <div className="flex justify-end items-center gap-4">
-        <AuthButton
-          icons={loginUserIcon}
-          title="Login"
-          handleAuthButton={() =>
-            handleModal({
-              modalType: SIGNIN?.value,
-              modalLabel: SIGNIN?.label,
-              isMobileModal: false,
-              isWidth: "md:max-w-[400px] xxl:max-w-[480px]",
-              modalContent: <SignIn />,
-            })
-          }
-        />
-        <AuthButton
-          icons={signUpIcons}
-          title="Sign Up"
-          handleAuthButton={() =>
-            handleModal({
-              modalType: SIGNUP?.value,
-              modalLabel: SIGNUP?.label,
-              isMobileModal: false,
-              isWidth: "md:max-w-[400px] xxl:max-w-[480px]",
-              modalContent: <SignUp />,
-            })
-          }
-        />
+        {/* user , login , sign up */}
+        <div className="flex justify-end items-center gap-4">
+          <AuthButton
+            icons={loginUserIcon}
+            title="Login"
+            handleAuthButton={() =>
+              handleModal({
+                modalType: SIGNIN?.value,
+                modalLabel: SIGNIN?.label,
+                isMobileModal: false,
+                isWidth: "md:max-w-[400px] xxl:max-w-[480px]",
+                modalContent: <SignIn />,
+              })
+            }
+          />
+          <AuthButton
+            icons={signUpIcons}
+            title="Sign Up"
+            handleAuthButton={() =>
+              handleModal({
+                modalType: SIGNUP?.value,
+                modalLabel: SIGNUP?.label,
+                isMobileModal: false,
+                isWidth: "md:max-w-[400px] xxl:max-w-[480px]",
+                modalContent: <SignUp />,
+              })
+            }
+          />
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

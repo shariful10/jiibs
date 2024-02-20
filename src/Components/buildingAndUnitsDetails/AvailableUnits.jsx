@@ -1,11 +1,11 @@
 "use client";
-import ButtonWhite from "@/Components/Regular/Buttons/ButtonWhite";
+
 import { useEffect, useState } from "react";
-import AvailableUnitsCart from "./AvailableUnitsCart";
+import AvailableUnitsCart from "./components/AvailableUnitsCart";
 
 // Available Units
 export default function AvailableUnits() {
-  const [demoData, setDemoData] = useState([
+  const demoData = [
     {
       type: "studio",
       unitsNumber: "3405",
@@ -77,7 +77,7 @@ export default function AvailableUnits() {
         "https://i0.wp.com/laurylee.com/wp-content/uploads/2023/10/Featured-2023-10-19T083217.455.png",
     },
     {
-      type: "3 beds",
+      type: "2 beds",
       unitsNumber: "3405",
       amount: { type: "month", price: 4495 },
       offer: "1 month free - 14 Month Lease",
@@ -86,72 +86,65 @@ export default function AvailableUnits() {
       ArchitectImage:
         "https://i0.wp.com/laurylee.com/wp-content/uploads/2023/10/Featured-2023-10-19T083239.450.png",
     },
-  ]);
+  ];
   const [tabs, setTabs] = useState("all");
+  const [tabLoadData, setTabLoadData] = useState({});
   const [showData, setShowData] = useState([]);
-  const [loadData, setLoadData] = useState(false);
 
   useEffect(() => {
-    if (tabs !== "all") {
-      const filtered = demoData.filter((item) => item.type === tabs);
-      // console.log("filtered ", filtered);
-      setShowData(filtered);
-    } else {
-      setShowData(demoData);
-    }
+    const filteredData =
+      tabs !== "all" ? demoData.filter((item) => item.type === tabs) : demoData;
+    setShowData(filteredData);
   }, [tabs]);
 
+  const renderUnits = () => {
+    const displayedData = tabLoadData[tabs] ? showData : showData.slice(0, 3);
+    return displayedData.map((item, idx) => (
+      <AvailableUnitsCart cart={item} key={idx} />
+    ));
+  };
+
+  const shouldShowLoadMoreButton = showData.length > 3;
+
+  const handleLoadMore = () => {
+    setTabLoadData((prev) => ({ ...prev, [tabs]: !prev[tabs] }));
+  };
+
   return (
-    <>
+    <div>
+      <h3 className="text-xl md:text-[26px] xxl:text-3xl font-semibold mb-6">
+        Available Units
+      </h3>
       {/* tabs */}
       <div className="flex items-center justify-start gap-3">
-        <TabButton text="all" onClick={setTabs} active={tabs} />
-        <TabButton text="studio" onClick={setTabs} active={tabs} />
-        <TabButton text="1 bed" onClick={setTabs} active={tabs} />
-        <TabButton text="2 beds" onClick={setTabs} active={tabs} />
-        <TabButton text="3 beds+" onClick={setTabs} active={tabs} />
+        {["all", "studio", "1 bed", "2 beds", "3 beds+"].map((tab) => (
+          <TabButton key={tab} text={tab} onClick={setTabs} active={tabs} />
+        ))}
       </div>
 
       {/* content */}
       <div className="py-3 divide-y-2 flex flex-col">
-        {showData?.length ? (
+        {showData.length ? (
           <>
-            {loadData ? (
-              <>
-                {showData?.map((item, idx) => (
-                  <AvailableUnitsCart cart={item} key={idx} />
-                ))}
-              </>
-            ) : (
-              <>
-                {showData
-                  ?.map((item, idx) => (
-                    <AvailableUnitsCart cart={item} key={idx} />
-                  ))
-                  ?.slice(0, 3)}
-              </>
-            )}
-
-            <div className="py-6 border-t-2">
-              {showData?.length > 3 ? (
+            {renderUnits()}
+            {shouldShowLoadMoreButton && (
+              <div className="py-6 border-t-2">
                 <button
                   className="border border-softGray py-2.5 px-6 rounded-md font-semibold text-sm"
-                  onClick={() => setLoadData(!loadData)}
+                  onClick={handleLoadMore}
                 >
-                  {loadData ? "See Less " : "Load More"}
+                  {tabLoadData[tabs] ? "See Less" : "Load More"}
                 </button>
-              ) : null}
-            </div>
+              </div>
+            )}
           </>
         ) : (
-          <>
-            <p className="text-base text-blackText text-center">
-              Unit Not Available
-            </p>
-          </>
+          <p className="text-base text-blackText text-center">
+            Unit Not Available
+          </p>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
