@@ -63,13 +63,16 @@ const UnitCard = () => {
         </svg>
       </div>
 
-      <Image
-        src={building_image}
-        alt="Description of the image"
-        width={500}
-        height={300}
-        className="w-full h-full object-cover"
-      ></Image>
+      <div className="w-[320px] h-[320px]">
+        <Image
+          src={building_image}
+          alt="Description of the image"
+          width={500}
+          height={300}
+          className="w-full h-full object-cover"
+        ></Image>
+      </div>
+
       <div className="flex flex-col gap-1 mt-[10px] rounded-lg md:rounded-[20px]">
         <p className="text-sm font-semibold text-[#626262]">Midtown East</p>
         <h3 className="text-lg leading-6 font-semibold">The Somerset</h3>
