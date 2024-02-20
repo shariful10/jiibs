@@ -6,7 +6,7 @@ import UnitCard from "@/Components/UnitCard";
 import { data } from "@/Components/data";
 import "swiper/css";
 
-export default function SimilarSlider() {
+export default function SimilarBuildingSlider() {
   const apartments = data.apartments;
 
   return (

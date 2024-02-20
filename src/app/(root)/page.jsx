@@ -12,7 +12,6 @@ const Home = () => {
 
   return (
     <Container>
-      {/* <CatSlider /> */}
       {/* Desktop categories and filtering  */}
       <CategoriesAndFilter />
       {/* Mobile categories and filtering  */}

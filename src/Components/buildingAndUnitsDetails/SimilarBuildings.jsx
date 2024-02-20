@@ -1,5 +1,5 @@
 import Container from "@/Components/Regular/Container";
-import SimilarSlider from "./components/SimilarSlider";
+import SimilarSlider from "./components/SimilarBuildingSlider";
 
 export default function SimilarBuildings() {
   return (
