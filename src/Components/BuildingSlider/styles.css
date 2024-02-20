@@ -58,6 +58,10 @@
   object-fit: cover;
 }
 
+.swiper_mobile_building_details img {
+  border-radius: 0;
+}
+
 .swiper_mobile_building_details > .swiper-wrapper {
   gap: 0 !important;
 }
