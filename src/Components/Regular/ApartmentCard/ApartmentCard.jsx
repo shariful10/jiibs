@@ -7,6 +7,7 @@ import heartButton from "@/assets/images/heart-button.svg";
 import Image from "next/image";
 import { useContext } from "react";
 import { ADD_WISHLIST } from "../Utils/constant";
+import Link from "next/link";
 
 const ApartmentCard = ({ apartment = {} }) => {
   const { modal, setModal } = useContext(Context);
@@ -28,7 +29,7 @@ const ApartmentCard = ({ apartment = {} }) => {
   };
 
   return (
-    <div className="col-span-1 cursor-pointer group">
+    <Link href={"/unit-details"} className="col-span-1 cursor-pointer group">
       <div className="flex flex-col w-full">
         {/* image view */}
         <div className="aspect-square w-full relative overflow-hidden rounded-[15px]">
@@ -77,7 +78,7 @@ const ApartmentCard = ({ apartment = {} }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

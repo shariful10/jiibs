@@ -8,6 +8,8 @@ import Transportation from "@/Components/buildingAndUnitsDetails/Transportation"
 import AboutDescription from "@/Components/buildingAndUnitsDetails/AboutDescription";
 import Container from "@/Components/Regular/Container";
 import SimilarBuildings from "@/Components/buildingAndUnitsDetails/SimilarBuildings";
+import SimilarUnitsSlider from "@/Components/buildingAndUnitsDetails/components/SimilarUnitsSlider";
+import SimilarUnits from "@/Components/buildingAndUnitsDetails/SimilarUnits";
 
 export default function UnitDetails() {
   return (
@@ -50,7 +52,7 @@ export default function UnitDetails() {
             <LocationMap />
           </div>
         </section>
-        <SimilarBuildings />
+        <SimilarUnits />
       </Container>
     </div>
   );
