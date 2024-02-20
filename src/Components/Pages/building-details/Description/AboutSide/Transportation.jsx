@@ -2,7 +2,7 @@ export default function Transportation() {
   return (
     <>
       <div>
-        <h2 className="md:text-[26px] xxl:text-3xl font-semibold">
+        <h2 className="text-xl md:text-[26px] xxl:text-3xl font-semibold">
           Transportation
         </h2>
         <div className="mt-5 space-y-6">
@@ -38,9 +38,9 @@ export default function Transportation() {
 // similar components
 function TableRow({ wall = null, runningTimes = null, dots = null }) {
   return (
-    <div className="flex items-center justify-between gap-3.5">
+    <div className="grid grid-cols-3 justify-between gap-3.5">
       {dots ? (
-        <div className="flex items-center justify-start gap-3.5 flex-1">
+        <div className="grid grid-cols-4 lg:grid-cols-6 justify-start gap-3.5 md:gap-1 flex-1">
           {dots}
         </div>
       ) : null}

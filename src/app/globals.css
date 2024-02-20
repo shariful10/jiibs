@@ -53,3 +53,12 @@ input[type="number"] {
   background-color: #20a5c9;
   cursor: pointer;
 }
+
+.swiper-wrapper {
+  gap: 0 !important;
+}
+
+.swiper_mobile_building_details > .swiper-pagination {
+  bottom: 10px !important;
+  padding: 2px 6px !important;
+}

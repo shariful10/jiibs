@@ -20,12 +20,10 @@ const Layout = ({ children }) => {
 
   return (
     <Context.Provider value={{ modal, setModal }}>
-      <Container>
-        <NavigationBar />
-        <MobileBottomMenu />
-        {children}
-      </Container>
-      <Footer />
+      <NavigationBar />
+      <MobileBottomMenu />
+      {children}
+      {/* <Footer /> */}
       {/* Modal  */}
       {modal?.isOpen && <Modal {...modal} />}
     </Context.Provider>
