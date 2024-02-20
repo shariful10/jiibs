@@ -2,43 +2,26 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 
-const StudioBed = ({ betData = [] }) => {
+export default function StudioBed({ betData = [] }) {
   return (
-    <Swiper
-      slidesPerView={1}
-      spaceBetween={10}
-      breakpoints={{
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-      }}
-      className="!w-full rounded-lg"
-    >
-      {betData?.map((bet, index) => (
-        <SwiperSlide key={index} className="!w-[180px]">
-          <div className="flex items-center justify-between gap-6 cursor-pointer">
-            <BetStudio studio={bet} />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div>
+      <Swiper slidesPerView={"auto"} spaceBetween={10}>
+        {betData?.map((bet, index) => (
+          <SwiperSlide
+            key={index}
+            className="!max-w-[180px] min-[1200px]:!max-w-[160px] xxl:!max-w-[190px] !w-full"
+          >
+            <div className="flex items-center justify-between gap-5 cursor-pointer">
+              <BetStudio studio={bet} />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
-};
-
-export default StudioBed;
+}
 
 // bet studio components
 function BetStudio({ studio }) {

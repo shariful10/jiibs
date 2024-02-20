@@ -1,22 +1,22 @@
 "use client";
 
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import UnitCard from "@/Components/UnitCard";
 import { data } from "@/Components/data";
-
-// Import Swiper styles
 import "swiper/css";
 
 export default function SimilarSlider() {
   const apartments = data.apartments;
 
   return (
-    <div>
+    <div className="mb-[120px] sm:pb-0">
       <Swiper slidesPerView={"auto"} spaceBetween={30}>
         {apartments?.map((apartment, index) => (
-          <SwiperSlide key={index} className="max-w-[320px] !w-full">
+          <SwiperSlide
+            key={index}
+            className="!max-w-[320px] min-[1200px]:!max-w-[260px] xxl:!max-w-[320px] !w-full"
+          >
             <UnitCard />
           </SwiperSlide>
         ))}
@@ -24,18 +24,3 @@ export default function SimilarSlider() {
     </div>
   );
 }
-// breakpoints={{
-//   400: {
-//     slidesPerView: 2,
-//     spaceBetween: 20,
-//   },
-//   768: {
-//     slidesPerView: 4,
-//     spaceBetween: 40,
-//   },
-//   1024: {
-//     slidesPerView: 4,
-//     spaceBetween: 30,
-//   },
-// }}
-// className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0"
