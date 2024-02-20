@@ -12,7 +12,7 @@ export default function BuildingDetail() {
       <BuildingSliderMobile />
       <Container>
         {/* title and slider part */}
-        <section className="py-4">
+        <section className="">
           {/* Header part */}
           <div className="md:flex flex-col md:flex-row gap-4 justify-between items-center py-[14px] hidden">
             <h1 className="md:text-[24px] xxl:text-3xl font-semibold">
