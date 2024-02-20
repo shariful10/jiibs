@@ -8,10 +8,6 @@ import { data } from "@/Components/data";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination } from "swiper/modules";
 
 export default function SimilarSlider() {
   const apartments = data.apartments;
@@ -21,11 +17,8 @@ export default function SimilarSlider() {
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
-          640: {
+          400: {
             slidesPerView: 2,
             spaceBetween: 20,
           },
@@ -35,14 +28,13 @@ export default function SimilarSlider() {
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 30,
           },
         }}
-        modules={[Pagination]}
         className="pt-12 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-5 md:p-0"
       >
         {apartments?.map((apartment, index) => (
-          <SwiperSlide className="!w-full">
+          <SwiperSlide key={index}>
             <UnitCard />
           </SwiperSlide>
         ))}
